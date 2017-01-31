@@ -10,6 +10,8 @@
 #include <QScreen>
 #include <QCoreApplication>
 
+#include "settingsmodel/settingsmodel.h"
+
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -23,8 +25,15 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl("/usr/share/glacier-settings/qml/glacier-settings.qml"));
     QObject *topLevel = engine->rootObjects().value(0);
     QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
+
+    SettingsModel *settingsModel = new SettingsModel();
+    settingsModel->fill();
+
     setenv("QT_QUICK_CONTROLS_STYLE", "Nemo", 1);
+
     engine->rootContext()->setContextProperty("__window", window);
+    engine->rootContext()->setContextProperty("settingsModel", settingsModel);
+
     window->setTitle(QObject::tr("Settings"));
     window->showFullScreen();
     return app.exec();

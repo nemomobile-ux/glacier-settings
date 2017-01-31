@@ -1,7 +1,8 @@
 TARGET = glacier-settings
 
 SOURCES += \
-    src/main.cpp
+    src/main.cpp \
+    src/settingsmodel/settingsmodel.cpp
 
 QT += qml quick
 
@@ -20,3 +21,6 @@ qml.files = qml/glacier-settings.qml
 qml.path = /usr/share/glacier-settings/qml
 
 INSTALLS += target desktop qml
+
+HEADERS += \
+    src/settingsmodel/settingsmodel.h
