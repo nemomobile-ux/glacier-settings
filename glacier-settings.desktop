@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+Exec=glacier-settings
+Icon=icon-launcher-settings
+X-Desktop-File-Install-Version=0.20
