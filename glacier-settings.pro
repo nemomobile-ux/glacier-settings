@@ -4,6 +4,9 @@ SOURCES += \
     src/main.cpp \
     src/settingsmodel/settingsmodel.cpp
 
+HEADERS += \
+    src/settingsmodel/settingsmodel.h
+
 QT += qml quick
 
 OTHER_FILES +=rpm/glacier-settings.spec \
@@ -20,7 +23,18 @@ desktop.path = /usr/share/applications
 qml.files = qml/glacier-settings.qml
 qml.path = /usr/share/glacier-settings/qml
 
-INSTALLS += target desktop qml
+exampleplugin.files = qml/plugins/example/example.qml
+exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
-HEADERS += \
-    src/settingsmodel/settingsmodel.h
+pluginconfigs.files = qml/plugins/example/example.json
+pluginconfigs.path = /usr/share/glacier-settings/plugins
+
+INSTALLS += target \
+            desktop \
+            qml \
+            pluginconfigs \
+            exampleplugin
+
+DISTFILES += \
+    qml/plugins/example/example.qml \
+    qml/plugins/example/example.json
