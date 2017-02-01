@@ -26,15 +26,23 @@ qml.path = /usr/share/glacier-settings/qml
 exampleplugin.files = qml/plugins/example/example.qml
 exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
-pluginconfigs.files = qml/plugins/example/example.json
+developermodeplugin.files = qml/plugins/developermode/developermode.qml
+developermodeplugin.path = /usr/share/glacier-settings/qml/plugins/developermode
+
+pluginconfigs.files = qml/plugins/example/example.json\
+                      qml/plugins/developermode/developermode.json
+
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
 INSTALLS += target \
             desktop \
             qml \
             pluginconfigs \
-            exampleplugin
+            exampleplugin \
+            developermodeplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
-    qml/plugins/example/example.json
+    qml/plugins/example/example.json \
+    qml/plugins/developermode/developermode.qml \
+    qml/plugins/developermode/developermode.json
