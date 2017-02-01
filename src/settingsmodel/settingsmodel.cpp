@@ -1,9 +1,13 @@
 #include "settingsmodel.h"
 
 #include <QAbstractListModel>
+#include <QDebug>
+#include <QDir>
+#include <QJsonDocument>
+#include <QJsonObject>
 
 SettingsModel::SettingsModel(QObject *parent) :
-  QAbstractListModel(parent)
+    QAbstractListModel(parent)
 {
     hash.insert(Qt::UserRole ,QByteArray("title"));
     hash.insert(Qt::UserRole+1 ,QByteArray("category"));
@@ -13,6 +17,41 @@ SettingsModel::SettingsModel(QObject *parent) :
 
 void SettingsModel::fill()
 {
+    QDir pluginsPath = QDir("/usr/share/glacier-settings/plugins");
+    qDebug() << "Start scan plugins dir " << pluginsPath.absolutePath();
+    pluginsPath.setNameFilters(QStringList("*.json"));
+
+    const QFileInfoList &list = pluginsPath.entryInfoList();
+    QListIterator<QFileInfo> it (list);
+
+    while (it.hasNext ()) {
+        const QFileInfo &fileInfo = it.next ();
+        qDebug() << "Load " << fileInfo.fileName();
+
+        QFile pluginConfig("/usr/share/glacier-settings/plugins/"+fileInfo.fileName());
+        pluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
+        QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());
+        QJsonObject configObject = config.object();
+
+        settingsItem item;
+        item.title = configObject.value("title").toString();
+        item.category = configObject.value("category").toString();
+        item.path = configObject.value("path").toString();
+
+        if(item.title.length() > 0 and item.category.length() > 0 and item.path.length() > 0)
+        {
+            addItem(item);
+        }
+        else
+        {
+            qWarning() << "Wrong plugin config";
+        }
+    }
+
+    if(rowCount() == 0)
+    {
+        qWarning() << "Plugins directory is empty";
+    }
 }
 
 void SettingsModel::addItem(settingsItem item)
@@ -70,7 +109,7 @@ bool SettingsModel::removeRows(int position, int rows, const QModelIndex &index)
     Q_UNUSED(index);
     beginRemoveRows(QModelIndex(), position, position+rows-1);
     for (int row = 0; row < rows; ++row) {
-       settingsList.removeAt(position);
+        settingsList.removeAt(position);
     }
     endRemoveRows();
     return true;
