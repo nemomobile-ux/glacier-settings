@@ -13,5 +13,19 @@ ApplicationWindow{
             id: tools
             title: qsTr("Settings")
         }
+
+        ListView {
+            id: view
+            anchors.fill: parent
+            clip: true
+            model: settingsModel
+            delegate: ListViewItemWithActions {
+                label: title
+                onClicked:{
+                    pageStack.push(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml"))
+                }
+            }
+            section.property: "category"
+        }
     }
 }

@@ -5,13 +5,13 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
-Item {
-    Column {
-        spacing: 40
-        anchors.centerIn: parent
+Page {
+    id: listViewPage
 
-        Label{
-            text: "example plugin"
-        }
+    headerTools: HeaderToolsLayout { showBackButton: true; title: "Example settings plugin" }
+
+    Label{
+        text: "example"
+        anchors.centerIn: parent
     }
 }
