@@ -8,7 +8,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 Page {
     id: listViewPage
 
-    headerTools: HeaderToolsLayout { showBackButton: true; title: "Example settings plugin" }
+    headerTools: HeaderToolsLayout { showBackButton: true; title: qsTr("Example settings plugin")}
 
     Label{
         text: "example"
