@@ -6,18 +6,20 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-SettingsModel::SettingsModel(QObject *parent) :
+SettingsModel::SettingsModel(QString pluginsDir, QObject *parent) :
     QAbstractListModel(parent)
 {
     hash.insert(Qt::UserRole ,QByteArray("title"));
     hash.insert(Qt::UserRole+1 ,QByteArray("category"));
     hash.insert(Qt::UserRole+2 ,QByteArray("path"));
+
+    m_pluginsDir = pluginsDir;
 }
 
 
-void SettingsModel::fill()
+void SettingsModel::init()
 {
-    QDir pluginsPath = QDir("/usr/share/glacier-settings/plugins");
+    QDir pluginsPath = QDir(m_pluginsDir);
     qDebug() << "Start scan plugins dir " << pluginsPath.absolutePath();
     pluginsPath.setNameFilters(QStringList("*.json"));
 
@@ -27,22 +29,7 @@ void SettingsModel::fill()
     while (it.hasNext ()) {
         const QFileInfo &fileInfo = it.next ();
         qDebug() << "Load " << fileInfo.fileName();
-
-        QFile pluginConfig("/usr/share/glacier-settings/plugins/"+fileInfo.fileName());
-        pluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
-        QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());
-        QJsonObject configObject = config.object();
-
-        settingsItem item;
-        item.title = configObject.value("title").toString();
-        item.category = configObject.value("category").toString();
-        item.path = configObject.value("path").toString();
-
-        if(item.title.length() > 0 and item.category.length() > 0 and item.path.length() > 0)
-        {
-            addItem(item);
-        }
-        else
+        if(!loadConfig(m_pluginsDir+fileInfo.fileName()))
         {
             qWarning() << "Wrong plugin config";
         }
@@ -51,6 +38,30 @@ void SettingsModel::fill()
     if(rowCount() == 0)
     {
         qWarning() << "Plugins directory is empty";
+    }
+}
+
+bool SettingsModel::loadConfig(QString configFileName)
+{
+
+    QFile pluginConfig(configFileName);
+    pluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
+    QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());
+    QJsonObject configObject = config.object();
+
+    settingsItem item;
+    item.title = configObject.value("title").toString();
+    item.category = configObject.value("category").toString();
+    item.path = configObject.value("path").toString();
+
+    if(item.title.length() > 0 and item.category.length() > 0 and item.path.length() > 0)
+    {
+        addItem(item);
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 

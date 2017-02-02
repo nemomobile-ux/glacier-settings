@@ -14,8 +14,8 @@ class SettingsModel : public QAbstractListModel
     };
 
 public:
-    explicit SettingsModel(QObject *parent = 0);
-    void fill();
+    explicit SettingsModel(QString pluginsDir, QObject *parent = 0);
+    void init();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role) const;
@@ -36,6 +36,8 @@ public slots:
 
 private:
     QHash<int,QByteArray> hash;
+    QString m_pluginsDir;
+    bool loadConfig(QString configFileName);
 };
 
 #endif // SETTINGSMODEL_H

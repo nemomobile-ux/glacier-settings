@@ -25,8 +25,8 @@ int main(int argc, char *argv[])
                              | Qt::InvertedPortraitOrientation);
     }
 
-    SettingsModel *settingsModel = new SettingsModel();
-    settingsModel->fill();
+    SettingsModel *settingsModel = new SettingsModel(QString("/usr/share/glacier-settings/plugins/"));
+    settingsModel->init();
 
     QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl("/usr/share/glacier-settings/qml/glacier-settings.qml"));
     engine->rootContext()->setContextProperty("settingsModel", settingsModel);
