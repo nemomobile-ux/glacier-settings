@@ -25,12 +25,9 @@ int main(int argc, char *argv[])
                              | Qt::InvertedPortraitOrientation);
     }
 
-    SettingsModel *settingsModel = new SettingsModel(QString("/usr/share/glacier-settings/plugins/"));
-    settingsModel->init();
+    qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
 
     QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl("/usr/share/glacier-settings/qml/glacier-settings.qml"));
-    engine->rootContext()->setContextProperty("settingsModel", settingsModel);
-
     QObject *topLevel = engine->rootObjects().value(0);
     QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
 

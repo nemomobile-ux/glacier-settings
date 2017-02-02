@@ -6,19 +6,29 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
-SettingsModel::SettingsModel(QString pluginsDir, QObject *parent) :
+SettingsModel::SettingsModel(QObject *parent) :
     QAbstractListModel(parent)
 {
     hash.insert(Qt::UserRole ,QByteArray("title"));
     hash.insert(Qt::UserRole+1 ,QByteArray("category"));
     hash.insert(Qt::UserRole+2 ,QByteArray("path"));
-
-    m_pluginsDir = pluginsDir;
 }
 
+void SettingsModel::setPath(QString path)
+{
+    if(m_pluginsDir != path)
+    {
+        m_pluginsDir = path;
+        init();
+
+        emit pathChanged();
+    }
+}
 
 void SettingsModel::init()
 {
+    settingsList.clear();
+
     QDir pluginsPath = QDir(m_pluginsDir);
     qDebug() << "Start scan plugins dir " << pluginsPath.absolutePath();
     pluginsPath.setNameFilters(QStringList("*.json"));
@@ -43,7 +53,6 @@ void SettingsModel::init()
 
 bool SettingsModel::loadConfig(QString configFileName)
 {
-
     QFile pluginConfig(configFileName);
     pluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());

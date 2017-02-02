@@ -12,9 +12,10 @@ class SettingsModel : public QAbstractListModel
         QString category;
         QString path;
     };
+    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
 
 public:
-    explicit SettingsModel(QString pluginsDir, QObject *parent = 0);
+    explicit SettingsModel(QObject *parent = 0);
     void init();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
@@ -26,8 +27,11 @@ public:
 
     QList<settingsItem> settingsList;
 
+    QString path(){return m_pluginsDir;}
+    void setPath(QString path);
+
 signals:
-    void settingsModelUpdate();
+    void pathChanged();
 
 public slots:
     void addItem(settingsItem item);

@@ -5,10 +5,17 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
+import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
 ApplicationWindow{
     id: main
+
+    SettingsModel{
+        id: settingsModel
+        path: "/usr/share/glacier-settings/plugins/"
+    }
+
     initialPage: Page{
         id: mainPage
         headerTools: HeaderToolsLayout {
