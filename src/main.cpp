@@ -10,7 +10,7 @@
 #include <QScreen>
 #include <QCoreApplication>
 
-#include "settingsmodel/settingsmodel.h"
+#include "models/settingsmodel.h"
 
 int main(int argc, char *argv[])
 {

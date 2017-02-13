@@ -2,10 +2,12 @@ TARGET = glacier-settings
 
 SOURCES += \
     src/main.cpp \
-    src/settingsmodel/settingsmodel.cpp
+    src/models/settingsmodel.cpp \
+    src/models/imagesmodel.cpp
 
 HEADERS += \
-    src/settingsmodel/settingsmodel.h
+    src/models/settingsmodel.h \
+    src/models/imagesmodel.h
 
 QT += qml quick
 
