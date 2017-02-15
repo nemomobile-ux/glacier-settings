@@ -7,6 +7,8 @@
 SettingsProxyModel::SettingsProxyModel(QObject *parent) :
     QSortFilterProxyModel(parent)
 {
+    setSortRole(Qt::UserRole);
+    setDynamicSortFilter(true);
 }
 
 QObject *SettingsProxyModel::model()
@@ -20,6 +22,8 @@ void SettingsProxyModel::setModel(QObject *model)
     {
         setSourceModel(qobject_cast<QAbstractListModel*>(model));
         emit modelChanged();
+
+        sort(0);
     }
 }
 
@@ -36,9 +40,9 @@ bool SettingsProxyModel::lessThan(const QModelIndex &left, const QModelIndex &ri
         QString leftName = leftData.value("name").toString();
         QString rightName = rightData.value("name").toString();
 
-        return leftName < rightName;
+        return leftName > rightName;
     }
-    return SettingsModel::compareCategories(leftCategory,rightCategory) < 0;
+    return SettingsModel::compareCategories(leftCategory,rightCategory) > 0;
 }
 
 
