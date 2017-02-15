@@ -1,13 +1,17 @@
 TARGET = glacier-settings
 
+CONFIG += c++11
+
 SOURCES += \
     src/main.cpp \
     src/models/settingsmodel.cpp \
-    src/models/imagesmodel.cpp
+    src/models/imagesmodel.cpp \
+    src/models/settingsproxymodel.cpp
 
 HEADERS += \
     src/models/settingsmodel.h \
-    src/models/imagesmodel.h
+    src/models/imagesmodel.h \
+    src/models/settingsproxymodel.h
 
 QT += qml quick
 
@@ -31,8 +35,12 @@ exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 developermodeplugin.files = qml/plugins/developermode/developermode.qml
 developermodeplugin.path = /usr/share/glacier-settings/qml/plugins/developermode
 
+displayplugin.files = qml/plugins/display/display.qml
+displayplugin.path = /usr/share/glacier-settings/qml/plugins/display
+
 pluginconfigs.files = qml/plugins/example/example.json\
-                      qml/plugins/developermode/developermode.json
+                      qml/plugins/developermode/developermode.json \
+                      qml/plugins/display/display.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -41,10 +49,13 @@ INSTALLS += target \
             qml \
             pluginconfigs \
             exampleplugin \
-            developermodeplugin
+            developermodeplugin \
+            displayplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
     qml/plugins/example/example.json \
     qml/plugins/developermode/developermode.qml \
-    qml/plugins/developermode/developermode.json
+    qml/plugins/developermode/developermode.json \
+    qml/plugins/display/display.qml \
+    qml/plugins/display/display.json

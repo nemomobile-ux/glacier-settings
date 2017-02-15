@@ -11,9 +11,11 @@ import org.nemomobile.systemsettings 1.0
 ApplicationWindow{
     id: main
 
-    SettingsModel{
+    SettingsProxyModel{
         id: settingsModel
-        path: "/usr/share/glacier-settings/plugins/"
+        model: SettingsModel{
+            path: "/usr/share/glacier-settings/plugins/"
+        }
     }
 
     initialPage: Page{
@@ -54,6 +56,7 @@ ApplicationWindow{
             onValueChanged: {
                 displaySettings.brightness = value
             }
+            enabled: !displaySettings.autoBrightnessEnabled
         }
 
         ListView {
