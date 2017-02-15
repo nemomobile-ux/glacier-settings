@@ -6,13 +6,44 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+/*
+ * Orgeding categoty DRAFT
+ *
+ * Settings part:
+ * Personalization
+ *  - Display
+ *  - Sounds
+ * Network
+ *  - Cellural
+ *  - WiFi
+ *  - NFC
+ * Development
+ *  - Devmode
+ * Info
+ *  - About
+ * Other
+*/
+
+const QStringList SettingsModel::defaultCategories = {
+    "Personalization"
+    , "Network"
+    , "Development"
+    , "Info"
+    , "Other"
+};
+
 SettingsModel::SettingsModel(QObject *parent) :
     QAbstractListModel(parent)
 {
-    hash.insert(Qt::UserRole ,QByteArray("title"));
-    hash.insert(Qt::UserRole+1 ,QByteArray("category"));
-    hash.insert(Qt::UserRole+2 ,QByteArray("path"));
+    m_roleNames << "title";
+    m_roleNames << "category";
+    m_roleNames << "path";
+
+    for (const QString &role : m_roleNames) {
+        hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
+    }
 }
+
 
 void SettingsModel::setPath(QString path)
 {
@@ -23,6 +54,27 @@ void SettingsModel::setPath(QString path)
 
         emit pathChanged();
     }
+}
+
+int SettingsModel::compareCategories(QString leftCategory, QString rightCategory)
+{
+    if(leftCategory == rightCategory)
+    {
+        return 0;
+    }
+    else if(defaultCategories.contains(leftCategory) && defaultCategories.contains(rightCategory))
+    {
+        return defaultCategories.indexOf(leftCategory)-defaultCategories.indexOf(rightCategory);
+    }
+    else if(defaultCategories.contains(leftCategory))
+    {
+        return -1;
+    }
+    else
+    {
+        return 1;
+    }
+
 }
 
 void SettingsModel::init()
@@ -58,14 +110,16 @@ bool SettingsModel::loadConfig(QString configFileName)
     QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());
     QJsonObject configObject = config.object();
 
-    settingsItem item;
-    item.title = configObject.value("title").toString();
-    item.category = configObject.value("category").toString();
-    item.path = configObject.value("path").toString();
+    foreach (QString role, configObject.keys()) {
+        if (!m_roleNames.contains(role)) {
+            m_roleNames << role;
+            hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
+        }
+    }
 
-    if(item.title.length() > 0 and item.category.length() > 0 and item.path.length() > 0)
+    if(configObject.contains("title") && configObject.contains("category") && configObject.contains("path"))
     {
-        addItem(item);
+        addItem(configObject);
         return true;
     }
     else
@@ -74,8 +128,9 @@ bool SettingsModel::loadConfig(QString configFileName)
     }
 }
 
-void SettingsModel::addItem(settingsItem item)
+void SettingsModel::addItem(QJsonObject item)
 {
+
     int count = settingsList.size();
     insertRows(count,1,item);
 }
@@ -96,24 +151,35 @@ QVariant SettingsModel::data(const QModelIndex &index, int role) const
     if (index.row() >= settingsList.size())
         return QVariant();
 
-    settingsItem item = settingsList.at(index.row());
+    QJsonObject item = settingsList.at(index.row());
 
     if(role == Qt::UserRole)
     {
-        return item.title;
+        return item.value("title").toString();
     }
     else if(role == Qt::UserRole+1)
     {
-        return item.category;
+        return item.value("category").toString();
     }
     else if(role == Qt::UserRole+2)
     {
-        return item.path;
+        return item.value("path").toString();
     }
     return QVariant();
 }
 
-bool SettingsModel::insertRows(int position, int rows, settingsItem &item, const QModelIndex &parent)
+QJsonObject SettingsModel::data(const QModelIndex &index) const
+{
+    if (!index.isValid())
+        return QJsonObject();
+
+    if (index.row() >= settingsList.size())
+        return QJsonObject();
+
+    return settingsList.at(index.row());
+}
+
+bool SettingsModel::insertRows(int position, int rows, QJsonObject &item, const QModelIndex &parent)
 {
     Q_UNUSED(parent);
     beginInsertRows(QModelIndex(), position, position+rows-1);

@@ -11,6 +11,7 @@
 #include <QCoreApplication>
 
 #include "models/settingsmodel.h"
+#include "models/settingsproxymodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +27,7 @@ int main(int argc, char *argv[])
     }
 
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
+    qmlRegisterType<SettingsProxyModel>("org.nemomobile.glacier.settings",1,0,"SettingsProxyModel");
 
     QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl("/usr/share/glacier-settings/qml/glacier-settings.qml"));
     QObject *topLevel = engine->rootObjects().value(0);
