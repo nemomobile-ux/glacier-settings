@@ -26,7 +26,9 @@ target.path = /usr/bin
 desktop.files = glacier-settings.desktop
 desktop.path = /usr/share/applications
 
-qml.files = qml/glacier-settings.qml
+qml.files = qml/glacier-settings.qml \
+            qml/components/
+
 qml.path = /usr/share/glacier-settings/qml
 
 exampleplugin.files = qml/plugins/example/example.qml\

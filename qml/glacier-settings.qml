@@ -8,6 +8,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
+import "components"
+
 ApplicationWindow{
     id: main
 
@@ -25,16 +27,9 @@ ApplicationWindow{
             title: qsTr("Settings")
         }
 
-        DisplaySettings{
-            id: displaySettings
-        }
-
-        Label{
-            id: brightnessLabel
-            text: qsTr("Brightness");
+        QuickSettings{
+            id: quickSettings
             anchors{
-                left: parent.left
-                leftMargin: 20
                 top: parent.top
                 topMargin: 20
             }
@@ -46,7 +41,7 @@ ApplicationWindow{
             anchors{
                 left: parent.left
                 leftMargin: 20
-                top: brightnessLabel.bottom
+                top: quickSettings.bottom
                 topMargin: 20
             }
             minimumValue: 0
@@ -62,7 +57,7 @@ ApplicationWindow{
         ListView {
             id: view
             width: parent.width
-            height: parent.height-brightnessSlider.height-brightnessLabel.height
+            height: parent.height-quickSettings.height
 
             anchors{
                 top: brightnessSlider.bottom
