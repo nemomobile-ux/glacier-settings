@@ -73,6 +73,7 @@ ApplicationWindow{
             model: settingsModel
             delegate: ListViewItemWithActions {
                 label: title
+                icon: "/usr/share/glacier-settings/qml/plugins/"+path+"/"+path+".svg"
                 onClicked:{
                     pageStack.push(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml"))
                 }

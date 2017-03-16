@@ -29,13 +29,16 @@ desktop.path = /usr/share/applications
 qml.files = qml/glacier-settings.qml
 qml.path = /usr/share/glacier-settings/qml
 
-exampleplugin.files = qml/plugins/example/example.qml
+exampleplugin.files = qml/plugins/example/example.qml\
+                      qml/plugins/example/example.svg
 exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
-developermodeplugin.files = qml/plugins/developermode/developermode.qml
+developermodeplugin.files = qml/plugins/developermode/developermode.qml\
+                            qml/plugins/developermode/developermode.svg
 developermodeplugin.path = /usr/share/glacier-settings/qml/plugins/developermode
 
-displayplugin.files = qml/plugins/display/display.qml
+displayplugin.files = qml/plugins/display/display.qml\
+                      qml/plugins/display/display.svg
 displayplugin.path = /usr/share/glacier-settings/qml/plugins/display
 
 pluginconfigs.files = qml/plugins/example/example.json\
