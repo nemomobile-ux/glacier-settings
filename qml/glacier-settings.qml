@@ -35,32 +35,13 @@ ApplicationWindow{
             }
         }
 
-        Slider{
-            id: brightnessSlider
-            width: parent.width-40
-            anchors{
-                left: parent.left
-                leftMargin: 20
-                top: quickSettings.bottom
-                topMargin: 20
-            }
-            minimumValue: 0
-            maximumValue: displaySettings.maximumBrightness
-            value: displaySettings.brightness
-            stepSize: 1
-            onValueChanged: {
-                displaySettings.brightness = value
-            }
-            enabled: !displaySettings.autoBrightnessEnabled
-        }
-
         ListView {
             id: view
             width: parent.width
             height: parent.height-quickSettings.height
 
             anchors{
-                top: brightnessSlider.bottom
+                top: quickSettings.bottom
                 topMargin: 20
             }
 
