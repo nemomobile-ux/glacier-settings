@@ -44,10 +44,10 @@ Rectangle {
         layer.samplerName: "source"
 
         MouseArea{
-            id: clickMouseArea
+            id: quickButtonMouseArea
             anchors.fill: parent
             onClicked: {
-                clickIcon.clicked()
+                quickButton.clicked()
             }
         }
     }

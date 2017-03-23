@@ -6,12 +6,28 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
+import MeeGo.Connman 0.2
+
 Rectangle {
     id: quickSettings
     color: "transparent"
 
     width: parent.width
     height: childrenRect.height
+
+
+    TechnologyModel {
+        id: wifiNetworkingModel
+        name: "wifi"
+
+        onTechnologiesChanged: {
+            wifiButton.activated = wifiNetworkingModel.powered
+        }
+
+        onPoweredChanged: {
+            wifiButton.activated = wifiNetworkingModel.powered
+        }
+    }
 
 
     Text {
@@ -49,6 +65,20 @@ Rectangle {
             leftMargin: 20
             top: label.bottom
             topMargin: 20
+        }
+
+        activated: wifiNetworkingModel.powered
+        visible: wifiNetworkingModel.available
+
+        onClicked: {
+            if(wifiButton.activated)
+            {
+                wifiNetworkingModel.powered = false;
+            }
+            else
+            {
+                wifiNetworkingModel.powered = true;
+            }
         }
     }
 
