@@ -26,35 +26,42 @@ ApplicationWindow{
             id: tools
             title: qsTr("Settings")
         }
-
-        QuickSettings{
-            id: quickSettings
-            anchors{
-                top: parent.top
-                topMargin: 20
-            }
-        }
-
-        ListView {
-            id: view
+        Flickable{
+            id: mainArea
+            height: parent.height-tools.height
             width: parent.width
-            height: parent.height-quickSettings.height
 
-            anchors{
-                top: quickSettings.bottom
-                topMargin: 20
-            }
+            contentHeight: quickSettings.height+view.height
 
-            clip: true
-            model: settingsModel
-            delegate: ListViewItemWithActions {
-                label: title
-                icon: "/usr/share/glacier-settings/qml/plugins/"+path+"/"+path+".svg"
-                onClicked:{
-                    pageStack.push(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml"))
+            QuickSettings{
+                id: quickSettings
+                anchors{
+                    top: parent.top
+                    topMargin: 20
                 }
             }
-            section.property: "category"
+
+            ListView {
+                id: view
+                width: parent.width
+                height: view.contentHeight
+
+                anchors{
+                    top: quickSettings.bottom
+                    topMargin: 20
+                }
+
+                clip: true
+                model: settingsModel
+                delegate: ListViewItemWithActions {
+                    label: title
+                    icon: "/usr/share/glacier-settings/qml/plugins/"+path+"/"+path+".svg"
+                    onClicked:{
+                        pageStack.push(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml"))
+                    }
+                }
+                section.property: "category"
+            }
         }
     }
 }
