@@ -25,11 +25,11 @@
 */
 
 const QStringList SettingsModel::defaultCategories = {
-    "Personalization"
-    , "Network"
-    , "Development"
+    "Other"
     , "Info"
-    , "Other"
+    , "Development"
+    , "Network"
+    , "Personalization"
 };
 
 SettingsModel::SettingsModel(QObject *parent) :
