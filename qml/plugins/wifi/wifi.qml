@@ -37,37 +37,41 @@ Page {
         }
 
         model: networkingModel
-        delegate: Item {
-            width: parent.width
+        delegate: ListViewItemWithActions{
             height: 80
+            label: modelData.name
 
+            description: {
+                var state = modelData.state;
+                var security = modelData.security[0];
 
-            Image {
-                id: statusImage
-                width: 56
-                height: 56
-                fillMode: Image.PreserveAspectFit
-
-                anchors{
-                    left: parent.left
-                    verticalCenter: parent.verticalCenter
+                if ((state == "online") || (state == "ready")) {
+                    return qsTr("connected");
+                } else if (state == "association" || state == "configuration") {
+                    return qsTr("connecting")+"...";
+                } else {
+                    if (security == "none") {
+                        return qsTr("open");
+                    } else {
+                        return qsTr("secure");
+                    }
                 }
-
-                source: (getStrengthIndex(modelData.strength) === "0")? "image://theme/icon_wifi_0" : "image://theme/icon_wifi_focused" + getStrengthIndex(modelData.strength)
             }
+            icon: (getStrengthIndex(modelData.strength) === "0")? "image://theme/icon_wifi_0" : "image://theme/icon_wifi_focused" + getStrengthIndex(modelData.strength)
 
-            Label {
-                anchors{
-                    left: statusImage.right
-                    leftMargin: 20
-                    verticalCenter: statusImage.verticalCenter
+            onClicked:{
+                if (modelData.state == "idle" || modelData.state == "failure")
+                {
+                    modelData.requestConnect();
+                    networkingModel.networkName.text = modelData.name;
+                } else {
+                    console.log("Show network status page");
+                    for (var key in modelData.ipv4)
+                    {
+                        console.log(key + " -> " + modelData.ipv4[key]);
+                    }
                 }
-                width: root.width
-                font.pointSize: 20
-                text: modelData.name
-                wrapMode: Text.Wrap
             }
-
         }
     }
 
@@ -76,11 +80,17 @@ Page {
 
         if (strength >= 59) {
             strengthIndex = "4"
-        } else if (strength >= 55) {
+        }
+        else if (strength >= 55)
+        {
             strengthIndex = "3"
-        } else if (strength >= 50) {
+        }
+        else if (strength >= 50)
+        {
             strengthIndex = "2"
-        } else if (strength >= 40) {
+        }
+        else if (strength >= 40)
+        {
             strengthIndex = "1"
         }
         return strengthIndex
