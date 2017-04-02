@@ -44,9 +44,14 @@ displayplugin.files = qml/plugins/display/display.qml\
                       qml/plugins/display/display.svg
 displayplugin.path = /usr/share/glacier-settings/qml/plugins/display
 
+wifiplugin.files = qml/plugins/wifi/wifi.qml\
+                      qml/plugins/wifi/wifi.svg
+wifiplugin.path = /usr/share/glacier-settings/qml/plugins/wifi
+
 pluginconfigs.files = qml/plugins/example/example.json\
                       qml/plugins/developermode/developermode.json \
-                      qml/plugins/display/display.json
+                      qml/plugins/display/display.json \
+                      qml/plugins/wifi/wifi.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -56,7 +61,8 @@ INSTALLS += target \
             pluginconfigs \
             exampleplugin \
             developermodeplugin \
-            displayplugin
+            displayplugin \
+            wifiplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -64,4 +70,6 @@ DISTFILES += \
     qml/plugins/developermode/developermode.qml \
     qml/plugins/developermode/developermode.json \
     qml/plugins/display/display.qml \
-    qml/plugins/display/display.json
+    qml/plugins/display/display.json \
+    qml/plugins/wifi/wifi.qml \
+    qml/plugins/wifi/wifi.json
