@@ -23,17 +23,52 @@ Page {
         property string networkName
     }
 
+    Column{
+        id: actionColumn
+        anchors{
+            top: parent.top
+            topMargin: 20
+        }
+        width: parent.width
+
+        Label{
+            id: nameLabel
+            text: qsTr("Enable WiFi")
+            anchors{
+                left: actionColumn.left
+                leftMargin: 20
+            }
+            wrapMode: Text.Wrap
+            font.pointSize: 22
+            font.bold: true
+            color: "#ffffff"
+        }
+
+        CheckBox {
+            id: columnCheckBox
+            checked: networkingModel.powered
+            anchors{
+                right: actionColumn.right
+                rightMargin: 20
+                verticalCenter: nameLabel.verticalCenter
+            }
+            onClicked:{
+                networkingModel.setPowered(columnCheckBox.checked)
+            }
+        }
+    }
+
 
     ListView {
         id: networkList
-        width: parent.width-80
-        height: parent.height-40
+        width: parent.width-40
+        height: parent.height-actionColumn.height-80
 
         anchors{
-            top: parent.top
-            topMargin: 40
+            top: actionColumn.bottom
+            topMargin: 80
             left: parent.left
-            leftMargin: 40
+            leftMargin: 20
         }
 
         model: networkingModel
@@ -60,16 +95,10 @@ Page {
             icon: (getStrengthIndex(modelData.strength) === "0")? "image://theme/icon_wifi_0" : "image://theme/icon_wifi_focused" + getStrengthIndex(modelData.strength)
 
             onClicked:{
-                if (modelData.state == "idle" || modelData.state == "failure")
-                {
-                    modelData.requestConnect();
-                    networkingModel.networkName.text = modelData.name;
+                if (modelData.state == "idle" || modelData.state == "failure"){
+                    console.log("Show network settings page");
                 } else {
                     console.log("Show network status page");
-                    for (var key in modelData.ipv4)
-                    {
-                        console.log(key + " -> " + modelData.ipv4[key]);
-                    }
                 }
             }
         }
@@ -81,16 +110,13 @@ Page {
         if (strength >= 59) {
             strengthIndex = "4"
         }
-        else if (strength >= 55)
-        {
+        else if (strength >= 55){
             strengthIndex = "3"
         }
-        else if (strength >= 50)
-        {
+        else if (strength >= 50){
             strengthIndex = "2"
         }
-        else if (strength >= 40)
-        {
+        else if (strength >= 40){
             strengthIndex = "1"
         }
         return strengthIndex
