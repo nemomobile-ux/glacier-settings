@@ -32,20 +32,20 @@ Page {
             text: qsTr("Brightness");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: parent.top
-                topMargin: 20
+                topMargin: size.dp(20)
             }
         }
 
         Slider{
             id: brightnessSlider
-            width: parent.width-40
+            width: parent.width-size.dp(40)
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: brightnessLabel.bottom
-                topMargin: 20
+                topMargin: size.dp(20)
             }
             minimumValue: 0
             maximumValue: displaySettings.maximumBrightness
@@ -67,7 +67,7 @@ Page {
 
         anchors{
             top: brightnessSettings.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         Label{
@@ -75,9 +75,9 @@ Page {
             text: qsTr("Auto brightness");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: parent.top
-                topMargin: 20
+                topMargin: size.dp(20)
             }
         }
 
@@ -86,7 +86,7 @@ Page {
             checked: displaySettings.autoBrightnessEnabled
             anchors{
                 right: parent.right
-                rightMargin: 20
+                rightMargin: size.dp(20)
                 verticalCenter: autoBrightnessLabel.verticalCenter
             }
             onClicked: displaySettings.autoBrightnessEnabled = checked
@@ -102,7 +102,7 @@ Page {
 
         anchors{
             top: autoBrightnessSettings.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         Label{
@@ -110,20 +110,20 @@ Page {
             text: qsTr("Dim timeout");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: parent.top
-                topMargin: 20
+                topMargin: size.dp(20)
             }
         }
 
         Slider{
             id: dimTimeoutSlider
-            width: parent.width-40
+            width: parent.width-size.dp(40)
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: dimTimeoutLabel.bottom
-                topMargin: 20
+                topMargin: size.dp(20)
             }
             minimumValue: 0
             maximumValue: 60
@@ -144,7 +144,7 @@ Page {
 
         anchors{
             top: dimTimeoutSettings.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         Label{
@@ -152,20 +152,20 @@ Page {
             text: qsTr("Blank timeout");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: parent.top
-                topMargin: 20
+                topMargin: size.dp(20)
             }
         }
 
         Slider{
             id: blankTimeoutSlider
-            width: parent.width-40
+            width: parent.width-size.dp(40)
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
                 top: blankTimeoutLabel.bottom
-                topMargin: 20
+                topMargin: size.dp(20)
             }
             minimumValue: 0
             maximumValue: 60

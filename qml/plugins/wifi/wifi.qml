@@ -27,7 +27,7 @@ Page {
         id: actionColumn
         anchors{
             top: parent.top
-            topMargin: 20
+            topMargin: size.dp(20)
         }
         width: parent.width
 
@@ -36,10 +36,10 @@ Page {
             text: qsTr("Enable WiFi")
             anchors{
                 left: actionColumn.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
             wrapMode: Text.Wrap
-            font.pointSize: 22
+            font.pointSize: size.dp(22)
             font.bold: true
             color: "#ffffff"
         }
@@ -49,7 +49,7 @@ Page {
             checked: networkingModel.powered
             anchors{
                 right: actionColumn.right
-                rightMargin: 20
+                rightMargin: size.dp(20)
                 verticalCenter: nameLabel.verticalCenter
             }
             onClicked:{
@@ -61,19 +61,19 @@ Page {
 
     ListView {
         id: networkList
-        width: parent.width-40
-        height: parent.height-actionColumn.height-80
+        width: parent.width-size.dp(40)
+        height: parent.height-actionColumn.height-size.dp(80)
         clip: true
         anchors{
             top: actionColumn.bottom
-            topMargin: 80
+            topMargin: size.dp(80)
             left: parent.left
-            leftMargin: 20
+            leftMargin: size.dp(20)
         }
 
         model: networkingModel
         delegate: ListViewItemWithActions{
-            height: 80
+            height: size.dp(80)
             label: modelData.name
 
             description: {
