@@ -106,9 +106,14 @@ Page {
         TextField{
             id: wlanIpAddressInput
             text: devModeSettings.wlanIpAddress
+
+            font.pointSize: Theme.label.pointSize
+
             anchors{
-                right: parent.right
-                rightMargin: 20
+                top: wlanIpAddressLabel.bottom
+                topMargin: 20
+                left: parent.left
+                leftMargin: 20
             }
             readOnly: true
         }
@@ -141,9 +146,13 @@ Page {
             id: usbIpAddressInput
             text: devModeSettings.usbIpAddress
 
+            font.pointSize: Theme.label.pointSize
+
             anchors{
-                right: parent.right
-                rightMargin: 20
+                top: usbIpAddressLabel.bottom
+                topMargin: 20
+                left: parent.left
+                leftMargin: 20
             }
             validator: RegExpValidator {
                 regExp:  /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
