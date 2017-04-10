@@ -63,7 +63,7 @@ Page {
         id: networkList
         width: parent.width-40
         height: parent.height-actionColumn.height-80
-
+        clip: true
         anchors{
             top: actionColumn.bottom
             topMargin: 80
