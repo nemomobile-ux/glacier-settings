@@ -81,4 +81,7 @@ DISTFILES += \
     qml/plugins/display/display.qml \
     qml/plugins/display/display.json \
     qml/plugins/wifi/wifi.qml \
-    qml/plugins/wifi/wifi.json
+    qml/plugins/wifi/wifi.json \
+    qml/plugins/gps/gps.json \
+    qml/plugins/gps/gps.svg \
+    qml/plugins/gps/gps.qml
