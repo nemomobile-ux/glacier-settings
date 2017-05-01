@@ -96,7 +96,8 @@ Page {
 
             onClicked:{
                 if (modelData.state == "idle" || modelData.state == "failure"){
-                    console.log("Show network settings page");
+                    console.log("Show settings page");
+                    pageStack.push(Qt.resolvedUrl("wifiSettings.qml"),{modelData: modelData})
                 } else {
                     console.log("Show network status page");
                 }
