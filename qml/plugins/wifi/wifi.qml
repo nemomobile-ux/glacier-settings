@@ -31,29 +31,35 @@ Page {
         }
         width: parent.width
 
-        Label{
-            id: nameLabel
-            text: qsTr("Enable WiFi")
-            anchors{
-                left: actionColumn.left
-                leftMargin: 20
-            }
-            wrapMode: Text.Wrap
-            font.pointSize: 22
-            font.bold: true
-            color: "#ffffff"
-        }
+        Rectangle{
+            width: parent.width
+            height: childrenRect.height
+            color: "transparent"
 
-        CheckBox {
-            id: columnCheckBox
-            checked: networkingModel.powered
-            anchors{
-                right: actionColumn.right
-                rightMargin: 20
-                verticalCenter: nameLabel.verticalCenter
+            Label{
+                id: nameLabel
+                text: qsTr("Enable WiFi")
+                anchors{
+                    left: parent.left
+                    leftMargin: 20
+                }
+                wrapMode: Text.Wrap
+                font.pointSize: 22
+                font.bold: true
+                color: "#ffffff"
             }
-            onClicked:{
-                networkingModel.setPowered(columnCheckBox.checked)
+
+            CheckBox {
+                id: columnCheckBox
+                checked: networkingModel.powered
+                anchors{
+                    right: parent.right
+                    rightMargin: 20
+                    verticalCenter: nameLabel.verticalCenter
+                }
+                onClicked:{
+                    networkingModel.setPowered(columnCheckBox.checked)
+                }
             }
         }
     }
