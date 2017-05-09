@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import QtQuick.Window 2.1
 
 import QtQuick.Controls 1.0
@@ -97,7 +97,7 @@ Page {
             onClicked:{
                 if (modelData.state == "idle" || modelData.state == "failure"){
                     console.log("Show settings page");
-                    pageStack.push(Qt.resolvedUrl("wifiSettings.qml"),{modelData: modelData})
+                    pageStack.push(Qt.resolvedUrl("WifiSettings.qml"),{modelData: modelData})
                 } else {
                     console.log("Show network status page");
                 }
