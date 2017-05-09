@@ -22,7 +22,10 @@ Page {
         name: "wifi"
     }
 
+
+
     Column{
+        id: form
         width: parent.width
 
         anchors{
@@ -32,6 +35,86 @@ Page {
 
         spacing: 24
         leftPadding: 24
+
+
+        Row{
+            spacing: 24
+
+            Label {
+                text: qsTr("Method")
+            }
+
+            ButtonRow {
+                id: methodButtonRow
+                model: ListModel{
+                    id: methodModel
+                    ListElement{
+                        name: "DHCP"
+                    }
+                    ListElement{
+                        name: "Manual"
+                    }
+                }
+
+                Component.onCompleted: {
+                    if(modelData.ipv4["Method"] === "manual")
+                    {
+                        methodButtonRow.currentIndex = 1
+                    }
+                    else
+                    {
+                        methodButtonRow.currentIndex = 0
+                    }
+                }
+            }
+        }
+
+        Label {
+            text: qsTr("Network info")
+        }
+
+        Row{
+            spacing: 24
+            Label {
+                id:ipAddressLabel
+                text: qsTr("IP address")
+            }
+
+            TextField{
+                id: ipAddressInput
+                text: modelData.ipv4["Address"]
+                readOnly: (methodButtonRow.currentIndex !== 1)
+            }
+        }
+
+        Row{
+            spacing: 24
+            Label {
+                id:ipNetmaskLabel
+                text: qsTr("Net mask")
+            }
+
+            TextField{
+                id: ipNetmaskInput
+                text: modelData.ipv4["Netmask"]
+                readOnly: (methodButtonRow.currentIndex !== 1)
+            }
+        }
+
+
+        Row{
+            spacing: 24
+            Label {
+                id:ipGatewayLabel
+                text: qsTr("Gateway")
+            }
+
+            TextField{
+                id: ipGatewayInput
+                text: modelData.ipv4["Gateway"]
+                readOnly: (methodButtonRow.currentIndex !== 1)
+            }
+        }
 
         Rectangle {
             width: parent.width
