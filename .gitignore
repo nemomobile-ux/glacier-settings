@@ -1,0 +1,6 @@
+*.o
+*.pro.user
+moc_*
+Makefile
+documentation.list
+glacier-settings
