@@ -27,6 +27,9 @@ target.path = /usr/bin
 desktop.files = glacier-settings.desktop
 desktop.path = /usr/share/applications
 
+privileges.files = glacier-settings.privileges
+privileges.path = /usr/share/mapplauncherd/privileges.d/
+
 qml.files = qml/glacier-settings.qml \
             qml/components/ \
             qml/img
@@ -73,6 +76,7 @@ pluginconfigs.path = /usr/share/glacier-settings/plugins
 INSTALLS += target \
             desktop \
             qml \
+            privileges \
             pluginconfigs \
             exampleplugin \
             bluetoothplugin \
