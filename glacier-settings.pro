@@ -46,7 +46,7 @@ displayplugin.path = /usr/share/glacier-settings/qml/plugins/display
 
 wifiplugin.files = qml/plugins/wifi/wifi.qml\
                    qml/plugins/wifi/WifiSettings.qml\
-                   qml/plugins/wifi/WiFiStatus.qml \
+                   qml/plugins/wifi/WifiStatus.qml\
                    qml/plugins/wifi/wifi.svg
 wifiplugin.path = /usr/share/glacier-settings/qml/plugins/wifi
 
@@ -75,6 +75,6 @@ DISTFILES += \
     qml/plugins/display/display.json \
     qml/plugins/wifi/wifi.qml \
     qml/plugins/wifi/wifi.json \
-    qml/plugins/wifi/WiFiStatus.qml \
-    qml/plugins/wifi/WifiSettings.qml
+    qml/plugins/wifi/WifiSettings.qml \
+    qml/plugins/wifi/WifiStatus.qml
 
