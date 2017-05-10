@@ -7,6 +7,7 @@ import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
 import MeeGo.Connman 0.2
+import org.kde.bluezqt 1.0 as BluezQt
 
 Rectangle {
     id: quickSettings
@@ -29,6 +30,21 @@ Rectangle {
         }
     }
 
+    property QtObject _adapter: _bluetoothManager && _bluetoothManager.usableAdapter
+    property QtObject _bluetoothManager: BluezQt.Manager
+
+    TechnologyModel {
+        id: bluetoothModel
+        name: "bluetooth"
+
+        onTechnologiesChanged: {
+            bluetoothButton.activated = bluetoothModel.powered
+        }
+
+        onPoweredChanged: {
+            bluetoothButton.activated = bluetoothModel.powered
+        }
+    }
 
     Text {
         id: label
@@ -84,6 +100,7 @@ Rectangle {
 
     QuickButton{
         id: bluetoothButton
+        activated: bluetoothModel.powered && _adapter && _adapter.powered
 
         icon: "../img/bluetooth.svg"
 
@@ -92,6 +109,17 @@ Rectangle {
             leftMargin: size.dp(20)
             top: label.bottom
             topMargin: size.dp(20)
+        }
+
+        onClicked: {
+            if (bluetoothButton.activated)
+            {
+                bluetoothModel.powered = false;
+            }
+            else
+            {
+                bluetoothModel.powered = true;
+            }
         }
     }
 
