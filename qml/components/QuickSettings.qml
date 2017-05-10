@@ -63,6 +63,13 @@ Rectangle {
         id: locationSettings
     }
 
+    NetworkManagerFactory {
+        id: connMgr
+        onOfflineModeChanged: {
+            airplaneButton.activated = connMgr.instance.offlineMode
+        }
+    }
+
     Text {
         id: label
         text: qsTr("Quick settings")
@@ -188,6 +195,17 @@ Rectangle {
             leftMargin: size.dp(20)
             top: label.bottom
             topMargin: size.dp(20)
+        }
+
+        onClicked: {
+            if (airplaneButton.activated)
+            {
+                connMgr.instance.offlineMode = false;
+            }
+            else
+            {
+                connMgr.instance.offlineMode = true;
+            }
         }
     }
 

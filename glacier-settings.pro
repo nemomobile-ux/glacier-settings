@@ -93,7 +93,7 @@ DISTFILES += \
     qml/plugins/wifi/wifi.qml \
     qml/plugins/wifi/wifi.json \
     qml/plugins/wifi/WifiSettings.qml \
-    qml/plugins/wifi/WifiStatus.qml
+    qml/plugins/wifi/WifiStatus.qml \
     qml/plugins/gps/gps.json \
     qml/plugins/gps/gps.svg \
     qml/plugins/gps/gps.qml
