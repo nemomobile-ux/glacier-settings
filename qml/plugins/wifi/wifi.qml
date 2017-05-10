@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import QtQuick.Window 2.1
 
 import QtQuick.Controls 1.0
@@ -31,29 +31,36 @@ Page {
         }
         width: parent.width
 
-        Label{
-            id: nameLabel
-            text: qsTr("Enable WiFi")
-            anchors{
-                left: actionColumn.left
-                leftMargin: size.dp(20)
-            }
-            wrapMode: Text.Wrap
-            font.pointSize: size.dp(22)
-            font.bold: true
-            color: "#ffffff"
-        }
 
-        CheckBox {
-            id: columnCheckBox
-            checked: networkingModel.powered
-            anchors{
-                right: actionColumn.right
-                rightMargin: size.dp(20)
-                verticalCenter: nameLabel.verticalCenter
+        Rectangle{
+            width: parent.width
+            height: childrenRect.height
+            color: "transparent"
+
+            Label{
+                id: nameLabel
+                text: qsTr("Enable WiFi")
+                anchors{
+                    left: parent.left
+                    leftMargin: 20
+                }
+                wrapMode: Text.Wrap
+                font.pointSize: 22
+                font.bold: true
+                color: "#ffffff"
             }
-            onClicked:{
-                networkingModel.setPowered(columnCheckBox.checked)
+
+            CheckBox {
+                id: columnCheckBox
+                checked: networkingModel.powered
+                anchors{
+                    right: parent.right
+                    rightMargin: 20
+                    verticalCenter: nameLabel.verticalCenter
+                }
+                onClicked:{
+                    networkingModel.setPowered(columnCheckBox.checked)
+                }
             }
         }
     }
@@ -96,11 +103,71 @@ Page {
 
             onClicked:{
                 if (modelData.state == "idle" || modelData.state == "failure"){
-                    console.log("Show network settings page");
+                    console.log("Show settings page");
+                    pageStack.push(Qt.resolvedUrl("WifiSettings.qml"),{modelData: modelData})
                 } else {
                     console.log("Show network status page");
+                    var component = Qt.createComponent(Qt.resolvedUrl("WifiStatus.qml")).errorString();
+                    console.log(component)
+                    pageStack.push(Qt.resolvedUrl("WifiStatus.qml"),{modelData: modelData})
                 }
             }
+
+            actions: Rectangle{
+                width: childrenRect.width+16
+                height: parent.height
+                Image{
+                    id: removeNetworkButton
+                    source: "../../img/trash.svg"
+                    width: 64
+                    height: 64
+                    fillMode: Image.PreserveAspectFit
+                    sourceSize{
+                        width: width
+                        height: height
+                    }
+                    anchors{
+                        top:parent.top
+                        topMargin: 8
+                        left: parent.left
+                        leftMargin: 8
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            modelData.remove();
+                            networkList.hideAllActions(-1);
+                        }
+                    }
+                }
+
+                Image{
+                    source: "../../img/disconnect.svg"
+                    visible: (modelData.state == "online" || modelData.state == "ready")
+
+                    width: 64
+                    height: 64
+                    fillMode: Image.PreserveAspectFit
+                    sourceSize{
+                        width: width
+                        height: height
+                    }
+                    anchors{
+                        top:parent.top
+                        topMargin: 8
+                        left: removeNetworkButton.right
+                        leftMargin: 16
+                    }
+                    MouseArea{
+                        anchors.fill: parent
+                        onClicked: {
+                            modelData.requestDisconnect();
+                            networkList.hideAllActions(-1);
+                        }
+                    }
+                }
+            }
+
         }
     }
 
