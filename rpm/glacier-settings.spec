@@ -10,6 +10,7 @@ Source100:  glacier-settings.yaml
 
 Requires: nemo-qml-plugin-systemsettings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
+Requires: kf5bluezqt-bluez4-declarative
 
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -31,6 +32,9 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 %qmake5_install
 
+mkdir -p %{buildroot}%{_datadir}/mapplauncherd/privileges.d
+install -m 644 -p privileges %{buildroot}%{_datadir}/mapplauncherd/privileges.d/glacier-settings
+
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
@@ -40,3 +44,6 @@ desktop-file-install --delete-original       \
 %{_bindir}
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
+%dir %{_datadir}/mapplauncherd
+%dir %{_datadir}/mapplauncherd/privileges.d
+%{_datadir}/mapplauncherd/privileges.d/glacier-settings

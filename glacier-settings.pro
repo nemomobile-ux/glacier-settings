@@ -17,7 +17,8 @@ QT += qml quick
 
 OTHER_FILES +=rpm/glacier-settings.spec \
     translations/*.ts \
-    glacier-settings.desktop
+    glacier-settings.desktop \
+    privileges
 
 TRANSLATIONS += translations/*.ts
 
@@ -36,6 +37,10 @@ exampleplugin.files = qml/plugins/example/example.qml\
                       qml/plugins/example/example.svg
 exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
+bluetoothplugin.files = qml/plugins/bluetooth/bluetooth.qml\
+                        qml/plugins/bluetooth/bluetooth.svg
+bluetoothplugin.path = /usr/share/glacier-settings/qml/plugins/bluetooth
+
 developermodeplugin.files = qml/plugins/developermode/developermode.qml\
                             qml/plugins/developermode/developermode.svg
 developermodeplugin.path = /usr/share/glacier-settings/qml/plugins/developermode
@@ -48,9 +53,11 @@ wifiplugin.files = qml/plugins/wifi/wifi.qml\
                    qml/plugins/wifi/WifiSettings.qml\
                    qml/plugins/wifi/WiFiStatus.qml \
                    qml/plugins/wifi/wifi.svg
+
 wifiplugin.path = /usr/share/glacier-settings/qml/plugins/wifi
 
-pluginconfigs.files = qml/plugins/example/example.json\
+pluginconfigs.files = qml/plugins/example/example.json \
+                      qml/plugins/bluetooth/bluetooth.json \
                       qml/plugins/developermode/developermode.json \
                       qml/plugins/display/display.json \
                       qml/plugins/wifi/wifi.json
@@ -62,6 +69,7 @@ INSTALLS += target \
             qml \
             pluginconfigs \
             exampleplugin \
+            bluetoothplugin \
             developermodeplugin \
             displayplugin \
             wifiplugin
@@ -69,6 +77,8 @@ INSTALLS += target \
 DISTFILES += \
     qml/plugins/example/example.qml \
     qml/plugins/example/example.json \
+    qml/plugins/bluetooth/bluetooth.json \
+    qml/plugins/bluetooth/bluetooth.qml \
     qml/plugins/developermode/developermode.qml \
     qml/plugins/developermode/developermode.json \
     qml/plugins/display/display.qml \
