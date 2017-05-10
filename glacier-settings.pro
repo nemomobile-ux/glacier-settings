@@ -56,11 +56,17 @@ wifiplugin.files = qml/plugins/wifi/wifi.qml\
 
 wifiplugin.path = /usr/share/glacier-settings/qml/plugins/wifi
 
+gpsplugin.files =  qml/plugins/gps/gps.qml \
+                   qml/plugins/gps/gps.svg
+
+gpsplugin.path = /usr/share/glacier-settings/qml/plugins/gps
+
 pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/bluetooth/bluetooth.json \
                       qml/plugins/developermode/developermode.json \
                       qml/plugins/display/display.json \
-                      qml/plugins/wifi/wifi.json
+                      qml/plugins/wifi/wifi.json \
+                      qml/plugins/gps/gps.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -72,7 +78,8 @@ INSTALLS += target \
             bluetoothplugin \
             developermodeplugin \
             displayplugin \
-            wifiplugin
+            wifiplugin \
+            gpsplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -87,4 +94,6 @@ DISTFILES += \
     qml/plugins/wifi/wifi.json \
     qml/plugins/wifi/WifiSettings.qml \
     qml/plugins/wifi/WifiStatus.qml
-
+    qml/plugins/gps/gps.json \
+    qml/plugins/gps/gps.svg \
+    qml/plugins/gps/gps.qml

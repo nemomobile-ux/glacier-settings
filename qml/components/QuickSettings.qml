@@ -46,6 +46,23 @@ Rectangle {
         }
     }
 
+    TechnologyModel {
+        id: gpsModel
+        name: "gps"
+
+        onTechnologiesChanged: {
+            gpsButton.activated = gpsModel.powered
+        }
+
+        onPoweredChanged: {
+            gpsButton.activated = gpsModel.powered
+        }
+    }
+
+    LocationSettings {
+        id: locationSettings
+    }
+
     Text {
         id: label
         text: qsTr("Quick settings")
@@ -146,6 +163,18 @@ Rectangle {
             leftMargin: size.dp(20)
             top: label.bottom
             topMargin: size.dp(20)
+        }
+        onClicked: {
+            if(gpsButton.activated)
+            {
+                locationSettings.locationEnabled = false
+                gpsModel.powered = false;
+            }
+            else
+            {
+                locationSettings.locationEnabled = true
+                gpsModel.powered = true;
+            }
         }
     }
 
