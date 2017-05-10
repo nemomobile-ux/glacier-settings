@@ -31,7 +31,7 @@ Page {
             text: qsTr("Enable developer mode");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
         }
 
@@ -40,7 +40,7 @@ Page {
             checked: devModeSettings.developerModeEnabled
             anchors{
                 right: parent.right
-                rightMargin: 20
+                rightMargin: size.dp(20)
                 verticalCenter: enableDevModeLabel.verticalCenter
             }
             onClicked: devModeSettings.setDeveloperMode(checked)
@@ -56,7 +56,7 @@ Page {
 
         anchors{
             top: enableDevMode.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         Label{
@@ -64,7 +64,7 @@ Page {
             text: qsTr("Enable remote login");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
         }
 
@@ -73,7 +73,7 @@ Page {
             checked: devModeSettings.remoteLoginEnabled
             anchors{
                 right: parent.right
-                rightMargin: 20
+                rightMargin: size.dp(20)
                 verticalCenter: remoteLoginEnabledLabel.verticalCenter
             }
             onClicked: devModeSettings.setRemoteLogin(checked)
@@ -91,7 +91,7 @@ Page {
 
         anchors{
             top: remoteLoginEnabled.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         Label{
@@ -99,7 +99,7 @@ Page {
             text: qsTr("Wlan IP address");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
         }
 
@@ -111,9 +111,9 @@ Page {
 
             anchors{
                 top: wlanIpAddressLabel.bottom
-                topMargin: 20
+                topMargin: size.dp(20)
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
             readOnly: true
         }
@@ -130,7 +130,7 @@ Page {
 
         anchors{
             top: wlanIpAddress.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         Label{
@@ -138,7 +138,7 @@ Page {
             text: qsTr("USB IP address");
             anchors{
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
         }
 
@@ -150,9 +150,9 @@ Page {
 
             anchors{
                 top: usbIpAddressLabel.bottom
-                topMargin: 20
+                topMargin: size.dp(20)
                 left: parent.left
-                leftMargin: 20
+                leftMargin: size.dp(20)
             }
             validator: RegExpValidator {
                 regExp:  /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/

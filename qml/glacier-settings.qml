@@ -37,7 +37,7 @@ ApplicationWindow{
                 id: quickSettings
                 anchors{
                     top: parent.top
-                    topMargin: 20
+                    topMargin: size.dp(20)
                 }
             }
 
@@ -48,7 +48,7 @@ ApplicationWindow{
 
                 anchors{
                     top: quickSettings.bottom
-                    topMargin: 20
+                    topMargin: size.dp(20)
                 }
 
                 clip: true

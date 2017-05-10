@@ -34,11 +34,11 @@ Rectangle {
         id: label
         text: qsTr("Quick settings")
         font.capitalization: Font.AllUppercase
-        font.pixelSize: 20
+        font.pixelSize: size.dp(20)
         color: "white"
         anchors{
             left: parent.left
-            leftMargin: 10
+            leftMargin: size.dp(10)
         }
     }
 
@@ -46,10 +46,10 @@ Rectangle {
         id: line
         height: 1
         color: "white"
-        width: parent.width-label.width-30
+        width: parent.width-label.width-size.dp(30)
         anchors{
             left: label.right
-            leftMargin: 10
+            leftMargin: size.dp(10)
             verticalCenter: label.verticalCenter
         }
     }
@@ -62,9 +62,9 @@ Rectangle {
 
         anchors{
             left: parent.left
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: label.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
 
         activated: wifiNetworkingModel.powered
@@ -89,9 +89,9 @@ Rectangle {
 
         anchors{
             left: wifiButton.right
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: label.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
     }
 
@@ -102,9 +102,9 @@ Rectangle {
 
         anchors{
             left: bluetoothButton.right
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: label.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
     }
 
@@ -115,9 +115,9 @@ Rectangle {
 
         anchors{
             left: volumeButton.right
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: label.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
     }
 
@@ -128,9 +128,9 @@ Rectangle {
 
         anchors{
             left: gpsButton.right
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: label.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
     }
 
@@ -143,20 +143,20 @@ Rectangle {
         text: qsTr("Brightness");
         anchors{
             left: parent.left
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: wifiButton.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
     }
 
     Slider{
         id: brightnessSlider
-        width: parent.width-40
+        width: parent.width-size.dp(40)
         anchors{
             left: parent.left
-            leftMargin: 20
+            leftMargin: size.dp(20)
             top: brightnessLabel.bottom
-            topMargin: 20
+            topMargin: size.dp(20)
         }
         minimumValue: 0
         maximumValue: displaySettings.maximumBrightness

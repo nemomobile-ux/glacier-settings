@@ -8,7 +8,7 @@ Rectangle {
 
     signal clicked
 
-    width: (parent.width-120)/5
+    width: (parent.width-size.dp(120))/5
     height: width
 
     color: "transparent"

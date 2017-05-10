@@ -27,9 +27,10 @@ Page {
         id: actionColumn
         anchors{
             top: parent.top
-            topMargin: 20
+            topMargin: size.dp(20)
         }
         width: parent.width
+
 
         Rectangle{
             width: parent.width
@@ -67,19 +68,19 @@ Page {
 
     ListView {
         id: networkList
-        width: parent.width-40
-        height: parent.height-actionColumn.height-80
+        width: parent.width-size.dp(40)
+        height: parent.height-actionColumn.height-size.dp(80)
         clip: true
         anchors{
             top: actionColumn.bottom
-            topMargin: 80
+            topMargin: size.dp(80)
             left: parent.left
-            leftMargin: 20
+            leftMargin: size.dp(20)
         }
 
         model: networkingModel
         delegate: ListViewItemWithActions{
-            height: 80
+            height: size.dp(80)
             label: modelData.name
 
             description: {
