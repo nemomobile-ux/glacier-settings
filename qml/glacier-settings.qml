@@ -57,6 +57,7 @@ ApplicationWindow{
                     label: title
                     icon: "/usr/share/glacier-settings/qml/plugins/"+path+"/"+path+".svg"
                     onClicked:{
+                        console.log(Qt.createComponent(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml")).errorString())
                         pageStack.push(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml"))
                     }
                 }
