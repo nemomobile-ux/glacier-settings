@@ -65,9 +65,6 @@ Rectangle {
 
     NetworkManagerFactory {
         id: connMgr
-        onOfflineModeChanged: {
-            airplaneButton.activated = connMgr.instance.offlineMode
-        }
     }
 
     Text {
