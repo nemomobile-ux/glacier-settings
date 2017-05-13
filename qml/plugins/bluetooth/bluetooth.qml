@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.6
 import QtQuick.Window 2.1
 
 import QtQuick.Controls 1.0
@@ -8,6 +8,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import MeeGo.Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
 import Nemo.Ssu 1.1 as Ssu
+
+import "../../components"
 
 Page {
     id: bluetoothPage
@@ -26,130 +28,114 @@ Page {
         name: "bluetooth"
     }
 
-    Rectangle{
-        id: bluetoothEnable
-        width: parent.width
-        height: childrenRect.height
+    SettingsColumn{
+        id: bluetoothColumn
 
-        color: "transparent"
+        Rectangle{
+            id: bluetoothEnable
+            width: parent.width
+            height: childrenRect.height
 
-        Label {
-            id: nameLabel
-            text: qsTr("Enable Bluetooth")
-            anchors {
-                left: bluetoothEnable.left
-                leftMargin: size.dp(20)
+            color: "transparent"
+
+            Label {
+                id: nameLabel
+                text: qsTr("Enable Bluetooth")
+                anchors {
+                    left: bluetoothEnable.left
+                }
+                wrapMode: Text.Wrap
+                font.bold: true
             }
-            wrapMode: Text.Wrap
-            font.pointSize: size.dp(22)
-            font.bold: true
-            color: "#ffffff"
-        }
 
-        CheckBox {
-            id: columnCheckBox
-            checked: bluetoothModel.powered
-            anchors {
-                right: bluetoothEnable.right
-                rightMargin: size.dp(20)
-                verticalCenter: nameLabel.verticalCenter
-            }
-            onClicked: {
-                bluetoothModel.setPowered(columnCheckBox.checked)
-            }
-        }
-    }
-
-
-    Rectangle {
-        id: bluetoothName
-        width: parent.width
-        height: childrenRect.height
-
-        visible: bluetoothModel.powered
-
-        color: "transparent"
-
-        anchors {
-            top: bluetoothEnable.bottom
-            topMargin: size.dp(20)
-        }
-
-        Label {
-            id: bluetoothNameLabel
-            text: qsTr("Device name");
-            anchors {
-                left: parent.left
-                leftMargin: size.dp(20)
+            CheckBox {
+                id: columnCheckBox
+                checked: bluetoothModel.powered
+                anchors {
+                    right: bluetoothEnable.right
+                    verticalCenter: nameLabel.verticalCenter
+                }
+                onClicked: {
+                    bluetoothModel.setPowered(columnCheckBox.checked)
+                }
             }
         }
 
-        TextField {
-            id: bluetoothNameInput
-            text: _adapter.name
 
-            font.pointSize: Theme.label.pointSize
+        Rectangle {
+            id: bluetoothName
+            width: parent.width
+            height: childrenRect.height
 
-            anchors {
-                top: bluetoothNameLabel.bottom
-                topMargin: size.dp(20)
-                left: parent.left
-                leftMargin: size.dp(20)
+            visible: bluetoothModel.powered
+
+            color: "transparent"
+
+            Label {
+                id: bluetoothNameLabel
+                text: qsTr("Device name");
+                anchors {
+                    left: parent.left
+                }
             }
-            onEditingFinished: {
-                if (_adapter) {
-                    var newName = text.length ? text : Ssu.DeviceInfo.displayName(Ssu.DeviceInfo.DeviceModel);
-                    if (_adapter.name != newName) {
-                        _adapter.name = newName
-                    } else {
-                        text = _adapter.name
+
+            TextField {
+                id: bluetoothNameInput
+                text: _adapter.name
+
+                font.pointSize: Theme.label.pointSize
+
+                anchors {
+                    top: bluetoothNameLabel.bottom
+                    topMargin: size.dp(20)
+                    left: parent.left
+                }
+
+                onEditingFinished: {
+                    if (_adapter) {
+                        var newName = text.length ? text : Ssu.DeviceInfo.displayName(Ssu.DeviceInfo.DeviceModel);
+                        if (_adapter.name != newName) {
+                            _adapter.name = newName
+                        } else {
+                            text = _adapter.name
+                        }
                     }
                 }
             }
         }
-    }
 
-    Rectangle {
-        id: visible
-        width: parent.width
-        height: childrenRect.height
+        Rectangle {
+            id: visible
+            width: parent.width
+            height: childrenRect.height
 
-        visible: bluetoothModel.powered
+            visible: bluetoothModel.powered
 
-        color: "transparent"
+            color: "transparent"
 
-        anchors {
-            top: bluetoothName.bottom
-            topMargin: size.dp(20)
-        }
-
-        Label {
-            id: visibilityLabel
-            text: qsTr("Visibility")
-            anchors {
-                left: parent.left
-                leftMargin: size.dp(20)
-            }
-            wrapMode: Text.Wrap
-            font.pointSize: size.dp(22)
-            font.bold: true
-            color: "#ffffff"
-        }
-
-        CheckBox {
-            id: visibilityCheckBox
-
-            anchors {
-                top: visibilityLabel.bottom
-                topMargin: size.dp(20)
-                left: parent.left
-                leftMargin: size.dp(20)
-            }
-            onClicked: {
-                if (!_adapter) {
-                    return;
+            Label {
+                id: visibilityLabel
+                text: qsTr("Visibility")
+                anchors {
+                    left: parent.left
                 }
-                _adapter.discoverable = checked;
+                wrapMode: Text.Wrap
+                font.bold: true
+            }
+
+            CheckBox {
+                id: visibilityCheckBox
+
+                anchors {
+                    right: visible.right
+                }
+
+                onClicked: {
+                    if (!_adapter) {
+                        return;
+                    }
+                    _adapter.discoverable = checked;
+                }
             }
         }
     }

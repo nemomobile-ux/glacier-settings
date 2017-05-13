@@ -7,6 +7,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
 
+import "../../components"
+
 Page {
     id: listViewPage
 
@@ -20,33 +22,19 @@ Page {
         console.log(displaySettings.blankTimeout)
     }
 
-    Rectangle{
-        id: brightnessSettings
-        width: parent.width
-        height: childrenRect.height
 
-        color: "transparent"
+    SettingsColumn{
+        id: display
 
         Label{
             id: brightnessLabel
             text: qsTr("Brightness");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: parent.top
-                topMargin: size.dp(20)
-            }
         }
 
         Slider{
             id: brightnessSlider
-            width: parent.width-size.dp(40)
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: brightnessLabel.bottom
-                topMargin: size.dp(20)
-            }
+            width: parent.width
+
             minimumValue: 0
             maximumValue: displaySettings.maximumBrightness
             value: displaySettings.brightness
@@ -56,75 +44,43 @@ Page {
             }
             enabled: !displaySettings.autoBrightnessEnabled
         }
-    }
 
-    Rectangle{
-        id: autoBrightnessSettings
-        width: parent.width
-        height: childrenRect.height
+        Rectangle{
+            id: autoBrightnessSettings
+            width: parent.width
+            height: childrenRect.height
 
-        color: "transparent"
+            color: "transparent"
 
-        anchors{
-            top: brightnessSettings.bottom
-            topMargin: size.dp(20)
-        }
+            Label{
+                id: autoBrightnessLabel
+                text: qsTr("Auto brightness");
+                anchors{
+                    left: parent.left
+                    top: parent.top
+                }
+            }
 
-        Label{
-            id: autoBrightnessLabel
-            text: qsTr("Auto brightness");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: parent.top
-                topMargin: size.dp(20)
+            CheckBox{
+                id: autoBrightnessCheck
+                checked: displaySettings.autoBrightnessEnabled
+                anchors{
+                    right: parent.right
+                    verticalCenter: autoBrightnessLabel.verticalCenter
+                }
+                onClicked: displaySettings.autoBrightnessEnabled = checked
             }
         }
 
-        CheckBox{
-            id: autoBrightnessCheck
-            checked: displaySettings.autoBrightnessEnabled
-            anchors{
-                right: parent.right
-                rightMargin: size.dp(20)
-                verticalCenter: autoBrightnessLabel.verticalCenter
-            }
-            onClicked: displaySettings.autoBrightnessEnabled = checked
-        }
-    }
-
-    Rectangle{
-        id: dimTimeoutSettings
-        width: parent.width
-        height: childrenRect.height
-
-        color: "transparent"
-
-        anchors{
-            top: autoBrightnessSettings.bottom
-            topMargin: size.dp(20)
-        }
 
         Label{
             id: dimTimeoutLabel
             text: qsTr("Dim timeout");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: parent.top
-                topMargin: size.dp(20)
-            }
         }
 
         Slider{
             id: dimTimeoutSlider
-            width: parent.width-size.dp(40)
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: dimTimeoutLabel.bottom
-                topMargin: size.dp(20)
-            }
+            width: parent.width
             minimumValue: 0
             maximumValue: 60
             value: displaySettings.dimTimeout
@@ -133,40 +89,17 @@ Page {
                 displaySettings.dimTimeout = value
             }
         }
-    }
 
-    Rectangle{
-        id: blankTimeoutSettings
-        width: parent.width
-        height: childrenRect.height
-
-        color: "transparent"
-
-        anchors{
-            top: dimTimeoutSettings.bottom
-            topMargin: size.dp(20)
-        }
 
         Label{
             id: blankTimeoutLabel
             text: qsTr("Blank timeout");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: parent.top
-                topMargin: size.dp(20)
-            }
         }
 
         Slider{
             id: blankTimeoutSlider
-            width: parent.width-size.dp(40)
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-                top: blankTimeoutLabel.bottom
-                topMargin: size.dp(20)
-            }
+            width: parent.width
+
             minimumValue: 0
             maximumValue: 60
             value: displaySettings.blankTimeout
@@ -177,3 +110,4 @@ Page {
         }
     }
 }
+

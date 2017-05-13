@@ -9,6 +9,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import MeeGo.Connman 0.2
 import org.nemomobile.systemsettings 1.0
 
+import "../../components/"
+
 Page {
     id: gpsPage
 
@@ -27,18 +29,12 @@ Page {
         id: locationSettings
     }
 
-    Column{
+    SettingsColumn{
         id: gpsColumn
-        anchors{
-            top: parent.top
-            topMargin: size.dp(20)
-        }
-        width: parent.width
-        padding: size.dp(20)
 
         Rectangle{
             id: gpsEnable
-            width: parent.width-size.dp(20)*2
+            width: parent.width
             height: childrenRect.height
 
             color: "transparent"

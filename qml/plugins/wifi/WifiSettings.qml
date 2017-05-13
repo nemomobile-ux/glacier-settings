@@ -7,6 +7,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
 
+import "../../components"
+
 Page {
     id: wifiSettingsPage
     property var modelData
@@ -56,20 +58,13 @@ Page {
         networkingModel.networkName.text = modelData.name;
     }
 
-    Column{
-        width: parent.width
-
-        spacing: 24
-        leftPadding: 24
-
+    SettingsColumn{
         TextField{
             id: passphrase
-            width: parent.width-48
         }
 
         Button{
             id: connectButton
-            width: parent.width-48
             height: 48
 
             text: qsTr("Connect")

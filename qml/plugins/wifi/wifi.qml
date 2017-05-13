@@ -7,6 +7,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
 
+import "../../components"
+
 Page {
     id: wifiPage
 
@@ -23,14 +25,8 @@ Page {
         property string networkName
     }
 
-    Column{
+    SettingsColumn{
         id: actionColumn
-        anchors{
-            top: parent.top
-            topMargin: size.dp(20)
-        }
-        width: parent.width
-
 
         Rectangle{
             width: parent.width
@@ -42,12 +38,9 @@ Page {
                 text: qsTr("Enable WiFi")
                 anchors{
                     left: parent.left
-                    leftMargin: 20
                 }
                 wrapMode: Text.Wrap
-                font.pointSize: 22
                 font.bold: true
-                color: "#ffffff"
             }
 
             CheckBox {
@@ -55,7 +48,6 @@ Page {
                 checked: networkingModel.powered
                 anchors{
                     right: parent.right
-                    rightMargin: 20
                     verticalCenter: nameLabel.verticalCenter
                 }
                 onClicked:{

@@ -7,6 +7,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
 
+
+import "../../components"
 Page {
     id: wifiSettingsPage
     property var modelData
@@ -23,20 +25,8 @@ Page {
     }
 
 
-
-    Column{
+    SettingsColumn{
         id: form
-        width: parent.width
-
-        anchors{
-            top: parent.top
-            topMargin: 20
-        }
-
-        spacing: 24
-        leftPadding: 24
-
-
         Row{
             spacing: 24
 

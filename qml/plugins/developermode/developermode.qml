@@ -7,6 +7,9 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
 
+
+import "../../components"
+
 Page {
     id: listViewPage
 
@@ -19,144 +22,120 @@ Page {
         id: devModeSettings
     }
 
-    Rectangle{
-        id: enableDevMode
-        width: parent.width
-        height: childrenRect.height
+    SettingsColumn{
 
-        color: "transparent"
+        Rectangle{
+            id: enableDevMode
+            width: parent.width
+            height: childrenRect.height
 
-        Label{
-            id: enableDevModeLabel
-            text: qsTr("Enable developer mode");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
+            color: "transparent"
+
+            Label{
+                id: enableDevModeLabel
+                text: qsTr("Enable developer mode");
+                anchors{
+                    left: parent.left
+                }
+            }
+
+            CheckBox{
+                id: enableDevModeCheck
+                checked: devModeSettings.developerModeEnabled
+                anchors{
+                    right: parent.right
+                    verticalCenter: enableDevModeLabel.verticalCenter
+                }
+                onClicked: devModeSettings.setDeveloperMode(checked)
             }
         }
 
-        CheckBox{
-            id: enableDevModeCheck
-            checked: devModeSettings.developerModeEnabled
-            anchors{
-                right: parent.right
-                rightMargin: size.dp(20)
-                verticalCenter: enableDevModeLabel.verticalCenter
+        Rectangle{
+            id: remoteLoginEnabled
+            width: parent.width
+            height: childrenRect.height
+
+            color: "transparent"
+
+            Label{
+                id: remoteLoginEnabledLabel
+                text: qsTr("Enable remote login");
+                anchors{
+                    left: parent.left
+                }
             }
-            onClicked: devModeSettings.setDeveloperMode(checked)
-        }
-    }
 
-    Rectangle{
-        id: remoteLoginEnabled
-        width: parent.width
-        height: childrenRect.height
-
-        color: "transparent"
-
-        anchors{
-            top: enableDevMode.bottom
-            topMargin: size.dp(20)
-        }
-
-        Label{
-            id: remoteLoginEnabledLabel
-            text: qsTr("Enable remote login");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
+            CheckBox{
+                id: remoteLoginEnabledCheck
+                checked: devModeSettings.remoteLoginEnabled
+                anchors{
+                    right: parent.right
+                    verticalCenter: remoteLoginEnabledLabel.verticalCenter
+                }
+                onClicked: devModeSettings.setRemoteLogin(checked)
             }
         }
 
-        CheckBox{
-            id: remoteLoginEnabledCheck
-            checked: devModeSettings.remoteLoginEnabled
-            anchors{
-                right: parent.right
-                rightMargin: size.dp(20)
-                verticalCenter: remoteLoginEnabledLabel.verticalCenter
+        Rectangle{
+            id: wlanIpAddress
+            width: parent.width
+            height: childrenRect.height
+
+            visible: devModeSettings.developerModeEnabled
+
+            color: "transparent"
+
+            Label{
+                id: wlanIpAddressLabel
+                text: qsTr("Wlan IP address");
+                anchors{
+                    left: parent.left
+                }
             }
-            onClicked: devModeSettings.setRemoteLogin(checked)
-        }
-    }
 
-    Rectangle{
-        id: wlanIpAddress
-        width: parent.width
-        height: childrenRect.height
+            TextField{
+                id: wlanIpAddressInput
+                text: devModeSettings.wlanIpAddress
 
-        visible: devModeSettings.developerModeEnabled
-
-        color: "transparent"
-
-        anchors{
-            top: remoteLoginEnabled.bottom
-            topMargin: size.dp(20)
-        }
-
-        Label{
-            id: wlanIpAddressLabel
-            text: qsTr("Wlan IP address");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
+                anchors{
+                    top: wlanIpAddressLabel.bottom
+                    topMargin: size.dp(20)
+                    left: parent.left
+                }
+                readOnly: true
             }
         }
 
-        TextField{
-            id: wlanIpAddressInput
-            text: devModeSettings.wlanIpAddress
+        Rectangle{
+            id: usbIpAddress
+            width: parent.width
+            height: childrenRect.height
 
-            font.pointSize: Theme.label.pointSize
+            visible: devModeSettings.developerModeEnabled
 
-            anchors{
-                top: wlanIpAddressLabel.bottom
-                topMargin: size.dp(20)
-                left: parent.left
-                leftMargin: size.dp(20)
+            color: "transparent"
+
+            Label{
+                id: usbIpAddressLabel
+                text: qsTr("USB IP address");
+                anchors{
+                    left: parent.left
+                }
             }
-            readOnly: true
-        }
-    }
 
-    Rectangle{
-        id: usbIpAddress
-        width: parent.width
-        height: childrenRect.height
+            TextField{
+                id: usbIpAddressInput
+                text: devModeSettings.usbIpAddress
 
-        visible: devModeSettings.developerModeEnabled
+                anchors{
+                    top: usbIpAddressLabel.bottom
+                    topMargin: size.dp(20)
+                    left: parent.left
+                }
+                validator: RegExpValidator {
+                    regExp:  /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
 
-        color: "transparent"
-
-        anchors{
-            top: wlanIpAddress.bottom
-            topMargin: size.dp(20)
-        }
-
-        Label{
-            id: usbIpAddressLabel
-            text: qsTr("USB IP address");
-            anchors{
-                left: parent.left
-                leftMargin: size.dp(20)
-            }
-        }
-
-        TextField{
-            id: usbIpAddressInput
-            text: devModeSettings.usbIpAddress
-
-            font.pointSize: Theme.label.pointSize
-
-            anchors{
-                top: usbIpAddressLabel.bottom
-                topMargin: size.dp(20)
-                left: parent.left
-                leftMargin: size.dp(20)
-            }
-            validator: RegExpValidator {
-                regExp:  /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
-
+                }
             }
         }
     }

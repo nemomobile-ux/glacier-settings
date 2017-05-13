@@ -100,4 +100,5 @@ DISTFILES += \
     qml/plugins/wifi/WifiStatus.qml \
     qml/plugins/gps/gps.json \
     qml/plugins/gps/gps.svg \
-    qml/plugins/gps/gps.qml
+    qml/plugins/gps/gps.qml \
+    qml/components/SettingsColumn.qml
