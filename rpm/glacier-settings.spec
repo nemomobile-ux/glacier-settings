@@ -3,7 +3,7 @@ Summary:    Glacier Settings
 Version:    0.1
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    LGPL
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  glacier-settings.yaml
