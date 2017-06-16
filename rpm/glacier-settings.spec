@@ -24,7 +24,7 @@ Settings application for nemo mobile
 %setup -q -n %{name}-%{version}
 
 %build
-%qtc_qmake5
+%qmake5
 
 make %{?_smp_mflags}
 
