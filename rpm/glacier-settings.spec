@@ -8,7 +8,7 @@ URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  glacier-settings.yaml
 
-Requires: nemo-qml-plugin-systemsettings
+Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
 Requires: kf5bluezqt-bluez4-declarative
 
