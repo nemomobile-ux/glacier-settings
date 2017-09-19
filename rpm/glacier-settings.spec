@@ -1,12 +1,16 @@
+%{!?qtc_qmake:%define qtc_qmake %qmake}
+%{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
+%{!?qtc_make:%define qtc_make make}
+%{?qtc_builddir:%define _builddir %qtc_builddir}
+
 Name:       glacier-settings
 Summary:    Glacier Settings
 Version:    0.1
 Release:    1
 Group:      Qt/Qt
 License:    LGPL
-URL:        http://example.org/
+URL:        https://github.com/nemomobile-ux/glacier-settings
 Source0:    %{name}-%{version}.tar.bz2
-Source100:  glacier-settings.yaml
 
 Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
@@ -24,9 +28,8 @@ Settings application for nemo mobile
 %setup -q -n %{name}-%{version}
 
 %build
-%qmake5
-
-make %{?_smp_mflags}
+%qtc_qmake5
+%qtc_make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
