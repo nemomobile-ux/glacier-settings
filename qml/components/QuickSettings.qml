@@ -85,6 +85,10 @@ Rectangle {
         id: connMgr
     }
 
+    ProfileControl{
+        id: profileControl
+    }
+
     Text {
         id: label
         text: qsTr("Quick settings")
@@ -167,11 +171,24 @@ Rectangle {
 
         icon: "../img/volume.svg"
 
+        activated: profileControl.profile != "silent"
+
         anchors{
             left: bluetoothButton.right
             leftMargin: size.dp(20)
             top: label.bottom
             topMargin: size.dp(20)
+        }
+
+        onClicked: {
+            if(volumeButton.activated)
+            {
+                profileControl.profile = "silent"
+            }
+            else
+            {
+                profileControl.profile = "general"
+            }
         }
     }
 
