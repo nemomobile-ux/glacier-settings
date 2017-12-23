@@ -7,7 +7,7 @@ Name:       glacier-settings
 Summary:    Glacier Settings
 Version:    0.1
 Release:    1
-Group:      Qt/Qt
+Group:      System/Settings
 License:    LGPL
 URL:        https://github.com/nemomobile-ux/glacier-settings
 Source0:    %{name}-%{version}.tar.bz2
@@ -23,6 +23,20 @@ BuildRequires:  desktop-file-utils
 
 %description
 Settings application for nemo mobile
+
+%package developermode
+Summary: Developer mode plugin of glacier settings
+Requires: %{name}
+
+%description developermode
+This plug-in represents access to the settings of developermode
+
+%package example
+Summary: Example plugin of glacier settings
+Requires: %{name}
+
+%description example
+This is just example plugin   
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -43,5 +57,17 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %{_bindir}
 %{_datadir}/%{name}
+%exclude %{_datadir}/%{name}/qml/plugins/developermode
+%exclude %{_datadir}/%{name}/qml/plugins/example
+%exclude %{_datadir}/%{name}/plugins/developermode.json
+%exclude %{_datadir}/%{name}/plugins/example.json
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mapplauncherd/privileges.d/glacier-settings.privileges
+
+%files developermode
+%{_datadir}/%{name}/qml/plugins/developermode
+%{_datadir}/%{name}/plugins/developermode.json
+
+%files example
+%{_datadir}/%{name}/qml/plugins/example
+%{_datadir}/%{name}/plugins/example.json
