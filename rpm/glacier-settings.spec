@@ -61,6 +61,7 @@ desktop-file-install --delete-original       \
 %exclude %{_datadir}/%{name}/qml/plugins/example
 %exclude %{_datadir}/%{name}/plugins/developermode.json
 %exclude %{_datadir}/%{name}/plugins/example.json
+%{_datadir}/jolla-supported-languages
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mapplauncherd/privileges.d/glacier-settings.privileges
 
