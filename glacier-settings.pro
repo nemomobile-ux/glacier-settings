@@ -64,12 +64,22 @@ gpsplugin.files =  qml/plugins/gps/gps.qml \
 
 gpsplugin.path = /usr/share/glacier-settings/qml/plugins/gps
 
+languageplugin.files =  qml/plugins/language/language.qml \
+                   qml/plugins/language/language.svg
+
+languageplugin.path = /usr/share/glacier-settings/qml/plugins/language
+
+
+languageconfigs.files = configs/supported-languages/*
+languageconfigs.path = /usr/share/jolla-supported-languages/
+
 pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/bluetooth/bluetooth.json \
                       qml/plugins/developermode/developermode.json \
                       qml/plugins/display/display.json \
                       qml/plugins/wifi/wifi.json \
-                      qml/plugins/gps/gps.json
+                      qml/plugins/gps/gps.json\
+                      qml/plugins/language/language.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -83,7 +93,9 @@ INSTALLS += target \
             developermodeplugin \
             displayplugin \
             wifiplugin \
-            gpsplugin
+            gpsplugin\
+            languageplugin \
+            languageconfigs
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -101,4 +113,7 @@ DISTFILES += \
     qml/plugins/gps/gps.json \
     qml/plugins/gps/gps.svg \
     qml/plugins/gps/gps.qml \
-    qml/components/SettingsColumn.qml
+    qml/components/SettingsColumn.qml \
+    qml/plugins/language/language.qml \
+    qml/plugins/language/language.json \
+    qml/plugins/language/language.svg
