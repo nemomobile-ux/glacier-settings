@@ -44,6 +44,10 @@ int main(int argc, char *argv[])
                              | Qt::InvertedPortraitOrientation);
     }
 
+    QTranslator myappTranslator;
+    myappTranslator.load("/usr/share/glacier-settings/translations/glacier-settings_" + QLocale::system().name() + ".qm");
+    app.installTranslator(&myappTranslator);
+
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
     qmlRegisterType<SettingsProxyModel>("org.nemomobile.glacier.settings",1,0,"SettingsProxyModel");
 

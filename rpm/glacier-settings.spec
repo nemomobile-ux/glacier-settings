@@ -55,7 +55,7 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/%{name}
 %{_datadir}/%{name}
 %exclude %{_datadir}/%{name}/qml/plugins/developermode
 %exclude %{_datadir}/%{name}/qml/plugins/example
