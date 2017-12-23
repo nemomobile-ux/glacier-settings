@@ -1,4 +1,5 @@
 *.o
+*.qm
 *.pro.user
 moc_*
 Makefile
