@@ -4,7 +4,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="56"/>
+        <location filename="../src/main.cpp" line="60"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -20,6 +20,34 @@
         <location filename="../qml/components/QuickSettings.qml" line="250"/>
         <source>Brightness</source>
         <translation>Яркость</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsModel</name>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="46"/>
+        <source>Other</source>
+        <translation>Другое</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="47"/>
+        <source>Info</source>
+        <translation>Информация</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="48"/>
+        <source>Development</source>
+        <translation>Разработка</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="49"/>
+        <source>Network</source>
+        <translation>Сеть</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <source>Personalization</source>
+        <translation>Персонализация</translation>
     </message>
 </context>
 <context>
@@ -66,6 +94,49 @@
         <location filename="../qml/plugins/wifi/WifiStatus.qml" line="140"/>
         <source>Disconnect</source>
         <translation>Разъединить</translation>
+    </message>
+</context>
+<context>
+    <name>about</name>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="38"/>
+        <source>About</source>
+        <translation>О продукте</translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="98"/>
+        <source>Vendor</source>
+        <translation>Производитель</translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="110"/>
+        <source>Vendor version</source>
+        <translation>Модель</translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="122"/>
+        <source>Software version</source>
+        <translation>Версия ПО</translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="134"/>
+        <source>Adaptation version</source>
+        <translation>Версия адаптации</translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="147"/>
+        <source>Serial number</source>
+        <translation>Серийный номер</translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="160"/>
+        <source>IMEI</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="173"/>
+        <source>Wlan MAC</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -139,12 +210,12 @@
     <message>
         <location filename="../qml/plugins/display/display.qml" line="96"/>
         <source>Dim timeout</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../qml/plugins/display/display.qml" line="114"/>
         <source>Blank timeout</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -242,6 +313,16 @@
         <location filename="../qml/plugins/language/language.qml" line="91"/>
         <source>Do you want to change locale and reboot?</source>
         <translation>Вы хотите сменить язык и перезагрузиться?</translation>
+    </message>
+</context>
+<context>
+    <name>magic</name>
+    <message>
+        <location filename="../qml/plugins/about/magic.qml" line="58"/>
+        <source>— Forty two! — Lunkkuool screamed. — And all this that you can tell after seven and a half million years of work?
+— I very carefully checked everything — told the computer — and with all determinancy I declare that it and is the answer. It seems to me if to be with you absolutely fair, then all the matter is that you did not know in what a question.</source>
+        <translation>— Сорок два! — взвизгнул Лунккуоол. — И это всё, что ты можешь сказать после семи с половиной миллионов лет работы?
+— Я всё очень тщательно проверил, — сказал компьютер, — и со всей определённостью заявляю, что это и есть ответ. Мне кажется, если уж быть с вами абсолютно честным, то всё дело в том, что вы сами не знали, в чём вопрос.</translation>
     </message>
 </context>
 <context>

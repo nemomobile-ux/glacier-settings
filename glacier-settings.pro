@@ -73,6 +73,11 @@ languageplugin.files =  qml/plugins/language/language.qml \
 
 languageplugin.path = /usr/share/glacier-settings/qml/plugins/language
 
+aboutplugin.files =  qml/plugins/about/*.qml \
+                    qml/plugins/about/*.svg \
+                    qml/plugins/about/icon-glacier-icon.png
+aboutplugin.path = /usr/share/glacier-settings/qml/plugins/about
+
 
 languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
@@ -83,7 +88,8 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/display/display.json \
                       qml/plugins/wifi/wifi.json \
                       qml/plugins/gps/gps.json\
-                      qml/plugins/language/language.json
+                      qml/plugins/language/language.json\
+                      qml/plugins/about/about.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -99,6 +105,7 @@ INSTALLS += target \
             wifiplugin \
             gpsplugin\
             languageplugin \
+            aboutplugin \
             languageconfigs
 
 DISTFILES += \
@@ -122,4 +129,9 @@ DISTFILES += \
     qml/plugins/language/language.json \
     qml/plugins/language/language.svg \
     translations/glacier-settings_en.ts \
-    translations/glacier-settings_ru.ts
+    translations/glacier-settings_ru.ts \
+    qml/plugins/about/about.qml \
+    qml/plugins/about/about.json \
+    qml/plugins/about/about.svg \
+    qml/plugins/about/icon-glacier-icon.png \
+    qml/plugins/about/magic.qml
