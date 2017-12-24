@@ -4,7 +4,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="56"/>
+        <location filename="../src/main.cpp" line="60"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -19,6 +19,34 @@
     <message>
         <location filename="../qml/components/QuickSettings.qml" line="250"/>
         <source>Brightness</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsModel</name>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="46"/>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="47"/>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="48"/>
+        <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="49"/>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <source>Personalization</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -65,6 +93,49 @@
     <message>
         <location filename="../qml/plugins/wifi/WifiStatus.qml" line="140"/>
         <source>Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>about</name>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="38"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="98"/>
+        <source>Vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="110"/>
+        <source>Vendor version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="122"/>
+        <source>Software version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="134"/>
+        <source>Adaptation version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="147"/>
+        <source>Serial number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="160"/>
+        <source>IMEI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/plugins/about/about.qml" line="173"/>
+        <source>Wlan MAC</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -241,6 +312,15 @@
     <message>
         <location filename="../qml/plugins/language/language.qml" line="91"/>
         <source>Do you want to change locale and reboot?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>magic</name>
+    <message>
+        <location filename="../qml/plugins/about/magic.qml" line="58"/>
+        <source>— Forty two! — Lunkkuool screamed. — And all this that you can tell after seven and a half million years of work?
+— I very carefully checked everything — told the computer — and with all determinancy I declare that it and is the answer. It seems to me if to be with you absolutely fair, then all the matter is that you did not know in what a question.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
