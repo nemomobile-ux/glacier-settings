@@ -20,6 +20,7 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
+BuildRequires:  qt5-qttools-linguist
 
 %description
 Settings application for nemo mobile
@@ -48,6 +49,8 @@ This is just example plugin
 %install
 rm -rf %{buildroot}
 %qmake5_install
+
+lrelease %{buildroot}%{_datadir}/%{name}/translations/*.ts
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
