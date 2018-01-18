@@ -89,6 +89,10 @@ keyboardplugin.files =  qml/plugins/keyboard/keyboard.qml \
 
 keyboardplugin.path = /usr/share/glacier-settings/qml/plugins/keyboard
 
+datetimeplugin.files = qml/plugins/datetime/*.qml \
+                       qml/plugins/datetime/*.svg
+datetimeplugin.path = /usr/share/glacier-settings/qml/plugins/datetime
+
 languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
 
@@ -101,6 +105,7 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/language/language.json\
                       qml/plugins/about/about.json\
                       qml/plugins/keyboard/keyboard.json
+                      qml/plugins/datetime/datetime.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -117,6 +122,7 @@ INSTALLS += target \
             gpsplugin\
             languageplugin \
             aboutplugin \
+            datetimeplugin \
             languageconfigs\
             icon \
             keyboardplugin
@@ -149,3 +155,4 @@ DISTFILES += \
     qml/plugins/about/icon-glacier-icon.png \
     qml/plugins/about/magic.qml \
     qml/plugins/keyboard/keyboard.qml
+    qml/plugins/datetime/*
