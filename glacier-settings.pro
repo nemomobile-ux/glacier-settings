@@ -28,6 +28,9 @@ INSTALLS += i18n_files
 
 target.path = /usr/bin
 
+icon.files = glacier-settings.png
+icon.path = /usr/share/glacier-settings/
+
 desktop.files = glacier-settings.desktop
 desktop.path = /usr/share/applications
 
@@ -106,7 +109,8 @@ INSTALLS += target \
             gpsplugin\
             languageplugin \
             aboutplugin \
-            languageconfigs
+            languageconfigs\
+            icon
 
 DISTFILES += \
     qml/plugins/example/example.qml \

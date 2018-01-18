@@ -2,6 +2,6 @@
 Type=Application
 Name=Settings
 Exec=glacier-settings
-Icon=icon-launcher-settings
+Icon=/usr/share/glacier-settings/glacier-settings.png
 X-Desktop-File-Install-Version=0.20
 Name[ru]=Настройки
