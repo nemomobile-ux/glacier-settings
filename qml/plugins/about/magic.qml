@@ -34,7 +34,7 @@ Page {
     Flickable{
         width: parent.width
         height: parent.height
-        contentHeight: childrenRect.height*1.5
+        contentHeight: magicLogo.x+magicLogo.height+fortyTwo.height+Theme.itemSpacingHuge*2
 
         Image {
             id: magicLogo
