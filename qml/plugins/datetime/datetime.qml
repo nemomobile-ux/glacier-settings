@@ -17,11 +17,11 @@
  * Boston, MA 02110-1301, USA.
  */
 import QtQuick 2.6
-import QtQuick.Window 2.1
 
 import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+
+import org.nemomobile.systemsettings 1.0
 
 Page {
     id: listViewPage
@@ -29,5 +29,39 @@ Page {
     headerTools: HeaderToolsLayout {
         showBackButton: true;
         title: qsTr("Date and time")
+    }
+
+    DateTimeSettings{
+        id: dateTimeSettings
+    }
+
+    Column{
+        width: parent.width-Theme.itemSpacingLarge*2
+        anchors{
+            top: parent.top
+            topMargin: Theme.itemSpacingLarge
+            left: parent.left
+            leftMargin: Theme.itemSpacingLarge
+        }
+
+        spacing: Theme.itemSpacingLarge
+        CheckBox{
+            id: automaticTimeUpdateCheckbox
+            text: qsTr("Automatic time update")
+            checked: dateTimeSettings.automaticTimeUpdate
+            onClicked:{
+                dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
+            }
+        }
+
+        CheckBox{
+            id: automaticTimezoneUpdateCheckbox
+            text: qsTr("Automatic time zone update")
+            checked: dateTimeSettings.automaticTimezoneUpdate
+            onClicked:{
+                dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
+            }
+        }
+        
     }
 }
