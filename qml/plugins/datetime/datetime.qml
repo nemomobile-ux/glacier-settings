@@ -23,28 +23,151 @@ import QtQuick.Controls.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
 
+import "../../components"
+
 Page {
     id: listViewPage
+
+    property date currentDate: new Date()
 
     headerTools: HeaderToolsLayout {
         showBackButton: true;
         title: qsTr("Date and time")
     }
 
+    property var monthNames: ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ]
+
     DateTimeSettings{
         id: dateTimeSettings
     }
 
-    Column{
-        width: parent.width-Theme.itemSpacingLarge*2
-        anchors{
-            top: parent.top
-            topMargin: Theme.itemSpacingLarge
-            left: parent.left
-            leftMargin: Theme.itemSpacingLarge
+    ListModel{
+        id: timeFormatModel
+        ListElement{name: qsTr("12h")}
+        ListElement{name: qsTr("24h")}
+    }
+
+    SettingsColumn{
+        Item{
+            id: dateView
+            width: parent.width
+            height: parent.width/5*3
+
+            TimePicker{
+                id: timePicker
+                height: parent.height
+                width: height
+
+                hours: currentDate.getHours()
+                minutes: currentDate.getMinutes()
+
+                active: false
+            }
+            Item{
+                id: dateLabel
+                width: parent.width-timePicker.width
+
+                height: parent.height
+
+                anchors.left: timePicker.right
+
+                Text{
+                    id: dayLabel
+                    text: "00"
+                    width: parent.width/2
+                    anchors{
+                        bottom: parent.verticalCenter
+                        horizontalCenter: parent.horizontalCenter
+                    }
+                    font.pixelSize: dateLabel.height/3
+                    fontSizeMode: Text.Fit
+                    color: Theme.accentColor
+                }
+
+                Text {
+                    id: monthLabel
+                    text: monthNames[currentDate.getMonth()]
+                    width: parent.width/2
+                    font.pixelSize: dateLabel.height
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors{
+                        left: dayLabel.left
+                        top: dayLabel.bottom
+                        topMargin: Theme.itemSpacingExtraSmall
+                    }
+                    fontSizeMode: Text.Fit
+                    color: Theme.accentColor
+                    opacity: 0.5
+                }
+
+
+                Text {
+                    id: yearLabel
+                    text: currentDate.getFullYear()
+                    width: parent.width/2
+                    font.bold: true
+                    font.pixelSize: dateLabel.height
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors{
+                        left: monthLabel.left
+                        top: monthLabel.bottom
+                        topMargin: Theme.itemSpacingExtraSmall
+                    }
+                    fontSizeMode: Text.Fit
+                    color: Theme.accentColor
+                    opacity: 0.5
+                }
+            }
         }
 
-        spacing: Theme.itemSpacingLarge
+        Item{
+            width: parent.width
+            height: automaticTimeUpdateCheckbox.height
+            id: dateRow
+            Label{
+                text: qsTr("Date")
+            }
+            Label{
+                text: currentDate.toLocaleDateString();
+                anchors.right: parent.right
+            }
+        }
+
+        Item{
+            width: parent.width
+            height: automaticTimeUpdateCheckbox.height
+            id: timeRow
+            Label{
+                text: qsTr("Time")
+            }
+
+            Label{
+                text: currentDate.toLocaleTimeString()
+                anchors.right: parent.right
+            }
+        }
+
+        GlacierRoller {
+            id: timeFormatRoller
+            width: parent.width
+
+            clip: true
+            model: timeFormatModel
+            label: qsTr("Time format")
+            delegate:GlacierRollerItem{
+                Text{
+                    height: timeFormatRoller.itemHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: name
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    font.bold: (timeFormatRoller.activated && timeFormatRoller.currentIndex === index)
+                }
+            }
+        }
+
         CheckBox{
             id: automaticTimeUpdateCheckbox
             text: qsTr("Automatic time update")
@@ -62,6 +185,6 @@ Page {
                 dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
             }
         }
-        
+
     }
 }
