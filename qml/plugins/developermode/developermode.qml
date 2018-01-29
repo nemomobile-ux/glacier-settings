@@ -154,6 +154,17 @@ Page {
                     regExp:  /^((?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])\.){0,3}(?:[0-1]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$/
 
                 }
+
+                InverseMouseArea {
+                    anchors.fill: parent
+                    onPressed: {
+                        if(usbIpAddressInput.text !== devModeSettings.usbIpAddress && usbIpAddressInput.accepted)
+                        {
+                            console.log("Change ip")
+                            devModeSettings.setUsbIpAddress(usbIpAddressInput.text)
+                        }
+                    }
+                }
             }
         }
     }
