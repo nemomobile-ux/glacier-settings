@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2018 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -26,14 +26,14 @@ Column{
 
     anchors{
         top: parent.top
-        topMargin: size.dp(20)
+        topMargin: Theme.itemSpacingLarge
+        left: parent.left
+        leftMargin: Theme.itemSpacingLarge
     }
 
     Column{
         id: dataItem
-        width: parent.width-size.dp(24)*2
-
-        spacing: size.dp(24)
-        leftPadding: size.dp(24)
+        width: parent.width-Theme.itemSpacingLarge*2
+        spacing: Theme.itemSpacingLarge
     }
 }
