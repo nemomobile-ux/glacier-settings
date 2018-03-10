@@ -104,7 +104,7 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/gps/gps.json\
                       qml/plugins/language/language.json\
                       qml/plugins/about/about.json\
-                      qml/plugins/keyboard/keyboard.json
+                      qml/plugins/keyboard/keyboard.json \
                       qml/plugins/datetime/datetime.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
@@ -154,5 +154,5 @@ DISTFILES += \
     qml/plugins/about/about.svg \
     qml/plugins/about/icon-glacier-icon.png \
     qml/plugins/about/magic.qml \
-    qml/plugins/keyboard/keyboard.qml
-    qml/plugins/datetime/*
+    qml/plugins/keyboard/keyboard.qml \
+    qml/plugins/datetime/datetime.qml

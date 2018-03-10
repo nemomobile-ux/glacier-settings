@@ -14,7 +14,7 @@ Source0:    %{name}-%{version}.tar.bz2
 
 Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: nemo-qml-plugin-settings
-Requires: qt5-qtquickcontrols-nemo >= 5.3.2
+Requires: qt5-qtquickcontrols-nemo
 Requires: connman-qt5-declarative
 Requires: mapplauncherd-booster-nemomobile
 Requires: libglacierapp

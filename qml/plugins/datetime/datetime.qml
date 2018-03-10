@@ -50,102 +50,55 @@ Page {
     }
 
     SettingsColumn{
-        Item{
+        Row{
             id: dateView
             width: parent.width
-            height: parent.width/5*3
 
             TimePicker{
                 id: timePicker
-                height: parent.height
-                width: height
+                height: width
+                width: listViewPage.width/2
 
                 hours: currentDate.getHours()
                 minutes: currentDate.getMinutes()
-
-                active: false
             }
-            Item{
+
+            Column{
                 id: dateLabel
-                width: parent.width-timePicker.width
-
-                height: parent.height
-
-                anchors.left: timePicker.right
+                width: parent.width/2
 
                 Text{
                     id: dayLabel
-                    text: "00"
-                    width: parent.width/2
-                    anchors{
-                        bottom: parent.verticalCenter
-                        horizontalCenter: parent.horizontalCenter
-                    }
-                    font.pixelSize: dateLabel.height/3
-                    fontSizeMode: Text.Fit
+                    text: currentDate.getDay()
+                    width: parent.width
+                    height: timePicker.height/3
+                    verticalAlignment: Text.AlignVCenter
+                    horizontalAlignment: Text.AlignHCenter
+                    font.pixelSize: Theme.fontSizeExtraLarge
                     color: Theme.accentColor
                 }
 
                 Text {
                     id: monthLabel
                     text: monthNames[currentDate.getMonth()]
-                    width: parent.width/2
-                    font.pixelSize: dateLabel.height
+                    width: parent.width
+                    height: timePicker.height/3
                     horizontalAlignment: Text.AlignHCenter
-                    anchors{
-                        left: dayLabel.left
-                        top: dayLabel.bottom
-                        topMargin: Theme.itemSpacingExtraSmall
-                    }
-                    fontSizeMode: Text.Fit
+                    verticalAlignment: Text.AlignVCenter
+                    font.pixelSize: Theme.fontSizeExtraLarge
                     color: Theme.accentColor
-                    opacity: 0.5
                 }
-
 
                 Text {
                     id: yearLabel
                     text: currentDate.getFullYear()
-                    width: parent.width/2
-                    font.bold: true
-                    font.pixelSize: dateLabel.height
+                    width: parent.width
+                    height: timePicker.height/3
+                    verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
-                    anchors{
-                        left: monthLabel.left
-                        top: monthLabel.bottom
-                        topMargin: Theme.itemSpacingExtraSmall
-                    }
-                    fontSizeMode: Text.Fit
+                    font.pixelSize: Theme.fontSizeExtraLarge
                     color: Theme.accentColor
-                    opacity: 0.5
                 }
-            }
-        }
-
-        Item{
-            width: parent.width
-            height: automaticTimeUpdateCheckbox.height
-            id: dateRow
-            Label{
-                text: qsTr("Date")
-            }
-            Label{
-                text: currentDate.toLocaleDateString();
-                anchors.right: parent.right
-            }
-        }
-
-        Item{
-            width: parent.width
-            height: automaticTimeUpdateCheckbox.height
-            id: timeRow
-            Label{
-                text: qsTr("Time")
-            }
-
-            Label{
-                text: currentDate.toLocaleTimeString()
-                anchors.right: parent.right
             }
         }
 
