@@ -14,7 +14,7 @@ Source0:    %{name}-%{version}.tar.bz2
 
 Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
-Requires: kf5bluezqt-bluez4-declarative
+
 
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -32,12 +32,20 @@ Requires: %{name}
 %description developermode
 This plug-in represents access to the settings of developermode
 
+%package bluez4
+Summary: bluez4 plugin of glacier settings
+Requires: %{name}
+Requires: kf5bluezqt-bluez4-declarative
+
+%description bluez4
+This plug-in provide bluetooth configuration for bluez4 based devices
+
 %package example
 Summary: Example plugin of glacier settings
 Requires: %{name}
 
 %description example
-This is just example plugin   
+This is just example plugin
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -61,9 +69,12 @@ desktop-file-install --delete-original       \
 %{_bindir}/%{name}
 %{_datadir}/%{name}
 %exclude %{_datadir}/%{name}/qml/plugins/developermode
-%exclude %{_datadir}/%{name}/qml/plugins/example
 %exclude %{_datadir}/%{name}/plugins/developermode.json
 %exclude %{_datadir}/%{name}/plugins/example.json
+%exclude %{_datadir}/%{name}/qml/plugins/example
+%exclude %{_datadir}/%{name}/plugins/bluez4.json
+%exclude %{_datadir}/%{name}/qml/plugins/bluez4
+
 %{_datadir}/jolla-supported-languages
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mapplauncherd/privileges.d/glacier-settings.privileges
@@ -75,3 +86,7 @@ desktop-file-install --delete-original       \
 %files example
 %{_datadir}/%{name}/qml/plugins/example
 %{_datadir}/%{name}/plugins/example.json
+
+%files bluez4
+%{_datadir}/%{name}/plugins/bluez4.json
+%{_datadir}/%{name}/qml/plugins/bluez4

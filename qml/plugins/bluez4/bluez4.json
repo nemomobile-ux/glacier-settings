@@ -1,5 +1,5 @@
 {
-    "path": "bluetooth",
+    "path": "bluez4",
     "category": "Network",
     "title": "Bluetooth"
 }

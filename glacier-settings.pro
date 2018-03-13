@@ -47,9 +47,9 @@ exampleplugin.files = qml/plugins/example/example.qml\
                       qml/plugins/example/example.svg
 exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
-bluetoothplugin.files = qml/plugins/bluetooth/bluetooth.qml\
-                        qml/plugins/bluetooth/bluetooth.svg
-bluetoothplugin.path = /usr/share/glacier-settings/qml/plugins/bluetooth
+bluez4plugin.files = qml/plugins/bluez4/bluez4.qml\
+                        qml/plugins/bluez4/bluez4.svg
+bluez4plugin.path = /usr/share/glacier-settings/qml/plugins/bluez4
 
 developermodeplugin.files = qml/plugins/developermode/developermode.qml\
                             qml/plugins/developermode/developermode.svg
@@ -86,7 +86,7 @@ languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
 
 pluginconfigs.files = qml/plugins/example/example.json \
-                      qml/plugins/bluetooth/bluetooth.json \
+                      qml/plugins/bluez4/bluez4.json \
                       qml/plugins/developermode/developermode.json \
                       qml/plugins/display/display.json \
                       qml/plugins/wifi/wifi.json \
@@ -102,7 +102,7 @@ INSTALLS += target \
             privileges \
             pluginconfigs \
             exampleplugin \
-            bluetoothplugin \
+            bluez4plugin \
             developermodeplugin \
             displayplugin \
             wifiplugin \
@@ -115,8 +115,8 @@ INSTALLS += target \
 DISTFILES += \
     qml/plugins/example/example.qml \
     qml/plugins/example/example.json \
-    qml/plugins/bluetooth/bluetooth.json \
-    qml/plugins/bluetooth/bluetooth.qml \
+    qml/plugins/bluez4/bluez4.json \
+    qml/plugins/bluez4/bluez4.qml \
     qml/plugins/developermode/developermode.qml \
     qml/plugins/developermode/developermode.json \
     qml/plugins/display/display.qml \
