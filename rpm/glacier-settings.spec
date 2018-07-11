@@ -16,6 +16,7 @@ Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
 Requires: connman-qt5-declarative
+Requires: mapplauncherd-booster-nemomobile
 
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
