@@ -1,6 +1,8 @@
 TARGET = glacier-settings
 
-CONFIG += c++11
+CONFIG += c++11 link_pkgconfig
+PKGCONFIG += glacierapp
+LIBS += -lglacierapp
 
 SOURCES += \
     src/main.cpp \

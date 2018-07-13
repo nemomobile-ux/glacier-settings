@@ -28,6 +28,8 @@
 #include <QScreen>
 #include <QCoreApplication>
 
+#include <glacierapp.h>
+
 #include "models/settingsmodel.h"
 #include "models/settingsproxymodel.h"
 
@@ -35,8 +37,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     setenv("QT_QUICK_CONTROLS_STYLE", "Nemo", 1);
 
-    QGuiApplication app(argc, argv);
-    QScreen* sc = app.primaryScreen();
+    QGuiApplication *app = GlacierApp::app(argc, argv);
+    QScreen* sc = app->primaryScreen();
     if(sc){
         sc->setOrientationUpdateMask(Qt::LandscapeOrientation
                              | Qt::PortraitOrientation
@@ -44,20 +46,11 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                              | Qt::InvertedPortraitOrientation);
     }
 
-    QTranslator myappTranslator;
-    myappTranslator.load("/usr/share/glacier-settings/translations/glacier-settings_" + QLocale::system().name() + ".qm");
-    app.installTranslator(&myappTranslator);
-
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
     qmlRegisterType<SettingsProxyModel>("org.nemomobile.glacier.settings",1,0,"SettingsProxyModel");
 
-    QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl("/usr/share/glacier-settings/qml/glacier-settings.qml"));
-    QObject *topLevel = engine->rootObjects().value(0);
-    QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
-
-    engine->rootContext()->setContextProperty("__window", window);
-
+    QQuickWindow *window = GlacierApp::showWindow();
     window->setTitle(QObject::tr("Settings"));
-    window->showFullScreen();
-    return app.exec();
+
+    return app->exec();
 }

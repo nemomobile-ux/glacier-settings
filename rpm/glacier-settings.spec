@@ -17,12 +17,14 @@ Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
 Requires: connman-qt5-declarative
 Requires: mapplauncherd-booster-nemomobile
+Requires: libglacierapp
 
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 BuildRequires:  qt5-qttools-linguist
+BuildRequires:  pkgconfig(glacierapp)
 
 %description
 Settings application for nemo mobile
