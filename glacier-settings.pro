@@ -24,6 +24,7 @@ OTHER_FILES +=rpm/glacier-settings.spec \
 
 TRANSLATIONS += translations/glacier-settings_en.ts\
                 translations/glacier-settings_ru.ts
+
 i18n_files.files = translations
 i18n_files.path = /usr/share/$$TARGET
 INSTALLS += i18n_files
@@ -83,6 +84,10 @@ aboutplugin.files =  qml/plugins/about/*.qml \
                     qml/plugins/about/icon-glacier-icon.png
 aboutplugin.path = /usr/share/glacier-settings/qml/plugins/about
 
+keyboardplugin.files =  qml/plugins/keyboard/keyboard.qml \
+                   qml/plugins/keyboard/keyboard.svg
+
+keyboardplugin.path = /usr/share/glacier-settings/qml/plugins/keyboard
 
 languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
@@ -94,7 +99,8 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/wifi/wifi.json \
                       qml/plugins/gps/gps.json\
                       qml/plugins/language/language.json\
-                      qml/plugins/about/about.json
+                      qml/plugins/about/about.json\
+                      qml/plugins/keyboard/keyboard.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -112,7 +118,8 @@ INSTALLS += target \
             languageplugin \
             aboutplugin \
             languageconfigs\
-            icon
+            icon \
+            keyboardplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -140,4 +147,5 @@ DISTFILES += \
     qml/plugins/about/about.json \
     qml/plugins/about/about.svg \
     qml/plugins/about/icon-glacier-icon.png \
-    qml/plugins/about/magic.qml
+    qml/plugins/about/magic.qml \
+    qml/plugins/keyboard/keyboard.qml

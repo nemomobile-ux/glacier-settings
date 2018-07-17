@@ -44,6 +44,15 @@ Requires: kf5bluezqt-bluez4-declarative
 %description bluez4
 This plug-in provide bluetooth configuration for bluez4 based devices
 
+%package keyboard
+Summary: Keyboard plugin of glacier settings
+Requires: %{name}
+Requires: maliit-plugins
+Requires: nemo-qml-plugin-configuration-qt5
+
+%description keyboard
+This plug-in provide configuration of keyboard
+
 %package example
 Summary: Example plugin of glacier settings
 Requires: %{name}
@@ -78,6 +87,8 @@ desktop-file-install --delete-original       \
 %exclude %{_datadir}/%{name}/qml/plugins/example
 %exclude %{_datadir}/%{name}/plugins/bluez4.json
 %exclude %{_datadir}/%{name}/qml/plugins/bluez4
+%exclude %{_datadir}/%{name}/plugins/keyboard.json
+%exclude %{_datadir}/%{name}/qml/plugins/keyboard
 
 %{_datadir}/jolla-supported-languages
 %{_datadir}/applications/%{name}.desktop
@@ -94,3 +105,7 @@ desktop-file-install --delete-original       \
 %files bluez4
 %{_datadir}/%{name}/plugins/bluez4.json
 %{_datadir}/%{name}/qml/plugins/bluez4
+
+%files keyboard
+%{_datadir}/%{name}/plugins/keyboard.json
+%{_datadir}/%{name}/qml/plugins/keyboard
