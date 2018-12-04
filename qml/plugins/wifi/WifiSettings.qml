@@ -76,14 +76,21 @@ Page {
         networkingModel.networkName.text = modelData.name;
     }
 
-    SettingsColumn{
-        TextField{
+    SettingsColumn {
+        TextField {
             id: passphrase
+            text: modelData.passphrase
         }
 
-        Button{
+        Button {
             id: connectButton
             height: 48
+
+            onClicked: {
+                modelData.passphrase = passphrase.text;
+                modelData.requestConnect();
+                pageStack.pop();
+            }
 
             text: qsTr("Connect")
         }

@@ -69,7 +69,7 @@ Page {
                     verticalCenter: nameLabel.verticalCenter
                 }
                 onClicked:{
-                    networkingModel.setPowered(columnCheckBox.checked)
+                    networkingModel.powered = !networkingModel.powered;
                 }
             }
         }
