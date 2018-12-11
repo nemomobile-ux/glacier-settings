@@ -65,7 +65,10 @@ displayplugin.path = /usr/share/glacier-settings/qml/plugins/display
 wifiplugin.files = qml/plugins/wifi/wifi.qml\
                    qml/plugins/wifi/WifiSettings.qml\
                    qml/plugins/wifi/WifiStatus.qml\
-                   qml/plugins/wifi/wifi.svg
+                   qml/plugins/wifi/wifi.svg\
+                   qml/plugins/wifi/SavedServices.qml\
+                   qml/plugins/wifi/SavedStatus.qml\
+                   qml/plugins/wifi/NetworkDelegate.qml
 
 wifiplugin.path = /usr/share/glacier-settings/qml/plugins/wifi
 
@@ -148,4 +151,7 @@ DISTFILES += \
     qml/plugins/about/about.svg \
     qml/plugins/about/icon-glacier-icon.png \
     qml/plugins/about/magic.qml \
-    qml/plugins/keyboard/keyboard.qml
+    qml/plugins/keyboard/keyboard.qml \
+    qml/plugins/wifi/SavedServices.qml \
+    qml/plugins/wifi/SavedStatus.qml \
+    qml/plugins/wifi/NetworkDelegate.qml
