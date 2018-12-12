@@ -31,13 +31,13 @@ Page {
     id: wifiSettingsPage
     property var modelData
 
-    headerTools: HeaderToolsLayout {
+    headerTools: HeaderToolsLayout{
         id: header
         showBackButton: true;
         title: modelData.name
     }
 
-    TechnologyModel {
+    TechnologyModel{
         id: networkingModel
         name: "wifi"
     }
@@ -46,13 +46,13 @@ Page {
     SettingsColumn{
         id: form
         Row{
-            spacing: 24
+            spacing: Theme.itemSpacingLarge
 
-            Label {
+            Label{
                 text: qsTr("Method")
             }
 
-            ButtonRow {
+            ButtonRow{
                 id: methodButtonRow
                 model: ListModel{
                     id: methodModel
@@ -65,24 +65,21 @@ Page {
                 }
 
                 Component.onCompleted: {
-                    if(modelData.ipv4["Method"] === "manual")
-                    {
+                    if(modelData.ipv4["Method"] === "manual") {
                         methodButtonRow.currentIndex = 1
-                    }
-                    else
-                    {
+                    }else{
                         methodButtonRow.currentIndex = 0
                     }
                 }
             }
         }
 
-        Label {
+        Label{
             text: qsTr("Network info")
         }
 
         Row{
-            spacing: 24
+            spacing: Theme.itemSpacingLarge
             Label {
                 id:ipAddressLabel
                 text: qsTr("IP address")
@@ -96,7 +93,7 @@ Page {
         }
 
         Row{
-            spacing: 24
+            spacing: Theme.itemSpacingLarge
             Label {
                 id:ipNetmaskLabel
                 text: qsTr("Net mask")
@@ -109,9 +106,8 @@ Page {
             }
         }
 
-
         Row{
-            spacing: 24
+            spacing: Theme.itemSpacingLarge
             Label {
                 id:ipGatewayLabel
                 text: qsTr("Gateway")
@@ -124,16 +120,16 @@ Page {
             }
         }
 
-        Rectangle {
+        Rectangle{
             width: parent.width
             height: childrenRect.height
 
             color: "transparent"
 
-            Button {
+            Button{
                 id: disconnectButton
                 width: parent.width
-                anchors {
+                anchors{
                     horizontalCenter: parent.horizontalCenter
                     verticalCenter: parent.verticalCenter
                 }
@@ -145,6 +141,12 @@ Page {
                 }
             }
         }
+    }
 
+    Connections{
+        target: modelData
+        onConnectRequestFailed: {
+            console.log(error)
+        }
     }
 }

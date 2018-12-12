@@ -70,29 +70,34 @@ Page {
         }
     }
 
-
     Component.onCompleted: {
-        modelData.requestConnect();
         networkingModel.networkName.text = modelData.name;
     }
 
-    SettingsColumn {
-        TextField {
+    SettingsColumn{
+        TextField{
             id: passphrase
             text: modelData.passphrase
         }
 
-        Button {
+        Button{
             id: connectButton
-            height: 48
+            height: Theme.itemHeightSmall
 
             onClicked: {
                 modelData.passphrase = passphrase.text;
                 modelData.requestConnect();
+                networkingModel.networkName.text = modelData.name;
                 pageStack.pop();
             }
-
             text: qsTr("Connect")
+        }
+    }
+
+    Connections {
+        target: modelData
+        onConnectRequestFailed: {
+            console.log(error)
         }
     }
 }

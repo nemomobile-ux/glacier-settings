@@ -53,7 +53,7 @@ Page {
 
             Label{
                 id: nameLabel
-                text: qsTr("Enable WiFi")
+                text: qsTr("WiFi")
                 anchors{
                     left: parent.left
                 }
@@ -75,11 +75,12 @@ Page {
         }
     }
 
-
-    ListView {
-        id: networkList
+    Flickable{
+        visible: networkingModel.powered
         width: parent.width-size.dp(40)
         height: parent.height-actionColumn.height-size.dp(80)
+        contentHeight: networks.height+size.dp(50)
+
         clip: true
         anchors{
             top: actionColumn.bottom
@@ -88,96 +89,51 @@ Page {
             leftMargin: size.dp(20)
         }
 
-        model: networkingModel
-        delegate: ListViewItemWithActions{
-            height: size.dp(80)
-            label: modelData.name
+        Column{
+            id: networks
+            spacing: Theme.itemSpacingSmall
 
-            description: {
-                var state = modelData.state;
-                var security = modelData.security[0];
-
-                if ((state == "online") || (state == "ready")) {
-                    return qsTr("connected");
-                } else if (state == "association" || state == "configuration") {
-                    return qsTr("connecting")+"...";
-                } else {
-                    if (security == "none") {
-                        return qsTr("open");
-                    } else {
-                        return qsTr("secure");
-                    }
-                }
-            }
-            icon: (getStrengthIndex(modelData.strength) === "0")? "image://theme/icon_wifi_0" : "image://theme/icon_wifi_focused" + getStrengthIndex(modelData.strength)
-
-            onClicked:{
-                if (modelData.state == "idle" || modelData.state == "failure"){
-                    console.log("Show settings page");
-                    pageStack.push(Qt.resolvedUrl("WifiSettings.qml"),{modelData: modelData})
-                } else {
-                    console.log("Show network status page");
-                    var component = Qt.createComponent(Qt.resolvedUrl("WifiStatus.qml")).errorString();
-                    console.log(component)
-                    pageStack.push(Qt.resolvedUrl("WifiStatus.qml"),{modelData: modelData})
-                }
+            Text{
+                text: qsTr("Saved")
+                color: Theme.textColor
+                font.pointSize: Theme.fontSizeSmall
             }
 
-            actions: Rectangle{
-                width: childrenRect.width+16
-                height: parent.height
-                Image{
-                    id: removeNetworkButton
-                    source: "../../img/trash.svg"
-                    width: 64
-                    height: 64
-                    fillMode: Image.PreserveAspectFit
-                    sourceSize{
-                        width: width
-                        height: height
-                    }
-                    anchors{
-                        top:parent.top
-                        topMargin: 8
-                        left: parent.left
-                        leftMargin: 8
-                    }
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            modelData.remove();
-                            networkList.hideAllActions(-1);
-                        }
-                    }
-                }
-
-                Image{
-                    source: "../../img/disconnect.svg"
-                    visible: (modelData.state == "online" || modelData.state == "ready")
-
-                    width: 64
-                    height: 64
-                    fillMode: Image.PreserveAspectFit
-                    sourceSize{
-                        width: width
-                        height: height
-                    }
-                    anchors{
-                        top:parent.top
-                        topMargin: 8
-                        left: removeNetworkButton.right
-                        leftMargin: 16
-                    }
-                    MouseArea{
-                        anchors.fill: parent
-                        onClicked: {
-                            modelData.requestDisconnect();
-                            networkList.hideAllActions(-1);
-                        }
-                    }
-                }
+            Rectangle{
+                width: parent.width
+                height: 1
             }
 
+            Repeater{
+                width: parent.width
+                model: networkingModel
+                delegate: NetworkDelegate{saved: true}
+            }
+
+
+            Text{
+                text: qsTr("Enabled")
+                color: Theme.textColor
+                font.pointSize: Theme.fontSizeSmall
+            }
+
+            Rectangle{
+                width: parent.width
+                height: 1
+            }
+
+            Repeater{
+                width: parent.width
+                model: networkingModel
+                delegate: NetworkDelegate{saved: false}
+            }
+
+            ListViewItemWithActions{
+                label: qsTr("Manage saved networks")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SavedServices.qml"));
+                }
+            }
         }
     }
 
