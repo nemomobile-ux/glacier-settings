@@ -63,60 +63,25 @@ Item {
             }
         }
 
-        actions: Rectangle{
-            width: childrenRect.width+size.dp(16)
-            height: parent.height
-            Image{
+        actions: [
+            ActionButton {
                 id: removeNetworkButton
-                source: "/usr/share/glacier-settings/qml/img/trash.svg"
-                width: height
-                height: Theme.itemHeightSmall
-                fillMode: Image.PreserveAspectFit
-                sourceSize{
-                    width: width
-                    height: height
-                }
-                anchors{
-                    top:parent.top
-                    topMargin: size.dp(8)
-                    left: parent.left
-                    leftMargin: size.dp(8)
-                }
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: {
-                        modelData.remove();
-                        model.hideAllActions(-1);
-                    }
-                }
-            }
+                iconSource: "/usr/share/glacier-settings/qml/img/trash.svg"
 
-            Image{
+                onClicked: {
+                    modelData.remove();
+                    model.hideAllActions(-1);
+                }
+            },
+            ActionButton {
+                id: disconnectNetworkButton
                 source: "/usr/share/glacier-settings/qml/img/disconnect.svg"
                 visible: (modelData.state === "online" || modelData.state === "ready")
-
-                width: Theme.itemHeightSmall
-                height: width
-                fillMode: Image.PreserveAspectFit
-                sourceSize{
-                    width: width
-                    height: height
-                }
-                anchors{
-                    top:parent.top
-                    topMargin: size.dp(8)
-                    left: removeNetworkButton.right
-
-                    leftMargin: size.dp(16)
-                }
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: {
-                        modelData.requestDisconnect();
-                        model.hideAllActions(-1);
-                    }
+                onClicked: {
+                    modelData.requestDisconnect();
+                    model.hideAllActions(-1);
                 }
             }
-        }
+        ]
     }
 }
