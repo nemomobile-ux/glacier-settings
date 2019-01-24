@@ -107,6 +107,9 @@ pluginconfigs.files = qml/plugins/example/example.json \
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
+service.path = $${INSTALL_ROOT}/usr/share/dbus-1/services
+service.files = data/org.nemomobile.qmlsettings.service
+
 INSTALLS += target \
             desktop \
             qml \
@@ -122,7 +125,8 @@ INSTALLS += target \
             aboutplugin \
             languageconfigs\
             icon \
-            keyboardplugin
+            keyboardplugin \
+            service
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -154,4 +158,6 @@ DISTFILES += \
     qml/plugins/keyboard/keyboard.qml \
     qml/plugins/wifi/SavedServices.qml \
     qml/plugins/wifi/SavedStatus.qml \
-    qml/plugins/wifi/NetworkDelegate.qml
+    qml/plugins/wifi/NetworkDelegate.qml \
+    qml/components/SettingsService.qml \
+    data/org.nemomobile.qmlsettings.service

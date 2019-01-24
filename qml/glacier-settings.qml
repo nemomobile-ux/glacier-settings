@@ -39,6 +39,15 @@ ApplicationWindow{
         }
     }
 
+    SettingsService{
+        id: setingService
+
+        onOpenSettingsPage: {
+            pageStack.push(Qt.resolvedUrl("plugins/"+plugin+"/"+plugin+".qml"))
+            main.raise()
+        }
+    }
+
     initialPage: Page{
         id: mainPage
         headerTools: HeaderToolsLayout {

@@ -81,6 +81,7 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
 %{_datadir}/%{name}
+%{_datadir}/dbus-1/services/org.nemomobile.qmlsettings.service
 %exclude %{_datadir}/%{name}/qml/plugins/developermode
 %exclude %{_datadir}/%{name}/plugins/developermode.json
 %exclude %{_datadir}/%{name}/plugins/example.json
