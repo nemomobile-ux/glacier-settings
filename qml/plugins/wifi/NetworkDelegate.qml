@@ -70,16 +70,14 @@ Item {
 
                 onClicked: {
                     modelData.remove();
-                    model.hideAllActions(-1);
                 }
             },
             ActionButton {
                 id: disconnectNetworkButton
-                source: "/usr/share/glacier-settings/qml/img/disconnect.svg"
+                iconSource: "/usr/share/glacier-settings/qml/img/disconnect.svg"
                 visible: (modelData.state === "online" || modelData.state === "ready")
                 onClicked: {
                     modelData.requestDisconnect();
-                    model.hideAllActions(-1);
                 }
             }
         ]
