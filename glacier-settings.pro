@@ -7,13 +7,11 @@ LIBS += -lglacierapp
 SOURCES += \
     src/main.cpp \
     src/models/settingsmodel.cpp \
-    src/models/imagesmodel.cpp \
-    src/models/settingsproxymodel.cpp
+    src/models/imagesmodel.cpp
 
 HEADERS += \
     src/models/settingsmodel.h \
-    src/models/imagesmodel.h \
-    src/models/settingsproxymodel.h
+    src/models/imagesmodel.h
 
 QT += qml quick
 

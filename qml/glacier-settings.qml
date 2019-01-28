@@ -32,11 +32,9 @@ import "components"
 ApplicationWindow{
     id: main
 
-    SettingsProxyModel{
+    SettingsModel{
         id: settingsModel
-        model: SettingsModel{
-            path: "/usr/share/glacier-settings/plugins/"
-        }
+        path: "/usr/share/glacier-settings/plugins/"
     }
 
     SettingsService{
@@ -59,37 +57,84 @@ ApplicationWindow{
             height: parent.height-tools.height
             width: parent.width
 
-            contentHeight: quickSettings.height+view.height
+            contentHeight: content.height
 
-            QuickSettings{
-                id: quickSettings
-                anchors{
-                    top: parent.top
-                    topMargin: size.dp(20)
-                }
-            }
-
-            ListView {
-                id: view
+            Column {
+                id: content
                 width: parent.width
-                height: view.contentHeight
+                spacing: size.dp(20)
 
-                anchors{
-                    top: quickSettings.bottom
-                    topMargin: size.dp(20)
+                QuickSettings{
+                    id: quickSettings
                 }
 
-                clip: true
-                model: settingsModel
-                delegate: ListViewItemWithActions {
-                    label: title
-                    icon: "/usr/share/glacier-settings/qml/plugins/"+path+"/"+path+".svg"
-                    onClicked:{
-                        console.log(Qt.createComponent(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml")).errorString())
-                        pageStack.push(Qt.resolvedUrl("plugins/"+path+"/"+path+".qml"))
+                Repeater {
+                    id: view
+
+                    model: settingsModel
+                    delegate: Rectangle {
+                        id: settingsListDelegate
+                        height: sectionHeading.height+flow.height
+                        width: mainArea.width
+                        color: Theme.backgroundColor
+
+                        Rectangle {
+                            id: sectionHeading
+                            width: parent.width
+                            height: Theme.itemHeightMedium
+                            color: Theme.backgroundColor
+
+                            Text {
+                                id: sectionText
+                                text: title
+                                font.capitalization: Font.AllUppercase
+                                font.pixelSize: Theme.fontSizeSmall
+                                color: Theme.textColor
+                                anchors{
+                                    left: parent.left
+                                    leftMargin: Theme.itemSpacingSmall
+                                    verticalCenter: parent.verticalCenter
+                                }
+                            }
+
+                            Rectangle{
+                                id: line
+                                height: size.ratio(1)
+                                color: Theme.textColor
+                                width: content.width-sectionText.width-Theme.itemHeightExtraSmall
+                                anchors{
+                                    left: sectionText.right
+                                    leftMargin: Theme.itemSpacingSmall
+                                    verticalCenter: sectionText.verticalCenter
+                                }
+                            }
+                        }
+
+                        Flow{
+                            id: flow
+                            width: parent.width
+                            anchors.top: sectionHeading.bottom
+                            Repeater{
+                                id: list
+                                width: parent.width
+                                height: isUiLandscape ?
+                                            Theme.itemHeightMedium*Math.ceil(items.length/2) :
+                                            Theme.itemHeightMedium*items.length
+                                model: items
+
+                                delegate: ListViewItemWithActions {
+                                    height: Theme.itemHeightMedium
+                                    width: isUiLandscape ? parent.width/2 : parent.width
+                                    label: modelData.title
+                                    icon: "/usr/share/glacier-settings/qml/plugins/"+modelData.path+"/"+modelData.path+".svg"
+                                    onClicked:{
+                                        pageStack.push(Qt.resolvedUrl("plugins/"+modelData.path+"/"+modelData.path+".qml"))
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                section.property: "category"
             }
         }
     }
