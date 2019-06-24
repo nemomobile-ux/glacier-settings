@@ -35,7 +35,7 @@ Page {
     headerTools: HeaderToolsLayout {
         id: header
         showBackButton: true;
-        title: qsTr("Bluetooth settings")
+        title: qsTr("Bluetooth")
     }
 
     property QtObject _adapter: _bluetoothManager && _bluetoothManager.usableAdapter
@@ -80,61 +80,41 @@ Page {
         }
 
 
-        Rectangle {
-            id: bluetoothName
+        Label {
+            id: bluetoothNameLabel
+            text: qsTr("Device name");
+            font.bold: true
+        }
+
+        TextField {
+            id: bluetoothNameInput
+            text: _adapter.name
+
             width: parent.width
-            height: childrenRect.height
 
-            visible: bluetoothModel.powered
+            font.pixelSize: Theme.fontSizeLarge
 
-            color: "transparent"
-
-            Label {
-                id: bluetoothNameLabel
-                text: qsTr("Device name");
-                anchors {
-                    left: parent.left
-                }
-            }
-
-            TextField {
-                id: bluetoothNameInput
-                text: _adapter.name
-
-                font.pointSize: Theme.label.pointSize
-
-                anchors {
-                    top: bluetoothNameLabel.bottom
-                    topMargin: size.dp(20)
-                    left: parent.left
-                }
-
-                onEditingFinished: {
-                    if (_adapter) {
-                        var newName = text.length ? text : Ssu.DeviceInfo.displayName(Ssu.DeviceInfo.DeviceModel);
-                        if (_adapter.name != newName) {
-                            _adapter.name = newName
-                        } else {
-                            text = _adapter.name
-                        }
+            onEditingFinished: {
+                if (_adapter) {
+                    var newName = text.length ? text : Ssu.DeviceInfo.displayName(Ssu.DeviceInfo.DeviceModel);
+                    if (_adapter.name != newName) {
+                        _adapter.name = newName
+                    } else {
+                        text = _adapter.name
                     }
                 }
             }
         }
 
-        Rectangle {
-            id: visible
+        Rectangle{
             width: parent.width
             height: childrenRect.height
-
-            visible: bluetoothModel.powered
-
             color: "transparent"
 
-            Label {
+            Label{
                 id: visibilityLabel
                 text: qsTr("Visibility")
-                anchors {
+                anchors{
                     left: parent.left
                 }
                 wrapMode: Text.Wrap
@@ -143,11 +123,11 @@ Page {
 
             CheckBox {
                 id: visibilityCheckBox
-
-                anchors {
-                    right: visible.right
+                checked: bluetoothModel.powered
+                anchors{
+                    right: parent.right
+                    verticalCenter: visibilityLabel.verticalCenter
                 }
-
                 onClicked: {
                     if (!_adapter) {
                         return;
