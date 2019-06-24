@@ -41,6 +41,21 @@ Page {
         name: "wifi"
         property bool sheetOpened
         property string networkName
+        onPoweredChanged: {
+            wifiTimer.stop();
+            columnCheckBox.indeterminate = false
+            columnCheckBox.checked = networkingModel.powered
+        }
+    }
+
+    Timer{
+        id: wifiTimer
+        interval: 5000
+        repeat: false
+        onTriggered: {
+            columnCheckBox.indeterminate = false
+            columnCheckBox.checked = networkingModel.powered
+        }
     }
 
     SettingsColumn{
@@ -70,6 +85,8 @@ Page {
                 }
                 onClicked:{
                     networkingModel.powered = !networkingModel.powered;
+                    columnCheckBox.indeterminate = true
+                    wifiTimer.start()
                 }
             }
         }
