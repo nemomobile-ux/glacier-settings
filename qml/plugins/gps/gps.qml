@@ -35,7 +35,7 @@ Page {
     headerTools: HeaderToolsLayout {
         id: header
         showBackButton: true;
-        title: qsTr("Location settings")
+        title: qsTr("Location")
     }
 
     TechnologyModel {
@@ -83,19 +83,22 @@ Page {
 
         Label{
             id: latitudeLabel
-            text: "<b>"+qsTr("Latitude")+"</b> : "+positionSource.position.coordinate.latitude
-            visible: gpsModel.powered
+            font.bold: true
+            text: qsTr("Latitude")+" : "+positionSource.position.coordinate.latitude
+            visible: gpsModel.powered && positionSource.position.coordinate.latitude
         }
 
         Label{
             id: longitudeLabel
-            text: "<b>"+qsTr("Longitude")+"</b> : "+positionSource.position.coordinate.longitude
-            visible: gpsModel.powered
+            font.bold: true
+            text: qsTr("Longitude")+" : "+positionSource.position.coordinate.longitude
+            visible: gpsModel.powered && positionSource.position.coordinate.longitude
         }
 
         Label{
             id: sourceLabel
-            text: "<b>"+qsTr("Source")+"</b> : "+printableMethod(positionSource.supportedPositioningMethods)
+            font.bold: true
+            text: qsTr("Source")+" : "+printableMethod(positionSource.supportedPositioningMethods)
             visible: gpsModel.powered
         }
     }
