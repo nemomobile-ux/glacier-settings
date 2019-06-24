@@ -1,2 +1,2 @@
 # Tells invoker to run glacier-settings as nemo:privileged
-/usr/bin/glacier-settings,
+/usr/bin/glacier-settings,acehilmnprsu
