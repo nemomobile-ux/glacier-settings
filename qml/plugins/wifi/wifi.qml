@@ -96,7 +96,7 @@ Page {
             Text{
                 text: qsTr("Saved")
                 color: Theme.textColor
-                font.pointSize: Theme.fontSizeSmall
+                font.pixelSize: Theme.fontSizeLarge
             }
 
             Rectangle{
@@ -114,7 +114,7 @@ Page {
             Text{
                 text: qsTr("Enabled")
                 color: Theme.textColor
-                font.pointSize: Theme.fontSizeSmall
+                font.pixelSize: Theme.fontSizeLarge
             }
 
             Rectangle{
