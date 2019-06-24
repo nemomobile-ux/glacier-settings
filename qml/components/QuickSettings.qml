@@ -144,6 +144,7 @@ Rectangle {
     QuickButton{
         id: bluetoothButton
         activated: bluetoothModel.powered && _adapter && _adapter.powered
+        visible: wifiNetworkingModel.available
 
         icon: "../img/bluetooth.svg"
 
