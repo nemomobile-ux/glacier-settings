@@ -25,7 +25,9 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
+
 import org.nemomobile.systemsettings 1.0
+import org.nemomobile.glacier.settings 1.0
 
 import "../../components/"
 
@@ -41,6 +43,18 @@ Page {
     TechnologyModel {
         id: gpsModel
         name: "gps"
+    }
+
+    SatelliteModel {
+        id: satelliteModel
+        running: true
+        onErrorFound: {
+            console.error("Last Error: %1", "%1=error number").arg(code)
+        }
+
+        onSatelliteInfoAvailableChanged: {
+            console.log("Aviable:"+satelliteModel.rowCount())
+        }
     }
 
     LocationSettings {
@@ -84,15 +98,15 @@ Page {
         Label{
             id: latitudeLabel
             font.bold: true
-            text: qsTr("Latitude")+" : "+positionSource.position.coordinate.latitude
-            visible: gpsModel.powered && positionSource.position.coordinate.latitude
+            text: qsTr("Latitude")+" : " + qsTr("unavailable")
+            visible: gpsModel.powered
         }
 
         Label{
             id: longitudeLabel
             font.bold: true
-            text: qsTr("Longitude")+" : "+positionSource.position.coordinate.longitude
-            visible: gpsModel.powered && positionSource.position.coordinate.longitude
+            text: qsTr("Longitude")+" : " + qsTr("unavailable")
+            visible: gpsModel.powered
         }
 
         Label{
@@ -101,13 +115,141 @@ Page {
             text: qsTr("Source")+" : "+printableMethod(positionSource.supportedPositioningMethods)
             visible: gpsModel.powered
         }
+
+        Rectangle{
+            id: satView
+            width: parent.width
+            height: width
+            color: "transparent"
+            clip: true
+
+            Row {
+                property int rows: 13
+                spacing: satView.width/39
+
+                Rectangle {
+                    id: scale
+                    width: satView.width/13
+                    height: satView.height
+                    color: signalColor(100)
+                    Text {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.bottom: lawngreenRect.top
+                        font.pixelSize: Theme.fontSizeTiny
+                        text: "50"
+                    }
+                    Text {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.top: parent.top
+                        font.pixelSize: Theme.fontSizeTiny
+                        text: "100"
+                    }
+
+                    Rectangle {
+                        id: redRect
+                        width: parent.width
+                        color: signalColor(0)
+                        height: parent.height*10/100
+                        anchors.bottom: parent.bottom
+                        Text {
+                            id: strengthLabel
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: parent.bottom
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "00"
+                        }
+                    }
+                    Rectangle {
+                        id: orangeRect
+                        height: parent.height*10/100
+                        anchors.bottom: redRect.top
+                        width: parent.width
+                        color: signalColor(10)
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: parent.bottom
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "10"
+                        }
+                    }
+                    Rectangle {
+                        id: goldRect
+                        height: parent.height*10/100
+                        anchors.bottom: orangeRect.top
+                        width: parent.width
+                        color: signalColor(20)
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: parent.bottom
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "20"
+                        }
+                    }
+                    Rectangle {
+                        id: yellowRect
+                        height: parent.height*10/100
+                        anchors.bottom: goldRect.top
+                        width: parent.width
+                        color: signalColor(30)
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: parent.bottom
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "30"
+                        }
+                    }
+                    Rectangle {
+                        id: lawngreenRect
+                        height: parent.height*10/100
+                        anchors.bottom: yellowRect.top
+                        width: parent.width
+                        color: signalColor(40)
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: parent.bottom
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "40"
+                        }
+                    }
+                }
+
+                Repeater {
+                    id: repeater
+                    model: satelliteModel
+                    delegate: Rectangle {
+                        height: satView.height
+                        width: Theme.itemHeightExtraSmall
+                        color: "transparent"
+
+                        Rectangle {
+                            anchors.bottom: parent.bottom
+                            width: parent.width
+                            height: parent.height*signalStrength/100
+                            color: signalColor(signalStrength);
+                        }
+
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: parent.bottom
+                            text: satelliteIdentifier
+                            font.pixelSize: Theme.fontSizeTiny
+                            font.bold: isInUse
+                        }
+                    }
+                }
+            }
+        }
     }
 
     PositionSource {
         id: positionSource
         onPositionChanged: {
-            latitudeLabel.text = positionSource.position.coordinate.latitude
-            longitudeLabel.text = positionSource.position.coordinate.longitude
+            if(!isNaN(positionSource.position.coordinate.latitude)) {
+                latitudeLabel.text = qsTr("Latitude")+" : "+positionSource.position.coordinate.latitude
+            }
+            if(!isNaN(positionSource.position.coordinate.longitude)) {
+                longitudeLabel.text = qsTr("Longitude")+" : "+positionSource.position.coordinate.longitude
+            }
         }
     }
 
@@ -121,5 +263,24 @@ Page {
         else if (method === PositionSource.AllPositioningMethods)
             return qsTr("Multiple")
         return qsTr("source error");
+    }
+
+    function signalColor(signalLevel){
+        if(signalLevel>=50) {
+            return "#32cd32";
+        }
+        if(signalLevel < 50 && signalLevel >= 40) {
+            return "#7cFc00";
+        }
+        if(signalLevel < 40 && signalLevel >= 30) {
+            return "yellow";
+        }
+        if(signalLevel < 30 && signalLevel >= 20) {
+            return "#ffd700";
+        }
+        if(signalLevel < 20 && signalLevel >= 10) {
+            return "#ffa500";
+        }
+        return "red";
     }
 }

@@ -7,13 +7,17 @@ LIBS += -lglacierapp
 SOURCES += \
     src/main.cpp \
     src/models/settingsmodel.cpp \
-    src/models/imagesmodel.cpp
+    src/models/satellitemodel.cpp \
+    src/models/imagesmodel.cpp \
+
 
 HEADERS += \
     src/models/settingsmodel.h \
+    src/models/satellitemodel.h \
     src/models/imagesmodel.h
 
-QT += qml quick
+
+QT += qml quick positioning
 
 OTHER_FILES +=rpm/glacier-settings.spec \
     translations/*.ts \
