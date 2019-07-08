@@ -252,6 +252,8 @@ Page {
                 longitudeLabel.text = qsTr("Longitude")+" : "+positionSource.position.coordinate.longitude
             }
         }
+        active: true
+        updateInterval: 10000
     }
 
     function printableMethod(method) {
