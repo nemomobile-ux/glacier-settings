@@ -24,6 +24,7 @@ Requires: libglacierapp
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  desktop-file-utils
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  pkgconfig(glacierapp)
