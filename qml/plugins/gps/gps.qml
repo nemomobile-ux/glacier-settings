@@ -122,6 +122,7 @@ Page {
             height: width
             color: "transparent"
             clip: true
+            visible: gpsModel.powered
 
             Row {
                 property int rows: 13
