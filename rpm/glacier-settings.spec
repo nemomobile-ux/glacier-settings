@@ -15,11 +15,13 @@ Source0:    %{name}-%{version}.tar.bz2
 Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
-#for gps plugin
-Requires: qt5-qtdeclarative-import-positioning
 Requires: connman-qt5-declarative
 Requires: mapplauncherd-booster-nemomobile
 Requires: libglacierapp
+
+#for gps plugin
+Requires: qt5-qtdeclarative-import-positioning
+Requires: qt5-plugin-position-geoclue
 
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
