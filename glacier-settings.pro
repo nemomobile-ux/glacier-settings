@@ -64,6 +64,10 @@ displayplugin.files = qml/plugins/display/display.qml\
                       qml/plugins/display/display.svg
 displayplugin.path = /usr/share/glacier-settings/qml/plugins/display
 
+datetimeplugin.files = qml/plugins/datetime/*.qml \
+                       qml/plugins/datetime/*.svg
+datetimeplugin.path = /usr/share/glacier-settings/qml/plugins/datetime
+
 wifiplugin.files = qml/plugins/wifi/wifi.qml\
                    qml/plugins/wifi/WifiSettings.qml\
                    qml/plugins/wifi/WifiStatus.qml\
@@ -101,6 +105,7 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/bluez4/bluez4.json \
                       qml/plugins/developermode/developermode.json \
                       qml/plugins/display/display.json \
+                      qml/plugins/datetime/datetime.json \
                       qml/plugins/wifi/wifi.json \
                       qml/plugins/gps/gps.json\
                       qml/plugins/language/language.json\
@@ -121,6 +126,7 @@ INSTALLS += target \
             bluez4plugin \
             developermodeplugin \
             displayplugin \
+            datetimeplugin \
             wifiplugin \
             gpsplugin\
             languageplugin \
@@ -162,4 +168,7 @@ DISTFILES += \
     qml/plugins/wifi/SavedStatus.qml \
     qml/plugins/wifi/NetworkDelegate.qml \
     qml/components/SettingsService.qml \
-    data/org.nemomobile.qmlsettings.service
+    data/org.nemomobile.qmlsettings.service \
+    qml/plugins/datetime/datetime.qml \
+    qml/plugins/datetime/datetime.json \
+    qml/plugins/datetime/datetime.svg
