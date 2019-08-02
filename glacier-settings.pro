@@ -98,6 +98,12 @@ keyboardplugin.files =  qml/plugins/keyboard/keyboard.qml \
 
 keyboardplugin.path = /usr/share/glacier-settings/qml/plugins/keyboard
 
+
+usbplugin.files = qml/plugins/usb/usb.qml \
+                  qml/plugins/usb/usb.svg
+
+usbplugin.path = /usr/share/glacier-settings/qml/plugins/usb
+
 languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
 
@@ -110,7 +116,8 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/gps/gps.json\
                       qml/plugins/language/language.json\
                       qml/plugins/about/about.json\
-                      qml/plugins/keyboard/keyboard.json
+                      qml/plugins/keyboard/keyboard.json \
+                      qml/plugins/usb/usb.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -134,6 +141,7 @@ INSTALLS += target \
             languageconfigs\
             icon \
             keyboardplugin \
+            usbplugin \
             service
 
 DISTFILES += \
@@ -171,4 +179,7 @@ DISTFILES += \
     data/org.nemomobile.qmlsettings.service \
     qml/plugins/datetime/datetime.qml \
     qml/plugins/datetime/datetime.json \
-    qml/plugins/datetime/datetime.svg
+    qml/plugins/datetime/datetime.svg \
+    qml/plugins/usb/usb.json \
+    qml/plugins/usb/usb.qml \
+    qml/plugins/usb/usb.svg
