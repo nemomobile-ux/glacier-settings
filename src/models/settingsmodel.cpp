@@ -35,6 +35,8 @@
  *  - Cellural
  *  - WiFi
  *  - NFC
+ * Security
+ *  - Device Lock
  * Development
  *  - Devmode
  * Info
@@ -46,6 +48,7 @@
 const QStringList SettingsModel::defaultCategories = {
     "Personalization",
     "Network",
+    "Security",
     "Development",
     "Info",
     "Other"
