@@ -39,10 +39,52 @@ Page {
 
     DeviceLockSettings{
         id: lockSettings
+
+        authorization {
+            onChallengeExpired: {
+                console.log("EXP")
+            }
+        }
     }
 
     SecurityCodeSettings{
         id: secCodeSettings
+
+        onChanged: {
+            token = authenticationToken
+        }
+    }
+
+    AuthenticationInput{
+        id: authInput
+
+        active: true
+        registered: true
+
+        onAuthenticationStarted: {
+            console.log("onAuthenticationStarted")
+            reset()
+            authInput.feedback(feedback, data)
+        }
+
+        onAuthenticationUnavailable: {
+            console.log("onAuthenticationUnavailable")
+            reset()
+            authInput.error(error, data)
+        }
+
+        onError: {
+            console.log("Error")
+        }
+
+        onAuthenticationEnded: {
+            console.log("Ended")
+        }
+
+    }
+
+    Component.onCompleted: {
+        authInput.authorize()
     }
 
     ListModel{
@@ -52,7 +94,7 @@ Page {
             time: -1
         }
         ListElement{
-            name: qsTr("Without deay")
+            name: qsTr("Without delay")
             time: 0
         }
         ListElement{
@@ -170,6 +212,17 @@ Page {
                 if(changedTime != lockSettings.automaticLocking) {
                     lockSettings.setAutomaticLocking(token,changedTime)
                 }
+            }
+        }
+
+        Button{
+            id: entherCode
+            width: parent.width
+            height: Theme.itemHeightLarge
+            text: qsTr("Enther code")
+            onClicked: {
+                //authInput.authorize()
+                pageStack.push(Qt.resolvedUrl("DeviceLockPad.qml"), {authenticationInput: authInput})
             }
         }
     }

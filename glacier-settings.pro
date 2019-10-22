@@ -105,7 +105,8 @@ usbplugin.files = qml/plugins/usb/usb.qml \
 usbplugin.path = /usr/share/glacier-settings/qml/plugins/usb
 
 devicelockplugin.files = qml/plugins/devicelock/devicelock.qml \
-                  qml/plugins/devicelock/devicelock.svg
+                         qml/plugins/devicelock/DeviceLockPad.qml\
+                         qml/plugins/devicelock/devicelock.svg
 
 devicelockplugin.path = /usr/share/glacier-settings/qml/plugins/devicelock
 
