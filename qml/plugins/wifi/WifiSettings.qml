@@ -24,6 +24,7 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
+import Nemo.Dialogs 1.0
 
 import "../../components"
 
@@ -67,6 +68,8 @@ Page {
 
         onErrorReported: {
             console.log("Got error from model: " + error);
+            failDialog.subLabelText = error;
+            failDialog.open();
         }
     }
 
@@ -74,21 +77,38 @@ Page {
         networkingModel.networkName.text = modelData.name;
     }
 
+    Spinner {
+        id: spinner
+        anchors.centerIn: parent
+        enabled: true;
+        visible: false;
+    }
+
     SettingsColumn{
+        visible: !spinner.visible
+
+        Label{
+            id: currentModeLabel
+            text: qsTr("Password: ")
+        }
+
         TextField{
             id: passphrase
             text: modelData.passphrase
+            echoMode: TextInput.Password
+            width: parent.width
         }
 
         Button{
             id: connectButton
             height: Theme.itemHeightSmall
+            width: parent.width
 
             onClicked: {
                 modelData.passphrase = passphrase.text;
                 modelData.requestConnect();
                 networkingModel.networkName.text = modelData.name;
-                pageStack.pop();
+                spinner.visible = true;
             }
             text: qsTr("Connect")
         }
@@ -98,6 +118,31 @@ Page {
         target: modelData
         onConnectRequestFailed: {
             console.log(error)
+            failDialog.subLabelText = error;
+            failDialog.open();
+            spinner.visible = false;
+        }
+
+        onConnectedChanged: {
+            if(connected) {
+                pageStack.pop();
+                spinner.visible = false;
+            }
+        }
+    }
+
+
+    Dialog{
+        id: failDialog
+        acceptText: qsTr("Ok")
+        headingText: qsTr("Connection failed")
+
+        inline: false
+
+        icon: "image://theme/exclamation-triangle"
+
+        onAccepted: {
+            failDialog.close();
         }
     }
 }

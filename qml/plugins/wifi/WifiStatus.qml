@@ -57,10 +57,10 @@ Page {
                 model: ListModel{
                     id: methodModel
                     ListElement{
-                        name: "DHCP"
+                        name: qsTr("DHCP")
                     }
                     ListElement{
-                        name: "Manual"
+                        name: qsTr("Manual")
                     }
                 }
 
