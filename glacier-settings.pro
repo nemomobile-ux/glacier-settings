@@ -110,6 +110,12 @@ devicelockplugin.files = qml/plugins/devicelock/devicelock.qml \
 
 devicelockplugin.path = /usr/share/glacier-settings/qml/plugins/devicelock
 
+
+mobileplugin.files = qml/plugins/mobile/mobile.qml \
+                     qml/plugins/mobile/mobile.svg
+
+mobileplugin.path = /usr/share/glacier-settings/qml/plugins/mobile
+
 languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
 
@@ -124,7 +130,8 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/about/about.json\
                       qml/plugins/keyboard/keyboard.json \
                       qml/plugins/usb/usb.json \
-                      qml/plugins/devicelock/devicelock.json
+                      qml/plugins/devicelock/devicelock.json \
+                      qml/plugins/mobile/mobile.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -150,7 +157,8 @@ INSTALLS += target \
             keyboardplugin \
             usbplugin \
             devicelockplugin \
-            service
+            service \
+            mobileplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -190,4 +198,7 @@ DISTFILES += \
     qml/plugins/datetime/datetime.svg \
     qml/plugins/usb/usb.json \
     qml/plugins/usb/usb.qml \
-    qml/plugins/usb/usb.svg
+    qml/plugins/usb/usb.svg \
+    qml/plugins/mobile/mobile.qml \
+    qml/plugins/mobile/mobile.json \
+    qml/plugins/mobile/mobile.svg
