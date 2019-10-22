@@ -38,12 +38,37 @@ Page {
         title: qsTr("Bluetooth")
     }
 
-    property QtObject _adapter: _bluetoothManager && _bluetoothManager.usableAdapter
     property QtObject _bluetoothManager: BluezQt.Manager
+    property QtObject _adapter: _bluetoothManager.usableAdapter
 
     TechnologyModel {
         id: bluetoothModel
         name: "bluetooth"
+
+        onPoweredChanged: {
+            bluetoothTimer.stop();
+            columnCheckBox.indeterminate = false
+            columnCheckBox.checked = bluetoothModel.powered
+
+            if(powered) {
+                _adapter.startDiscovery()
+            }
+        }
+    }
+
+    BluezQt.DevicesModel {
+        id: bluetoothDevicesModel
+    }
+
+
+    Timer{
+        id: bluetoothTimer
+        interval: 5000
+        repeat: false
+        onTriggered: {
+            columnCheckBox.indeterminate = false
+            columnCheckBox.checked = bluetoothModel.powered
+        }
     }
 
     SettingsColumn{
@@ -74,7 +99,9 @@ Page {
                     verticalCenter: nameLabel.verticalCenter
                 }
                 onClicked: {
-                    bluetoothModel.setPowered(columnCheckBox.checked)
+                    bluetoothModel.powered = columnCheckBox.checked
+                    columnCheckBox.indeterminate = true
+                    bluetoothTimer.start()
                 }
             }
         }
@@ -135,6 +162,43 @@ Page {
                     _adapter.discoverable = checked;
                 }
             }
+        }
+
+        Rectangle{
+            width: parent.width
+            height: childrenRect.height
+            color: "transparent"
+
+            Text{
+                id: aviableLabel
+                text: qsTr("Aviable devices:")
+                color: Theme.textColor
+                font.pixelSize: Theme.fontSizeLarge
+
+                anchors{
+                    left: parent.left
+                }
+            }
+        }
+
+        Button{
+            id: startDiscovery
+            text: (_adapter.discovering) ? qsTr("Stop search") : qsTr("Search discovery")
+
+            onClicked: {
+                if (_adapter.discovering) {
+                    _adapter.stopDiscovery()
+                } else {
+                    _adapter.startDiscovery()
+                }
+            }
+        }
+    }
+
+    Connections{
+        target: _adapter
+        onDeviceFound: {
+            console.log("*** Remote device found:" + device)
         }
     }
 }
