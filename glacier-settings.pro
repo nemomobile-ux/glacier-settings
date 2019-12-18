@@ -98,6 +98,10 @@ keyboardplugin.files =  qml/plugins/keyboard/keyboard.qml \
 
 keyboardplugin.path = /usr/share/glacier-settings/qml/plugins/keyboard
 
+nfcplugin.files =  qml/plugins/nfc/nfc.qml \
+                   qml/plugins/nfc/nfc.svg
+
+nfcplugin.path = /usr/share/glacier-settings/qml/plugins/nfc
 
 usbplugin.files = qml/plugins/usb/usb.qml \
                   qml/plugins/usb/usb.svg
@@ -125,9 +129,10 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/display/display.json \
                       qml/plugins/datetime/datetime.json \
                       qml/plugins/wifi/wifi.json \
-                      qml/plugins/gps/gps.json\
-                      qml/plugins/language/language.json\
-                      qml/plugins/about/about.json\
+                      qml/plugins/gps/gps.json \
+                      qml/plugins/nfc/nfc.json \
+                      qml/plugins/language/language.json \
+                      qml/plugins/about/about.json \
                       qml/plugins/keyboard/keyboard.json \
                       qml/plugins/usb/usb.json \
                       qml/plugins/devicelock/devicelock.json \
@@ -158,7 +163,8 @@ INSTALLS += target \
             usbplugin \
             devicelockplugin \
             service \
-            mobileplugin
+            mobileplugin \
+            nfcplugin
 
 DISTFILES += \
     qml/plugins/example/example.qml \
@@ -169,6 +175,7 @@ DISTFILES += \
     qml/plugins/developermode/developermode.json \
     qml/plugins/display/display.qml \
     qml/plugins/display/display.json \
+    qml/plugins/nfc.qml \
     qml/plugins/wifi/wifi.qml \
     qml/plugins/wifi/wifi.json \
     qml/plugins/wifi/WifiSettings.qml \
@@ -201,4 +208,7 @@ DISTFILES += \
     qml/plugins/usb/usb.svg \
     qml/plugins/mobile/mobile.qml \
     qml/plugins/mobile/mobile.json \
-    qml/plugins/mobile/mobile.svg
+    qml/plugins/mobile/mobile.svg \
+    qml/plugins/nfc/nfc.qml \
+    qml/plugins/nfc/nfc.json \
+    qml/plugins/nfc/nfc.svg
