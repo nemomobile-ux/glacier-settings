@@ -14,7 +14,7 @@ Source0:    %{name}-%{version}.tar.bz2
 
 Requires: nemo-qml-plugin-systemsettings >= 0.2.30
 Requires: libqofonoext-declarative
-Requires: nemo-qml-plugin-settings >= 0.5.35
+Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
 Requires: connman-qt5-declarative
 Requires: mapplauncherd-booster-nemomobile
@@ -45,7 +45,7 @@ This plug-in represents access to the settings of developermode
 %package bluez4
 Summary: bluez4 plugin of glacier settings
 Requires: %{name}
-Requires: kf5bluezqt-bluez4-declarative
+Requires: kf5bluezqt-declarative
 
 %description bluez4
 This plug-in provide bluetooth configuration for bluez4 based devices

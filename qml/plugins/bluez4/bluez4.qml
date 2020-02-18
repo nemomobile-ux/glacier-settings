@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2020 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -58,6 +58,7 @@ Page {
 
     BluezQt.DevicesModel {
         id: bluetoothDevicesModel
+        filters: BluezQt.DevicesModelPrivate.UnpairedDevices
     }
 
 
@@ -73,36 +74,18 @@ Page {
 
     SettingsColumn{
         id: bluetoothColumn
+        width: parent.width
+        height: parent.height
 
-        Rectangle{
-            id: bluetoothEnable
-            width: parent.width
-            height: childrenRect.height
+        CheckBox {
+            id: columnCheckBox
+            checked: bluetoothModel.powered
+            text: qsTr("Enable Bluetooth")
 
-            color: "transparent"
-
-            Label {
-                id: nameLabel
-                text: qsTr("Enable Bluetooth")
-                anchors {
-                    left: bluetoothEnable.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
-            }
-
-            CheckBox {
-                id: columnCheckBox
-                checked: bluetoothModel.powered
-                anchors {
-                    right: bluetoothEnable.right
-                    verticalCenter: nameLabel.verticalCenter
-                }
-                onClicked: {
-                    bluetoothModel.powered = columnCheckBox.checked
-                    columnCheckBox.indeterminate = true
-                    bluetoothTimer.start()
-                }
+            onClicked: {
+                bluetoothModel.powered = columnCheckBox.checked
+                columnCheckBox.indeterminate = true
+                bluetoothTimer.start()
             }
         }
 
@@ -111,6 +94,8 @@ Page {
             id: bluetoothNameLabel
             text: qsTr("Device name");
             font.bold: true
+
+            visible: bluetoothModel.powered
         }
 
         TextField {
@@ -120,6 +105,7 @@ Page {
             width: parent.width
 
             font.pixelSize: Theme.fontSizeLarge
+            visible: bluetoothModel.powered
 
             onEditingFinished: {
                 if (_adapter) {
@@ -133,57 +119,75 @@ Page {
             }
         }
 
-        Rectangle{
+        CheckBox {
+            id: visibilityCheckBox
+            checked: bluetoothModel.powered
+            visible: bluetoothModel.powered
+            text: qsTr("Visibility")
+
+            onClicked: {
+                if (!_adapter) {
+                    return;
+                }
+                _adapter.discoverable = checked;
+            }
+        }
+
+        Text{
+            id: aviableLabel
+            text: qsTr("Aviable devices:")
+            color: Theme.textColor
+            font.pixelSize: Theme.fontSizeLarge
+
+            visible: bluetoothModel.powered
+
+            anchors{
+                left: parent.left
+            }
+        }
+
+        ListView {
+            model: bluetoothDevicesModel
             width: parent.width
             height: childrenRect.height
-            color: "transparent"
 
-            Label{
-                id: visibilityLabel
-                text: qsTr("Visibility")
-                anchors{
-                    left: parent.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
-            }
+            clip: true
 
-            CheckBox {
-                id: visibilityCheckBox
-                checked: bluetoothModel.powered
-                anchors{
-                    right: parent.right
-                    verticalCenter: visibilityLabel.verticalCenter
-                }
-                onClicked: {
-                    if (!_adapter) {
-                        return;
+            visible: bluetoothModel.powered
+
+            delegate: ListViewItemWithActions {
+                id: item
+                label: model.FriendlyName
+                description: model.Address
+                width: parent.width
+                height: Theme.itemHeightLarge
+                showNext: false
+                icon: formatIcon(model.Type)
+
+                actions:[
+                    ActionButton {
+                        iconSource: model.Connected ? "image://theme/chain-broken" : "image://theme/link"
+                        onClicked: {
+                            if(model.Connected) {
+                                //disconect
+
+                            } else {
+                                //connect
+
+                            }
+                        }
                     }
-                    _adapter.discoverable = checked;
-                }
+                ]
+
             }
         }
 
-        Rectangle{
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
-
-            Text{
-                id: aviableLabel
-                text: qsTr("Aviable devices:")
-                color: Theme.textColor
-                font.pixelSize: Theme.fontSizeLarge
-
-                anchors{
-                    left: parent.left
-                }
-            }
-        }
 
         Button{
             id: startDiscovery
             text: (_adapter.discovering) ? qsTr("Stop search") : qsTr("Search discovery")
+            visible: bluetoothModel.powered
+            width: parent.width
 
             onClicked: {
                 if (_adapter.discovering) {
@@ -195,10 +199,60 @@ Page {
         }
     }
 
-    Connections{
-        target: _adapter
-        onDeviceFound: {
-            console.log("*** Remote device found:" + device)
+    function formatIcon(devType) {
+        /* Aviable types
+        0  - Phone,
+        1  - Modem,
+        2  - Computer,
+        3  - Network,
+        4  - Headset,
+        5  - Headphones,
+        6  - AudioVideo,
+        7  - Keyboard,
+        8  - Mouse,
+        9  - Joypad,
+        10 - Tablet,
+        11 - Peripheral,
+        12 - Camera,
+        13 - Printer,
+        14 - Imaging,
+        15 - Wearable,
+        16 - Toy,
+        17 - Health,
+        18 - Uncategorized
+         */
+        switch(devType){
+        case 0:
+        case 1:
+        case 10:
+            return "image://theme/mobile"
+        case 2:
+            return "image://theme/descktop"
+        case 3:
+            return "image://theme/globe"
+        case 4:
+        case 5:
+            return "image://theme/headphones"
+        case 7:
+            return "image://theme/keyboard-o"
+        case 8:
+            return "image://theme/mouse-pointer"
+        case 9:
+        case 16:
+            return "image://theme/gamepad"
+        case 11:
+        case 13:
+            return "image://theme/printer"
+        case 12:
+        case 14:
+            return "image://theme/camera"
+        case 15:
+            return "image://theme/clock-o"
+        case 17:
+            return "image://theme/medkit"
+        default:
+            return "image://theme/circle"
         }
+
     }
 }
