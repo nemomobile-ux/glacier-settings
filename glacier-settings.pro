@@ -52,10 +52,10 @@ exampleplugin.files = qml/plugins/example/example.qml\
                       qml/plugins/example/example.svg
 exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
-bluez4plugin.files = qml/plugins/bluez4/bluez4.qml\
-                     qml/plugins/bluez4/BtDevisesList.qml \
-                        qml/plugins/bluez4/bluez4.svg
-bluez4plugin.path = /usr/share/glacier-settings/qml/plugins/bluez4
+bluezplugin.files = qml/plugins/bluez/bluez.qml\
+                     qml/plugins/bluez/BtDevisesList.qml \
+                        qml/plugins/bluez/bluez.svg
+bluezplugin.path = /usr/share/glacier-settings/qml/plugins/bluez
 
 developermodeplugin.files = qml/plugins/developermode/developermode.qml\
                             qml/plugins/developermode/developermode.svg
@@ -125,7 +125,7 @@ languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
 
 pluginconfigs.files = qml/plugins/example/example.json \
-                      qml/plugins/bluez4/bluez4.json \
+                      qml/plugins/bluez/bluez.json \
                       qml/plugins/developermode/developermode.json \
                       qml/plugins/display/display.json \
                       qml/plugins/datetime/datetime.json \
@@ -150,7 +150,7 @@ INSTALLS += target \
             privileges \
             pluginconfigs \
             exampleplugin \
-            bluez4plugin \
+            bluezplugin \
             developermodeplugin \
             displayplugin \
             datetimeplugin \
@@ -168,10 +168,10 @@ INSTALLS += target \
             nfcplugin
 
 DISTFILES += \
+    qml/plugins/bluez/bluez.json \
+    qml/plugins/bluez/bluez.qml \
     qml/plugins/example/example.qml \
     qml/plugins/example/example.json \
-    qml/plugins/bluez4/bluez4.json \
-    qml/plugins/bluez4/bluez4.qml \
     qml/plugins/developermode/developermode.qml \
     qml/plugins/developermode/developermode.json \
     qml/plugins/display/display.qml \

@@ -42,13 +42,13 @@ Requires: %{name}
 %description developermode
 This plug-in represents access to the settings of developermode
 
-%package bluez4
-Summary: bluez4 plugin of glacier settings
+%package bluez
+Summary: bluez plugin of glacier settings
 Requires: %{name}
 Requires: kf5bluezqt-declarative
 
-%description bluez4
-This plug-in provide bluetooth configuration for bluez4 based devices
+%description bluez
+This plug-in provide bluetooth configuration for bluez
 
 %package keyboard
 Summary: Keyboard plugin of glacier settings
@@ -92,8 +92,8 @@ desktop-file-install --delete-original       \
 %exclude %{_datadir}/%{name}/plugins/developermode.json
 %exclude %{_datadir}/%{name}/plugins/example.json
 %exclude %{_datadir}/%{name}/qml/plugins/example
-%exclude %{_datadir}/%{name}/plugins/bluez4.json
-%exclude %{_datadir}/%{name}/qml/plugins/bluez4
+%exclude %{_datadir}/%{name}/plugins/bluez.json
+%exclude %{_datadir}/%{name}/qml/plugins/bluez
 %exclude %{_datadir}/%{name}/plugins/keyboard.json
 %exclude %{_datadir}/%{name}/qml/plugins/keyboard
 
@@ -109,9 +109,9 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}/qml/plugins/example
 %{_datadir}/%{name}/plugins/example.json
 
-%files bluez4
-%{_datadir}/%{name}/plugins/bluez4.json
-%{_datadir}/%{name}/qml/plugins/bluez4
+%files bluez
+%{_datadir}/%{name}/plugins/bluez.json
+%{_datadir}/%{name}/qml/plugins/bluez
 
 %files keyboard
 %{_datadir}/%{name}/plugins/keyboard.json
