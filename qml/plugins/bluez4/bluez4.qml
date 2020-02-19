@@ -57,8 +57,13 @@ Page {
     }
 
     BluezQt.DevicesModel {
-        id: bluetoothDevicesModel
+        id: bluetoothDevicesNearbyModel
         filters: BluezQt.DevicesModelPrivate.UnpairedDevices
+    }
+
+    BluezQt.DevicesModel {
+        id: bluetoothDevicesPairedModel
+        filters: BluezQt.DevicesModelPrivate.PairedDevices
     }
 
 
@@ -134,52 +139,42 @@ Page {
         }
 
         Text{
-            id: aviableLabel
-            text: qsTr("Aviable devices:")
+            id: pairedLabel
+            text: qsTr("Paired devices:")
             color: Theme.textColor
             font.pixelSize: Theme.fontSizeLarge
 
-            visible: bluetoothModel.powered
+            visible: bluetoothModel.powered && pairedListView.count > 0
 
             anchors{
                 left: parent.left
             }
         }
 
-        ListView {
-            model: bluetoothDevicesModel
-            width: parent.width
-            height: childrenRect.height
-
-            clip: true
-
+        BtDevisesList{
+            id: pairedListView
+            model: bluetoothDevicesPairedModel
             visible: bluetoothModel.powered
+        }
 
-            delegate: ListViewItemWithActions {
-                id: item
-                label: model.FriendlyName
-                description: model.Address
-                width: parent.width
-                height: Theme.itemHeightLarge
-                showNext: false
-                icon: formatIcon(model.Type)
 
-                actions:[
-                    ActionButton {
-                        iconSource: model.Connected ? "image://theme/chain-broken" : "image://theme/link"
-                        onClicked: {
-                            if(model.Connected) {
-                                //disconect
+        Text{
+            id: aviableLabel
+            text: qsTr("Devices nearby:")
+            color: Theme.textColor
+            font.pixelSize: Theme.fontSizeLarge
 
-                            } else {
-                                //connect
+            visible: bluetoothModel.powered && nearbyListView.count > 0
 
-                            }
-                        }
-                    }
-                ]
-
+            anchors{
+                left: parent.left
             }
+        }
+
+        BtDevisesList{
+            id: nearbyListView
+            model: bluetoothDevicesNearbyModel
+            visible: bluetoothModel.powered
         }
 
 

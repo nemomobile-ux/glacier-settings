@@ -53,6 +53,7 @@ exampleplugin.files = qml/plugins/example/example.qml\
 exampleplugin.path = /usr/share/glacier-settings/qml/plugins/example
 
 bluez4plugin.files = qml/plugins/bluez4/bluez4.qml\
+                     qml/plugins/bluez4/BtDevisesList.qml \
                         qml/plugins/bluez4/bluez4.svg
 bluez4plugin.path = /usr/share/glacier-settings/qml/plugins/bluez4
 
