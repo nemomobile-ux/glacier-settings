@@ -69,32 +69,6 @@ Page {
         }
 
         Rectangle{
-            id: remoteLoginEnabled
-            width: parent.width
-            height: childrenRect.height
-
-            color: "transparent"
-
-            Label{
-                id: remoteLoginEnabledLabel
-                text: qsTr("Enable remote login");
-                anchors{
-                    left: parent.left
-                }
-            }
-
-            CheckBox{
-                id: remoteLoginEnabledCheck
-                checked: devModeSettings.remoteLoginEnabled
-                anchors{
-                    right: parent.right
-                    verticalCenter: remoteLoginEnabledLabel.verticalCenter
-                }
-                onClicked: devModeSettings.setRemoteLogin(checked)
-            }
-        }
-
-        Rectangle{
             id: wlanIpAddress
             width: parent.width
             height: childrenRect.height
