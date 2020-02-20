@@ -26,6 +26,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import MeeGo.Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
 import Nemo.Ssu 1.1 as Ssu
+import Nemo.DBus 2.0
 
 import "../../components"
 
@@ -54,6 +55,13 @@ Page {
                 _adapter.startDiscovery()
             }
         }
+    }
+
+    DBusInterface {
+        id: btInterface
+        service: "org.glacier.lipstick"
+        path: "/bluetooth"
+        iface: "org.glacier.lipstick"
     }
 
     BluezQt.DevicesModel {

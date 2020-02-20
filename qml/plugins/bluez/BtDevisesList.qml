@@ -38,6 +38,12 @@ ListView {
         showNext: false
         icon: formatIcon(model.Type)
 
+        onClicked: {
+            if(model.Paired) {
+                btInterface.call("connectDevice", [Address])
+            }
+        }
+
         actions:[
             ActionButton {
                 iconSource: model.Paired ? "image://theme/chain-broken" : "image://theme/link"
@@ -47,16 +53,17 @@ ListView {
                         return
                     }
 
-                    if(model.paired) {
+                    if(model.Paired) {
                         //disconect
-                        device.cancelPairing();
+                        console.log("UNPAIR!!!")
+                        btInterface.call("unPair", [Address])
                     } else {
                         //connect
-                        device.pair()
+                        console.log("PAIR!!!")
+                        btInterface.call("pair", [Address])
                     }
                 }
             }
         ]
-
     }
 }
