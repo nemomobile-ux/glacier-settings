@@ -56,10 +56,26 @@ Page {
 
         delegate: ListViewItemWithActions{
             id: mFromList
-            label: path//serviceProviderName
+            label: qsTr("Unknow")
             description: model.enabled ? "Enabled" : "Disabled"
             iconVisible: false
             showNext: model.enabled
+
+            OfonoNetworkRegistration{
+                id: cellularRegistration
+                modemPath: path
+
+                onCurrentOperatorPathChanged: {
+                    operator.operatorPath = currentOperatorPath
+                }
+            }
+
+            OfonoNetworkOperator{
+                id: operator
+                onNameChanged: {
+                    mFromList.label = name
+                }
+            }
 
             actions:[
                 ActionButton {
@@ -73,6 +89,8 @@ Page {
                     }
                 }
             ]
+
+
         }
     }
 }
