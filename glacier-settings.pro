@@ -121,6 +121,11 @@ mobileplugin.files = qml/plugins/mobile/mobile.qml \
 
 mobileplugin.path = /usr/share/glacier-settings/qml/plugins/mobile
 
+powersaveplugin.files = qml/plugins/powersave/powersave.qml \
+                        qml/plugins/powersave/powersave.svg
+
+powersaveplugin.path = /usr/share/glacier-settings/qml/plugins/powersave
+
 languageconfigs.files = configs/supported-languages/*
 languageconfigs.path = /usr/share/jolla-supported-languages/
 
@@ -137,7 +142,8 @@ pluginconfigs.files = qml/plugins/example/example.json \
                       qml/plugins/keyboard/keyboard.json \
                       qml/plugins/usb/usb.json \
                       qml/plugins/devicelock/devicelock.json \
-                      qml/plugins/mobile/mobile.json
+                      qml/plugins/mobile/mobile.json \
+                      qml/plugins/powersave/powersave.json
 
 pluginconfigs.path = /usr/share/glacier-settings/plugins
 
@@ -165,7 +171,8 @@ INSTALLS += target \
             devicelockplugin \
             service \
             mobileplugin \
-            nfcplugin
+            nfcplugin \
+            powersaveplugin
 
 DISTFILES += \
     qml/plugins/bluez/bluez.json \
@@ -177,6 +184,9 @@ DISTFILES += \
     qml/plugins/display/display.qml \
     qml/plugins/display/display.json \
     qml/plugins/nfc.qml \
+    qml/plugins/powersave/powersave.json \
+    qml/plugins/powersave/powersave.qml \
+    qml/plugins/powersave/powersave.svg \
     qml/plugins/wifi/wifi.qml \
     qml/plugins/wifi/wifi.json \
     qml/plugins/wifi/WifiSettings.qml \

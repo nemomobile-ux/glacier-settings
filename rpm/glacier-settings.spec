@@ -19,6 +19,7 @@ Requires: qt5-qtquickcontrols-nemo >= 5.2.0
 Requires: connman-qt5-declarative
 Requires: mapplauncherd-booster-nemomobile
 Requires: libglacierapp
+Requires: libmce-qt5-declarative
 
 #for gps plugin
 Requires: qt5-qtdeclarative-import-positioning
