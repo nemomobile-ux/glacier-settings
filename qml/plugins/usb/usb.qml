@@ -35,19 +35,43 @@ Page {
         title: qsTr("USB")
     }
 
+    ListModel{
+        id: modesModel
+        ListElement{
+            label: qsTr("Ask")
+            mode: "ask"
+        }
+        ListElement {
+            label: qsTr("Connection sharing")
+            mode: "connection_sharing"
+        }
+        ListElement {
+            label: qsTr("MTP")
+            mode: "mtp_mode"
+        }
+        ListElement{
+            label: qsTr("Charging only")
+            mode: "charging_only"
+        }
+        ListElement{
+            label: qsTr("Developer mode")
+            mode: "developer_mode"
+        }
+    }
+
     USBSettings{
         id: usbSettings
 
         onSupportedModesChanged: {
-            for(var i = 0; i <= usbSettings.supportedModes.length; i++) {
-                if(usbSettings.supportedModes[i] === usbSettings.currentMode) {
+            for(var i = 0; i <= modesModel.count-1; i++) {
+                if(modesModel.get(i).mode === usbSettings.configMode) {
                     usbModeRoller.currentIndex = i;
                 }
             }
         }
 
         onCurrentModeChanged: {
-            currentModeLabel.text = qsTr("Current mode: ") + formatMode(usbSettings.currentMode)
+            currentModeLabel.text = qsTr("Usb mode: ") + formatMode(usbSettings.configMode)
         }
     }
 
@@ -69,7 +93,7 @@ Page {
 
             Label{
                 id: currentModeLabel
-                text: qsTr("Current mode: ") + formatMode(usbSettings.currentMode)
+                text: qsTr("Usb mode: ") + formatMode(usbSettings.configMode)
             }
 
             GlacierRoller {
@@ -77,14 +101,14 @@ Page {
                 width: parent.width
 
                 clip: true
-                model: usbSettings.availableModes
+                model: modesModel
                 label: qsTr("Select USB mode")
                 delegate: GlacierRollerItem{
                     id: item
                     Text{
                         height: usbModeRoller.itemHeight
                         verticalAlignment: Text.AlignVCenter
-                        text: formatMode(modelData)
+                        text: label
                         color: Theme.textColor
                         font.pixelSize: Theme.fontSizeMedium
                         font.bold: (usbModeRoller.activated && usbModeRoller.currentIndex === index)
@@ -92,28 +116,28 @@ Page {
                 }
 
                 onCurrentIndexChanged: {
-                    usbSettings.currentMode = usbSettings.supportedModes[currentIndex]
+                    usbSettings.configMode = modesModel.get(currentIndex).mode
                 }
             }
         }
     }
 
     function formatMode(mode) {
-        switch(mode) {
-        case "ask":
-            return qsTr("Always ask")
-        case "mtp_mode":
-            return qsTr("MTP")
-        case "charging_only":
-            return qsTr("Chagring only")
-        case "connection_sharing":
-            return qsTr("Connection sharing")
-        case "developer_mode":
-            return qsTr("Developer mode")
-        case "busy":
-            return qsTr("Busy")
-        default:
-            return mode
+            switch(mode) {
+            case "ask":
+                return qsTr("Always ask")
+            case "mtp_mode":
+                return qsTr("MTP")
+            case "charging_only":
+                return qsTr("Chagring only")
+            case "connection_sharing":
+                return qsTr("Connection sharing")
+            case "developer_mode":
+                return qsTr("Developer mode")
+            case "busy":
+                return qsTr("Busy")
+            default:
+                return mode
+            }
         }
-    }
 }
