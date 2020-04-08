@@ -6,7 +6,7 @@
 Name:       glacier-settings
 Summary:    Glacier Settings
 Version:    0.1
-Release:    1
+Release:    3
 Group:      System/Settings
 License:    LGPL
 URL:        https://github.com/nemomobile-ux/glacier-settings
@@ -31,6 +31,7 @@ Requires: qt5-qtdeclarative-import-positioning
 Requires: qt5-plugin-position-geoclue
 %endif
 
+BuildRequires:  cmake
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
@@ -84,12 +85,19 @@ This is just example plugin
 %setup -q -n %{name}-%{version}
 
 %build
-%qtc_qmake5
-%qtc_make %{?_smp_mflags}
+mkdir build
+cd build
+cmake \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-DCMAKE_VERBOSE_MAKEFILE=ON \
+	..
+cmake --build .
 
 %install
+cd build
 rm -rf %{buildroot}
-%qmake5_install
+DESTDIR=%{buildroot} cmake --build . --target install
 
 %lrelease %{buildroot}%{_datadir}/%{name}/translations/*.ts
 
