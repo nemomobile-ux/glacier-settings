@@ -1,5 +1,5 @@
 import QtQuick 2.6
-import org.nemomobile.dbus 2.0
+import Nemo.DBus 2.0
 
 Item {
     id: rootObject
