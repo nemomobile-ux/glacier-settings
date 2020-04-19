@@ -220,7 +220,7 @@ Rectangle {
 
     QuickButton{
         id: airplaneButton
-
+        activated: connMgr.instance.offlineMode
         icon: "../img/plane.svg"
 
         anchors{
@@ -231,14 +231,7 @@ Rectangle {
         }
 
         onClicked: {
-            if (airplaneButton.activated)
-            {
-                connMgr.instance.offlineMode = false;
-            }
-            else
-            {
-                connMgr.instance.offlineMode = true;
-            }
+            connMgr.instance.offlineMode = !connMgr.instance.offlineMode;
         }
     }
 
