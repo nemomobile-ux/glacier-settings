@@ -25,6 +25,9 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.ofono 1.0
 
 import MeeGo.QOfono 0.2
+import MeeGo.Connman 0.2
+
+import Nemo.Connectivity 1.0
 
 import "../../components"
 
@@ -41,25 +44,38 @@ Page {
         id: simModel
     }
 
+    OfonoSimInfo{
+        id: simInfo
+
+        onSubscriberIdentityChanged: {
+            mobileData.defaultDataSim = subscriberIdentity
+        }
+    }
+
     OfonoModemListModel{
         id: modemModel
     }
 
-    ListView{
-        id: languageList
-        width: parent.width
-        height: parent.height
+    MobileDataConnection{
+        id: mobileData
+        useDefaultModem: true
+    }
 
-        model:  modemModel//simModel
+    ListView{
+        id: simList
+        width: parent.width
+        height: Theme.itemHeightLarge*modemModel.count
+
+        model:  modemModel
 
         clip: true
 
         delegate: ListViewItemWithActions{
             id: mFromList
-            label: qsTr("Unknow")
-            description: model.enabled ? "Enabled" : "Disabled"
+            label: model.simPresent ? qsTr("Unknow") : qsTr("No sim")
+            description: model.enabled ? qsTr("Enabled") : qsTr("Disabled")
             iconVisible: false
-            showNext: model.enabled
+            showNext: model.enabled && model.simPresent
 
             OfonoNetworkRegistration{
                 id: cellularRegistration
@@ -87,8 +103,39 @@ Page {
                             model.enabled = true
                         }
                     }
+                },
+                ActionButton {
+                    iconSource: "image://theme/globe"
+                    onClicked: {
+                        simInfo.modemPath = path
+                        console.log(path)
+                    }
                 }
             ]
+        }
+    }
+
+    CheckBox {
+        id: autoConnectCheckBox
+        width: parent.width
+        anchors.top: simList.bottom
+        checked: mobileData.autoConnect
+        text: qsTr("Connect to internet")
+
+        onClicked: {
+            mobileData.autoConnect = !mobileData.autoConnect
+        }
+    }
+
+    CheckBox {
+        id: roamingCheckBox
+        width: parent.width
+        anchors.top: autoConnectCheckBox.bottom
+        checked: mobileData.roamingAllowed
+        text: qsTr("Enable data roaming")
+
+        onClicked: {
+            mobileData.roamingAllowed = !mobileData.roamingAllowed
         }
     }
 }
