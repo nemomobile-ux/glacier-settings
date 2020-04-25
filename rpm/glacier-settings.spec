@@ -12,7 +12,7 @@ License:    LGPL
 URL:        https://github.com/nemomobile-ux/glacier-settings
 Source0:    %{name}-%{version}.tar.bz2
 
-Requires: nemo-qml-plugin-systemsettings >= 0.2.30
+Requires: nemo-qml-plugin-systemsettings >= 0.5.38
 Requires: libqofonoext-declarative
 Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
@@ -20,6 +20,7 @@ Requires: connman-qt5-declarative
 Requires: mapplauncherd-booster-nemomobile
 Requires: libglacierapp
 Requires: libmce-qt5-declarative
+Requires: nemo-qml-plugin-connectivity
 
 #for gps plugin
 Requires: qt5-qtdeclarative-import-positioning
@@ -47,6 +48,7 @@ This plug-in represents access to the settings of developermode
 Summary: bluez plugin of glacier settings
 Requires: %{name}
 Requires: kf5bluezqt-declarative
+Requires: ssu-declarative
 
 %description bluez
 This plug-in provide bluetooth configuration for bluez
