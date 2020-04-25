@@ -25,7 +25,8 @@ OTHER_FILES +=rpm/glacier-settings.spec \
     privileges
 
 TRANSLATIONS += translations/glacier-settings_en.ts\
-                translations/glacier-settings_ru.ts
+                translations/glacier-settings_ru.ts \
+                translations/glacier-settings_cs.ts
 
 i18n_files.files = translations
 i18n_files.path = /usr/share/$$TARGET
@@ -198,8 +199,7 @@ DISTFILES += \
     qml/plugins/language/language.qml \
     qml/plugins/language/language.json \
     qml/plugins/language/language.svg \
-    translations/glacier-settings_en.ts \
-    translations/glacier-settings_ru.ts \
+    translations/* \
     qml/plugins/about/about.qml \
     qml/plugins/about/about.json \
     qml/plugins/about/about.svg \
