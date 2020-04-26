@@ -56,7 +56,7 @@ This plug-in provide bluetooth configuration for bluez
 %package keyboard
 Summary: Keyboard plugin of glacier settings
 Requires: %{name}
-Requires: maliit-plugins
+Requires: maliit-plugins >= 0.99.3
 Requires: nemo-qml-plugin-configuration-qt5
 
 %description keyboard
