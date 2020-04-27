@@ -17,7 +17,7 @@ Requires: libqofonoext-declarative
 Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0
 Requires: connman-qt5-declarative
-Requires: mapplauncherd-booster-nemomobile
+Requires: mapplauncherd-booster-nemomobile >= 0.2.0
 Requires: libglacierapp
 Requires: libmce-qt5-declarative
 Requires: nemo-qml-plugin-connectivity
