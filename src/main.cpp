@@ -38,13 +38,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     setenv("QT_QUICK_CONTROLS_STYLE", "Nemo", 1);
 
     QGuiApplication *app = GlacierApp::app(argc, argv);
-    QScreen* sc = app->primaryScreen();
-    if(sc){
-        sc->setOrientationUpdateMask(Qt::LandscapeOrientation
-                             | Qt::PortraitOrientation
-                             | Qt::InvertedLandscapeOrientation
-                             | Qt::InvertedPortraitOrientation);
-    }
+    app->setOrganizationName("NemoMobile");
 
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
     qmlRegisterType<SatelliteModel>("org.nemomobile.glacier.settings",1,0,"SatelliteModel");
