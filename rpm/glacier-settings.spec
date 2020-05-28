@@ -13,6 +13,7 @@ URL:        https://github.com/nemomobile-ux/glacier-settings
 Source0:    %{name}-%{version}.tar.bz2
 
 Requires: nemo-qml-plugin-systemsettings >= 0.5.38
+Requires: nemo-qml-plugin-devicelock
 Requires: libqofonoext-declarative
 Requires: nemo-qml-plugin-settings
 Requires: qt5-qtquickcontrols-nemo >= 5.2.0

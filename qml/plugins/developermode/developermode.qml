@@ -24,12 +24,15 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
+import org.nemomobile.devicelock 1.0
 
 
 import "../../components"
 
 Page {
     id: listViewPage
+
+    property bool reqestAllowUnsuportedToken: false
 
     headerTools: HeaderToolsLayout {
         showBackButton: true;
@@ -38,6 +41,29 @@ Page {
 
     DeveloperModeSettings{
         id: devModeSettings
+    }
+
+    DeviceLockSettings {
+        id: deviceLockSettings
+    }
+
+    Authenticator {
+        id: authenticator
+        onAuthenticated: {
+            if(reqestAllowUnsuportedToken) {
+                deviceLockSettings.setSideloadingAllowed(authenticationToken,!deviceLockSettings.sideloadingAllowed)
+                reqestAllowUnsuportedToken = false;
+            }
+        }
+    }
+
+    Connections{
+        target: deviceLockSettings.authorization
+        onChallengeIssued:{
+
+            authenticator.authenticate(deviceLockSettings.authorization.challengeCode,
+                                       deviceLockSettings.authorization.allowedMethods)
+        }
     }
 
     SettingsColumn{
@@ -67,6 +93,45 @@ Page {
                 onClicked: devModeSettings.setDeveloperMode(checked)
             }
         }
+
+        Rectangle{
+            id: allowUntrustedSoftware
+            width: parent.width
+            height: childrenRect.height
+
+            color: "transparent"
+
+            Label{
+                id:allowUntrustedSoftwareLabel
+                text: qsTr("Allow install untrusted software");
+                anchors{
+                    left: parent.left
+                }
+            }
+
+            CheckBox{
+                id: allowUntrustedSoftwareCheck
+                checked: deviceLockSettings.sideloadingAllowed
+                anchors{
+                    right: parent.right
+                    verticalCenter: allowUntrustedSoftwareLabel.verticalCenter
+                }
+                onClicked: {
+                    switch(deviceLockSettings.authorization.status) {
+                    case Authorization.NoChallenge:
+                        reqestAllowUnsuportedToken = true
+                        deviceLockSettings.authorization.requestChallenge()
+                        break
+                    case Authorization.ChallengeIssued:
+                        console.error("ChallengeIssued not suppoted in NEMO now...")
+                        break
+                    default:
+                        console.error("Unsupported auth status")
+                    }
+                }
+            }
+        }
+
 
         Rectangle{
             id: wlanIpAddress
