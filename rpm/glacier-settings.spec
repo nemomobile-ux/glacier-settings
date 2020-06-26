@@ -48,7 +48,7 @@ This plug-in represents access to the settings of developermode
 %package bluez
 Summary: bluez plugin of glacier settings
 Requires: %{name}
-Requires: kf5bluezqt-declarative
+Requires: kf5bluezqt-declarative >= 5.68.0+git1
 Requires: ssu-declarative
 
 %description bluez
