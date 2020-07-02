@@ -147,6 +147,17 @@ bool SettingsModel::loadConfig(QString configFileName)
     }
 }
 
+bool SettingsModel::pluginAviable(QString name)
+{
+    if(name.length() == 0) {
+        return false;
+    }
+
+    QFile pluginConfig(m_pluginsDir+"/"+name+".json");
+
+    return pluginConfig.exists();
+}
+
 QVariant SettingsModel::pluginsInCategory(QString category) const
 {
     QVariantList pluginsInCat;

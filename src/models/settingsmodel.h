@@ -45,6 +45,8 @@ public:
 
     const static QStringList defaultCategories;
 
+    Q_INVOKABLE bool pluginAviable(QString name);
+
 signals:
     void pathChanged();
 

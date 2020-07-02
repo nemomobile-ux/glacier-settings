@@ -41,8 +41,12 @@ ApplicationWindow{
         id: setingService
 
         onOpenSettingsPage: {
-            pageStack.push(Qt.resolvedUrl("plugins/"+plugin+"/"+plugin+".qml"))
-            main.raise()
+            if(settingsModel.pluginAviable(plugin)) {
+                pageStack.push(Qt.resolvedUrl("plugins/"+plugin+"/"+plugin+".qml"))
+                main.raise()
+            } else {
+                console.error("Wrong plugin "+plugin)
+            }
         }
     }
 
