@@ -32,7 +32,13 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  desktop-file-utils
+%if 0%{?fedora}
+%define lrelease lrelease-qt5
+BuildRequires:  qt5-linguist
+%else
+%define lrelease lrelease
 BuildRequires:  qt5-qttools-linguist
+%endif
 BuildRequires:  pkgconfig(glacierapp)
 
 %description
@@ -81,7 +87,7 @@ This is just example plugin
 rm -rf %{buildroot}
 %qmake5_install
 
-lrelease %{buildroot}%{_datadir}/%{name}/translations/*.ts
+%lrelease %{buildroot}%{_datadir}/%{name}/translations/*.ts
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
