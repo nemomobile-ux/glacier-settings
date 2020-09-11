@@ -24,8 +24,12 @@ Requires: libmce-qt5-declarative
 Requires: nemo-qml-plugin-connectivity
 
 #for gps plugin
+%if 0%{?fedora}
+Requires: qt5-qtlocation
+%else
 Requires: qt5-qtdeclarative-import-positioning
 Requires: qt5-plugin-position-geoclue
+%endif
 
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
