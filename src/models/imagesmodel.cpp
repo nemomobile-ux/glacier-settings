@@ -31,8 +31,7 @@ ImagesModel::ImagesModel(QObject *parent) :
 
 void ImagesModel::setPath(QString path)
 {
-    if(m_imagesDir != path)
-    {
+    if(m_imagesDir != path) {
         m_imagesDir = path;
         init();
         emit pathChanged();
@@ -77,9 +76,7 @@ QVariant ImagesModel::data(const QModelIndex &index, int role) const
     QString item = imageList.at(index.row());
 
     if(role == Qt::UserRole)
-    {
         return item;
-    }
 
     return QVariant();
 }

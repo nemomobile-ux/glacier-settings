@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2020 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -68,8 +68,7 @@ SettingsModel::SettingsModel(QObject *parent) :
 
 void SettingsModel::setPath(QString path)
 {
-    if(m_pluginsDir != path)
-    {
+    if(m_pluginsDir != path) {
         m_pluginsDir = path;
         init();
 
@@ -79,23 +78,15 @@ void SettingsModel::setPath(QString path)
 
 int SettingsModel::compareCategories(QString leftCategory, QString rightCategory)
 {
-    if(leftCategory == rightCategory)
-    {
+    if(leftCategory == rightCategory) {
         return 0;
-    }
-    else if(defaultCategories.contains(leftCategory) && defaultCategories.contains(rightCategory))
-    {
+    } else if (defaultCategories.contains(leftCategory) && defaultCategories.contains(rightCategory)) {
         return defaultCategories.indexOf(leftCategory)-defaultCategories.indexOf(rightCategory);
-    }
-    else if(defaultCategories.contains(leftCategory))
-    {
+    } else if(defaultCategories.contains(leftCategory)) {
         return -1;
-    }
-    else
-    {
+    } else {
         return 1;
     }
-
 }
 
 void SettingsModel::init()
@@ -110,16 +101,13 @@ void SettingsModel::init()
     while (it.hasNext ()) {
         const QFileInfo &fileInfo = it.next ();
         qDebug() << "Load " << fileInfo.fileName();
-        if(!loadConfig(m_pluginsDir+fileInfo.fileName()))
-        {
+        if(!loadConfig(m_pluginsDir+fileInfo.fileName())) {
             qWarning() << "Wrong plugin config";
         }
     }
 
     if(rowCount() == 0)
-    {
         qWarning() << "Plugins directory is empty";
-    }
 }
 
 bool SettingsModel::loadConfig(QString configFileName)
@@ -136,22 +124,18 @@ bool SettingsModel::loadConfig(QString configFileName)
         }
     }
 
-    if(configObject.contains("title") && configObject.contains("category") && configObject.contains("path"))
-    {
+    if(configObject.contains("title") && configObject.contains("category") && configObject.contains("path")) {
         m_pluginsData.append(configObject);
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
 
 bool SettingsModel::pluginAviable(QString name)
 {
-    if(name.length() == 0) {
+    if(name.length() == 0)
         return false;
-    }
 
     QFile pluginConfig(m_pluginsDir+"/"+name+".json");
 
@@ -198,12 +182,9 @@ QVariant SettingsModel::data(const QModelIndex &index, int role) const
 
     QVariant item = defaultCategories.at(index.row());
 
-    if(role == Qt::UserRole)
-    {
+    if(role == Qt::UserRole) {
         return item;
-    }
-    else if(role == Qt::UserRole+1)
-    {
+    } else if(role == Qt::UserRole+1) {
         return pluginsInCategory(item.toString()) ;
     }
     return QVariant();

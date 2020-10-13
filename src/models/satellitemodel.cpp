@@ -18,6 +18,7 @@ SatelliteModel::SatelliteModel(QObject *parent) :
         qWarning() << "No satellite data source found. Changing to demo mode.";
         demo = true;
     }
+
     if (!demo) {
         source->setUpdateInterval(3000);
         connect(source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
@@ -164,7 +165,6 @@ void SatelliteModel::setRunning(bool isActive)
             source->stopUpdates();
     }
 
-
     Q_EMIT runningChanged();
 }
 
@@ -239,7 +239,6 @@ void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo> &inf
         return;
 
     int oldEntryCount = knownSatellites.count();
-
 
     QSet<int> satelliteIdsInUpdate;
     foreach (const QGeoSatelliteInfo &info, infos) {
