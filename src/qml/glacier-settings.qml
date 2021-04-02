@@ -56,10 +56,11 @@ ApplicationWindow{
             id: tools
             title: qsTr("Settings")
         }
+
         Flickable{
             id: mainArea
-            height: parent.height-tools.height
-            width: parent.width
+            height: mainPage.height-tools.height
+            width: mainPage.width
 
             contentHeight: content.height
 
@@ -74,6 +75,8 @@ ApplicationWindow{
 
                 Repeater {
                     id: view
+                    width: parent.width
+                    height: childrenRect.height
 
                     model: settingsModel
                     delegate: Rectangle {
@@ -140,6 +143,11 @@ ApplicationWindow{
                     }
                 }
             }
+        }
+
+        ScrollDecorator{
+            id: decorator
+            flickable: mainArea
         }
     }
 }
