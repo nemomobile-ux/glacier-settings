@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2020 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,7 +25,6 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
-import Nemo.Ssu 1.1 as Ssu
 import Nemo.DBus 2.0
 
 import "../../components"
@@ -122,7 +121,7 @@ Page {
 
             onEditingFinished: {
                 if (_adapter) {
-                    var newName = text.length ? text : Ssu.DeviceInfo.displayName(Ssu.DeviceInfo.DeviceModel);
+                    var newName = text.length ? text : _adapter.name
                     if (_adapter.name != newName) {
                         _adapter.name = newName
                     } else {
