@@ -27,6 +27,8 @@ import MeeGo.Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
 import Nemo.DBus 2.0
 
+import org.nemomobile.sortfiltermodel 1.0
+
 import "../../components"
 
 Page {
@@ -64,15 +66,8 @@ Page {
     }
 
     BluezQt.DevicesModel {
-        id: bluetoothDevicesNearbyModel
-        filters: BluezQt.DevicesModelPrivate.UnpairedDevices
+        id: bluetoothDevicesModel
     }
-
-    BluezQt.DevicesModel {
-        id: bluetoothDevicesPairedModel
-        filters: BluezQt.DevicesModelPrivate.PairedDevices
-    }
-
 
     Timer{
         id: bluetoothTimer
@@ -160,7 +155,11 @@ Page {
 
         BtDevisesList{
             id: pairedListView
-            model: bluetoothDevicesPairedModel
+            model: SortFilterModel {
+                sourceModel: bluetoothDevicesModel
+                filterRole: "Paired"
+                filterRegExp: "true"
+            }
             visible: bluetoothModel.powered
         }
 
@@ -180,7 +179,11 @@ Page {
 
         BtDevisesList{
             id: nearbyListView
-            model: bluetoothDevicesNearbyModel
+            model: SortFilterModel {
+                sourceModel: bluetoothDevicesModel
+                filterRole: "Paired"
+                filterRegExp: "false"
+           }
             visible: bluetoothModel.powered
         }
 
