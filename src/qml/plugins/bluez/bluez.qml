@@ -27,7 +27,7 @@ import MeeGo.Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
 import Nemo.DBus 2.0
 
-import org.nemomobile.sortfiltermodel 1.0
+import org.nemomobile.models 1.0
 
 import "../../components"
 
