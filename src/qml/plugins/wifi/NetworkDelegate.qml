@@ -20,7 +20,7 @@ Item {
         // skip drawing of some items
         height: {
             if (visible)
-                return size.dp(80)
+                return Theme.itemHeightMedium
             else
                 return 0
         }

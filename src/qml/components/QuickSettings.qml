@@ -93,8 +93,8 @@ Rectangle {
         id: label
         text: qsTr("Quick settings")
         font.capitalization: Font.AllUppercase
-        font.pixelSize: size.dp(20)
-        color: "white"
+        font.pixelSize: Theme.fontSizeSmall
+        color: Theme.textColor
         anchors{
             left: parent.left
             leftMargin: size.dp(10)
