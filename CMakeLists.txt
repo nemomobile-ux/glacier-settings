@@ -37,4 +37,9 @@ install(FILES glacier-settings.privileges
 install(FILES glacier-settings.png
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings)
 
+file(GLOB LANGLIST_FILES ./configs/supported-languages/*.conf)
+install(FILES ${LANGLIST_FILES}
+	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/jolla-supported-languages)
+
+
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
