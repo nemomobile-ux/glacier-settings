@@ -1,6 +1,8 @@
 *.o
 *.qm
 *.pro.user
+*.user
+build
 moc_*
 Makefile
 documentation.list
