@@ -38,34 +38,13 @@ Page {
         title: qsTr("About")
     }
 
+    ScrollDecorator{
+        id: decorator
+        flickable: mainContent
+    }
+
     AboutSettings{
         id: aboutSettings
-    }
-
-    Image {
-        id: glacierLogo
-        source: "/usr/share/glacier-settings/qml/plugins/about/icon-glacier-icon.png"
-        anchors{
-            top: parent.top
-            topMargin: Theme.itemSpacingLarge
-            horizontalCenter: parent.horizontalCenter
-        }
-
-        MouseArea{
-            anchors.fill: parent
-            onClicked: {
-                ++magicCount
-                magicTimer.restart()
-            }
-        }
-    }
-
-    Timer{
-        id: magicTimer
-        interval: 500
-        onTriggered: {
-            magicCount = 0
-        }
     }
 
     onMagicCountChanged: {
@@ -75,109 +54,137 @@ Page {
         }
     }
 
-    Grid{
-        id: abloutGreed
-        width: parent.width-Theme.itemSpacingMedium*2
-        height: parent.height
+    Flickable {
+        id: mainContent
+        width: aboutPage.width
+        height: aboutPage.height
+        contentHeight: glacierLogo.height+abloutGreed.height
 
-        anchors{
-            top: glacierLogo.bottom
-            topMargin: Theme.itemSpacingLarge
-            left: parent.left
-            leftMargin: Theme.itemSpacingMedium
+        Image {
+            id: glacierLogo
+            source: "/usr/share/glacier-settings/qml/plugins/about/icon-glacier-icon.png"
+            anchors{
+                top: parent.top
+                topMargin: Theme.itemSpacingLarge
+                horizontalCenter: parent.horizontalCenter
+            }
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    ++magicCount
+                    magicTimer.restart()
+                }
+            }
         }
 
-        columns: 2
-
-        horizontalItemAlignment:  Grid.AlignLeft
-        verticalItemAlignment: Grid.AlignVCenter
-
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("Vendor")
+        Timer{
+            id: magicTimer
+            interval: 500
+            onTriggered: {
+                magicCount = 0
+            }
         }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.vendorName
-        }
+        Column{
+            id: abloutGreed
+            width: parent.width-Theme.itemSpacingMedium*2
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("Vendor version")
-        }
+            anchors{
+                top: glacierLogo.bottom
+                topMargin: Theme.itemSpacingLarge
+                left: parent.left
+                leftMargin: Theme.itemSpacingMedium
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.vendorVersion
-        }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("Software version")
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("Vendor")
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.softwareVersion
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.vendorName
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("Adaptation version")
-            wrapMode: Text.WordWrap
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("Vendor version")
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.adaptationVersion
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.vendorVersion
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("Serial number")
-            wrapMode: Text.WordWrap
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("Software version")
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.serial
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.softwareVersion
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("IMEI")
-            wrapMode: Text.WordWrap
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("Adaptation version")
+                wrapMode: Text.WordWrap
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.imei
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.adaptationVersion
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: qsTr("Wlan MAC")
-            wrapMode: Text.WordWrap
-        }
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("Serial number")
+                wrapMode: Text.WordWrap
+            }
 
-        Label{
-            width: parent.width/2
-            height: Theme.itemHeightLarge
-            text: aboutSettings.wlanMacAddress
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.serial
+            }
+
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("IMEI")
+                wrapMode: Text.WordWrap
+            }
+
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.imei
+            }
+
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: qsTr("Wlan MAC")
+                wrapMode: Text.WordWrap
+            }
+
+            Label{
+                width: parent.width
+                height: Theme.itemHeightLarge
+                text: aboutSettings.wlanMacAddress
+            }
         }
     }
 }
