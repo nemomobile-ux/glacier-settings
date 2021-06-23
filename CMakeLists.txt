@@ -16,6 +16,9 @@ set(QT_MIN_VERSION "5.6.0")
 find_package(Qt5 COMPONENTS Qml Quick Positioning LinguistTools REQUIRED)
 find_package(Glacier COMPONENTS App REQUIRED)
 
+option(MER_DEVMODE "Install mer developer mode plugin" OFF)
+option(BUILD_EXAMPLES "Install example plugin" OFF)
+
 add_subdirectory(src)
 
 # Translations

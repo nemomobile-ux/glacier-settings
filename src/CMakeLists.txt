@@ -7,9 +7,7 @@ set(SRC
 	models/settingsmodel.cpp
 	models/settingsmodel.h)
 set(QML_PLUGINS
-	qml/plugins/example/example.json
 	qml/plugins/bluez/bluez.json
-	qml/plugins/developermode/developermode.json
 	qml/plugins/display/display.json
 	qml/plugins/datetime/datetime.json
 	qml/plugins/wifi/wifi.json
@@ -38,4 +36,22 @@ install(FILES ${QML_PLUGINS}
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
 install(DIRECTORY qml
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings
-	PATTERN "*.json" EXCLUDE)
+        PATTERN "*.json" EXCLUDE
+        PATTERN "example" EXCLUDE
+        PATTERN "developermode" EXCLUDE)
+
+if(MER_DEVMODE)
+    install(FILES qml/plugins/developermode/developermode.json
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
+    install(DIRECTORY qml/plugins/developermode
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/qml/plugins
+            PATTERN "*.json" EXCLUDE)
+endif()
+
+if(BUILD_EXAMPLES)
+    install(FILES qml/plugins/example/example.json
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
+    install(DIRECTORY qml/plugins/example
+            DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/qml/plugins
+            PATTERN "*.json" EXCLUDE)
+endif()
