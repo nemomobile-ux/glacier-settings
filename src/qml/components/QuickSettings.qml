@@ -32,8 +32,7 @@ Rectangle {
     color: "transparent"
 
     width: parent.width
-    height: childrenRect.height
-
+    height: Theme.itemHeightHuge*2
 
     TechnologyModel {
         id: wifiNetworkingModel
@@ -113,125 +112,102 @@ Rectangle {
         }
     }
 
-
-    QuickButton{
-        id: wifiButton
-
-        icon: "../img/wifi.svg"
-
+    Row{
+        id: buttonRow
+        height: Theme.itemHeightLarge+size.dp(40)
         anchors{
-            left: parent.left
-            leftMargin: size.dp(20)
             top: label.bottom
-            topMargin: size.dp(20)
+            horizontalCenter: parent.horizontalCenter
         }
 
-        activated: wifiNetworkingModel.powered
-        visible: wifiNetworkingModel.available
+        spacing: size.dp(20)
 
-        onClicked: {
-            if(wifiButton.activated)
-            {
-                wifiNetworkingModel.powered = false;
-            }
-            else
-            {
-                wifiNetworkingModel.powered = true;
-            }
-        }
-    }
+        QuickButton{
+            id: wifiButton
 
-    QuickButton{
-        id: bluetoothButton
-        activated: bluetoothModel.powered && _adapter && _adapter.powered
-        visible: wifiNetworkingModel.available
+            icon: "../img/wifi.svg"
 
-        icon: "../img/bluetooth.svg"
+            activated: wifiNetworkingModel.powered
+            visible: wifiNetworkingModel.available
 
-        anchors{
-            left: wifiButton.right
-            leftMargin: size.dp(20)
-            top: label.bottom
-            topMargin: size.dp(20)
-        }
-
-        onClicked: {
-            if (bluetoothButton.activated)
-            {
-                bluetoothModel.powered = false;
-            }
-            else
-            {
-                bluetoothModel.powered = true;
+            onClicked: {
+                if(wifiButton.activated)
+                {
+                    wifiNetworkingModel.powered = false;
+                }
+                else
+                {
+                    wifiNetworkingModel.powered = true;
+                }
             }
         }
-    }
 
-    QuickButton{
-        id: volumeButton
+        QuickButton{
+            id: bluetoothButton
+            activated: bluetoothModel.powered && _adapter && _adapter.powered
+            visible: wifiNetworkingModel.available
 
-        icon: "../img/volume.svg"
+            icon: "../img/bluetooth.svg"
 
-        activated: profileControl.profile != "silent"
-
-        anchors{
-            left: bluetoothButton.right
-            leftMargin: size.dp(20)
-            top: label.bottom
-            topMargin: size.dp(20)
-        }
-
-        onClicked: {
-            if(volumeButton.activated)
-            {
-                profileControl.profile = "silent"
-            }
-            else
-            {
-                profileControl.profile = "general"
+            onClicked: {
+                if (bluetoothButton.activated)
+                {
+                    bluetoothModel.powered = false;
+                }
+                else
+                {
+                    bluetoothModel.powered = true;
+                }
             }
         }
-    }
 
-    QuickButton{
-        id: gpsButton
+        QuickButton{
+            id: volumeButton
 
-        icon: "../img/gps.svg"
+            icon: "../img/volume.svg"
 
-        anchors{
-            left: volumeButton.right
-            leftMargin: size.dp(20)
-            top: label.bottom
-            topMargin: size.dp(20)
-        }
-        onClicked: {
-            if(gpsButton.activated)
-            {
-                locationSettings.locationEnabled = false
-                gpsModel.powered = false;
-            }
-            else
-            {
-                locationSettings.locationEnabled = true
-                gpsModel.powered = true;
+            activated: profileControl.profile != "silent"
+
+            onClicked: {
+                if(volumeButton.activated)
+                {
+                    profileControl.profile = "silent"
+                }
+                else
+                {
+                    profileControl.profile = "general"
+                }
             }
         }
-    }
 
-    QuickButton{
-        id: airplaneButton
-        activated: connMgr.instance.offlineMode
-        icon: "../img/plane.svg"
+        QuickButton{
+            id: gpsButton
 
-        anchors{
-            left: gpsButton.right
-            leftMargin: size.dp(20)
-            top: label.bottom
-            topMargin: size.dp(20)
+            icon: "../img/gps.svg"
+            visible: locationSettings.gpsAvailable
+
+            onClicked: {
+                if(gpsButton.activated)
+                {
+                    locationSettings.locationEnabled = false
+                    gpsModel.powered = false;
+                }
+                else
+                {
+                    locationSettings.locationEnabled = true
+                    gpsModel.powered = true;
+                }
+            }
         }
 
-        onClicked: {
-            connMgr.instance.offlineMode = !connMgr.instance.offlineMode;
+        QuickButton{
+            id: airplaneButton
+            activated: connMgr.instance.offlineMode
+            icon: "../img/plane.svg"
+
+            onClicked: {
+                connMgr.instance.offlineMode = !connMgr.instance.offlineMode;
+            }
         }
     }
 
@@ -245,8 +221,8 @@ Rectangle {
         anchors{
             left: parent.left
             leftMargin: size.dp(20)
-            top: wifiButton.bottom
-            topMargin: size.dp(20)
+            bottom: brightnessSlider.top
+            bottomMargin: size.dp(20)
         }
     }
 
@@ -256,8 +232,8 @@ Rectangle {
         anchors{
             left: parent.left
             leftMargin: size.dp(20)
-            top: brightnessLabel.bottom
-            topMargin: size.dp(20)
+            bottom: parent.bottom
+            bottomMargin: size.dp(20)
         }
         minimumValue: 0
         maximumValue: displaySettings.maximumBrightness

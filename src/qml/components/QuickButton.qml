@@ -26,8 +26,8 @@ Rectangle {
 
     signal clicked
 
-    width: (parent.width-size.dp(120))/5
-    height: width
+    width: visible ? height : 0
+    height: visible ? Theme.itemHeightLarge : 0
 
     color: "transparent"
 
