@@ -24,7 +24,7 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
-import MeeGo.Connman 0.2
+import Nemo.Configuration 1.0
 
 import org.nemomobile.systemsettings 1.0
 import org.nemomobile.glacier.settings 1.0
@@ -40,11 +40,6 @@ Page {
         title: qsTr("Location")
     }
 
-    TechnologyModel {
-        id: gpsModel
-        name: "gps"
-    }
-
     SatelliteModel {
         id: satelliteModel
         running: true
@@ -57,8 +52,10 @@ Page {
         }
     }
 
-    LocationSettings {
-        id: locationSettings
+    ConfigurationValue {
+        id: loactionEnabled
+        key: "/home/glacier/loaction/enabled"
+        defaultValue: "0"
     }
 
     SettingsColumn{
@@ -83,14 +80,13 @@ Page {
 
             CheckBox {
                 id: gpsCheckBox
-                checked: gpsModel.powered
+                checked: loactionEnabled.value == true
                 anchors {
                     right: gpsEnable.right
                     verticalCenter: nameLabel.verticalCenter
                 }
                 onClicked: {
-                    gpsModel.powered = gpsCheckBox.checked
-                    locationSettings.locationEnabled = gpsCheckBox.checked
+                    loactionEnabled.value = gpsCheckBox.checked
                 }
             }
         }
@@ -99,21 +95,21 @@ Page {
             id: latitudeLabel
             font.bold: true
             text: qsTr("Latitude")+" : " + qsTr("unavailable")
-            visible: gpsModel.powered
+            visible: loactionEnabled.value == true
         }
 
         Label{
             id: longitudeLabel
             font.bold: true
             text: qsTr("Longitude")+" : " + qsTr("unavailable")
-            visible: gpsModel.powered
+            visible: loactionEnabled.value == true
         }
 
         Label{
             id: sourceLabel
             font.bold: true
             text: qsTr("Source")+" : "+printableMethod(positionSource.supportedPositioningMethods)
-            visible: gpsModel.powered
+            visible: loactionEnabled.value == true
         }
 
         Rectangle{
@@ -122,7 +118,7 @@ Page {
             height: width
             color: "transparent"
             clip: true
-            visible: gpsModel.powered
+            visible: loactionEnabled.value == true
 
             Row {
                 property int rows: 13

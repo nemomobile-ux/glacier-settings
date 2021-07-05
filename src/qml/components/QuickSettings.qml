@@ -24,6 +24,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
+import Nemo.Configuration 1.0
+
 import MeeGo.Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
 
@@ -63,21 +65,10 @@ Rectangle {
         }
     }
 
-    TechnologyModel {
-        id: gpsModel
-        name: "gps"
-
-        onTechnologiesChanged: {
-            gpsButton.activated = gpsModel.powered
-        }
-
-        onPoweredChanged: {
-            gpsButton.activated = gpsModel.powered
-        }
-    }
-
-    LocationSettings {
-        id: locationSettings
+    ConfigurationValue {
+        id: loactionEbnable
+        key: "/home/glacier/loaction/enabled"
+        defaultValue: "0"
     }
 
     NetworkManagerFactory {
@@ -184,18 +175,17 @@ Rectangle {
             id: gpsButton
 
             icon: "../img/gps.svg"
-            visible: locationSettings.gpsAvailable
+            visible: true //Always?
+            activated: loactionEbnable.value == true
 
             onClicked: {
                 if(gpsButton.activated)
                 {
-                    locationSettings.locationEnabled = false
-                    gpsModel.powered = false;
+                    loactionEbnable.value = false
                 }
                 else
                 {
-                    locationSettings.locationEnabled = true
-                    gpsModel.powered = true;
+                    loactionEbnable.value = true
                 }
             }
         }
