@@ -1,3 +1,3 @@
 [D-BUS Service]
 Name=org.nemomobile.qmlsettings
-Exec=/usr/bin/invoker --type=nemomobile -s /usr/bin/glacier-settings
+Exec=/usr/bin/glacier-settings -p

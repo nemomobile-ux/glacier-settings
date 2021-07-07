@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Settings
-Exec=/usr/bin/invoker --type=nemomobile -s /usr/bin/glacier-settings
+Exec=/usr/bin/glacier-settings
 Icon=/usr/share/glacier-settings/glacier-settings.png
 X-Desktop-File-Install-Version=0.20
 Name[ru]=Настройки

@@ -36,8 +36,6 @@ install(FILES glacier-settings.desktop
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
 install(FILES data/org.nemomobile.qmlsettings.service
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/dbus-1/services)
-install(FILES glacier-settings.privileges
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/mapplauncherd/privileges.d)
 install(FILES glacier-settings.png
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings)
 
