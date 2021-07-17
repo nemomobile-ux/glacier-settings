@@ -34,7 +34,7 @@ Page {
 
     headerTools: HeaderToolsLayout {
         showBackButton: true;
-        title: qsTr("Enther code")
+        title: qsTr("Enter code")
     }
 
     SettingsColumn {
