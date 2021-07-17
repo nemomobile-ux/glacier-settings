@@ -90,7 +90,7 @@ Page {
     ListModel{
         id: autoLockModel
         ListElement{
-            name: qsTr("Newer")
+            name: qsTr("Never")
             time: -1
         }
         ListElement{
@@ -161,7 +161,7 @@ Page {
 
             Label{
                 id: showNotifyLabel
-                text: qsTr("Show notify when device locked")
+                text: qsTr("Show notifications when device locked")
                 anchors{
                     left: parent.left
                 }
@@ -216,10 +216,10 @@ Page {
         }
 
         Button{
-            id: entherCode
+            id: enterCode
             width: parent.width
             height: Theme.itemHeightLarge
-            text: qsTr("Enther code")
+            text: qsTr("Enter code")
             onClicked: {
                 //authInput.authorize()
                 pageStack.push(Qt.resolvedUrl("DeviceLockPad.qml"), {authenticationInput: authInput})

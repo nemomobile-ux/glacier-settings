@@ -2,9 +2,40 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
+    <name>DeviceLockPad</name>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="37"/>
+        <source>Enter code</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NetworkDelegate</name>
+    <message>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="39"/>
+        <source>connected</source>
+        <translation type="unfinished">verbonden</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="41"/>
+        <source>connecting</source>
+        <translation type="unfinished">verbinden</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="44"/>
+        <source>open</source>
+        <translation type="unfinished">onbeveiligd</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
+        <source>secure</source>
+        <translation type="unfinished">beveiligd</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="60"/>
+        <location filename="../src/main.cpp" line="47"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
@@ -12,86 +43,104 @@
 <context>
     <name>QuickSettings</name>
     <message>
-        <location filename="../qml/components/QuickSettings.qml" line="94"/>
+        <location filename="../src/qml/components/QuickSettings.qml" line="84"/>
         <source>Quick settings</source>
         <translation>Snelle instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/components/QuickSettings.qml" line="250"/>
+        <location filename="../src/qml/components/QuickSettings.qml" line="210"/>
         <source>Brightness</source>
         <translation>Helderheid</translation>
     </message>
 </context>
 <context>
-    <name>SettingsModel</name>
+    <name>SavedServices</name>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="46"/>
-        <source>Other</source>
-        <translation>Overige</translation>
+        <location filename="../src/qml/plugins/wifi/SavedServices.qml" line="17"/>
+        <source>Manage saved networks</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SavedStatus</name>
+    <message>
+        <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="32"/>
+        <source>Auto connect</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="47"/>
-        <source>Info</source>
-        <translation>Info</translation>
-    </message>
-    <message>
-        <location filename="../src/models/settingsmodel.cpp" line="48"/>
-        <source>Development</source>
-        <translation>Ontwikkeling</translation>
-    </message>
-    <message>
-        <location filename="../src/models/settingsmodel.cpp" line="49"/>
-        <source>Network</source>
-        <translation>Netwerk</translation>
-    </message>
-    <message>
-        <location filename="../src/models/settingsmodel.cpp" line="50"/>
-        <source>Personalization</source>
-        <translation>Personalisering</translation>
+        <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="67"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WifiSettings</name>
     <message>
-        <location filename="../qml/plugins/wifi/WifiSettings.qml" line="37"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="38"/>
         <source>Connect to</source>
         <translation>Verbinden met</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/WifiSettings.qml" line="88"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="92"/>
+        <source>Password: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="113"/>
         <source>Connect</source>
         <translation>Verbinden</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="137"/>
+        <source>Ok</source>
+        <translation type="unfinished">Oké</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="138"/>
+        <source>Connection failed</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>WifiStatus</name>
     <message>
-        <location filename="../qml/plugins/wifi/WifiStatus.qml" line="52"/>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="52"/>
         <source>Method</source>
         <translation>Methode</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/WifiStatus.qml" line="81"/>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="60"/>
+        <source>DHCP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="63"/>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="78"/>
         <source>Network info</source>
         <translation>Netwerkinfo</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/WifiStatus.qml" line="88"/>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="85"/>
         <source>IP address</source>
         <translation>IP-adres</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/WifiStatus.qml" line="102"/>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="99"/>
         <source>Net mask</source>
         <translation>Netwerkmasker</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/WifiStatus.qml" line="117"/>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="113"/>
         <source>Gateway</source>
         <translation>Gateway</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/WifiStatus.qml" line="140"/>
+        <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="136"/>
         <source>Disconnect</source>
         <translation>Verbinding verbreken</translation>
     </message>
@@ -99,121 +148,242 @@
 <context>
     <name>about</name>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="38"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="38"/>
         <source>About</source>
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="98"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="104"/>
         <source>Vendor</source>
         <translation>Leverancier</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="110"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="116"/>
         <source>Vendor version</source>
         <translation>Leverancierversie</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="122"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="128"/>
         <source>Software version</source>
         <translation>Softwareversie</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="134"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="140"/>
         <source>Adaptation version</source>
         <translation>Adaptatieversie</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="147"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="153"/>
         <source>Serial number</source>
         <translation>Serienummer</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="160"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="166"/>
         <source>IMEI</source>
         <translation>IMEI</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/about/about.qml" line="173"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="179"/>
         <source>Wlan MAC</source>
         <translation>WLAN-MAC</translation>
     </message>
 </context>
 <context>
-    <name>bluetooth</name>
+    <name>bluez</name>
     <message>
-        <location filename="../qml/plugins/bluetooth/bluetooth.qml" line="38"/>
-        <source>Bluetooth settings</source>
-        <translation>Bluetooth-instellingen</translation>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="40"/>
+        <source>Bluetooth</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/plugins/bluetooth/bluetooth.qml" line="61"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="90"/>
         <source>Enable Bluetooth</source>
-        <translation>Bluetooth inschakelen</translation>
+        <translation type="unfinished">Bluetooth inschakelen</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/bluetooth/bluetooth.qml" line="94"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="102"/>
         <source>Device name</source>
-        <translation>Apparaatnaam</translation>
+        <translation type="unfinished">Apparaatnaam</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/bluetooth/bluetooth.qml" line="136"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="133"/>
         <source>Visibility</source>
-        <translation>Zichtbaarheid</translation>
+        <translation type="unfinished">Zichtbaarheid</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="145"/>
+        <source>Paired devices:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="169"/>
+        <source>Devices nearby:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="193"/>
+        <source>Stop search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="193"/>
+        <source>Search discovery</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>datetime</name>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="36"/>
+        <source>Date and time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="49"/>
+        <source>12h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="50"/>
+        <source>24h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="123"/>
+        <source>Time format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="145"/>
+        <source>Automatic time update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="154"/>
+        <source>Automatic time zone update</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>developermode</name>
     <message>
-        <location filename="../qml/plugins/developermode/developermode.qml" line="36"/>
+        <location filename="../src/qml/plugins/developermode/developermode.qml" line="39"/>
         <source>Developer mode</source>
         <translation>Ontwikkelaarsmodus</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/developermode/developermode.qml" line="54"/>
+        <location filename="../src/qml/plugins/developermode/developermode.qml" line="80"/>
         <source>Enable developer mode</source>
         <translation>Ontwikkelaarsmodus inschakelen</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/developermode/developermode.qml" line="80"/>
-        <source>Enable remote login</source>
-        <translation>Extern inloggen inschakelen</translation>
+        <location filename="../src/qml/plugins/developermode/developermode.qml" line="106"/>
+        <source>Allow install untrusted software</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/plugins/developermode/developermode.qml" line="108"/>
+        <location filename="../src/qml/plugins/developermode/developermode.qml" line="147"/>
         <source>Wlan IP address</source>
         <translation>WLAN-IP-adres</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/developermode/developermode.qml" line="138"/>
+        <location filename="../src/qml/plugins/developermode/developermode.qml" line="177"/>
         <source>USB IP address</source>
         <translation>USB-IP-adres</translation>
     </message>
 </context>
 <context>
+    <name>devicelock</name>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="37"/>
+        <source>Device lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="93"/>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="97"/>
+        <source>Without delay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
+        <source>1 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
+        <source>5 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
+        <source>10 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
+        <source>15 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
+        <source>30 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
+        <source>1 hour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="137"/>
+        <source>Enable device lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="164"/>
+        <source>Show notifications when device locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="191"/>
+        <source>Auto lock device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="222"/>
+        <source>Enter code</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>display</name>
     <message>
-        <location filename="../qml/plugins/display/display.qml" line="33"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="33"/>
         <source>Display settings</source>
         <translation>Scherminstellingen</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/display/display.qml" line="49"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="49"/>
         <source>Brightness</source>
         <translation>Helderheid</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/display/display.qml" line="75"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="75"/>
         <source>Auto brightness</source>
         <translation>Automatische helderheid</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/display/display.qml" line="96"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="96"/>
         <source>Dim timeout</source>
         <translation>Time-out voor dimmen</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/display/display.qml" line="114"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="114"/>
         <source>Blank timeout</source>
         <translation>Time-out voor uitschakelen van scherm</translation>
     </message>
@@ -221,7 +391,7 @@
 <context>
     <name>example</name>
     <message>
-        <location filename="../qml/plugins/example/example.qml" line="29"/>
+        <location filename="../src/qml/plugins/example/example.qml" line="29"/>
         <source>Example settings plugin</source>
         <translation>Voorbeeldinstellingsplug-in</translation>
     </message>
@@ -229,7 +399,7 @@
 <context>
     <name>glacier-settings</name>
     <message>
-        <location filename="../qml/glacier-settings.qml" line="46"/>
+        <location filename="../src/qml/glacier-settings.qml" line="57"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
@@ -237,80 +407,96 @@
 <context>
     <name>gps</name>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="38"/>
-        <source>Location settings</source>
-        <translation>Positie-instellingen</translation>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="40"/>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="62"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="73"/>
         <source>Enable location</source>
         <translation>Positiebepaling inschakelen</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="86"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="245"/>
         <source>Latitude</source>
         <translation>Breedtegraad</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="92"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
+        <source>unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="248"/>
         <source>Longitude</source>
         <translation>Lengtegraad</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="98"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="111"/>
         <source>Source</source>
         <translation>Bron</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="113"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="257"/>
         <source>Satellite</source>
         <translation>Satelliet</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="115"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="259"/>
         <source>Not available</source>
         <translation>Niet beschikbaar</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="117"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="261"/>
         <source>Non-satellite</source>
         <translation>Geen satelliet</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="119"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="263"/>
         <source>Multiple</source>
         <translation>Meerdere</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/gps/gps.qml" line="120"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="264"/>
         <source>source error</source>
         <translation>bronfout</translation>
     </message>
 </context>
 <context>
+    <name>keyboard</name>
+    <message>
+        <location filename="../src/qml/plugins/keyboard/keyboard.qml" line="35"/>
+        <source>Keyboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>language</name>
     <message>
-        <location filename="../qml/plugins/language/language.qml" line="36"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="36"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/language/language.qml" line="88"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="88"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/language/language.qml" line="89"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="89"/>
         <source>Ok</source>
         <translation>Oké</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/language/language.qml" line="90"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="90"/>
         <source>Change language?</source>
         <translation>Taal wijzigen?</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/language/language.qml" line="91"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="91"/>
         <source>Do you want to change locale and reboot?</source>
         <translation>Wil je de taal wijzigen en herstarten?</translation>
     </message>
@@ -318,43 +504,169 @@
 <context>
     <name>magic</name>
     <message>
-        <location filename="../qml/plugins/about/magic.qml" line="58"/>
-        <source>‘Tweeënveertig!’ brulde Lonckwill. ‘Heb je daar zeven-en-een-half miljoen jaar over moeten denken?’
-‘Ik heb het zeer zorgvuldig gecontroleerd,’ zei de computer, ‘en dat is zeer beslist het antwoord. Het probleem is volgens mij, om het jullie maar heel eerlijk te zeggen, dat jullie eigenlijk nooit goed geweten hebben wat de vraag was.’</source>
+        <location filename="../src/qml/plugins/about/magic.qml" line="58"/>
+        <source>— Forty two! — Lunkkuool screamed. — And all this that you can tell after seven and a half million years of work?
+— I very carefully checked everything — told the computer — and with all determinancy I declare that it and is the answer. It seems to me if to be with you absolutely fair, then all the matter is that you did not know in what a question.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>mobile</name>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="40"/>
+        <source>Mobile networks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="75"/>
+        <source>Unknow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="75"/>
+        <source>No sim</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="76"/>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="76"/>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="123"/>
+        <source>Connect to internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="135"/>
+        <source>Enable data roaming</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>nfc</name>
+    <message>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="35"/>
+        <source>NFC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="54"/>
+        <source>Enable NFC</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>powersave</name>
+    <message>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="38"/>
+        <source>Power save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="81"/>
+        <source>Force power save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="111"/>
+        <source>Power save mode battery level threshold</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>usb</name>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="35"/>
+        <source>USB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="41"/>
+        <source>Ask</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="45"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="134"/>
+        <source>Connection sharing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="49"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="130"/>
+        <source>MTP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
+        <source>Charging only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="57"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="136"/>
+        <source>Developer mode</source>
+        <translation type="unfinished">Ontwikkelaarsmodus</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="74"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="96"/>
+        <source>Usb mode: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="105"/>
+        <source>Select USB mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="128"/>
+        <source>Always ask</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
+        <source>Chagring only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="138"/>
+        <source>Busy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>wifi</name>
     <message>
-        <location filename="../qml/plugins/wifi/wifi.qml" line="36"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="36"/>
         <source>WiFi settings</source>
         <translation>Wifi-instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/wifi.qml" line="56"/>
-        <source>Enable WiFi</source>
-        <translation>Wifi inschakelen</translation>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="71"/>
+        <source>WiFi</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/wifi.qml" line="101"/>
-        <source>connected</source>
-        <translation>verbonden</translation>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="114"/>
+        <source>Saved</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/wifi.qml" line="103"/>
-        <source>connecting</source>
-        <translation>verbinden</translation>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="132"/>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/plugins/wifi/wifi.qml" line="106"/>
-        <source>open</source>
-        <translation>onbeveiligd</translation>
-    </message>
-    <message>
-        <location filename="../qml/plugins/wifi/wifi.qml" line="108"/>
-        <source>secure</source>
-        <translation>beveiligd</translation>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="149"/>
+        <source>Manage saved networks</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
