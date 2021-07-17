@@ -190,7 +190,7 @@ Page {
 
         Button{
             id: startDiscovery
-            text: (_adapter.discovering) ? qsTr("Stop search") : qsTr("Search discovery")
+            text: (_adapter.discovering) ? qsTr("Stop search") : qsTr("Start discovery")
             visible: bluetoothModel.powered
             width: parent.width
 
