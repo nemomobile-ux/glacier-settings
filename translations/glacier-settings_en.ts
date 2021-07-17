@@ -227,7 +227,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="193"/>
-        <source>Search discovery</source>
+        <source>Start discovery</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -227,8 +227,8 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="193"/>
-        <source>Search discovery</source>
-        <translation type="unfinished"></translation>
+        <source>Start discovery</source>
+        <translation>Spustit hledání</translation>
     </message>
 </context>
 <context>
@@ -236,32 +236,32 @@
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="36"/>
         <source>Date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum a čas</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="49"/>
         <source>12h</source>
-        <translation type="unfinished"></translation>
+        <translation>12h</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="50"/>
         <source>24h</source>
-        <translation type="unfinished"></translation>
+        <translation>24h</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="123"/>
         <source>Time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formát času</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="145"/>
         <source>Automatic time update</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky nastavit čas</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="154"/>
         <source>Automatic time zone update</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky nastavit časovou zónu</translation>
     </message>
 </context>
 <context>
@@ -279,7 +279,7 @@
     <message>
         <location filename="../src/qml/plugins/developermode/developermode.qml" line="106"/>
         <source>Allow install untrusted software</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit instalaci nedůveryhodného software</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/developermode/developermode.qml" line="147"/>
@@ -297,67 +297,67 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="37"/>
         <source>Device lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Zámek zařízení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="93"/>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Nikdy</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="97"/>
         <source>Without delay</source>
-        <translation type="unfinished"></translation>
+        <translation>Bez zpoždění</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
         <source>1 min</source>
-        <translation type="unfinished"></translation>
+        <translation>1 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
         <source>5 min</source>
-        <translation type="unfinished"></translation>
+        <translation>5 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
         <source>10 min</source>
-        <translation type="unfinished"></translation>
+        <translation>10 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
         <source>15 min</source>
-        <translation type="unfinished"></translation>
+        <translation>15 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
         <source>30 min</source>
-        <translation type="unfinished"></translation>
+        <translation>30 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
         <source>1 hour</source>
-        <translation type="unfinished"></translation>
+        <translation>hodina</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="137"/>
         <source>Enable device lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit zámek zařízení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="164"/>
         <source>Show notifications when device locked</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraovat upozornění na zamčené obrazovce</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="191"/>
         <source>Auto lock device</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky zamknout zařízení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="222"/>
         <source>Enter code</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadejte kód</translation>
     </message>
 </context>
 <context>
@@ -409,7 +409,7 @@
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="40"/>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Poloha</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="73"/>
@@ -426,7 +426,7 @@
         <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
         <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
         <source>unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>není dostupn=é</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
@@ -470,7 +470,7 @@
     <message>
         <location filename="../src/qml/plugins/keyboard/keyboard.qml" line="35"/>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Klávesnice</translation>
     </message>
 </context>
 <context>
@@ -516,37 +516,37 @@
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="40"/>
         <source>Mobile networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobilní sítě</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="75"/>
         <source>Unknow</source>
-        <translation type="unfinished"></translation>
+        <translation>Neznámý</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="75"/>
         <source>No sim</source>
-        <translation type="unfinished"></translation>
+        <translation>Není vložena sim</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="76"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Povoleno</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="76"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Zakázáno</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="123"/>
         <source>Connect to internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Připojit k internetu</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="135"/>
         <source>Enable data roaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit datový roaming</translation>
     </message>
 </context>
 <context>
@@ -554,12 +554,12 @@
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="35"/>
         <source>NFC</source>
-        <translation type="unfinished"></translation>
+        <translation>NFC</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="54"/>
         <source>Enable NFC</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit NFC</translation>
     </message>
 </context>
 <context>
@@ -567,17 +567,17 @@
     <message>
         <location filename="../src/qml/plugins/powersave/powersave.qml" line="38"/>
         <source>Power save</source>
-        <translation type="unfinished"></translation>
+        <translation>Úspora energie</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/powersave/powersave.qml" line="81"/>
         <source>Force power save</source>
-        <translation type="unfinished"></translation>
+        <translation>Vynutit úsporu energie</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/powersave/powersave.qml" line="111"/>
         <source>Power save mode battery level threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Práh pro zapnutí úsporného režimu</translation>
     </message>
 </context>
 <context>
@@ -585,61 +585,61 @@
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="35"/>
         <source>USB</source>
-        <translation type="unfinished"></translation>
+        <translation>USB</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="41"/>
         <source>Ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeptat se</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="45"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="134"/>
         <source>Connection sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>Sdílení připojení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="49"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="130"/>
         <source>MTP</source>
-        <translation type="unfinished"></translation>
+        <translation>MTP</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
         <source>Charging only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze nabíjení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="57"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="136"/>
         <source>Developer mode</source>
-        <translation type="unfinished">Režim pro vývojáře</translation>
+        <translation>Režim pro vývojáře</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="74"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="96"/>
         <source>Usb mode: </source>
-        <translation type="unfinished"></translation>
+        <translation>Režim USB: </translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="105"/>
         <source>Select USB mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolit režim USB</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="128"/>
         <source>Always ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Vždy se zeptat</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
         <source>Chagring only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze nabíjení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="138"/>
         <source>Busy</source>
-        <translation type="unfinished"></translation>
+        <translation>Obsazeno</translation>
     </message>
 </context>
 <context>
@@ -652,22 +652,22 @@
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="71"/>
         <source>WiFi</source>
-        <translation type="unfinished"></translation>
+        <translation>WiFi</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="114"/>
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Uloženo</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="132"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Povoleno</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="149"/>
         <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Spravovat uložené spojení</translation>
     </message>
 </context>
 </TS>
