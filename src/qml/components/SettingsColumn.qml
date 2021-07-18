@@ -20,7 +20,7 @@ import QtQuick 2.6
 import QtQuick.Controls.Nemo 1.0
 
 Column{
-    default property alias contentItem: dataItem.children
+//    default property alias contentItem: dataItem.children
 
     width: parent.width
 
@@ -31,9 +31,9 @@ Column{
         leftMargin: Theme.itemSpacingLarge
     }
 
-    Column{
-        id: dataItem
-        width: parent.width-Theme.itemSpacingLarge*2
-        spacing: Theme.itemSpacingLarge
-    }
+//    Column{
+//        id: dataItem
+//        width: parent.width-Theme.itemSpacingLarge*2
+//        spacing: Theme.itemSpacingLarge
+//    }
 }

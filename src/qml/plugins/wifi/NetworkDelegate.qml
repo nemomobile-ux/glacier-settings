@@ -74,7 +74,7 @@ Item {
             },
             ActionButton {
                 id: disconnectNetworkButton
-                iconSource: "/usr/share/glacier-settings/qml/img/disconnect.svg"
+                iconSource: "image://theme/unlink"
                 visible: (modelData.state === "online" || modelData.state === "ready")
                 onClicked: {
                     modelData.requestDisconnect();
