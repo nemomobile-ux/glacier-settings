@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -55,6 +55,52 @@ ApplicationWindow{
         headerTools: HeaderToolsLayout {
             id: tools
             title: qsTr("Settings")
+
+            tools: [
+                AiroplaneButton {
+                    id: airoplaneButton
+                },
+                WifiButton{
+                    id: wifiButton
+                },
+                VolumeButton {
+                    id: volumeButton
+                }
+            ]
+
+            drawerLevels: [
+                Row {
+                    id: brightnessRow
+                    width: mainPage.width
+                    spacing: size.dp(40)
+                    padding: size.dp(40)
+
+                    Slider{
+                        id: brightnessSlider
+                        width: parent.width-brightnessIcon.width-size.dp(120)
+
+                        minimumValue: 0
+                        maximumValue: displaySettings.maximumBrightness
+                        value: displaySettings.brightness
+                        stepSize: 1
+                        onValueChanged: {
+                            displaySettings.brightness = value
+                        }
+                        enabled: !displaySettings.autoBrightnessEnabled
+
+                        DisplaySettings{
+                            id: displaySettings
+                        }
+                    }
+
+                    NemoIcon{
+                        id: brightnessIcon
+                        source: "image://theme/sun"
+                        height: Theme.itemHeightExtraSmall
+                        width: height
+                    }
+                }
+            ]
         }
 
         Flickable{
@@ -68,10 +114,6 @@ ApplicationWindow{
                 id: content
                 width: parent.width
                 spacing: size.dp(20)
-
-                QuickSettings{
-                    id: quickSettings
-                }
 
                 Repeater {
                     id: view
