@@ -70,7 +70,7 @@ Page {
                         text: modelData
                         font.pixelSize: Theme.fontSizeLarge
                         anchors.centerIn: parent
-                        color: "white"
+                        color: Theme.textColor
                     }
 
                     MouseArea{
