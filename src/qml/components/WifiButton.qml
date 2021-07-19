@@ -28,7 +28,7 @@ import MeeGo.Connman 0.2
 
 ToolButton {
     id: wifiButton
-    iconSource: "image://theme/wifig"
+    iconSource: "image://theme/wifi"
     showCounter: false
 
     TechnologyModel {
