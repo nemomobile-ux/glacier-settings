@@ -43,7 +43,7 @@ public:
 
     static int compareCategories(QString leftCategory, QString rightCategory);
 
-    const static QStringList defaultCategories;
+    static QStringList defaultCategories;
 
     Q_INVOKABLE bool pluginAviable(QString name);
 
@@ -59,7 +59,7 @@ private:
     QStringList m_roleNames;
     QJsonArray m_pluginsData; //plugins list
 
-    QVariant pluginsInCategory(QString category) const;
+    QVariantList pluginsInCategory(QString category) const;
     bool loadConfig(QString configFileName);
 };
 

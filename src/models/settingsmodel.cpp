@@ -45,7 +45,7 @@
 */
 
 
-const QStringList SettingsModel::defaultCategories = {
+QStringList SettingsModel::defaultCategories = {
     "Personalization",
     "Network",
     "Security",
@@ -108,6 +108,13 @@ void SettingsModel::init()
 
     if(rowCount() == 0)
         qWarning() << "Plugins directory is empty";
+
+    /*Remove empty categories*/
+    for(QString category : defaultCategories) {
+        if(pluginsInCategory(category).count() == 0) {
+            defaultCategories.removeAll(category);
+        }
+    }
 }
 
 bool SettingsModel::loadConfig(QString configFileName)
@@ -142,7 +149,7 @@ bool SettingsModel::pluginAviable(QString name)
     return pluginConfig.exists();
 }
 
-QVariant SettingsModel::pluginsInCategory(QString category) const
+QVariantList SettingsModel::pluginsInCategory(QString category) const
 {
     QVariantList pluginsInCat;
 
