@@ -64,6 +64,7 @@ Page {
                     console.log("    " + inkey + ": " + fields[key][inkey]);
                 }
             }
+            userAgent.sendUserReply({"Passphrase": passphrase.text})
         }
 
         onErrorReported: {
