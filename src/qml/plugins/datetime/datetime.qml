@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2018-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -70,9 +70,6 @@ Page {
                 id: timePicker
                 height: width
                 width: listViewPage.width/2
-
-                hours: currentDate.getHours()
-                minutes: currentDate.getMinutes()
             }
 
             Column{
