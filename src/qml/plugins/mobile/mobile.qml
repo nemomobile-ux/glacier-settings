@@ -95,7 +95,7 @@ Page {
             delegate: ListViewItemWithActions{
                 id: mFromList
                 label: simManager.present? qsTr("Unknow") : qsTr("No sim")
-                description: modemId.powered ? qsTr("Enabled") : qsTr("Disabled")
+                description: (modemId.powered ? qsTr("Enabled") : qsTr("Disabled")) + " " + cellularRegistration.status
                 height: Theme.itemHeightLarge
                 iconVisible: false
                 showNext: false
