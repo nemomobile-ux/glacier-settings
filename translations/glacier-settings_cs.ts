@@ -426,7 +426,7 @@
         <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
         <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
         <source>unavailable</source>
-        <translation>není dostupn=é</translation>
+        <translation>není dostupné</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
