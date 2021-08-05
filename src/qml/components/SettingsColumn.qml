@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2018 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,9 +20,9 @@ import QtQuick 2.6
 import QtQuick.Controls.Nemo 1.0
 
 Column{
-//    default property alias contentItem: dataItem.children
+    id: settingsColumn
 
-    width: parent.width
+    width: parent.width - Theme.itemSpacingLarge*2
 
     anchors{
         top: parent.top
@@ -30,10 +30,4 @@ Column{
         left: parent.left
         leftMargin: Theme.itemSpacingLarge
     }
-
-//    Column{
-//        id: dataItem
-//        width: parent.width-Theme.itemSpacingLarge*2
-//        spacing: Theme.itemSpacingLarge
-//    }
 }
