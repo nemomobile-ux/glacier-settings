@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -117,14 +117,14 @@ Page {
 
     Connections {
         target: modelData
-        onConnectRequestFailed: {
+        function onConnectRequestFailed(error) {
             console.log(error)
             failDialog.subLabelText = error;
             failDialog.open();
             spinner.visible = false;
         }
 
-        onConnectedChanged: {
+        function onConnectedChanged(connected) {
             if(connected) {
                 pageStack.pop();
                 spinner.visible = false;
