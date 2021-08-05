@@ -23,9 +23,6 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.QOfono 0.2
-import MeeGo.Connman 0.2
-
-import Nemo.Connectivity 1.0
 
 import "../../components"
 
@@ -39,42 +36,89 @@ Page {
         title: qsTr("Mobile networks")
     }
 
-    NetworkTechnology {
+    OfonoConnMan {
         id: cellularNetworkTechnology
-        path: "/net/connman/technology/cellular"
+        modemPath:ofonoManager.defaultModem
     }
 
     OfonoSimListModel{
         id: simListModel
     }
 
+    OfonoManager {
+        id: ofonoManager
+        onModemsChanged: {
+            recalcModel()
+        }
+
+        Component.onCompleted: {
+            recalcModel()
+        }
+
+        function recalcModel() {
+            mobilePage.modems = [];
+            for(var i = 0; i < ofonoManager.modems.length; i++) {
+                mobilePage.modems.push(modems[i]);
+            }
+            simList.model = mobilePage.modems;
+            if(mobilePage.modems.length > 0) {
+                noSimLabel.visible = false;
+            } else {
+                noSimLabel.visible = true;
+            }
+        }
+    }
+
+
+    Label{
+        id: noSimLabel
+        visible: mobilePage.modems.length === 0
+        text: qsTr("SIM cards not avaiable")
+        anchors.centerIn: parent
+    }
+
 
     SettingsColumn{
+        id:mobilePageSettingsColumn
+        visible: !noSimLabel.visible
 
         ListView{
             id: simList
             width: parent.width
-            height: Theme.itemHeightLarge*simListModel.count
+            height: childrenRect.height
 
-            model:  simListModel
+            model:  mobilePage.modems
 
             clip: true
 
             delegate: ListViewItemWithActions{
                 id: mFromList
-                label: qsTr("Unknow")
+                label: simManager.present? qsTr("Unknow") : qsTr("No sim")
                 description: modemId.powered ? qsTr("Enabled") : qsTr("Disabled")
+                height: Theme.itemHeightLarge
                 iconVisible: false
                 showNext: false
 
                 OfonoModem{
                     id: modemId
-                    modemPath: path
+                    modemPath: modelData
+
+                    onPoweredChanged: {
+                        if(powered) {
+                            cellularRegistration.registration()
+                            cellularRegistration.modemPath = modemId.modemPath
+                        }
+                    }
+                }
+
+                OfonoSimManager{
+                    id: simManager
+                    modemPath: modelData
                 }
 
                 OfonoNetworkRegistration{
                     id: cellularRegistration
-                    modemPath: path
+                    modemPath: modelData
 
                     onNameChanged: {
                         mFromList.label = name
@@ -107,6 +151,19 @@ Page {
             onClicked: {
                 cellularNetworkTechnology.powered = !cellularNetworkTechnology.powered
             }
+        }
+
+        CheckBox {
+            id: roamingCheckBox
+            width: parent.width
+
+            checked: cellularNetworkTechnology.roamingAllowed
+            text: qsTr("Enable data roaming")
+
+            onClicked: {
+                cellularNetworkTechnology.roamingAllowed = !cellularNetworkTechnology.roamingAllowed
+            }
+
         }
 
     }
