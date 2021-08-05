@@ -41,8 +41,9 @@ Page {
         modemPath:ofonoManager.defaultModem
     }
 
-    OfonoSimListModel{
-        id: simListModel
+    OfonoRadioSettings{
+        id: radioSettings
+        modemPath:ofonoManager.defaultModem
     }
 
     OfonoManager {
@@ -163,7 +164,30 @@ Page {
             onClicked: {
                 cellularNetworkTechnology.roamingAllowed = !cellularNetworkTechnology.roamingAllowed
             }
+        }
 
+        GlacierRoller{
+            id: techSelector
+            width: parent.width
+            label: qsTr("Preferred network")
+
+            model: radioSettings.availableTechnologies
+
+            delegate: GlacierRollerItem{
+                Text{
+                    id: tech
+                    verticalAlignment: Text.AlignVCenter
+                    height: techSelector.itemHeight
+                    text: modelData
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    font.bold: modelData == radioSettings.technologyPreference
+                }
+            }
+
+            onCurrentIndexChanged: {
+                radioSettings.technologyPreference = radioSettings.availableTechnologies[currentIndex]
+            }
         }
 
     }
