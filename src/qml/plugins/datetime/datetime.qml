@@ -60,103 +60,113 @@ Page {
         timeFormatRoller.currentIndex = timeFormat.value
     }
 
+    ScrollDecorator{
+        id: decorator
+        flickable: mainContent
+    }
 
-    SettingsColumn{
-        Row{
-            id: dateView
-            width: parent.width
+    Flickable {
+        id: mainContent
+        anchors.fill: parent
+        contentHeight: timeColumn.height
 
-            TimePicker{
-                id: timePicker
-                height: width
-                width: listViewPage.width/2
+        SettingsColumn{
+            id: timeColumn
+            Row{
+                id: dateView
+                width: parent.width
 
-                hours: currentDate.getHours()
-                minutes: currentDate.getMinutes()
+                TimePicker{
+                    id: timePicker
+                    height: width
+                    width: listViewPage.width/2
+
+                    hours: currentDate.getHours()
+                    minutes: currentDate.getMinutes()
+                }
+
+                Column{
+                    id: dateLabel
+                    width: parent.width/2
+
+                    Text{
+                        id: dayLabel
+                        text: currentDate.getDate()
+                        width: parent.width
+                        height: timePicker.height/3
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pixelSize: Theme.fontSizeExtraLarge
+                        color: Theme.accentColor
+                    }
+
+                    Text {
+                        id: monthLabel
+                        text: monthNames[currentDate.getMonth()]
+                        width: parent.width
+                        height: timePicker.height/3
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        font.pixelSize: Theme.fontSizeExtraLarge
+                        color: Theme.accentColor
+                    }
+
+                    Text {
+                        id: yearLabel
+                        text: currentDate.getFullYear()
+                        width: parent.width
+                        height: timePicker.height/3
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pixelSize: Theme.fontSizeExtraLarge
+                        color: Theme.accentColor
+                    }
+                }
             }
 
-            Column{
-                id: dateLabel
-                width: parent.width/2
+            GlacierRoller {
+                id: timeFormatRoller
+                width: parent.width
 
-                Text{
-                    id: dayLabel
-                    text: currentDate.getDate()
-                    width: parent.width
-                    height: timePicker.height/3
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    color: Theme.accentColor
+                clip: true
+                model: timeFormatModel
+                label: qsTr("Time format")
+                delegate:GlacierRollerItem{
+                    Text{
+                        height: Theme.itemHeightMedium
+                        verticalAlignment: Text.AlignVCenter
+                        text: name
+                        color: Theme.textColor
+                        font.pixelSize: Theme.fontSizeMedium
+                        font.bold: (timeFormatRoller.activated && timeFormatRoller.currentIndex === index)
+                    }
                 }
 
-                Text {
-                    id: monthLabel
-                    text: monthNames[currentDate.getMonth()]
-                    width: parent.width
-                    height: timePicker.height/3
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    color: Theme.accentColor
+                onCurrentIndexChanged: {
+                    if(timeFormat.value != currentIndex) {
+                        timeFormat.value = currentIndex
+                    }
                 }
 
-                Text {
-                    id: yearLabel
-                    text: currentDate.getFullYear()
-                    width: parent.width
-                    height: timePicker.height/3
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    color: Theme.accentColor
+            }
+
+            CheckBox{
+                id: automaticTimeUpdateCheckbox
+                text: qsTr("Automatic time update")
+                checked: dateTimeSettings.automaticTimeUpdate
+                onClicked:{
+                    dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
+                }
+            }
+
+            CheckBox{
+                id: automaticTimezoneUpdateCheckbox
+                text: qsTr("Automatic time zone update")
+                checked: dateTimeSettings.automaticTimezoneUpdate
+                onClicked:{
+                    dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
                 }
             }
         }
-
-        GlacierRoller {
-            id: timeFormatRoller
-            width: parent.width
-
-            clip: true
-            model: timeFormatModel
-            label: qsTr("Time format")
-            delegate:GlacierRollerItem{
-                Text{
-                    height: timeFormatRoller.itemHeight
-                    verticalAlignment: Text.AlignVCenter
-                    text: name
-                    color: Theme.textColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    font.bold: (timeFormatRoller.activated && timeFormatRoller.currentIndex === index)
-                }
-            }
-
-            onCurrentIndexChanged: {
-                if(timeFormat.value != currentIndex) {
-                    timeFormat.value = currentIndex
-                }
-            }
-
-        }
-
-        CheckBox{
-            id: automaticTimeUpdateCheckbox
-            text: qsTr("Automatic time update")
-            checked: dateTimeSettings.automaticTimeUpdate
-            onClicked:{
-                dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
-            }
-        }
-
-        CheckBox{
-            id: automaticTimezoneUpdateCheckbox
-            text: qsTr("Automatic time zone update")
-            checked: dateTimeSettings.automaticTimezoneUpdate
-            onClicked:{
-                dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
-            }
-        }
-
     }
 }
