@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2019-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,17 +22,13 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
-import org.nemomobile.ofono 1.0
-
 import MeeGo.QOfono 0.2
-import MeeGo.Connman 0.2
-
-import Nemo.Connectivity 1.0
 
 import "../../components"
 
 Page {
-    id: usbPage
+    id: mobilePage
+    property var modems: []
 
     headerTools: HeaderToolsLayout {
         id: header
@@ -40,103 +36,159 @@ Page {
         title: qsTr("Mobile networks")
     }
 
-    OfonoExtSimListModel {
-        id: simModel
+    OfonoConnMan {
+        id: cellularNetworkTechnology
+        modemPath:ofonoManager.defaultModem
     }
 
-    OfonoSimInfo{
-        id: simInfo
+    OfonoRadioSettings{
+        id: radioSettings
+        modemPath:ofonoManager.defaultModem
+    }
 
-        onSubscriberIdentityChanged: {
-            mobileData.defaultDataSim = subscriberIdentity
+    OfonoManager {
+        id: ofonoManager
+        onModemsChanged: {
+            recalcModel()
+        }
+
+        Component.onCompleted: {
+            recalcModel()
+        }
+
+        function recalcModel() {
+            mobilePage.modems = [];
+            for(var i = 0; i < ofonoManager.modems.length; i++) {
+                mobilePage.modems.push(modems[i]);
+            }
+            simList.model = mobilePage.modems;
+            if(mobilePage.modems.length > 0) {
+                noSimLabel.visible = false;
+            } else {
+                noSimLabel.visible = true;
+            }
         }
     }
 
-    OfonoModemListModel{
-        id: modemModel
+
+    Label{
+        id: noSimLabel
+        visible: mobilePage.modems.length === 0
+        text: qsTr("SIM cards not avaiable")
+        anchors.centerIn: parent
     }
 
-    MobileDataConnection{
-        id: mobileData
-        useDefaultModem: true
-    }
 
-    ListView{
-        id: simList
-        width: parent.width
-        height: Theme.itemHeightLarge*modemModel.count
+    SettingsColumn{
+        id:mobilePageSettingsColumn
+        visible: !noSimLabel.visible
 
-        model:  modemModel
+        ListView{
+            id: simList
+            width: parent.width
+            height: childrenRect.height
 
-        clip: true
+            model:  mobilePage.modems
 
-        delegate: ListViewItemWithActions{
-            id: mFromList
-            label: model.simPresent ? qsTr("Unknow") : qsTr("No sim")
-            description: model.enabled ? qsTr("Enabled") : qsTr("Disabled")
-            iconVisible: false
-            showNext: model.enabled && model.simPresent
+            clip: true
 
-            OfonoNetworkRegistration{
-                id: cellularRegistration
-                modemPath: path
+            delegate: ListViewItemWithActions{
+                id: mFromList
+                label: simManager.present? qsTr("Unknow") : qsTr("No sim")
+                description: (modemId.powered ? qsTr("Enabled") : qsTr("Disabled")) + " " + cellularRegistration.status
+                height: Theme.itemHeightLarge
+                iconVisible: false
+                showNext: false
 
-                onCurrentOperatorPathChanged: {
-                    operator.operatorPath = currentOperatorPath
-                }
-            }
+                OfonoModem{
+                    id: modemId
+                    modemPath: modelData
 
-            OfonoNetworkOperator{
-                id: operator
-                onNameChanged: {
-                    mFromList.label = name
-                }
-            }
-
-            actions:[
-                ActionButton {
-                    iconSource: "image://theme/power-off"
-                    onClicked: {
-                        if(model.enabled) {
-                            model.enabled = false
-                        } else {
-                            model.enabled = true
+                    onPoweredChanged: {
+                        if(powered) {
+                            cellularRegistration.registration()
+                            cellularRegistration.modemPath = modemId.modemPath
                         }
                     }
-                },
-                ActionButton {
-                    iconSource: "image://theme/globe"
-                    onClicked: {
-                        simInfo.modemPath = path
-                        console.log(path)
+                }
+
+                OfonoSimManager{
+                    id: simManager
+                    modemPath: modelData
+                }
+
+                OfonoNetworkRegistration{
+                    id: cellularRegistration
+                    modemPath: modelData
+
+                    onNameChanged: {
+                        mFromList.label = name
                     }
                 }
-            ]
+
+                actions:[
+                    ActionButton {
+                        iconSource: "image://theme/power-off"
+                        onClicked: {
+                            if(modemId.powered) {
+                                modemId.powered = false
+                            } else {
+                                modemId.powered = true
+                            }
+                        }
+                    }
+                ]
+            }
         }
-    }
 
-    CheckBox {
-        id: autoConnectCheckBox
-        width: parent.width
-        anchors.top: simList.bottom
-        checked: mobileData.autoConnect
-        text: qsTr("Connect to internet")
+        CheckBox {
+            id: autoConnectCheckBox
+            width: parent.width
+            height: Theme.itemHeightLarge
 
-        onClicked: {
-            mobileData.autoConnect = !mobileData.autoConnect
+            checked: cellularNetworkTechnology.powered
+            text: qsTr("Connect to internet")
+
+            onClicked: {
+                cellularNetworkTechnology.powered = !cellularNetworkTechnology.powered
+            }
         }
-    }
 
-    CheckBox {
-        id: roamingCheckBox
-        width: parent.width
-        anchors.top: autoConnectCheckBox.bottom
-        checked: mobileData.roamingAllowed
-        text: qsTr("Enable data roaming")
+        CheckBox {
+            id: roamingCheckBox
+            width: parent.width
 
-        onClicked: {
-            mobileData.roamingAllowed = !mobileData.roamingAllowed
+            checked: cellularNetworkTechnology.roamingAllowed
+            text: qsTr("Enable data roaming")
+
+            onClicked: {
+                cellularNetworkTechnology.roamingAllowed = !cellularNetworkTechnology.roamingAllowed
+            }
         }
+
+        GlacierRoller{
+            id: techSelector
+            width: parent.width
+            label: qsTr("Preferred network")
+
+            model: radioSettings.availableTechnologies
+
+            delegate: GlacierRollerItem{
+                Text{
+                    id: tech
+                    verticalAlignment: Text.AlignVCenter
+                    height: techSelector.itemHeight
+                    text: modelData
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    font.bold: modelData == radioSettings.technologyPreference
+                }
+            }
+
+            onCurrentIndexChanged: {
+                radioSettings.technologyPreference = radioSettings.availableTechnologies[currentIndex]
+            }
+        }
+
     }
 }
-
