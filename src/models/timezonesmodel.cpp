@@ -35,11 +35,13 @@ TimeZonesModel::TimeZonesModel(QObject *parent) :
     for (const QString &role : m_roleNames) {
         m_hash.insert(Qt::UserRole+m_hash.count() ,role.toLatin1());
     }
+
+    m_zones =  m_tzInfo->systemTimeZones();
 }
 
 int TimeZonesModel::rowCount(const QModelIndex &parent) const
 {
-    return m_tzInfo->systemTimeZones().count();
+    return m_zones.count();
 }
 
 QVariant TimeZonesModel::data(const QModelIndex &index, int role) const
@@ -48,11 +50,11 @@ QVariant TimeZonesModel::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    if (index.row() >= m_tzInfo->systemTimeZones().count()) {
+    if (index.row() >= m_zones.count()) {
         return QVariant();
     }
 
-    TimeZoneInfo item = m_tzInfo->systemTimeZones().at(index.row());
+    TimeZoneInfo item = m_zones.at(index.row());
 
     if(role == Qt::UserRole) {
         return item.name();
@@ -70,4 +72,20 @@ QVariant TimeZonesModel::data(const QModelIndex &index, int role) const
         return item.offset() ;
     }
     return QVariant();
+}
+
+void TimeZonesModel::search(QString zoneName)
+{
+    beginResetModel();
+    if(zoneName.isEmpty()) {
+        m_zones = m_tzInfo->systemTimeZones();
+    } else {
+        m_zones.clear();
+        foreach(const TimeZoneInfo &zone, m_tzInfo->systemTimeZones()) {
+            if(zone.name().contains(zoneName.toUtf8())) {
+                m_zones.append(zone);
+            }
+        }
+    }
+    endResetModel();
 }

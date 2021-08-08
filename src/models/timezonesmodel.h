@@ -35,11 +35,14 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int, QByteArray> roleNames() const {return m_hash;}
 
+    Q_INVOKABLE void search(QString zoneName);
+
 private:
     QHash<int,QByteArray> m_hash;
     QStringList m_roleNames;
 
     TimeZoneInfo* m_tzInfo;
+    QList<TimeZoneInfo> m_zones;
 };
 
 #endif // TIMEZONESMODEL_H

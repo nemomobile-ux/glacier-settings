@@ -43,34 +43,61 @@ Page {
         id: dateTimeSettings
     }
 
-    ListView{
-        id: timeZonesList
-        width: parent.width
-        height: parent.height
+    SettingsColumn {
+        id: timezoneSettingsCollumn
+        anchors.fill: parent
 
-        model: timeZonesModel
-        delegate: Rectangle{
-            width: timeZonesList.width
-            height: Theme.itemHeightLarge
+        Row{
+            id: searchLineItem
+            width: parent.width
+            height: searchLine.height
+            spacing: Theme.itemSpacingMedium
 
-            color: Theme.backgroundColor
-            Label {
-                color: dateTimeSettings.timezone == name ? Theme.accentColor : Theme.textColor
-                text: name
-                anchors{
-                    left: parent.left
-                    leftMargin: Theme.itemSpacingSmall
-                    verticalCenter: parent.verticalCenter
+            TextField{
+                id: searchLine
+                width: parent.width-searchLine.height-Theme.itemSpacingMedium*2
+                onTextChanged: {
+                    timeZonesModel.search(searchLine.text);
                 }
-
-                font.pixelSize: Theme.fontSizeMedium
-                clip: true
             }
 
-            MouseArea{
-                anchors.fill: parent
-                onClicked: {
-                    dateTimeSettings.timezone = name
+            Image {
+                id: searchLineImage
+                source: "image://theme/search"
+                width: height
+                height: searchLine.height
+            }
+        }
+
+        ListView{
+            id: timeZonesList
+            width: parent.width
+            height: parent.height
+
+            model: timeZonesModel
+            delegate: Rectangle{
+                width: timeZonesList.width
+                height: Theme.itemHeightLarge
+
+                color: Theme.backgroundColor
+                Label {
+                    color: dateTimeSettings.timezone == name ? Theme.accentColor : Theme.textColor
+                    text: name
+                    anchors{
+                        left: parent.left
+                        leftMargin: Theme.itemSpacingSmall
+                        verticalCenter: parent.verticalCenter
+                    }
+
+                    font.pixelSize: Theme.fontSizeMedium
+                    clip: true
+                }
+
+                MouseArea{
+                    anchors.fill: parent
+                    onClicked: {
+                        dateTimeSettings.timezone = name
+                    }
                 }
             }
         }
