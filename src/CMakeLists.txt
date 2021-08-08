@@ -2,6 +2,8 @@ set(SRC
 	main.cpp
 	models/imagesmodel.cpp
 	models/imagesmodel.h
+        models/timezonesmodel.cpp
+        models/timezonesmodel.h
 	models/satellitemodel.cpp
 	models/satellitemodel.h
 	models/settingsmodel.cpp
@@ -32,7 +34,12 @@ target_link_libraries(glacier-settings
 	Qt5::Qml
 	Qt5::Quick
 	Qt5::Positioning
+        ${SYSSETTINGS_LIBRARIES}
 	Glacier::App)
+
+target_include_directories(glacier-settings PUBLIC
+        ${SYSSETTINGS_INCLUDE_DIRS})
+
 install(TARGETS glacier-settings RUNTIME
 	DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${QML_PLUGINS}

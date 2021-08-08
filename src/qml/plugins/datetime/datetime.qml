@@ -67,54 +67,82 @@ Page {
 
     SettingsColumn{
         id: mainContent
-        Row{
-            id: dateView
+
+        CheckBox{
+            id: automaticTimeUpdateCheckbox
+            text: qsTr("Automatic time update")
+            checked: dateTimeSettings.automaticTimeUpdate
+            width: parent.width
+            onClicked:{
+                dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
+            }
+        }
+
+        CheckBox{
+            id: automaticTimezoneUpdateCheckbox
+            text: qsTr("Automatic time zone update")
+            width: parent.width
+            checked: dateTimeSettings.automaticTimezoneUpdate
+            onClicked:{
+                dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
+            }
+        }
+
+        Item{
+            id: selectTimeZone
+            height: Theme.itemHeightLarge
             width: parent.width
 
-            TimePicker{
-                id: timePicker
-                height: width
-                width: listViewPage.width/2
+            Label {
+                id: descriptionItem
+                color: Theme.textColor
+                text: qsTr("Current time zone")
+                anchors{
+                    left: parent.left
+                    right: parent.right
+                }
+                font.pixelSize: Theme.fontSizeMedium
+                clip: true
             }
 
-            Column{
-                id: dateLabel
-                width: parent.width/2
+            Label {
+                id: subDescriptionItem
+                color: Theme.textColor
+                text: dateTimeSettings.timezone
+                anchors{
+                    left: parent.left
+                    right: parent.right
+                    top: descriptionItem.bottom
+                }
+                font.pixelSize: Theme.fontSizeTiny
+                clip: true
+            }
 
-                Text{
-                    id: dayLabel
-                    text: currentDate.getDate()
-                    width: parent.width
-                    height: timePicker.height/3
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    color: Theme.accentColor
+            NemoIcon {
+                id: arrowItem
+                height: parent.height- Theme.itemSpacingSmall
+                width: height
+
+                anchors{
+                    right: parent.right
+                    rightMargin: Theme.itemSpacingLarge
+                    verticalCenter: parent.verticalCenter
                 }
 
-                Text {
-                    id: monthLabel
-                    text: monthNames[currentDate.getMonth()]
-                    width: parent.width
-                    height: timePicker.height/3
-                    horizontalAlignment: Text.AlignHCenter
-                    verticalAlignment: Text.AlignVCenter
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    color: Theme.accentColor
-                }
+                sourceSize.width: width
+                sourceSize.height: height
 
-                Text {
-                    id: yearLabel
-                    text: currentDate.getFullYear()
-                    width: parent.width
-                    height: timePicker.height/3
-                    verticalAlignment: Text.AlignVCenter
-                    horizontalAlignment: Text.AlignHCenter
-                    font.pixelSize: Theme.fontSizeExtraLarge
-                    color: Theme.accentColor
+                source: "/usr/lib/qt/qml/QtQuick/Controls/Nemo/images/listview-icon-arrow.svg"
+            }
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
                 }
             }
         }
+
 
         GlacierRoller {
             id: timeFormatRoller
@@ -125,7 +153,7 @@ Page {
             label: qsTr("Time format")
             delegate:GlacierRollerItem{
                 Text{
-                    height: Theme.itemHeightMedium
+                    height: timeFormatRoller.itemHeight
                     verticalAlignment: Text.AlignVCenter
                     text: name
                     color: Theme.textColor
@@ -137,27 +165,15 @@ Page {
             onCurrentIndexChanged: {
                 if(timeFormat.value != currentIndex) {
                     timeFormat.value = currentIndex
+
+                    if(currentIndex === 0) {
+                        dateTimeSettings.setHourMode(dateTimeSettings.TwentyFourHours)
+                    } else {
+                        dateTimeSettings.setHourMode(dateTimeSettings.TwelveHours)
+                    }
                 }
             }
 
-        }
-
-        CheckBox{
-            id: automaticTimeUpdateCheckbox
-            text: qsTr("Automatic time update")
-            checked: dateTimeSettings.automaticTimeUpdate
-            onClicked:{
-                dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
-            }
-        }
-
-        CheckBox{
-            id: automaticTimezoneUpdateCheckbox
-            text: qsTr("Automatic time zone update")
-            checked: dateTimeSettings.automaticTimezoneUpdate
-            onClicked:{
-                dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
-            }
         }
     }
 }
