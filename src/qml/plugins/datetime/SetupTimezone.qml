@@ -44,7 +44,7 @@ Page {
     }
 
     SettingsColumn {
-        id: timezoneSettingsCollumn
+        id: timezoneSettingsColumn
         anchors.fill: parent
 
         Row{

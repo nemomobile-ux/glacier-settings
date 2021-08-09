@@ -29,8 +29,6 @@ import "../../components"
 Page {
     id: listViewPage
 
-    property date currentDate: new Date()
-
     headerTools: HeaderToolsLayout {
         showBackButton: true;
         title: qsTr("Date and time")
@@ -78,6 +76,31 @@ Page {
             }
         }
 
+        SettingsClickedItem{
+            id: selectDate
+            height: visible ? Theme.itemHeightLarge : 0
+            width: parent.width
+            visible: !dateTimeSettings.automaticTimeUpdate
+            description: qsTr("Select date")
+            subDescription: Qt.formatDateTime(new Date(), "dd-MM-yyyy");
+            onClicked: {
+                pageStack.push(Qt.resolvedUrl("SetupDate.qml"));
+            }
+        }
+
+
+        SettingsClickedItem{
+            id: selectTime
+            height: visible ? Theme.itemHeightLarge : 0
+            width: parent.width
+            visible: !dateTimeSettings.automaticTimeUpdate
+            description: qsTr("Select time")
+            subDescription: Qt.formatDateTime(new Date(), "HH:mm");
+            onClicked: {
+                pageStack.push(Qt.resolvedUrl("SetupTime.qml"));
+            }
+        }
+
         CheckBox{
             id: automaticTimezoneUpdateCheckbox
             text: qsTr("Automatic time zone update")
@@ -88,58 +111,16 @@ Page {
             }
         }
 
-        Item{
+        SettingsClickedItem{
             id: selectTimeZone
-            height: Theme.itemHeightLarge
+            height: visible ? Theme.itemHeightLarge : 0
             width: parent.width
+            visible: !dateTimeSettings.automaticTimezoneUpdate
+            description: qsTr("Current time zone")
+            subDescription: dateTimeSettings.timezone
 
-            Label {
-                id: descriptionItem
-                color: Theme.textColor
-                text: qsTr("Current time zone")
-                anchors{
-                    left: parent.left
-                    right: parent.right
-                }
-                font.pixelSize: Theme.fontSizeMedium
-                clip: true
-            }
-
-            Label {
-                id: subDescriptionItem
-                color: Theme.textColor
-                text: dateTimeSettings.timezone
-                anchors{
-                    left: parent.left
-                    right: parent.right
-                    top: descriptionItem.bottom
-                }
-                font.pixelSize: Theme.fontSizeTiny
-                clip: true
-            }
-
-            NemoIcon {
-                id: arrowItem
-                height: parent.height- Theme.itemSpacingSmall
-                width: height
-
-                anchors{
-                    right: parent.right
-                    rightMargin: Theme.itemSpacingLarge
-                    verticalCenter: parent.verticalCenter
-                }
-
-                sourceSize.width: width
-                sourceSize.height: height
-
-                source: "/usr/lib/qt/qml/QtQuick/Controls/Nemo/images/listview-icon-arrow.svg"
-            }
-
-            MouseArea{
-                anchors.fill: parent
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
-                }
+            onClicked: {
+                pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
             }
         }
 
