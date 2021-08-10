@@ -43,6 +43,7 @@ Page {
 
     SettingsColumn{
         id: display
+        spacing: Theme.itemSpacingLarge
 
         Label{
             id: brightnessLabel
