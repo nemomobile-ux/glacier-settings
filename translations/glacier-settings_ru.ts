@@ -35,7 +35,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="47"/>
+        <location filename="../src/main.cpp" line="49"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -43,14 +43,12 @@
 <context>
     <name>QuickSettings</name>
     <message>
-        <location filename="../src/qml/components/QuickSettings.qml" line="84"/>
         <source>Quick settings</source>
-        <translation>Быстрые настройки</translation>
+        <translation type="vanished">Быстрые настройки</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/QuickSettings.qml" line="210"/>
         <source>Brightness</source>
-        <translation>Яркость</translation>
+        <translation type="vanished">Яркость</translation>
     </message>
 </context>
 <context>
@@ -75,6 +73,30 @@
     </message>
 </context>
 <context>
+    <name>SetupDate</name>
+    <message>
+        <location filename="../src/qml/plugins/datetime/SetupDate.qml" line="35"/>
+        <source>Setup date</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SetupTime</name>
+    <message>
+        <location filename="../src/qml/plugins/datetime/SetupTime.qml" line="35"/>
+        <source>Setup time</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SetupTimezone</name>
+    <message>
+        <location filename="../src/qml/plugins/datetime/SetupTimezone.qml" line="35"/>
+        <source>Setup time zone</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>WifiSettings</name>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="38"/>
@@ -82,22 +104,22 @@
         <translation>Присоединиться к</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="92"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="93"/>
         <source>Password: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="113"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="114"/>
         <source>Connect</source>
         <translation>Присоединиться</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="137"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="138"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="138"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="139"/>
         <source>Connection failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -153,37 +175,37 @@
         <translation>О продукте</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="104"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="105"/>
         <source>Vendor</source>
         <translation>Производитель</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="116"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="117"/>
         <source>Vendor version</source>
         <translation>Модель</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="128"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="129"/>
         <source>Software version</source>
         <translation>Версия ПО</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="140"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="141"/>
         <source>Adaptation version</source>
         <translation>Версия адаптации</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="153"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="154"/>
         <source>Serial number</source>
         <translation>Серийный номер</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="166"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="167"/>
         <source>IMEI</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="179"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="180"/>
         <source>Wlan MAC</source>
         <translation></translation>
     </message>
@@ -196,37 +218,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="90"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
         <source>Enable Bluetooth</source>
         <translation type="unfinished">Включить bluetooth</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="102"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="101"/>
         <source>Device name</source>
         <translation type="unfinished">Имя устройства</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="133"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="132"/>
         <source>Visibility</source>
         <translation type="unfinished">Видимость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="145"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="144"/>
         <source>Paired devices:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="169"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="168"/>
         <source>Devices nearby:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="193"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="192"/>
         <source>Stop search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="193"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="192"/>
         <source>Start discovery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -234,32 +256,47 @@
 <context>
     <name>datetime</name>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="36"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="34"/>
         <source>Date and time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="49"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="47"/>
         <source>12h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="50"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="48"/>
         <source>24h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="123"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
+        <source>Select date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="98"/>
+        <source>Select time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
+        <source>Current time zone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
         <source>Time format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="145"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
         <source>Automatic time update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="154"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
         <source>Automatic time zone update</source>
         <translation type="unfinished"></translation>
     </message>
@@ -340,22 +377,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="137"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="138"/>
         <source>Enable device lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="164"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="165"/>
         <source>Show notifications when device locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="191"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="192"/>
         <source>Auto lock device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="222"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="223"/>
         <source>Enter code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -368,22 +405,22 @@
         <translation>Настройки экрана</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="49"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="50"/>
         <source>Brightness</source>
         <translation>Яркость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="75"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="76"/>
         <source>Auto brightness</source>
         <translation>Автоматическая яркость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="96"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
         <source>Dim timeout</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="114"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="115"/>
         <source>Blank timeout</source>
         <translation></translation>
     </message>
@@ -514,38 +551,48 @@
 <context>
     <name>mobile</name>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="40"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="36"/>
         <source>Mobile networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="75"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="77"/>
+        <source>SIM cards not avaiable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
         <source>Unknow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="75"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
         <source>No sim</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="76"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
         <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="76"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="123"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="151"/>
         <source>Connect to internet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/mobile/mobile.qml" line="135"/>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="163"/>
         <source>Enable data roaming</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/mobile/mobile.qml" line="173"/>
+        <source>Preferred network</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -557,7 +604,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/nfc/nfc.qml" line="54"/>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="55"/>
         <source>Enable NFC</source>
         <translation type="unfinished"></translation>
     </message>
