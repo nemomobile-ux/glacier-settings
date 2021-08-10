@@ -65,6 +65,7 @@ Page {
 
     SettingsColumn{
         id: mainContent
+        spacing: Theme.itemSpacingLarge
 
         CheckBox{
             id: automaticTimeUpdateCheckbox

@@ -48,12 +48,12 @@ Page {
         id: displaySettings
 
         onPowerSaveModeThresholdChanged: {
-            console.log("powerSaveModeThreshold:"+displaySettings.powerSaveModeThreshold)
+            console.log("powerSaveModeThreshold: "+displaySettings.powerSaveModeThreshold)
             for (var i = 0; i < thresholdRollerModel.count; ++i) {
                 if(thresholdRollerModel.get(i).name == displaySettings.powerSaveModeThreshold) {
                     powerSaveModeThresholdRoller.currentIndex = i
 
-                    console.log(powerSaveModeThresholdRoller.currentIndex+" "+thresholdRollerModel.get(i).name)
+                    console.log("powerSaveModeThresholdRoller: " + powerSaveModeThresholdRoller.currentIndex+" "+thresholdRollerModel.get(i).name)
                 }
             }
         }
@@ -70,7 +70,7 @@ Page {
 
     SettingsColumn{
         id: forcePowerSaveColumn
-
+        spacing: Theme.itemSpacingLarge
         Rectangle{
             width: parent.width
             height: childrenRect.height
@@ -130,7 +130,7 @@ Page {
                 if(thresholdRollerModel.get(i).name == displaySettings.powerSaveModeThreshold) {
                     powerSaveModeThresholdRoller.currentIndex = i
 
-                    console.log(powerSaveModeThresholdRoller.currentIndex+" "+thresholdRollerModel.get(i).name)
+                    console.log("powerSaveModeThresholdRoller: " + powerSaveModeThresholdRoller.currentIndex+" "+thresholdRollerModel.get(i).name)
                 }
             }
         }
