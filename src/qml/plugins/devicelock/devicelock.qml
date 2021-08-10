@@ -125,6 +125,7 @@ Page {
 
     SettingsColumn{
         id: lockColumn
+        spacing: Theme.itemSpacingLarge
 
         Rectangle{
             id: useLockArea
