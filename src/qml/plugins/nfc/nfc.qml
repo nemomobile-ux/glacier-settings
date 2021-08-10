@@ -41,6 +41,7 @@ Page {
 
     SettingsColumn{
         id: nfcColumn
+        spacing: Theme.itemSpacingLarge
 
         Rectangle{
             id: nfcEnable

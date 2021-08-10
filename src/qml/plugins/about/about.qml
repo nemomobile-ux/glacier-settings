@@ -89,6 +89,7 @@ Page {
         Column{
             id: abloutGreed
             width: parent.width-Theme.itemSpacingMedium*2
+            spacing: Theme.itemSpacingLarge
 
             anchors{
                 top: glacierLogo.bottom

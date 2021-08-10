@@ -82,6 +82,7 @@ Page {
     SettingsColumn{
         id:mobilePageSettingsColumn
         visible: !noSimLabel.visible
+        spacing: Theme.itemSpacingLarge
 
         ListView{
             id: simList

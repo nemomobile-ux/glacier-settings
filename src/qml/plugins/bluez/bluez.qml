@@ -81,8 +81,7 @@ Page {
 
     SettingsColumn{
         id: bluetoothColumn
-        width: parent.width
-        height: parent.height
+        spacing: Theme.itemSpacingLarge
 
         CheckBox {
             id: columnCheckBox
