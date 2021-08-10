@@ -60,6 +60,7 @@ Page {
 
     SettingsColumn{
         id: gpsColumn
+        spacing: Theme.itemSpacingLarge
 
         Rectangle{
             id: gpsEnable
