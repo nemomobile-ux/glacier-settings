@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="37"/>
         <source>Enter code</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите код</translation>
     </message>
 </context>
 <context>
@@ -14,22 +14,22 @@
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="39"/>
         <source>connected</source>
-        <translation type="unfinished">Соединён</translation>
+        <translation>Соединён</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="41"/>
         <source>connecting</source>
-        <translation type="unfinished">Соединяется</translation>
+        <translation>Соединяется</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="44"/>
         <source>open</source>
-        <translation type="unfinished">открытая</translation>
+        <translation>открытая</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
         <source>secure</source>
-        <translation type="unfinished">защищённая</translation>
+        <translation>защищённая</translation>
     </message>
 </context>
 <context>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/SavedServices.qml" line="17"/>
         <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление сохранёнными сетями</translation>
     </message>
 </context>
 <context>
@@ -64,12 +64,12 @@
     <message>
         <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="32"/>
         <source>Auto connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматическое соединение</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="67"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
     <message>
         <location filename="../src/qml/plugins/datetime/SetupDate.qml" line="35"/>
         <source>Setup date</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить дату</translation>
     </message>
 </context>
 <context>
@@ -85,7 +85,7 @@
     <message>
         <location filename="../src/qml/plugins/datetime/SetupTime.qml" line="35"/>
         <source>Setup time</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить время</translation>
     </message>
 </context>
 <context>
@@ -93,7 +93,7 @@
     <message>
         <location filename="../src/qml/plugins/datetime/SetupTimezone.qml" line="35"/>
         <source>Setup time zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить часовой пояс</translation>
     </message>
 </context>
 <context>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="93"/>
         <source>Password: </source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль: </translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="114"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="138"/>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="139"/>
         <source>Connection failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Соединение не удалось</translation>
     </message>
 </context>
 <context>
@@ -134,12 +134,12 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="60"/>
         <source>DHCP</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="63"/>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Вручную</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="78"/>
@@ -215,42 +215,42 @@
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="40"/>
         <source>Bluetooth</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
         <source>Enable Bluetooth</source>
-        <translation type="unfinished">Включить bluetooth</translation>
+        <translation>Включить bluetooth</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="101"/>
         <source>Device name</source>
-        <translation type="unfinished">Имя устройства</translation>
+        <translation>Имя устройства</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="132"/>
         <source>Visibility</source>
-        <translation type="unfinished">Видимость</translation>
+        <translation>Видимость</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="144"/>
         <source>Paired devices:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сопряжённые устройства:</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="168"/>
         <source>Devices nearby:</source>
-        <translation type="unfinished"></translation>
+        <translation>Устройства рядом:</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="192"/>
         <source>Stop search</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить поиск</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="192"/>
         <source>Start discovery</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустить поиск</translation>
     </message>
 </context>
 <context>
@@ -258,47 +258,47 @@
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="34"/>
         <source>Date and time</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата и время</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="47"/>
         <source>12h</source>
-        <translation type="unfinished"></translation>
+        <translation>12ч</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="48"/>
         <source>24h</source>
-        <translation type="unfinished"></translation>
+        <translation>24ч</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
         <source>Select date</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать дату</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="98"/>
         <source>Select time</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать время</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
         <source>Current time zone</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущий часовой пояс</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
         <source>Time format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат времени</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
         <source>Automatic time update</source>
-        <translation type="unfinished"></translation>
+        <translation>Определять время автоматически</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
         <source>Automatic time zone update</source>
-        <translation type="unfinished"></translation>
+        <translation>Определять часовой пояс автоматически</translation>
     </message>
 </context>
 <context>
@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/qml/plugins/developermode/developermode.qml" line="106"/>
         <source>Allow install untrusted software</source>
-        <translation type="unfinished"></translation>
+        <translation>Позволять установку непроверенных приложений</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/developermode/developermode.qml" line="147"/>
@@ -334,67 +334,67 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="37"/>
         <source>Device lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Блокировка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="93"/>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Никогда</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="97"/>
         <source>Without delay</source>
-        <translation type="unfinished"></translation>
+        <translation>Без задержки</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
         <source>1 min</source>
-        <translation type="unfinished"></translation>
+        <translation>1 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
         <source>5 min</source>
-        <translation type="unfinished"></translation>
+        <translation>5 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
         <source>10 min</source>
-        <translation type="unfinished"></translation>
+        <translation>10 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
         <source>15 min</source>
-        <translation type="unfinished"></translation>
+        <translation>15 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
         <source>30 min</source>
-        <translation type="unfinished"></translation>
+        <translation>30 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
         <source>1 hour</source>
-        <translation type="unfinished"></translation>
+        <translation>1 час</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="138"/>
         <source>Enable device lock</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить блокировку устройства</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="165"/>
         <source>Show notifications when device locked</source>
-        <translation type="unfinished"></translation>
+        <translation>Показовать уведомления при заблокированном экране</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="192"/>
         <source>Auto lock device</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматическая блокировка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="223"/>
         <source>Enter code</source>
-        <translation type="unfinished"></translation>
+        <translation>Ввести код</translation>
     </message>
 </context>
 <context>
@@ -446,7 +446,7 @@
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="40"/>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Местоположение</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="73"/>
@@ -463,7 +463,7 @@
         <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
         <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
         <source>unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>недоступно</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/qml/plugins/keyboard/keyboard.qml" line="35"/>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Клавиатура</translation>
     </message>
 </context>
 <context>
@@ -553,47 +553,47 @@
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="36"/>
         <source>Mobile networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Мобильные сети</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="77"/>
         <source>SIM cards not avaiable</source>
-        <translation type="unfinished"></translation>
+        <translation>Отсутствует SIM</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
         <source>Unknow</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестно</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
         <source>No sim</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет SIM</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Включена</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Выключена</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="151"/>
         <source>Connect to internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Соединение с интернетом</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="163"/>
         <source>Enable data roaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить интернет в роуменге</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="173"/>
         <source>Preferred network</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпочитаемая сеть</translation>
     </message>
 </context>
 <context>
@@ -601,12 +601,12 @@
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="35"/>
         <source>NFC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="55"/>
         <source>Enable NFC</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить NFC</translation>
     </message>
 </context>
 <context>
@@ -614,17 +614,17 @@
     <message>
         <location filename="../src/qml/plugins/powersave/powersave.qml" line="38"/>
         <source>Power save</source>
-        <translation type="unfinished"></translation>
+        <translation>Энергосбережение</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/powersave/powersave.qml" line="81"/>
         <source>Force power save</source>
-        <translation type="unfinished"></translation>
+        <translation>Усиленное энергосбережение</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/powersave/powersave.qml" line="111"/>
         <source>Power save mode battery level threshold</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить усиленное энергосбережение при уровне заряда</translation>
     </message>
 </context>
 <context>
@@ -632,61 +632,61 @@
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="35"/>
         <source>USB</source>
-        <translation type="unfinished"></translation>
+        <translation>USB</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="41"/>
         <source>Ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Спрашивать</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="45"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="134"/>
         <source>Connection sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>Раздача интернета</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="49"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="130"/>
         <source>MTP</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
         <source>Charging only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только зарядка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="57"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="136"/>
         <source>Developer mode</source>
-        <translation type="unfinished">Режим разработчика</translation>
+        <translation>Режим разработчика</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="74"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="96"/>
         <source>Usb mode: </source>
-        <translation type="unfinished"></translation>
+        <translation>Соединение USB: </translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="105"/>
         <source>Select USB mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать тип соединения</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="128"/>
         <source>Always ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Всегда спрашивать</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
         <source>Chagring only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только зарядка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="138"/>
         <source>Busy</source>
-        <translation type="unfinished"></translation>
+        <translation>Занято</translation>
     </message>
 </context>
 <context>
@@ -699,22 +699,22 @@
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="71"/>
         <source>WiFi</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="114"/>
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранённые</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="132"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Включена</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="149"/>
         <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление сохранёнными сетями</translation>
     </message>
 </context>
 </TS>
