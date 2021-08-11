@@ -40,8 +40,10 @@ Item {
             } else if (modelData.state === "association" || modelData.state === "configuration") {
                 return qsTr("connecting")+"...";
             } else {
-                if (modelData.security[0] === "none") {
+                if (modelData.securityType === NetworkService.SecurityNone) {
                     return qsTr("open");
+                } else if (modelData.securityType === NetworkService.SecurityUnknown) {
+                    return qsTr("unknow");
                 } else {
                     return qsTr("secure");
                 }
@@ -66,6 +68,7 @@ Item {
         actions: [
             ActionButton {
                 id: removeNetworkButton
+                visible: saved
                 iconSource: "/usr/share/glacier-settings/qml/img/trash.svg"
 
                 onClicked: {

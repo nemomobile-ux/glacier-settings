@@ -109,6 +109,7 @@ Page {
         Column{
             id: networks
             spacing: Theme.itemSpacingSmall
+            width: parent.width
 
             Text{
                 text: qsTr("Saved")
@@ -129,7 +130,7 @@ Page {
 
 
             Text{
-                text: qsTr("Enabled")
+                text: qsTr("Available")
                 color: Theme.textColor
                 font.pixelSize: Theme.fontSizeLarge
             }

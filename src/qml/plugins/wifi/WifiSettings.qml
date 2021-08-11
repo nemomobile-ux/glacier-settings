@@ -64,7 +64,7 @@ Page {
                     console.log("    " + inkey + ": " + fields[key][inkey]);
                 }
             }
-            userAgent.sendUserReply({"Passphrase": passphrase.text})
+            userAgent.sendUserReply({"Passphrase": passphraseField.text})
         }
 
         onErrorReported: {
@@ -75,7 +75,14 @@ Page {
     }
 
     Component.onCompleted: {
+        // none - without pass
+        // wep | psk - pass
+        // ieee8021x - Login pass
         networkingModel.networkName.text = modelData.name;
+        if(modelData.securityType === NetworkService.SecurityNone) {
+            modelData.requestConnect();
+            spinner.visible = true;
+        }
     }
 
     Spinner {
@@ -86,15 +93,30 @@ Page {
     }
 
     SettingsColumn{
+        id: wifiAuthColumn
+        spacing: Theme.itemSpacingLarge
         visible: !spinner.visible
 
         Label{
-            id: currentModeLabel
-            text: qsTr("Password: ")
+            id: identityLabel
+            text: qsTr("Login")+":"
+            visible: modelData.securityType === NetworkService.SecurityIEEE802
         }
 
         TextField{
-            id: passphrase
+            id: identityField
+            text: modelData.identity
+            width: parent.width
+            visible: modelData.securityType === NetworkService.SecurityIEEE802
+        }
+
+        Label{
+            id: passphraseLabel
+            text: qsTr("Password")+":"
+        }
+
+        TextField{
+            id: passphraseField
             text: modelData.passphrase
             echoMode: TextInput.Password
             width: parent.width
@@ -106,9 +128,9 @@ Page {
             width: parent.width
 
             onClicked: {
-                modelData.passphrase = passphrase.text;
+                modelData.passphrase = passphraseField.text;
+                modelData.identity = identityField.text
                 modelData.requestConnect();
-                networkingModel.networkName.text = modelData.name;
                 spinner.visible = true;
             }
             text: qsTr("Connect")
