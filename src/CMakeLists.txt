@@ -21,7 +21,8 @@ set(QML_PLUGINS
 	qml/plugins/usb/usb.json
 	qml/plugins/devicelock/devicelock.json
 	qml/plugins/mobile/mobile.json
-	qml/plugins/powersave/powersave.json)
+        qml/plugins/powersave/powersave.json
+        qml/plugins/storage/storage.json)
 
 qt5_create_translation(QT_FILES ${SRC})
 
