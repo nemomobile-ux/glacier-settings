@@ -9,6 +9,7 @@ set(SRC
 	models/settingsmodel.cpp
 	models/settingsmodel.h)
 set(QML_PLUGINS
+	qml/plugins/bluez/audio.json
 	qml/plugins/bluez/bluez.json
 	qml/plugins/display/display.json
 	qml/plugins/datetime/datetime.json
