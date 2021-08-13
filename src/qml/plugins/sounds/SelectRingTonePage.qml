@@ -30,6 +30,7 @@ import org.nemomobile.folderlistmodel 1.0
 import "../../components"
 
 Page {
+    id: selectRingTonePage
 
     property string selectedFile
 
@@ -59,7 +60,7 @@ Page {
 //            icon: iconSource
             iconVisible: false
 
-            width: parent.width !== null ? parent.width : 200
+            width: selectRingTonePage.width !== null ? selectRingTonePage.width : 200
             height: Theme.itemHeightLarge
 
             onClicked: {

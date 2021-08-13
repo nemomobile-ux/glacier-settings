@@ -35,7 +35,6 @@ Page {
     headerTools: HeaderToolsLayout { showBackButton: true; title: qsTr("Sounds")}
 
     Component.onCompleted: {
-
         console.log("profile.ringerVolume              "+ profile.ringerVolume)
         console.log("profile.vibraMode                 "+ profile.vibraMode)
         console.log("profile.systemSoundLevel          "+ profile.systemSoundLevel)
@@ -80,9 +79,7 @@ Page {
 
     SettingsColumn{
         id: column
-        clip: true
         spacing: Theme.itemSpacingLarge
-
 
         Label{
             text: qsTr("Ringer Volume");
@@ -90,7 +87,8 @@ Page {
 
         Slider{
             width: parent.width
-
+            showValue: true
+            alwaysUp: true
             minimumValue: 0
             maximumValue: 100
             value: profile.ringerVolume
@@ -102,15 +100,11 @@ Page {
 
         GlacierRoller {
             id: vibraModeRoller
-            label: qsTr("Vibra Mode")
+            label: qsTr("Vibrations mode")
             width:  parent.width
             currentIndex: profile.vibraMode
 
-// enum:
-//        VibraAlways,
-//        VibraSilent,
-//        VibraNormal,
-//        VibraNever
+            // enum: VibraAlways, VibraSilent, VibraNormal, VibraNever
 
             model: ListModel {
                 ListElement { name: qsTr("Always") }
@@ -120,7 +114,6 @@ Page {
             }
             delegate: GlacierRollerItem{
                 Text{
-//                        height: serverType.itemHeight
                     verticalAlignment: Text.AlignVCenter
                     text: name
                     color: Theme.textColor
@@ -138,7 +131,8 @@ Page {
 
         Slider{
             width: parent.width
-
+            showValue: true
+            alwaysUp: true
             minimumValue: 0
             maximumValue: 100
             value: profile.systemSoundLevel
@@ -149,12 +143,13 @@ Page {
         }
 
         Label{
-            text: qsTr("Touch screen Tone Level");
+            text: qsTr("Touch screen tone Level");
         }
 
         Slider{
             width: parent.width
-
+            showValue: true
+            alwaysUp: true
             minimumValue: 0
             maximumValue: 100
             value: profile.touchscreenToneLevel
@@ -164,86 +159,109 @@ Page {
             }
         }
 
+//// files ////
 
-        Rectangle{
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
-
-            Label{
-                text: qsTr("Ringer tone");
-                anchors.left: parent.left
-                anchors.top: parent.top
-            }
-
-            CheckBox{
-                checked: profile.ringerToneEnabled
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
-                onClicked: profile.ringerToneEnabled = checked
-            }
-        }
-
-        ListViewItemWithActions {
-            label: qsTr("Select ringer tone")
+        // ringer
+        SoundLabel {
+            label: qsTr("Ringer tone")
             description: profile.ringerToneFile
-            width: parent.width
-            iconVisible: false
-            visible: profile.ringerToneEnabled
-            onClicked: {
-                console.log("select profile.ringerToneFile" + profile.ringerToneFile)
-                var filePicker = pageStack.push(Qt.resolvedUrl("SelectRingTonePage.qml"), {selectedFile: profile.ringerToneFile})
-                filePicker.newFileSelected.connect(function(newFile){
-                    console.log("new file selected: profile.ringerToneFile = " + newFile)
-                    profile.ringerToneFile = newFile
-                    pageStack.pop()
-                });
+            selectedFile: profile.ringerToneFile
+            onSelectedFileChanged: {
+                profile.ringerToneFile = selectedFile
             }
-            actions: [
-                ActionButton {
-                    iconSource: soundPlayer.playbackState === MediaPlayer.PlayingState ? "image://theme/pause" : "image://theme/play";
-                    onClicked: {
-                        if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
-                            soundPlayer.stop();
-                        } else {
-                            soundPlayer.source = "/usr/share/sounds/glacier/stereo/" + profile.ringerToneFile
-                            soundPlayer.play();
-                        }
-                    }
-                }
-            ]
+
+            checked: profile.ringerToneEnabled
+            onClicked: profile.ringerToneEnabled = checked
         }
 
 
-
-        Rectangle{
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
-
-            Label{
-                text: qsTr("Message tone");
-                anchors.left: parent.left
-                anchors.top: parent.top
-            }
-
-            CheckBox{
-                checked: profile.messageToneEnabled
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
-                onClicked: profile.messageToneEnabled = checked
-            }
-        }
-
-        ListViewItemWithActions {
-            label: qsTr("Message tone file")
+        // message
+        SoundLabel {
+            label: qsTr("Message tone")
             description: profile.messageToneFile
-            iconVisible: false
-            visible: profile.messageToneEnabled
-            onClicked: {
-                console.log("profile.messageToneFile")
+            selectedFile: profile.messageToneFile
+            onSelectedFileChanged: {
+                profile.messageToneFile = selectedFile
             }
+
+            checked: profile.messageToneEnabled
+            onClicked: profile.messageToneEnabled = checked
         }
+
+
+        // chat
+        SoundLabel {
+            label: qsTr("Chat tone")
+            description: profile.chatToneFile
+            selectedFile: profile.chatToneFile
+            onSelectedFileChanged: {
+                profile.chatToneFile = selectedFile
+            }
+
+            checked: profile.chatToneEnabled
+            onClicked: profile.chatToneEnabled = checked
+        }
+
+
+        // mail
+        SoundLabel {
+            label: qsTr("Mail tone")
+            description: profile.mailToneFile
+            selectedFile: profile.mailToneFile
+            onSelectedFileChanged: {
+                profile.mailToneFile = selectedFile
+            }
+
+            checked: profile.mailToneEnabled
+            onClicked: profile.mailToneEnabled = checked
+        }
+
+
+        // internetCall
+        SoundLabel {
+            label: qsTr("Internet call tone")
+            description: profile.internetCallToneFile
+            selectedFile: profile.internetCallToneFile
+            onSelectedFileChanged: {
+                profile.internetCallToneFile = selectedFile
+            }
+
+            checked: profile.internetCallToneEnabled
+            onClicked: profile.internetCallToneEnabled = checked
+        }
+
+
+        // calendar
+        SoundLabel {
+            label: qsTr("Calendar tone")
+            description: profile.calendarToneFile
+            selectedFile: profile.calendarToneFile
+            onSelectedFileChanged: {
+                profile.calendarToneFile = selectedFile
+            }
+
+            checked: profile.calendarToneEnabled
+            onClicked: profile.calendarToneEnabled = checked
+        }
+
+
+        // clockAlarm
+        SoundLabel {
+            label: qsTr("Alarm clock tone")
+            description: profile.clockAlarmToneFile
+            selectedFile: profile.clockAlarmToneFile
+            onSelectedFileChanged: {
+                profile.clockAlarmToneFile = selectedFile
+            }
+
+            checked: profile.clockAlarmToneEnabled
+            onClicked: profile.clockAlarmToneEnabled = checked
+        }
+
+
+
+
+
 
 
     } // Column
@@ -254,5 +272,4 @@ Page {
             flickable: mainFlickable
     }
 
-    
 }
