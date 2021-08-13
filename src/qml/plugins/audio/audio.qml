@@ -80,6 +80,7 @@ Page {
 
     SettingsColumn{
         id: column
+        clip: true
         spacing: Theme.itemSpacingLarge
 
 
@@ -103,6 +104,7 @@ Page {
             id: vibraModeRoller
             label: qsTr("Vibra Mode")
             width:  parent.width
+            currentIndex: profile.vibraMode
 
 // enum:
 //        VibraAlways,
@@ -183,13 +185,19 @@ Page {
         }
 
         ListViewItemWithActions {
-            label: qsTr("Ringer tone file")
+            label: qsTr("Select ringer tone")
             description: profile.ringerToneFile
             width: parent.width
             iconVisible: false
             visible: profile.ringerToneEnabled
             onClicked: {
                 console.log("select profile.ringerToneFile" + profile.ringerToneFile)
+                var filePicker = pageStack.push(Qt.resolvedUrl("SelectRingTonePage.qml"), {selectedFile: profile.ringerToneFile})
+                filePicker.newFileSelected.connect(function(newFile){
+                    console.log("new file selected: profile.ringerToneFile = " + newFile)
+                    profile.ringerToneFile = newFile
+                    pageStack.pop()
+                });
             }
             actions: [
                 ActionButton {
@@ -198,11 +206,9 @@ Page {
                         if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
                             soundPlayer.stop();
                         } else {
-                            soundPlayer.source = "/usr/share/sounds/glacier/stereo/ring-1.ogg"
-                            // soundPlayer.source = profile.ringerToneFile
+                            soundPlayer.source = "/usr/share/sounds/glacier/stereo/" + profile.ringerToneFile
                             soundPlayer.play();
                         }
-                        
                     }
                 }
             ]
