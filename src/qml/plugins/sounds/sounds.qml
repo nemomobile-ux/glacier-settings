@@ -80,12 +80,10 @@ Page {
         id: column
         spacing: Theme.itemSpacingLarge
 
-        Label{
+        Label {
             text: qsTr("Ringer Volume");
         }
-
-        Slider{
-            width: parent.width
+        Slider {
             showValue: true
             alwaysUp: true
             minimumValue: 0
@@ -124,16 +122,15 @@ Page {
 
 
 
-        Label{
+        Label {
             text: qsTr("System sound level");
         }
 
-        Slider{
-            width: parent.width
-            showValue: true
-            alwaysUp: true
+        Slider {
+            showValue: false
+            alwaysUp: false
             minimumValue: 0
-            maximumValue: 100
+            maximumValue: 2
             value: profile.systemSoundLevel
             stepSize: 1
             onValueChanged: {
@@ -141,20 +138,36 @@ Page {
             }
         }
 
-        Label{
-            text: qsTr("Touch screen tone Level");
+        Label {
+            text: qsTr("Touch screen tone level");
         }
 
-        Slider{
-            width: parent.width
-            showValue: true
-            alwaysUp: true
+        Slider {
+            showValue: false
+            alwaysUp: false
             minimumValue: 0
-            maximumValue: 100
+            maximumValue: 2
             value: profile.touchscreenToneLevel
             stepSize: 1
             onValueChanged: {
                 profile.touchscreenToneLevel = value
+            }
+        }
+
+
+        Label {
+            text: qsTr("Touch screen vibration level");
+        }
+
+        Slider {
+            showValue: false
+            alwaysUp: false
+            minimumValue: 0
+            maximumValue: 2
+            value: profile.touchscreenVibrationLevel
+            stepSize: 1
+            onValueChanged: {
+                profile.touchscreenVibrationLevel = value
             }
         }
 
