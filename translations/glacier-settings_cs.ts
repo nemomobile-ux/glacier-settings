@@ -28,6 +28,11 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
+        <source>unknow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="48"/>
         <source>secure</source>
         <translation>zabezpečené</translation>
     </message>
@@ -73,6 +78,19 @@
     </message>
 </context>
 <context>
+    <name>SelectRingTonePage</name>
+    <message>
+        <location filename="../src/qml/plugins/sounds/SelectRingTonePage.qml" line="38"/>
+        <source>Select file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/SelectRingTonePage.qml" line="57"/>
+        <source>selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SetupDate</name>
     <message>
         <location filename="../src/qml/plugins/datetime/SetupDate.qml" line="35"/>
@@ -104,22 +122,31 @@
         <translation>Připojit k</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="93"/>
         <source>Password: </source>
-        <translation>Heslo: </translation>
+        <translation type="vanished">Heslo: </translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="114"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="102"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="115"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="136"/>
         <source>Connect</source>
         <translation>Připojit</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="138"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="160"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="139"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="161"/>
         <source>Connection failed</source>
         <translation>Připojení selhalo</translation>
     </message>
@@ -405,24 +432,77 @@
         <translation>Nastavení obrazovky</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="47"/>
+        <source>Dynamic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/display/display.qml" line="50"/>
+        <source>Portrait</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="53"/>
+        <source>Landscape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="60"/>
+        <source>15 sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
+        <source>30 sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="68"/>
+        <source>1 min</source>
+        <translation type="unfinished">1 min</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="72"/>
+        <source>2 min</source>
+        <translation type="unfinished">30 min {2 ?}</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="76"/>
+        <source>5 min</source>
+        <translation type="unfinished">5 min</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="80"/>
+        <source>10 min</source>
+        <translation type="unfinished">10 min</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="92"/>
         <source>Brightness</source>
         <translation>Jas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="76"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
         <source>Auto brightness</source>
         <translation>Automatický jas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
-        <source>Dim timeout</source>
-        <translation>Interval pro ztmavení</translation>
+        <location filename="../src/qml/plugins/display/display.qml" line="126"/>
+        <source>Display sleep timeout</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="115"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="157"/>
+        <source>Orientation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dim timeout</source>
+        <translation type="vanished">Interval pro ztmavení</translation>
+    </message>
+    <message>
         <source>Blank timeout</source>
-        <translation>Interval pro prázdnou</translation>
+        <translation type="vanished">Interval pro prázdnou</translation>
     </message>
 </context>
 <context>
@@ -449,55 +529,55 @@
         <translation>Poloha</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="73"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="74"/>
         <source>Enable location</source>
         <translation>Povolit polohu</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="245"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="98"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="246"/>
         <source>Latitude</source>
         <translation>Zeměpisná šířka</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="97"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="98"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
         <source>unavailable</source>
         <translation>není dostupné</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="104"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="248"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="249"/>
         <source>Longitude</source>
         <translation>Zeměpisná délka</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="111"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
         <source>Source</source>
         <translation>Zdroj</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="257"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="258"/>
         <source>Satellite</source>
         <translation>Satelit</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="259"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="260"/>
         <source>Not available</source>
         <translation>Není k dispozici</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="261"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="262"/>
         <source>Non-satellite</source>
         <translation>Není ze satelitu</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="263"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="264"/>
         <source>Multiple</source>
         <translation>Více</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="264"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
         <source>source error</source>
         <translation>chyba zdroje</translation>
     </message>
@@ -628,6 +708,102 @@
     </message>
 </context>
 <context>
+    <name>sounds</name>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="34"/>
+        <source>Sounds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="84"/>
+        <source>Ringer Volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="100"/>
+        <source>Vibrations mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="107"/>
+        <source>Always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="108"/>
+        <source>Silent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="109"/>
+        <source>Normal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="110"/>
+        <source>Never</source>
+        <translation type="unfinished">Nikdy</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="126"/>
+        <source>System sound level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="142"/>
+        <source>Touch screen tone level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="159"/>
+        <source>Touch screen vibration level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="178"/>
+        <source>Ringer tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="192"/>
+        <source>Message tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="206"/>
+        <source>Chat tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="220"/>
+        <source>Mail tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="234"/>
+        <source>Internet call tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="248"/>
+        <source>Calendar tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/sounds/sounds.qml" line="262"/>
+        <source>Alarm clock tone</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>storage</name>
+    <message>
+        <location filename="../src/qml/plugins/storage/storage.qml" line="36"/>
+        <source>Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>usb</name>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="35"/>
@@ -702,17 +878,21 @@
         <translation>WiFi</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="114"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="115"/>
         <source>Saved</source>
         <translation>Uloženo</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="132"/>
-        <source>Enabled</source>
-        <translation>Povoleno</translation>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="133"/>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="149"/>
+        <source>Enabled</source>
+        <translation type="vanished">Povoleno</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="150"/>
         <source>Manage saved networks</source>
         <translation>Spravovat uložené spojení</translation>
     </message>
