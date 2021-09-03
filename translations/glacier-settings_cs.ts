@@ -28,7 +28,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
-        <source>unknow</source>
+        <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -43,17 +43,6 @@
         <location filename="../src/main.cpp" line="49"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
-    </message>
-</context>
-<context>
-    <name>QuickSettings</name>
-    <message>
-        <source>Quick settings</source>
-        <translation type="vanished">Rychlé nastavení</translation>
-    </message>
-    <message>
-        <source>Brightness</source>
-        <translation type="vanished">Jas</translation>
     </message>
 </context>
 <context>
@@ -120,10 +109,6 @@
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="38"/>
         <source>Connect to</source>
         <translation>Připojit k</translation>
-    </message>
-    <message>
-        <source>Password: </source>
-        <translation type="vanished">Heslo: </translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="102"/>
@@ -495,14 +480,6 @@
         <location filename="../src/qml/plugins/display/display.qml" line="157"/>
         <source>Orientation</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dim timeout</source>
-        <translation type="vanished">Interval pro ztmavení</translation>
-    </message>
-    <message>
-        <source>Blank timeout</source>
-        <translation type="vanished">Interval pro prázdnou</translation>
     </message>
 </context>
 <context>
@@ -886,10 +863,6 @@
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="133"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enabled</source>
-        <translation type="vanished">Povoleno</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="150"/>

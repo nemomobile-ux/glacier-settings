@@ -28,7 +28,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
-        <source>unknow</source>
+        <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -43,17 +43,6 @@
         <location filename="../src/main.cpp" line="49"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
-    </message>
-</context>
-<context>
-    <name>QuickSettings</name>
-    <message>
-        <source>Quick settings</source>
-        <translation type="vanished">Snelle instellingen</translation>
-    </message>
-    <message>
-        <source>Brightness</source>
-        <translation type="vanished">Helderheid</translation>
     </message>
 </context>
 <context>
@@ -491,14 +480,6 @@
         <location filename="../src/qml/plugins/display/display.qml" line="157"/>
         <source>Orientation</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dim timeout</source>
-        <translation type="vanished">Time-out voor dimmen</translation>
-    </message>
-    <message>
-        <source>Blank timeout</source>
-        <translation type="vanished">Time-out voor uitschakelen van scherm</translation>
     </message>
 </context>
 <context>

@@ -28,7 +28,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
-        <source>unknow</source>
+        <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
