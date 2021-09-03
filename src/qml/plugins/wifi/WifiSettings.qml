@@ -48,7 +48,6 @@ Page {
     UserAgent {
         id: userAgent
         onUserInputRequested: {
-            console.log("USER INPUT REQUESTED");
             var view = {
                 "fields": []
             };
@@ -122,6 +121,12 @@ Page {
             width: parent.width
         }
 
+        CheckBox{
+            id: autoConnectCheckBox
+            text: qsTr("Connect automatically")
+            checked: true
+        }
+
         Button{
             id: connectButton
             height: Theme.itemHeightSmall
@@ -130,6 +135,7 @@ Page {
             onClicked: {
                 modelData.passphrase = passphraseField.text;
                 modelData.identity = identityField.text
+                modelData.autoConnect = autoConnectCheckBox.checked
                 modelData.requestConnect();
                 spinner.visible = true;
             }
