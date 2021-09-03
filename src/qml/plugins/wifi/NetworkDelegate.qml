@@ -43,7 +43,7 @@ Item {
                 if (modelData.securityType === NetworkService.SecurityNone) {
                     return qsTr("open");
                 } else if (modelData.securityType === NetworkService.SecurityUnknown) {
-                    return qsTr("unknow");
+                    return qsTr("unknown");
                 } else {
                     return qsTr("secure");
                 }
