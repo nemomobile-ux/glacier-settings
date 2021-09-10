@@ -68,9 +68,14 @@ Page {
             }
 
             Label{
-                text: mountPath
+                text: mountPath + " (" + formatDiskSize(bytesFree) + " / " + formatDiskSize(bytesTotal) + ")"
                 anchors.centerIn: parent
             }
         }
+    }
+
+
+    function formatDiskSize(num) {
+        return parseFloat(num/1073741824).toFixed(2) + "GB";
     }
 }
