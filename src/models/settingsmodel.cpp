@@ -46,12 +46,12 @@
 
 
 QStringList SettingsModel::defaultCategories = {
-    "Personalization",
-    "Network",
-    "Security",
-    "Development",
-    "Info",
-    "Other"
+    QT_TR_NOOP("Personalization"),
+    QT_TR_NOOP("Network"),
+    QT_TR_NOOP("Security"),
+    QT_TR_NOOP("Development"),
+    QT_TR_NOOP("Info"),
+    QT_TR_NOOP("Other")
 };
 
 SettingsModel::SettingsModel(QObject *parent) :
@@ -190,7 +190,7 @@ QVariant SettingsModel::data(const QModelIndex &index, int role) const
     QVariant item = defaultCategories.at(index.row());
 
     if(role == Qt::UserRole) {
-        return item;
+        return tr(item.toString().toLatin1());
     } else if(role == Qt::UserRole+1) {
         return pluginsInCategory(item.toString()) ;
     }
