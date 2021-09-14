@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2019-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -103,8 +103,8 @@ Page {
     Connections {
         target: authenticationInput
 
-        onFeedback: displayFeedback(feedback, data)
-        onError: displayError(error)
+        function onFeedback(feedback, data) { displayFeedback(feedback, data) }
+        function onError(error) { displayError(error) }
     }
 
     function displayFeedback(feedback, data) {

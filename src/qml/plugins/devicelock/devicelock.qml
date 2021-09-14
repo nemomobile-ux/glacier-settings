@@ -37,6 +37,14 @@ Page {
         title: qsTr("Device lock")
     }
 
+    Authenticator{
+        id: authenticater
+
+        onAuthenticated: {
+            console.log("authenticationToken:" + authenticationToken)
+        }
+    }
+
     DeviceLockSettings{
         id: lockSettings
 
@@ -84,7 +92,7 @@ Page {
     }
 
     Component.onCompleted: {
-        authInput.authorize()
+        authenticater.authenticate();
     }
 
     ListModel{

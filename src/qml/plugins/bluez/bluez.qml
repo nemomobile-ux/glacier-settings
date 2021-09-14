@@ -79,132 +79,146 @@ Page {
         }
     }
 
-    SettingsColumn{
-        id: bluetoothColumn
-        spacing: Theme.itemSpacingLarge
+    ScrollDecorator{
+        id: bluezScrollDecorator
+        flickable: bluetoothFlickable
+    }
 
-        CheckBox {
-            id: columnCheckBox
-            checked: bluetoothModel.powered
-            text: qsTr("Enable Bluetooth")
+    Flickable{
+        id: bluetoothFlickable
+        anchors.fill: parent
 
-            onClicked: {
-                bluetoothModel.powered = columnCheckBox.checked
-                columnCheckBox.indeterminate = true
-                bluetoothTimer.start()
+        SettingsColumn{
+            id: bluetoothColumn
+            height: childrenRect.height
+            spacing: Theme.itemSpacingLarge
+
+            CheckBox {
+                id: columnCheckBox
+                checked: bluetoothModel.powered
+                text: qsTr("Enable Bluetooth")
+
+                onClicked: {
+                    bluetoothModel.powered = columnCheckBox.checked
+                    columnCheckBox.indeterminate = true
+                    bluetoothTimer.start()
+                }
             }
-        }
 
 
-        Label {
-            id: bluetoothNameLabel
-            text: qsTr("Device name");
-            font.bold: true
+            Label {
+                id: bluetoothNameLabel
+                text: qsTr("Device name");
+                font.bold: true
 
-            visible: bluetoothModel.powered
-        }
+                visible: bluetoothModel.powered
+            }
 
-        TextField {
-            id: bluetoothNameInput
-            text: _adapter.name
+            TextField {
+                id: bluetoothNameInput
+                text: _adapter.name
 
-            width: parent.width
+                width: parent.width
 
-            font.pixelSize: Theme.fontSizeLarge
-            visible: bluetoothModel.powered
+                font.pixelSize: Theme.fontSizeLarge
+                visible: bluetoothModel.powered
 
-            onEditingFinished: {
-                if (_adapter) {
-                    var newName = text.length ? text : _adapter.name
-                    if (_adapter.name != newName) {
-                        _adapter.name = newName
+                onEditingFinished: {
+                    if (_adapter) {
+                        var newName = text.length ? text : _adapter.name
+                        if (_adapter.name != newName) {
+                            _adapter.name = newName
+                        } else {
+                            text = _adapter.name
+                        }
+                    }
+                }
+            }
+
+            CheckBox {
+                id: visibilityCheckBox
+                checked: bluetoothModel.powered
+                visible: bluetoothModel.powered
+                text: qsTr("Visibility")
+
+                onClicked: {
+                    if (!_adapter) {
+                        return;
+                    }
+                    _adapter.discoverable = checked;
+                }
+            }
+
+            Label{
+                id: pairedLabel
+                text: qsTr("Paired devices:")
+                width: parent.width
+                height: visible ? Theme.itemHeightLarge : 0
+
+                font.pixelSize: Theme.fontSizeLarge
+
+                visible: bluetoothModel.powered && pairedListView.count > 0
+
+            }
+
+            BtDevisesList{
+                id: pairedListView
+                model: SortFilterModel {
+                    sourceModel: bluetoothDevicesModel
+                    filterRole: "Paired"
+                    filterRegExp: "true"
+                }
+                visible: bluetoothModel.powered
+                height: Theme.itemHeightLarge * pairedListView.count
+            }
+
+
+            Label{
+                id: aviableLabel
+                text: qsTr("Devices nearby:")
+
+                width: parent.width
+                height: visible ? Theme.itemHeightLarge : 0
+
+                font.pixelSize: Theme.fontSizeLarge
+
+                visible: bluetoothModel.powered && nearbyListView.count > 0
+
+                anchors{
+                    left: parent.left
+                }
+            }
+
+            BtDevisesList{
+                id: nearbyListView
+                model: SortFilterModel {
+                    sourceModel: bluetoothDevicesModel
+                    filterRole: "Paired"
+                    filterRegExp: "false"
+                }
+                visible: bluetoothModel.powered
+                height: Theme.itemHeightLarge * nearbyListView.count
+            }
+
+
+            Button{
+                id: startDiscovery
+                text: (_adapter.discovering) ? qsTr("Stop search") : qsTr("Start discovery")
+                visible: bluetoothModel.powered
+                width: parent.width
+
+                onClicked: {
+                    if (_adapter.discovering) {
+                        _adapter.stopDiscovery()
                     } else {
-                        text = _adapter.name
+                        _adapter.startDiscovery()
                     }
                 }
             }
         }
 
-        CheckBox {
-            id: visibilityCheckBox
-            checked: bluetoothModel.powered
-            visible: bluetoothModel.powered
-            text: qsTr("Visibility")
-
-            onClicked: {
-                if (!_adapter) {
-                    return;
-                }
-                _adapter.discoverable = checked;
-            }
-        }
-
-        Text{
-            id: pairedLabel
-            text: qsTr("Paired devices:")
-            color: Theme.textColor
-            font.pixelSize: Theme.fontSizeLarge
-
-            visible: bluetoothModel.powered && pairedListView.count > 0
-
-            anchors{
-                left: parent.left
-            }
-        }
-
-        BtDevisesList{
-            id: pairedListView
-            model: SortFilterModel {
-                sourceModel: bluetoothDevicesModel
-                filterRole: "Paired"
-                filterRegExp: "true"
-            }
-            visible: bluetoothModel.powered
-        }
-
-
-        Text{
-            id: aviableLabel
-            text: qsTr("Devices nearby:")
-            color: Theme.textColor
-            font.pixelSize: Theme.fontSizeLarge
-
-            visible: bluetoothModel.powered && nearbyListView.count > 0
-
-            anchors{
-                left: parent.left
-            }
-        }
-
-        BtDevisesList{
-            id: nearbyListView
-            model: SortFilterModel {
-                sourceModel: bluetoothDevicesModel
-                filterRole: "Paired"
-                filterRegExp: "false"
-           }
-            visible: bluetoothModel.powered
-        }
-
-
-        Button{
-            id: startDiscovery
-            text: (_adapter.discovering) ? qsTr("Stop search") : qsTr("Start discovery")
-            visible: bluetoothModel.powered
-            width: parent.width
-
-            onClicked: {
-                if (_adapter.discovering) {
-                    _adapter.stopDiscovery()
-                } else {
-                    _adapter.startDiscovery()
-                }
-            }
-        }
-    }
-
-    function formatIcon(devType) {
-        /* Aviable types
+        function formatIcon(devType) {
+            /* Aviable types
         0  - Phone,
         1  - Modem,
         2  - Computer,
@@ -225,38 +239,38 @@ Page {
         17 - Health,
         18 - Uncategorized
          */
-        switch(devType){
-        case 0:
-        case 1:
-        case 10:
-            return "image://theme/mobile"
-        case 2:
-            return "image://theme/descktop"
-        case 3:
-            return "image://theme/globe"
-        case 4:
-        case 5:
-            return "image://theme/headphones"
-        case 7:
-            return "image://theme/keyboard-o"
-        case 8:
-            return "image://theme/mouse-pointer"
-        case 9:
-        case 16:
-            return "image://theme/gamepad"
-        case 11:
-        case 13:
-            return "image://theme/printer"
-        case 12:
-        case 14:
-            return "image://theme/camera"
-        case 15:
-            return "image://theme/clock-o"
-        case 17:
-            return "image://theme/medkit"
-        default:
-            return "image://theme/circle"
+            switch(devType){
+            case 0:
+            case 1:
+            case 10:
+                return "image://theme/mobile"
+            case 2:
+                return "image://theme/descktop"
+            case 3:
+                return "image://theme/globe"
+            case 4:
+            case 5:
+                return "image://theme/headphones"
+            case 7:
+                return "image://theme/keyboard-o"
+            case 8:
+                return "image://theme/mouse-pointer"
+            case 9:
+            case 16:
+                return "image://theme/gamepad"
+            case 11:
+            case 13:
+                return "image://theme/printer"
+            case 12:
+            case 14:
+                return "image://theme/camera"
+            case 15:
+                return "image://theme/clock-o"
+            case 17:
+                return "image://theme/medkit"
+            default:
+                return "image://theme/circle"
+            }
         }
-
     }
 }
