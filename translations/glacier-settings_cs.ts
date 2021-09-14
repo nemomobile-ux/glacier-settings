@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
 <context>
     <name>DeviceLockPad</name>
     <message>
@@ -29,7 +27,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>neznámo</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="48"/>
@@ -71,12 +69,45 @@
     <message>
         <location filename="../src/qml/plugins/sounds/SelectRingTonePage.qml" line="38"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat soubor</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/SelectRingTonePage.qml" line="57"/>
         <source>selected</source>
-        <translation type="unfinished"></translation>
+        <translation>vybraný</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsModel</name>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="49"/>
+        <source>Personalization</source>
+        <translation>Přizpůsobení</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <source>Network</source>
+        <translation>Síť</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="51"/>
+        <source>Security</source>
+        <translation>Zabezpečení</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="52"/>
+        <source>Development</source>
+        <translation>Vývoj</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="53"/>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="54"/>
+        <source>Other</source>
+        <translation>Ostatní</translation>
     </message>
 </context>
 <context>
@@ -113,12 +144,12 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="102"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Přihlašovací jméno</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="115"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Heslo</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="136"/>
@@ -283,6 +314,11 @@
         <translation>24h</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
+        <source>Automatic time update</source>
+        <translation>Automaticky nastavit čas</translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
         <source>Select date</source>
         <translation>Vybrat datum</translation>
@@ -293,6 +329,11 @@
         <translation>Vybrat čas</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
+        <source>Automatic time zone update</source>
+        <translation>Automaticky nastavit časovou zónu</translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
         <source>Current time zone</source>
         <translation>Aktuální časová zóna</translation>
@@ -301,16 +342,6 @@
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
         <source>Time format</source>
         <translation>Formát času</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
-        <source>Automatic time update</source>
-        <translation>Automaticky nastavit čas</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
-        <source>Automatic time zone update</source>
-        <translation>Automaticky nastavit časovou zónu</translation>
     </message>
 </context>
 <context>
@@ -419,47 +450,47 @@
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="47"/>
         <source>Dynamic</source>
-        <translation type="unfinished"></translation>
+        <translation>Dynamicky</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="50"/>
         <source>Portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>Na výšku</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="53"/>
         <source>Landscape</source>
-        <translation type="unfinished"></translation>
+        <translation>Na šířku</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="60"/>
         <source>15 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>15 sek</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="64"/>
         <source>30 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>30 sek</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="68"/>
         <source>1 min</source>
-        <translation type="unfinished">1 min</translation>
+        <translation>1 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="72"/>
         <source>2 min</source>
-        <translation type="unfinished">30 min {2 ?}</translation>
+        <translation>2 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="76"/>
         <source>5 min</source>
-        <translation type="unfinished">5 min</translation>
+        <translation>5 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="80"/>
         <source>10 min</source>
-        <translation type="unfinished">10 min</translation>
+        <translation>10 min</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="92"/>
@@ -474,12 +505,12 @@
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="126"/>
         <source>Display sleep timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Doba pro uspání obrazovky</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="157"/>
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Natočení</translation>
     </message>
 </context>
 <context>
@@ -689,87 +720,87 @@
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="34"/>
         <source>Sounds</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvuky</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="84"/>
         <source>Ringer Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlasitost vyzvánění</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="100"/>
         <source>Vibrations mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim vybrací</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="107"/>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Vždy</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="108"/>
         <source>Silent</source>
-        <translation type="unfinished"></translation>
+        <translation>Potichu</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="109"/>
         <source>Normal</source>
-        <translation type="unfinished"></translation>
+        <translation>Normálně</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="110"/>
         <source>Never</source>
-        <translation type="unfinished">Nikdy</translation>
+        <translation>Nikdy</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="126"/>
         <source>System sound level</source>
-        <translation type="unfinished"></translation>
+        <translation>Hlasitost systémových zvuků</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="142"/>
         <source>Touch screen tone level</source>
-        <translation type="unfinished"></translation>
+        <translation>Úroveň odezvy na dotyk obrazovky</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="159"/>
         <source>Touch screen vibration level</source>
-        <translation type="unfinished"></translation>
+        <translation>Vibrace při dotyku obrazovky</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="178"/>
         <source>Ringer tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Melodie vyzvánění</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="192"/>
         <source>Message tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Tón zprávy</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="206"/>
         <source>Chat tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvuk chat zprávy</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="220"/>
         <source>Mail tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvuk e-mailu</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="234"/>
         <source>Internet call tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Melodie příchozího internetového hovoru</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="248"/>
         <source>Calendar tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvuk kalendáře</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="262"/>
         <source>Alarm clock tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Melodie budíku</translation>
     </message>
 </context>
 <context>
@@ -777,7 +808,7 @@
     <message>
         <location filename="../src/qml/plugins/storage/storage.qml" line="36"/>
         <source>Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložiště</translation>
     </message>
 </context>
 <context>
@@ -806,6 +837,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
         <source>Charging only</source>
         <translation>Pouze nabíjení</translation>
     </message>
@@ -830,11 +862,6 @@
         <location filename="../src/qml/plugins/usb/usb.qml" line="128"/>
         <source>Always ask</source>
         <translation>Vždy se zeptat</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
-        <source>Chagring only</source>
-        <translation>Pouze nabíjení</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="138"/>
@@ -862,7 +889,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="133"/>
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>K dispozici</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="150"/>
