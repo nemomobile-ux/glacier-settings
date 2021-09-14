@@ -80,6 +80,39 @@
     </message>
 </context>
 <context>
+    <name>SettingsModel</name>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="49"/>
+        <source>Personalization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="51"/>
+        <source>Security</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="52"/>
+        <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="53"/>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/models/settingsmodel.cpp" line="54"/>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SetupDate</name>
     <message>
         <location filename="../src/qml/plugins/datetime/SetupDate.qml" line="35"/>
@@ -806,6 +839,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
         <source>Charging only</source>
         <translation>Только зарядка</translation>
     </message>
@@ -832,9 +866,8 @@
         <translation>Всегда спрашивать</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
         <source>Chagring only</source>
-        <translation>Только зарядка</translation>
+        <translation type="vanished">Только зарядка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="138"/>
