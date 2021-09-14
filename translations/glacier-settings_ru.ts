@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>DeviceLockPad</name>
     <message>
@@ -29,7 +27,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>неизвестно</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="48"/>
@@ -71,12 +69,12 @@
     <message>
         <location filename="../src/qml/plugins/sounds/SelectRingTonePage.qml" line="38"/>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать файл</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/SelectRingTonePage.qml" line="57"/>
         <source>selected</source>
-        <translation type="unfinished"></translation>
+        <translation>выбраный</translation>
     </message>
 </context>
 <context>
@@ -84,32 +82,32 @@
     <message>
         <location filename="../src/models/settingsmodel.cpp" line="49"/>
         <source>Personalization</source>
-        <translation type="unfinished"></translation>
+        <translation>Персонализация</translation>
     </message>
     <message>
         <location filename="../src/models/settingsmodel.cpp" line="50"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Сети</translation>
     </message>
     <message>
         <location filename="../src/models/settingsmodel.cpp" line="51"/>
         <source>Security</source>
-        <translation type="unfinished"></translation>
+        <translation>Безопасность</translation>
     </message>
     <message>
         <location filename="../src/models/settingsmodel.cpp" line="52"/>
         <source>Development</source>
-        <translation type="unfinished"></translation>
+        <translation>Разработка</translation>
     </message>
     <message>
         <location filename="../src/models/settingsmodel.cpp" line="53"/>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация</translation>
     </message>
     <message>
         <location filename="../src/models/settingsmodel.cpp" line="54"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Другое</translation>
     </message>
 </context>
 <context>
@@ -146,12 +144,12 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="102"/>
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Логин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="115"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="136"/>
@@ -179,7 +177,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="60"/>
         <source>DHCP</source>
-        <translation></translation>
+        <translation>DHCP</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="63"/>
@@ -204,7 +202,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="113"/>
         <source>Gateway</source>
-        <translation></translation>
+        <translation>Шлюз по умолчанию</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/WifiStatus.qml" line="136"/>
@@ -247,12 +245,12 @@
     <message>
         <location filename="../src/qml/plugins/about/about.qml" line="167"/>
         <source>IMEI</source>
-        <translation></translation>
+        <translation>IMEI</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/about/about.qml" line="180"/>
         <source>Wlan MAC</source>
-        <translation></translation>
+        <translation>Wlan MAC</translation>
     </message>
 </context>
 <context>
@@ -260,7 +258,7 @@
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="40"/>
         <source>Bluetooth</source>
-        <translation></translation>
+        <translation>Bluetooth</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
@@ -316,6 +314,11 @@
         <translation>24ч</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
+        <source>Automatic time update</source>
+        <translation>Определять время автоматически</translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
         <source>Select date</source>
         <translation>Выбрать дату</translation>
@@ -326,6 +329,11 @@
         <translation>Выбрать время</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
+        <source>Automatic time zone update</source>
+        <translation>Определять часовой пояс автоматически</translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
         <source>Current time zone</source>
         <translation>Текущий часовой пояс</translation>
@@ -334,16 +342,6 @@
         <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
         <source>Time format</source>
         <translation>Формат времени</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
-        <source>Automatic time update</source>
-        <translation>Определять время автоматически</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
-        <source>Automatic time zone update</source>
-        <translation>Определять часовой пояс автоматически</translation>
     </message>
 </context>
 <context>
@@ -366,12 +364,12 @@
     <message>
         <location filename="../src/qml/plugins/developermode/developermode.qml" line="147"/>
         <source>Wlan IP address</source>
-        <translation></translation>
+        <translation>IP адресс Wlan</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/developermode/developermode.qml" line="177"/>
         <source>USB IP address</source>
-        <translation></translation>
+        <translation>IP адресс USB</translation>
     </message>
 </context>
 <context>
@@ -452,47 +450,47 @@
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="47"/>
         <source>Dynamic</source>
-        <translation type="unfinished"></translation>
+        <translation>Динамический</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="50"/>
         <source>Portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>Портретный</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="53"/>
         <source>Landscape</source>
-        <translation type="unfinished"></translation>
+        <translation>Ландшафтный</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="60"/>
         <source>15 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>15 сек</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="64"/>
         <source>30 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>30 сек</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="68"/>
         <source>1 min</source>
-        <translation type="unfinished">1 мин</translation>
+        <translation>1 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="72"/>
         <source>2 min</source>
-        <translation type="unfinished">30 мин {2 ?}</translation>
+        <translation>2 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="76"/>
         <source>5 min</source>
-        <translation type="unfinished">5 мин</translation>
+        <translation>5 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="80"/>
         <source>10 min</source>
-        <translation type="unfinished">10 мин</translation>
+        <translation>10 мин</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="92"/>
@@ -507,12 +505,12 @@
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="126"/>
         <source>Display sleep timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Время отключения экрана</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="157"/>
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ориентация</translation>
     </message>
 </context>
 <context>
@@ -615,7 +613,7 @@
     <message>
         <location filename="../src/qml/plugins/language/language.qml" line="89"/>
         <source>Ok</source>
-        <translation></translation>
+        <translation>Ок</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/language/language.qml" line="90"/>
@@ -691,7 +689,7 @@
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="35"/>
         <source>NFC</source>
-        <translation></translation>
+        <translation>NFC</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="55"/>
@@ -722,87 +720,87 @@
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="34"/>
         <source>Sounds</source>
-        <translation type="unfinished"></translation>
+        <translation>Звуки</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="84"/>
         <source>Ringer Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Громкость звонка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="100"/>
         <source>Vibrations mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип вибрации</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="107"/>
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Всегда</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="108"/>
         <source>Silent</source>
-        <translation type="unfinished"></translation>
+        <translation>Тихо</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="109"/>
         <source>Normal</source>
-        <translation type="unfinished"></translation>
+        <translation>Нормальный</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="110"/>
         <source>Never</source>
-        <translation type="unfinished">Никогда</translation>
+        <translation>Никогда</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="126"/>
         <source>System sound level</source>
-        <translation type="unfinished"></translation>
+        <translation>Системный уровень громкости</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="142"/>
         <source>Touch screen tone level</source>
-        <translation type="unfinished"></translation>
+        <translation>Уровень громкости касания</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="159"/>
         <source>Touch screen vibration level</source>
-        <translation type="unfinished"></translation>
+        <translation>Уровень вибрации при касании</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="178"/>
         <source>Ringer tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал звонка</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="192"/>
         <source>Message tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал сообщения</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="206"/>
         <source>Chat tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал чата</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="220"/>
         <source>Mail tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал почты</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="234"/>
         <source>Internet call tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал интернет звонков</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="248"/>
         <source>Calendar tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал календаря</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/sounds/sounds.qml" line="262"/>
         <source>Alarm clock tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Сигнал будильника</translation>
     </message>
 </context>
 <context>
@@ -810,7 +808,7 @@
     <message>
         <location filename="../src/qml/plugins/storage/storage.qml" line="36"/>
         <source>Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Накопитель</translation>
     </message>
 </context>
 <context>
@@ -835,7 +833,7 @@
         <location filename="../src/qml/plugins/usb/usb.qml" line="49"/>
         <location filename="../src/qml/plugins/usb/usb.qml" line="130"/>
         <source>MTP</source>
-        <translation></translation>
+        <translation>MTP</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
@@ -866,10 +864,6 @@
         <translation>Всегда спрашивать</translation>
     </message>
     <message>
-        <source>Chagring only</source>
-        <translation type="vanished">Только зарядка</translation>
-    </message>
-    <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="138"/>
         <source>Busy</source>
         <translation>Занято</translation>
@@ -885,7 +879,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="71"/>
         <source>WiFi</source>
-        <translation></translation>
+        <translation>WiFi</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="115"/>
@@ -895,7 +889,7 @@
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="133"/>
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Доступно</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/wifi/wifi.qml" line="150"/>
