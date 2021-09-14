@@ -838,6 +838,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="53"/>
+        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
         <source>Charging only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -861,11 +862,6 @@
     <message>
         <location filename="../src/qml/plugins/usb/usb.qml" line="128"/>
         <source>Always ask</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/usb/usb.qml" line="132"/>
-        <source>Chagring only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
