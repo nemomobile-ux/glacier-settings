@@ -129,7 +129,7 @@ Page {
             case "mtp_mode":
                 return qsTr("MTP")
             case "charging_only":
-                return qsTr("Chagring only")
+                return qsTr("Charging only")
             case "connection_sharing":
                 return qsTr("Connection sharing")
             case "developer_mode":
