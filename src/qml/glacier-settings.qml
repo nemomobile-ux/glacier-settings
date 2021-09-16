@@ -125,13 +125,13 @@ ApplicationWindow{
                         id: settingsListDelegate
                         height: sectionHeading.height+flow.height
                         width: mainArea.width
-                        color: Theme.backgroundColor
+                        color: "transparent"
 
                         Rectangle {
                             id: sectionHeading
                             width: parent.width
                             height: Theme.itemHeightMedium
-                            color: Theme.backgroundColor
+                            color: "transparent"
 
                             Text {
                                 id: sectionText
