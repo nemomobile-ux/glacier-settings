@@ -18,6 +18,7 @@
  */
 #include "settingsmodel.h"
 
+#include <QCoreApplication>
 #include <QAbstractListModel>
 #include <QDebug>
 #include <QDir>
@@ -155,7 +156,11 @@ QVariantList SettingsModel::pluginsInCategory(QString category) const
 
     for (const QJsonValue &item : m_pluginsData) {
         if(item.toObject().value("category").toString() == category) {
-            pluginsInCat.append(item.toObject().toVariantMap());
+            QVariantMap map = item.toObject().toVariantMap();
+            QString title = map["title"].toString();
+            QString path = map["path"].toString();
+            map["title"] = QCoreApplication::translate(path.toLatin1(), title.toLatin1());
+            pluginsInCat.append(map);
         }
     }
     return pluginsInCat;
