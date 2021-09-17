@@ -68,7 +68,7 @@ Page {
             }
 
             Label{
-                text: mountPath + " (" + formatDiskSize(bytesFree) + " / " + formatDiskSize(bytesTotal) + ")"
+                text: ((mountPath !== "") ? mountPath : devicePath) + " (" + formatDiskSize(bytesFree) + " / " + formatDiskSize(bytesTotal) + ")"
                 anchors.centerIn: parent
             }
         }
