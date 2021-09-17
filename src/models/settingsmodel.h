@@ -44,6 +44,7 @@ public:
     static int compareCategories(QString leftCategory, QString rightCategory);
 
     static QStringList defaultCategories;
+    static QMap<QString, QString> extraTranlation;
 
     Q_INVOKABLE bool pluginAviable(QString name);
 

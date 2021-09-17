@@ -18,6 +18,8 @@
  */
 #include "settingsmodel.h"
 
+#include <QGuiApplication>
+#include <QTranslator>
 #include <QCoreApplication>
 #include <QAbstractListModel>
 #include <QDebug>
@@ -54,6 +56,8 @@ QStringList SettingsModel::defaultCategories = {
     QT_TR_NOOP("Info"),
     QT_TR_NOOP("Other")
 };
+
+QMap<QString, QString> SettingsModel::extraTranlation = QMap<QString, QString>();
 
 SettingsModel::SettingsModel(QObject *parent) :
     QAbstractListModel(parent)
@@ -107,8 +111,27 @@ void SettingsModel::init()
         }
     }
 
-    if(rowCount() == 0)
+    if(rowCount() == 0) {
         qWarning() << "Plugins directory is empty";
+    }
+
+
+    QCoreApplication *app = QCoreApplication::instance();
+    for (QMap<QString, QString>::const_iterator i = extraTranlation.constBegin(); i != extraTranlation.constEnd(); ++i) {
+
+        QTranslator* myappTranslator = new QTranslator(app);
+        if (myappTranslator->load(QLocale(), i.value(), QLatin1String("_"), i.key() )) {
+            qDebug() << "translation.load() success" << i.key() << i.value() << QLocale::system().name();
+            if (app->installTranslator(myappTranslator)) {
+                qDebug() << "installTranslator() success"  << i.key() << i.value() << QLocale::system().name();
+            } else {
+                qDebug() << "installTranslator() failed" << i.key() << i.value() << QLocale::system().name();
+            }
+        } else {
+            qDebug() << "translation.load() failed"  << i.key() << i.value() << QLocale::system().name();
+        }
+
+    }
 
     /*Remove empty categories*/
     for(QString category : defaultCategories) {
@@ -133,6 +156,12 @@ bool SettingsModel::loadConfig(QString configFileName)
     }
 
     if(configObject.contains("title") && configObject.contains("category") && configObject.contains("path")) {
+        if (configObject.contains("translation_dir") && configObject.contains("translation_file")) {
+            QString t_dir = configObject["translation_dir"].toString();
+            QString t_file = configObject["translation_file"].toString();
+            qDebug() << "extra translation files " << configObject["title"].toString() << "" << t_dir << " " << t_file;
+            extraTranlation[t_dir] = t_file;
+        }
         m_pluginsData.append(configObject);
         return true;
     } else {
@@ -142,8 +171,9 @@ bool SettingsModel::loadConfig(QString configFileName)
 
 bool SettingsModel::pluginAviable(QString name)
 {
-    if(name.length() == 0)
+    if(name.length() == 0) {
         return false;
+    }
 
     QFile pluginConfig(m_pluginsDir+"/"+name+".json");
 
