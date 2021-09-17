@@ -12,27 +12,27 @@
 <context>
     <name>NetworkDelegate</name>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="39"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="58"/>
         <source>connected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="41"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="60"/>
         <source>connecting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="44"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="63"/>
         <source>open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="46"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="65"/>
         <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="48"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="67"/>
         <source>secure</source>
         <translation type="unfinished"></translation>
     </message>
@@ -48,8 +48,13 @@
 <context>
     <name>SavedServices</name>
     <message>
-        <location filename="../src/qml/plugins/wifi/SavedServices.qml" line="17"/>
+        <location filename="../src/qml/plugins/wifi/SavedServices.qml" line="36"/>
         <source>Manage saved networks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/SavedServices.qml" line="66"/>
+        <source>No saved wifi networks</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -82,32 +87,32 @@
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="49"/>
+        <location filename="../src/models/settingsmodel.cpp" line="50"/>
         <source>Personalization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <location filename="../src/models/settingsmodel.cpp" line="51"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="51"/>
+        <location filename="../src/models/settingsmodel.cpp" line="52"/>
         <source>Security</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="52"/>
+        <location filename="../src/models/settingsmodel.cpp" line="53"/>
         <source>Development</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="53"/>
+        <location filename="../src/models/settingsmodel.cpp" line="54"/>
         <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="54"/>
+        <location filename="../src/models/settingsmodel.cpp" line="55"/>
         <source>Other</source>
         <translation type="unfinished"></translation>
     </message>
@@ -144,27 +149,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="102"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="101"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="115"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="114"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="136"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="126"/>
+        <source>Connect automatically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="142"/>
         <source>Connect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="160"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="166"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="161"/>
+        <location filename="../src/qml/plugins/wifi/WifiSettings.qml" line="167"/>
         <source>Connection failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -263,37 +273,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="99"/>
         <source>Enable Bluetooth</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="101"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="111"/>
         <source>Device name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="132"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="142"/>
         <source>Visibility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="144"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="154"/>
         <source>Paired devices:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="168"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="178"/>
         <source>Devices nearby:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="192"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
         <source>Stop search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="192"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
         <source>Start discovery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -382,62 +392,62 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="93"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
         <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="97"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
         <source>Without delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
         <source>1 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
         <source>5 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
         <source>10 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
         <source>15 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="125"/>
         <source>30 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="129"/>
         <source>1 hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="138"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="146"/>
         <source>Enable device lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="165"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="173"/>
         <source>Show notifications when device locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="192"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="200"/>
         <source>Auto lock device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="223"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="231"/>
         <source>Enter code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -446,7 +456,7 @@
     <name>display</name>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="33"/>
-        <source>Display settings</source>
+        <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -873,27 +883,27 @@
 <context>
     <name>wifi</name>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="36"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="37"/>
         <source>WiFi settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="71"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="72"/>
         <source>WiFi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="115"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="116"/>
         <source>Saved</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="133"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="134"/>
         <source>Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="150"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="151"/>
         <source>Manage saved networks</source>
         <translation type="unfinished"></translation>
     </message>
