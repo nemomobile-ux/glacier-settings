@@ -30,7 +30,7 @@ import "../../components"
 Page {
     id: displaySettingsPage
 
-    headerTools: HeaderToolsLayout { showBackButton: true; title: qsTr("Display settings")}
+    headerTools: HeaderToolsLayout { showBackButton: true; title: qsTr("Display")}
 
     DisplaySettings{
         id: displaySettings
