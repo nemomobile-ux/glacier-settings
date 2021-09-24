@@ -74,7 +74,7 @@ Rectangle{
                     if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
                         soundPlayer.stop();
                     } else {
-                        soundPlayer.source = "/usr/share/sounds/glacier/stereo/" + itemWithAction.selectedFile
+                        soundPlayer.source = itemWithAction.selectedFile.startsWith("/usr") ? itemWithAction.selectedFile : ( "/usr/share/sounds/glacier/stereo/" + itemWithAction.selectedFile )
                         soundPlayer.play();
                     }
                 }

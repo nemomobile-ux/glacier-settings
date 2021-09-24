@@ -39,7 +39,7 @@ Page {
 
     FolderListModel {
         id: dirModel
-        path: "/usr/share/sounds/glacier/stereo/"
+        path: "/usr/share/sounds/glacier/stereo"
     }
 
     MediaPlayer {
@@ -63,7 +63,7 @@ Page {
             height: Theme.itemHeightLarge
 
             onClicked: {
-                newFileSelected(fileName);
+                newFileSelected(dirModel.path + "/" + fileName);
             }
 
             actions:[
@@ -73,7 +73,7 @@ Page {
                         if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
                             soundPlayer.stop();
                         } else {
-                            soundPlayer.source = "/usr/share/sounds/glacier/stereo/" + fileName
+                            soundPlayer.source = dirModel.path + "/" + fileName
                             soundPlayer.play();
                         }
                     }
