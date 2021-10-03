@@ -38,7 +38,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>Settings</source>
         <translation>Ustawienia</translation>
     </message>
@@ -85,32 +85,32 @@
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <location filename="../src/models/settingsmodel.cpp" line="52"/>
         <source>Personalization</source>
         <translation>Personalizacja</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="51"/>
+        <location filename="../src/models/settingsmodel.cpp" line="53"/>
         <source>Network</source>
         <translation>Sieć</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="52"/>
+        <location filename="../src/models/settingsmodel.cpp" line="54"/>
         <source>Security</source>
         <translation>Bezpieczeństwo</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="53"/>
+        <location filename="../src/models/settingsmodel.cpp" line="55"/>
         <source>Development</source>
         <translation>Ustawienia deweloperskie</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="54"/>
+        <location filename="../src/models/settingsmodel.cpp" line="56"/>
         <source>Info</source>
         <translation>Informacje</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="55"/>
+        <location filename="../src/models/settingsmodel.cpp" line="57"/>
         <source>Other</source>
         <translation>Inne</translation>
     </message>
@@ -534,7 +534,7 @@
 <context>
     <name>glacier-settings</name>
     <message>
-        <location filename="../src/qml/glacier-settings.qml" line="57"/>
+        <location filename="../src/qml/glacier-settings.qml" line="60"/>
         <source>Settings</source>
         <translation>Ustawienia</translation>
     </message>
@@ -655,7 +655,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="77"/>
-        <source>SIM cards not avaiable</source>
+        <source>SIM cards unavailable</source>
         <translation>Karty SIM niedostępne</translation>
     </message>
     <message>
