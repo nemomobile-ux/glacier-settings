@@ -71,13 +71,11 @@ Page {
 
         onAuthenticationStarted: {
             console.log("onAuthenticationStarted")
-            reset()
             authInput.feedback(feedback, data)
         }
 
         onAuthenticationUnavailable: {
             console.log("onAuthenticationUnavailable")
-            reset()
             authInput.error(error, data)
         }
 
@@ -92,7 +90,7 @@ Page {
     }
 
     Component.onCompleted: {
-        authenticater.authenticate();
+        authenticater.authenticate("123456"); // FIXME authenticate need parameter QVariant
     }
 
     ListModel{
