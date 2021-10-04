@@ -21,6 +21,8 @@ import QtQuick 2.6
 import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Dialogs 1.0
+
 
 import org.nemomobile.systemsettings 1.0
 import org.nemomobile.devicelock 1.0
@@ -53,6 +55,7 @@ Page {
         Grid {
             id: codePad
             height: parent.height
+            spacing: Theme.itemSpacingMedium
 
             columns: 3
             Repeater {
@@ -60,10 +63,11 @@ Page {
                 delegate:
                     Rectangle {
                     id:button
-                    width: root.width/3 > root.height/4 ? root.height/4 : root.width/3
+                    width: root.width/3 > root.height/4 ? (root.height/4 - 2*Theme.itemSpacingMedium) : (root.width/3 - 2*Theme.itemSpacingMedium)
                     height: width
 
-                    color: "transparent"
+                    color: buttonMouse.pressed ? Theme.accentColor : "transparent"
+                    radius: Theme.itemSpacingMedium
 
                     Text {
                         id: numLabel
@@ -74,6 +78,7 @@ Page {
                     }
 
                     MouseArea{
+                        id: buttonMouse
                         anchors.fill: parent
 
                         onClicked: {
@@ -102,12 +107,25 @@ Page {
 
     Connections {
         target: authenticationInput
-
         function onFeedback(feedback, data) { displayFeedback(feedback, data) }
         function onError(error) { displayError(error) }
     }
 
+    Dialog{
+        id: simpleDialog
+        inline: false
+        acceptText: qsTr("Ok")
+
+        icon: "image://theme/exclamation-triangle"
+
+        onAccepted: {
+            simpleDialog.close();
+        }
+    }
+
+
     function displayFeedback(feedback, data) {
+        console.log(feedback, data)
 
         switch(feedback) {
 
@@ -116,6 +134,10 @@ Page {
             break
 
         case AuthenticationInput.IncorrectSecurityCode:
+            simpleDialog.headingText = qsTr("Incorrect code")
+            simpleDialog.subLabelText = (authenticationInput.maximumAttempts !== -1) ? qsTr("%1 of %2 attempts").arg(data.attemptsRemaining).arg(authenticationInput.maximumAttempts) : ""
+            simpleDialog.open();
+
             console.log("Incorrect code")
             if(authenticationInput.maximumAttempts !== -1) {
                 console.log("("+(authenticationInput.maximumAttempts-data.attemptsRemaining)+
@@ -125,10 +147,17 @@ Page {
 
         case AuthenticationInput.TemporarilyLocked:
             console.log("Temporarily locked")
+            simpleDialog.headingText = qsTr("Error")
+            simpleDialog.subLabelText = qsTr("Temporarily locked")
+            simpleDialog.open();
+
         }
     }
 
     function displayError(error) {
-        console.log("displayError "+error)
+        console.error("displayError "+error)
+        simpleDialog.headingText = qsTr("Error")
+        simpleDialog.subLabelText = error
+        simpleDialog.open();
     }
 }
