@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2020-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -33,7 +33,7 @@ ListView {
         id: item
         label: model.FriendlyName
         description: model.Address
-        width: parent.width
+        width: btDeviceList.width
         height: Theme.itemHeightLarge
         showNext: false
         icon: formatIcon(model.Type)
@@ -65,5 +65,61 @@ ListView {
                 }
             }
         ]
+    }
+
+    function formatIcon(devType) {
+        /* Aviable types
+    0  - Phone,
+    1  - Modem,
+    2  - Computer,
+    3  - Network,
+    4  - Headset,
+    5  - Headphones,
+    6  - AudioVideo,
+    7  - Keyboard,
+    8  - Mouse,
+    9  - Joypad,
+    10 - Tablet,
+    11 - Peripheral,
+    12 - Camera,
+    13 - Printer,
+    14 - Imaging,
+    15 - Wearable,
+    16 - Toy,
+    17 - Health,
+    18 - Uncategorized
+     */
+        switch(devType){
+        case 0:
+        case 1:
+        case 10:
+            return "image://theme/mobile"
+        case 2:
+            return "image://theme/desktop"
+        case 3:
+            return "image://theme/globe"
+        case 4:
+        case 5:
+            return "image://theme/headphones"
+        case 7:
+            return "image://theme/keyboard-o"
+        case 8:
+            return "image://theme/mouse-pointer"
+        case 9:
+        case 16:
+            return "image://theme/gamepad"
+        case 11:
+        case 13:
+            return "image://theme/printer"
+        case 12:
+        case 14:
+            return "image://theme/camera"
+        case 15:
+            return "image://theme/clock-o"
+        case 17:
+            return "image://theme/medkit"
+        default:
+            return "image://theme/circle"
+        }
     }
 }
