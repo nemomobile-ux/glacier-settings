@@ -145,15 +145,17 @@ Page {
 
             CheckBox {
                 id: visibilityCheckBox
-                checked: bluetoothModel.powered
+                checked: bluetoothPage._adapter.discoverable
                 visible: bluetoothModel.powered
                 text: qsTr("Visibility")
 
                 onClicked: {
-                    if (!_adapter) {
+                    if (!bluetoothPage._adapter) {
+                        console.log("Adapter not found")
+                        checked = bluetoothPage._adapter.discoverable
                         return;
                     }
-                    _adapter.discoverable = checked;
+                    bluetoothPage._adapter.discoverable = checked;
                 }
             }
 
