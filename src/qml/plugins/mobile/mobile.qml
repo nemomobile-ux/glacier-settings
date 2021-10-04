@@ -74,7 +74,7 @@ Page {
     Label{
         id: noSimLabel
         visible: mobilePage.modems.length === 0
-        text: qsTr("SIM cards not avaiable")
+        text: qsTr("SIM cards unavailable")
         anchors.centerIn: parent
     }
 

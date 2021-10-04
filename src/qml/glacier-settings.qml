@@ -32,6 +32,9 @@ import "components"
 ApplicationWindow{
     id: main
 
+    contentOrientation: Screen.orientation
+    allowedOrientations:  Qt.PortraitOrientation | Qt.LandscapeOrientation | Qt.InvertedLandscapeOrientation | Qt.InvertedPortraitOrientation
+
     SettingsModel{
         id: settingsModel
         path: "/usr/share/glacier-settings/plugins/"

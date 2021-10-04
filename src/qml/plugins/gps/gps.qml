@@ -44,7 +44,7 @@ Page {
         id: satelliteModel
         running: true
         onErrorFound: {
-            console.error("Last Error: %1", "%1=error number").arg(code)
+            console.error(string("Last Error: %1").arg(code))
         }
 
         onSatelliteInfoAvailableChanged: {
