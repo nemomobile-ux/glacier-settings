@@ -87,14 +87,14 @@ Page {
     Label{
         id: btNotFound
         text: qsTr("Bluetooth adapters not avaible")
-        visible: !_adapter
+        visible: !bluetoothModel.available
         anchors.centerIn: parent
     }
 
     Flickable{
         id: bluetoothFlickable
         anchors.fill: parent
-        visible: _adapter
+        visible: bluetoothModel.available
 
         SettingsColumn{
             id: bluetoothColumn
