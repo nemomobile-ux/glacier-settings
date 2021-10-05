@@ -60,9 +60,9 @@ Page {
 
     DBusInterface {
         id: btInterface
-        service: "org.glacier.lipstick"
-        path: "/bluetooth"
-        iface: "org.glacier.lipstick"
+        service: "org.nemomobile.lipstick"
+        path: "/org/nemomobile/lipstick/bluetoothagent"
+        iface: "org.nemomobile.lipstick"
     }
 
     BluezQt.DevicesModel {
