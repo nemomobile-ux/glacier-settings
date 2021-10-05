@@ -2,9 +2,35 @@
 <context>
     <name>DeviceLockPad</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="37"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="39"/>
         <source>Enter code</source>
         <translation>Zadejte kód</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="117"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="137"/>
+        <source>Incorrect code</source>
+        <translation>Nesprávný kód</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="138"/>
+        <source>%1 of %2 attempts</source>
+        <translation>%1 z %2 pokusů</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="150"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="159"/>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="151"/>
+        <source>Temporarily locked</source>
+        <translation>Dočasně zamčeno</translation>
     </message>
 </context>
 <context>
@@ -38,7 +64,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
@@ -85,32 +111,32 @@
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <location filename="../src/models/settingsmodel.cpp" line="52"/>
         <source>Personalization</source>
         <translation>Přizpůsobení</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="51"/>
+        <location filename="../src/models/settingsmodel.cpp" line="53"/>
         <source>Network</source>
         <translation>Síť</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="52"/>
+        <location filename="../src/models/settingsmodel.cpp" line="54"/>
         <source>Security</source>
         <translation>Zabezpečení</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="53"/>
+        <location filename="../src/models/settingsmodel.cpp" line="55"/>
         <source>Development</source>
         <translation>Vývoj</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="54"/>
+        <location filename="../src/models/settingsmodel.cpp" line="56"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="55"/>
+        <location filename="../src/models/settingsmodel.cpp" line="57"/>
         <source>Other</source>
         <translation>Ostatní</translation>
     </message>
@@ -271,37 +297,42 @@
         <translation>Bluetooth</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="99"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
+        <source>Bluetooth adapters not avaible</source>
+        <translation>Adaptéry bluetooth nejsou k dispozici</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="107"/>
         <source>Enable Bluetooth</source>
         <translation>Povolit Bluetooth</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="111"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="119"/>
         <source>Device name</source>
         <translation>Jméno zařízení</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="142"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="150"/>
         <source>Visibility</source>
         <translation>Viditelnost</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="154"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="164"/>
         <source>Paired devices:</source>
         <translation>Spárované zařízení:</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="178"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="188"/>
         <source>Devices nearby:</source>
         <translation>Zařízení poblíž:</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
         <source>Stop search</source>
         <translation>Zastavit hledání</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
         <source>Start discovery</source>
         <translation>Spustit hledání</translation>
     </message>
@@ -390,62 +421,62 @@
         <translation>Zámek zařízení</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="99"/>
         <source>Never</source>
         <translation>Nikdy</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="103"/>
         <source>Without delay</source>
         <translation>Bez zpoždění</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
         <source>1 min</source>
         <translation>1 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
         <source>5 min</source>
         <translation>5 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
         <source>10 min</source>
         <translation>10 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
         <source>15 min</source>
         <translation>15 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="125"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
         <source>30 min</source>
         <translation>30 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="129"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
         <source>1 hour</source>
         <translation>hodina</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="146"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="144"/>
         <source>Enable device lock</source>
         <translation>Povolit zámek zařízení</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="173"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="171"/>
         <source>Show notifications when device locked</source>
         <translation>Zobraovat upozornění na zamčené obrazovce</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="200"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="198"/>
         <source>Auto lock device</source>
         <translation>Automaticky zamknout zařízení</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="231"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="229"/>
         <source>Enter code</source>
         <translation>Zadejte kód</translation>
     </message>
@@ -534,7 +565,7 @@
 <context>
     <name>glacier-settings</name>
     <message>
-        <location filename="../src/qml/glacier-settings.qml" line="57"/>
+        <location filename="../src/qml/glacier-settings.qml" line="60"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
@@ -655,7 +686,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="77"/>
-        <source>SIM cards not avaiable</source>
+        <source>SIM cards unavailable</source>
         <translation>SIM karta není k dispozici</translation>
     </message>
     <message>
