@@ -4,8 +4,34 @@
 <context>
     <name>DeviceLockPad</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="37"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="39"/>
         <source>Enter code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="117"/>
+        <source>Ok</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="137"/>
+        <source>Incorrect code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="138"/>
+        <source>%1 of %2 attempts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="150"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="159"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="151"/>
+        <source>Temporarily locked</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -273,37 +299,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="99"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
+        <source>Bluetooth adapters not avaible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="107"/>
         <source>Enable Bluetooth</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="111"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="119"/>
         <source>Device name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="142"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="150"/>
         <source>Visibility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="154"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="164"/>
         <source>Paired devices:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="178"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="188"/>
         <source>Devices nearby:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
         <source>Stop search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
         <source>Start discovery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -392,62 +423,62 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="99"/>
         <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="103"/>
         <source>Without delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
         <source>1 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
         <source>5 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
         <source>10 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
         <source>15 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="125"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
         <source>30 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="129"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
         <source>1 hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="146"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="144"/>
         <source>Enable device lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="173"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="171"/>
         <source>Show notifications when device locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="200"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="198"/>
         <source>Auto lock device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="231"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="229"/>
         <source>Enter code</source>
         <translation type="unfinished"></translation>
     </message>
