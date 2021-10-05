@@ -2,9 +2,35 @@
 <context>
     <name>DeviceLockPad</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="37"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="39"/>
         <source>Enter code</source>
         <translation>Введите код</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="117"/>
+        <source>Ok</source>
+        <translation>Ок</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="137"/>
+        <source>Incorrect code</source>
+        <translation>Неверный код</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="138"/>
+        <source>%1 of %2 attempts</source>
+        <translation>Попыток %1 из %2</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="150"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="159"/>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="151"/>
+        <source>Temporarily locked</source>
+        <translation>Временно заблокированно</translation>
     </message>
 </context>
 <context>
@@ -38,7 +64,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="57"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -85,32 +111,32 @@
 <context>
     <name>SettingsModel</name>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="50"/>
+        <location filename="../src/models/settingsmodel.cpp" line="52"/>
         <source>Personalization</source>
         <translation>Персонализация</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="51"/>
+        <location filename="../src/models/settingsmodel.cpp" line="53"/>
         <source>Network</source>
         <translation>Сети</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="52"/>
+        <location filename="../src/models/settingsmodel.cpp" line="54"/>
         <source>Security</source>
         <translation>Безопасность</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="53"/>
+        <location filename="../src/models/settingsmodel.cpp" line="55"/>
         <source>Development</source>
         <translation>Разработка</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="54"/>
+        <location filename="../src/models/settingsmodel.cpp" line="56"/>
         <source>Info</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../src/models/settingsmodel.cpp" line="55"/>
+        <location filename="../src/models/settingsmodel.cpp" line="57"/>
         <source>Other</source>
         <translation>Другое</translation>
     </message>
@@ -271,37 +297,42 @@
         <translation>Bluetooth</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="99"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
+        <source>Bluetooth adapters not avaible</source>
+        <translation>Блютус адаптеры не найдены</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="107"/>
         <source>Enable Bluetooth</source>
         <translation>Включить bluetooth</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="111"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="119"/>
         <source>Device name</source>
         <translation>Имя устройства</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="142"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="150"/>
         <source>Visibility</source>
         <translation>Видимость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="154"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="164"/>
         <source>Paired devices:</source>
         <translation>Сопряжённые устройства:</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="178"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="188"/>
         <source>Devices nearby:</source>
         <translation>Устройства рядом:</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
         <source>Stop search</source>
         <translation>Остановить поиск</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="206"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
         <source>Start discovery</source>
         <translation>Запустить поиск</translation>
     </message>
@@ -390,62 +421,62 @@
         <translation>Блокировка</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="101"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="99"/>
         <source>Never</source>
         <translation>Никогда</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="105"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="103"/>
         <source>Without delay</source>
         <translation>Без задержки</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="109"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
         <source>1 min</source>
         <translation>1 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="113"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
         <source>5 min</source>
         <translation>5 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="117"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
         <source>10 min</source>
         <translation>10 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="121"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
         <source>15 min</source>
         <translation>15 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="125"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
         <source>30 min</source>
         <translation>30 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="129"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
         <source>1 hour</source>
         <translation>1 час</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="146"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="144"/>
         <source>Enable device lock</source>
         <translation>Включить блокировку устройства</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="173"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="171"/>
         <source>Show notifications when device locked</source>
         <translation>Показовать уведомления при заблокированном экране</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="200"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="198"/>
         <source>Auto lock device</source>
         <translation>Автоматическая блокировка</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="231"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="229"/>
         <source>Enter code</source>
         <translation>Ввести код</translation>
     </message>
@@ -534,7 +565,7 @@
 <context>
     <name>glacier-settings</name>
     <message>
-        <location filename="../src/qml/glacier-settings.qml" line="57"/>
+        <location filename="../src/qml/glacier-settings.qml" line="60"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -655,8 +686,8 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="77"/>
-        <source>SIM cards not avaiable</source>
-        <translation>Отсутствует SIM</translation>
+        <source>SIM cards unavailable</source>
+        <translation>Отсутствуют SIM карты</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
