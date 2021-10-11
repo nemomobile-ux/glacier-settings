@@ -300,7 +300,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/bluez/bluez.qml" line="89"/>
-        <source>Bluetooth adapters not avaible</source>
+        <source>Bluetooth adapters not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
