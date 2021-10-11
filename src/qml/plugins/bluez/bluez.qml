@@ -86,7 +86,7 @@ Page {
 
     Label{
         id: btNotFound
-        text: qsTr("Bluetooth adapters not avaible")
+        text: qsTr("Bluetooth adapters not available")
         visible: !bluetoothModel.available
         anchors.centerIn: parent
     }
