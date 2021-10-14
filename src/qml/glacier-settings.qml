@@ -151,7 +151,7 @@ ApplicationWindow{
 
                             Rectangle{
                                 id: line
-                                height: size.ratio(1)
+                                height: size.dp(1)
                                 color: Theme.textColor
                                 width: content.width-sectionText.width-Theme.itemHeightExtraSmall
                                 anchors{
