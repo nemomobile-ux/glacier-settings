@@ -34,6 +34,15 @@ Page {
 
     DisplaySettings{
         id: displaySettings
+
+        onDimTimeoutChanged: {
+            console.log("dimTimeout:"+dimTimeout)
+            for(var i=0; i < dimTimeoutModel.count; i++) {
+                if(dimTimeoutModel.get(i).value === displaySettings.dimTimeout) {
+                    dsisplaySleepRoller.currentIndex = i
+                }
+            }
+        }
     }
 
     ScrollDecorator{
@@ -134,16 +143,10 @@ Page {
                     font.pixelSize: Theme.fontSizeMedium
                     font.bold: (dsisplaySleepRoller.activated && dsisplaySleepRoller.currentIndex === index)
                 }
-
-                Component.onCompleted: {
-                    if(value == displaySettings.dimTimeout) {
-                        dsisplaySleepRoller.currentIndex =  index
-                    }
-                }
             }
 
-            onCurrentIndexChanged: {
-                displaySettings.dimTimeout = dimTimeoutModel.get(dsisplaySleepRoller.currentIndex).value
+            onSelect: {
+                displaySettings.dimTimeout = dimTimeoutModel.get(currentItem).value
             }
         }
 
