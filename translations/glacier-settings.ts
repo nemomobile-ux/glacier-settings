@@ -692,12 +692,12 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
-        <source>Unknow</source>
+        <source>No sim</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
-        <source>No sim</source>
+        <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
