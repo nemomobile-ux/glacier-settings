@@ -39,9 +39,17 @@ Page {
         id: nfcSettings
     }
 
+    Label{
+        id: noNfcLabel
+        visible: !nfcSettings.available
+        text: qsTr("NFC unavailable")
+        anchors.centerIn: parent
+    }
+
     SettingsColumn{
         id: nfcColumn
         spacing: Theme.itemSpacingLarge
+        visible: nfcSettings.available
 
         Rectangle{
             id: nfcEnable
