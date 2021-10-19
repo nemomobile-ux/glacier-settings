@@ -691,13 +691,13 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
-        <source>Unknow</source>
-        <translation>Neznámý</translation>
+        <source>No sim</source>
+        <translation>Není vložena sim</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="98"/>
-        <source>No sim</source>
-        <translation>Není vložena sim</translation>
+        <source>Unknown</source>
+        <translation>Neznámo</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
