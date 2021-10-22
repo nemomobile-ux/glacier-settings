@@ -33,10 +33,18 @@ Page {
     id: deviceLockPadPage
 
     property AuthenticationInput authenticationInput
+    property SecurityCodeSettings securityCodeSettings
+    property bool changeCode: false
+    property bool confirmed: false
 
     headerTools: HeaderToolsLayout {
+        id: toolsLayout
         showBackButton: true;
-        title: qsTr("Enter code")
+        title: changeCode ? qsTr("Enter current security code") : qsTr("Enter security code")
+    }
+
+    Component.onCompleted: {
+        authenticationInput.authorize()
     }
 
     SettingsColumn {
@@ -74,7 +82,14 @@ Page {
                         text: modelData
                         font.pixelSize: Theme.fontSizeLarge
                         anchors.centerIn: parent
-                        color: Theme.textColor
+                        color: if(text == "OK"
+                                       && (lockCodeField.text.lenght > authenticationInput.minimumCodeLength
+                                       || lockCodeField.text.lenght < authenticationInput.maximumCodeLength)) {
+                                   return Theme.fillDarkColor
+                               } else {
+                                   return Theme.textColor
+                               }
+
                     }
 
                     MouseArea{
@@ -86,7 +101,11 @@ Page {
                                 lockCodeField.insert(lockCodeField.cursorPosition, numLabel.text)
                             } else {
                                 if (numLabel.text === "OK") {
-                                    authenticationInput.enterSecurityCode(lockCodeField.text)
+                                    if(!deviceLockPadPage.confirmed) {
+                                        authenticationInput.enterSecurityCode(lockCodeField.text)
+                                    } else {
+                                        securityCodeSettings.change(lockCodeField.text)
+                                    }
 
                                 } else if (numLabel.text === "<"){
                                     lockCodeField.text = lockCodeField.text.slice(0, -1)
@@ -109,6 +128,24 @@ Page {
         target: authenticationInput
         function onFeedback(feedback, data) { displayFeedback(feedback, data) }
         function onError(error) { displayError(error) }
+        function onAuthenticationEnded(confirmed) {
+            if(confirmed) {
+                deviceLockPadPage.confirmed = confirmed
+                if(changeCode) {
+                    lockCodeField.text = "";
+                    toolsLayout.title = qsTr("Enther new security code")
+                } else {
+                    pageStack.pop()
+                }
+            }
+        }
+    }
+
+    Connections {
+        target: securityCodeSettings
+        function onChangingChanged() {
+            pageStack.pop();
+        }
     }
 
     Dialog{
@@ -143,6 +180,7 @@ Page {
                 console.log("("+(authenticationInput.maximumAttempts-data.attemptsRemaining)+
                                                    "/"+authenticationInput.maximumAttempts+")")
             }
+            lockCodeField.text = "";
             break
 
         case AuthenticationInput.TemporarilyLocked:

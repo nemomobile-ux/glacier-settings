@@ -30,7 +30,10 @@ import "../../components"
 Page {
     id: deviceLockPage
 
-    property var token: undefined
+    property string token;
+    property bool requestCodeChange: false
+
+    property int changeAutomaticLockingTo: -2
 
     headerTools: HeaderToolsLayout {
         showBackButton: true;
@@ -38,10 +41,15 @@ Page {
     }
 
     Authenticator{
-        id: authenticater
+        id: authenticator
 
         onAuthenticated: {
-            console.log("authenticationToken:" + authenticationToken)
+            deviceLockPage.token = authenticationToken
+
+            if(deviceLockPage.changeAutomaticLockingTo > -2) {
+                lockSettings.setAutomaticLocking(deviceLockPage.token, changeAutomaticLockingTo)
+                deviceLockPage.changeAutomaticLockingTo = -2
+            }
         }
     }
 
@@ -50,16 +58,28 @@ Page {
 
         authorization {
             onChallengeExpired: {
-                console.log("EXP")
+                deviceLockSettings.authorization.requestChallenge()
             }
         }
+
+        onAutomaticLockingChanged: {
+            for(var i = 0; i < autoLockModel.count; i++ ) {
+                if(autoLockModel.get(i).time === lockSettings.automaticLocking) {
+                    autoLockRoller.currentIndex = i
+                }
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        lockSettings.authorization.requestChallenge()
     }
 
     SecurityCodeSettings{
         id: secCodeSettings
 
         onChanged: {
-            token = authenticationToken
+            deviceLockPage.token = authenticationToken
         }
     }
 
@@ -70,27 +90,15 @@ Page {
         registered: true
 
         onAuthenticationStarted: {
-            console.log("onAuthenticationStarted")
             authInput.feedback(feedback, data)
+            pageStack.push(Qt.resolvedUrl("DeviceLockPad.qml"), {authenticationInput: authInput,
+                               securityCodeSettings: secCodeSettings,
+                               changeCode: requestCodeChange})
         }
 
         onAuthenticationUnavailable: {
-            console.log("onAuthenticationUnavailable")
             authInput.error(error, data)
         }
-
-        onError: {
-            console.log("Error")
-        }
-
-        onAuthenticationEnded: {
-            console.log("Ended")
-        }
-
-    }
-
-    Component.onCompleted: {
-        authenticater.authenticate("123456"); // FIXME authenticate need parameter QVariant
     }
 
     ListModel{
@@ -129,65 +137,17 @@ Page {
         }
     }
 
+    Label{
+        id: noAuthLabel
+        text: qsTr("Lock is not available")
+        anchors.centerIn: parent
+        visible: authenticator.availableMethods == Authenticator.NoAuthentication
+    }
+
     SettingsColumn{
         id: lockColumn
         spacing: Theme.itemSpacingLarge
-
-        Rectangle{
-            id: useLockArea
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
-
-            Label{
-                id: useLockLabel
-                text: qsTr("Enable device lock")
-                anchors{
-                    left: parent.left
-                }
-                wrapMode: Text.Wrap
-            }
-
-            CheckBox {
-                id: useLockCheckBox
-                checked: false //fix it!
-                anchors{
-                    right: parent.right
-                    verticalCenter: useLockLabel.verticalCenter
-                }
-                onClicked:{
-                }
-            }
-        }
-
-        Rectangle{
-            id: showNotifyArea
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
-
-            Label{
-                id: showNotifyLabel
-                text: qsTr("Show notifications when device locked")
-                anchors{
-                    left: parent.left
-                }
-                width: parent.width-showNotifyCheckBox.width
-                wrapMode: Text.Wrap
-            }
-
-            CheckBox {
-                id: showNotifyCheckBox
-                checked: lockSettings.showNotifications
-                anchors{
-                    right: parent.right
-                    verticalCenter: showNotifyLabel.verticalCenter
-                }
-                onClicked:{
-                    lockSettings.showNotifications = showNotifyCheckBox.checked
-                }
-            }
-        }
+        visible: authenticator.availableMethods != Authenticator.NoAuthentication
 
         GlacierRoller {
             id: autoLockRoller
@@ -206,31 +166,51 @@ Page {
                     font.pixelSize: Theme.fontSizeMedium
                     font.bold: (autoLockRoller.activated && autoLockRoller.currentIndex === index)
                 }
-
-                Component.onCompleted: {
-                    if(time == lockSettings.automaticLocking) {
-                        autoLockRoller.currentIndex = index
-                    }
-                }
             }
 
             onCurrentIndexChanged: {
                 var changedTime = autoLockModel.get(autoLockRoller.currentIndex).time
                 if(changedTime != lockSettings.automaticLocking) {
-                    lockSettings.setAutomaticLocking(token,changedTime)
+                    if(deviceLockPage.token.length > 0) {
+                        lockSettings.setAutomaticLocking(token,changedTime)
+                    } else {
+                        deviceLockPage.changeAutomaticLockingTo = changedTime
+                        doAuth();
+                    }
+                }
+            }
+
+            Component.onCompleted: {
+                for(var i = 0; i < autoLockModel.count; i++ ) {
+                    if(autoLockModel.get(i).time === lockSettings.automaticLocking) {
+                        autoLockRoller.currentIndex = i
+                    }
                 }
             }
         }
 
-        Button{
-            id: enterCode
-            width: parent.width
-            height: Theme.itemHeightLarge
-            text: qsTr("Enter code")
-            onClicked: {
-                //authInput.authorize()
-                pageStack.push(Qt.resolvedUrl("DeviceLockPad.qml"), {authenticationInput: authInput})
+        CheckBox {
+            id: showNotifyCheckBox
+            text: qsTr("Show notifications when device locked")
+            checked: lockSettings.showNotifications
+            onClicked:{
+                lockSettings.showNotifications = showNotifyCheckBox.checked
             }
         }
+
+        Button{
+            id: changeCode
+            text: qsTr("Change security code")
+            width: parent.width
+
+            onClicked: {
+                deviceLockPage.requestCodeChange = true
+                doAuth();
+            }
+        }
+    }
+
+    function doAuth() {
+        authenticator.authenticate(lockSettings.authorization.challengeCode, lockSettings.authorization.allowedMethods)
     }
 }
