@@ -58,6 +58,7 @@ Page {
             readOnly: true
             echoMode: TextInput.PasswordEchoOnEdit
             font.pixelSize: Theme.fontSizeMedium
+            maximumLength: authenticationInput.maximumCodeLength
         }
 
         Grid {
@@ -82,9 +83,8 @@ Page {
                         text: modelData
                         font.pixelSize: Theme.fontSizeLarge
                         anchors.centerIn: parent
-                        color: if(text == "OK"
-                                       && (lockCodeField.text.lenght > authenticationInput.minimumCodeLength
-                                       || lockCodeField.text.lenght < authenticationInput.maximumCodeLength)) {
+                        color: if(modelData == "OK" && ( lockCodeField.length < authenticationInput.minimumCodeLength
+                                       || lockCodeField.length > authenticationInput.maximumCodeLength)) {
                                    return Theme.fillDarkColor
                                } else {
                                    return Theme.textColor
@@ -100,7 +100,7 @@ Page {
                             if (numLabel.text !== "<" && numLabel.text !== "OK") {
                                 lockCodeField.insert(lockCodeField.cursorPosition, numLabel.text)
                             } else {
-                                if (numLabel.text === "OK") {
+                                if (numLabel.text === "OK" && numLabel.color != Theme.fillDarkColor) {
                                     if(!deviceLockPadPage.confirmed) {
                                         authenticationInput.enterSecurityCode(lockCodeField.text)
                                     } else {
