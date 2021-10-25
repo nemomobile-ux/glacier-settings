@@ -40,7 +40,7 @@ Page {
     headerTools: HeaderToolsLayout {
         id: toolsLayout
         showBackButton: true;
-        title: changeCode ? qsTr("Enter current security code") : qsTr("Enter security code")
+        title: qsTr("Enter security code")
     }
 
     Component.onCompleted: {
@@ -84,7 +84,7 @@ Page {
                         font.pixelSize: Theme.fontSizeLarge
                         anchors.centerIn: parent
                         color: if(modelData == "OK" && ( lockCodeField.length < authenticationInput.minimumCodeLength
-                                       || lockCodeField.length > authenticationInput.maximumCodeLength)) {
+                                                        || lockCodeField.length > authenticationInput.maximumCodeLength)) {
                                    return Theme.fillDarkColor
                                } else {
                                    return Theme.textColor
@@ -162,13 +162,34 @@ Page {
 
 
     function displayFeedback(feedback, data) {
-        console.log(feedback, data)
-
         switch(feedback) {
 
         case AuthenticationInput.EnterSecurityCode:
-            console.log("Enter security code")
+            toolsLayout.title = qsTr("Enter current security code")
+            lockCodeField.text = "";
             break
+
+        case AuthenticationInput.EnterNewSecurityCode:
+            toolsLayout.title = qsTr("Enter new security code")
+            lockCodeField.text = "";
+            break
+
+        case AuthenticationInput.RepeatNewSecurityCode:
+            toolsLayout.title = qsTr("Repeat new security code")
+            lockCodeField.text = "";
+            break
+
+        case AuthenticationInput.SecurityCodesDoNotMatch:
+            simpleDialog.headingText = qsTr("Error")
+            simpleDialog.subLabelText = qsTr("Security code don't match")
+            simpleDialog.open();
+            break
+
+        case AuthenticationInput.SecurityCodeInHistory:
+            simpleDialog.headingText = qsTr("Error")
+            simpleDialog.subLabelText = qsTr("Don't use previous security code")
+            simpleDialog.open();
+            break;
 
         case AuthenticationInput.IncorrectSecurityCode:
             simpleDialog.headingText = qsTr("Incorrect code")
@@ -178,7 +199,7 @@ Page {
             console.log("Incorrect code")
             if(authenticationInput.maximumAttempts !== -1) {
                 console.log("("+(authenticationInput.maximumAttempts-data.attemptsRemaining)+
-                                                   "/"+authenticationInput.maximumAttempts+")")
+                            "/"+authenticationInput.maximumAttempts+")")
             }
             lockCodeField.text = "";
             break
