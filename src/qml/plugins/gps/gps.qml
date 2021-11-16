@@ -72,6 +72,7 @@ Page {
             Label {
                 id: nameLabel
                 text: qsTr("Enable location")
+                width: parent.width
                 anchors {
                     left: gpsEnable.left
                 }
