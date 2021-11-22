@@ -24,6 +24,7 @@ import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
+import org.nemomobile.glacier.settings 1.0
 
 import "../../components"
 
@@ -48,6 +49,10 @@ Page {
     ScrollDecorator{
         id: displayScroolDecorator
         flickable: displaySettingsColumn
+    }
+
+    ThemesModel{
+        id: themesModel
     }
 
     ListModel{
@@ -178,6 +183,37 @@ Page {
 
             onCurrentIndexChanged: {
                 displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
+            }
+        }
+
+        GlacierRoller {
+            id: themeRoller
+            width: parent.width
+
+            clip: true
+            model: themesModel
+            label: qsTr("Theme")
+
+            delegate: GlacierRollerItem{
+                Text{
+                    height: themeRoller.itemHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: name
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    font.bold: (themeRoller.activated && path == Theme.themePath)
+                }
+
+                Component.onCompleted: {
+                    if(path == Theme.themePath) {
+                        themeRoller.currentIndex =  index
+                    }
+                }
+            }
+
+            onCurrentIndexChanged: {
+                //displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
+                Theme.loadTheme(themesModel.getPath(currentIndex))
             }
         }
     }

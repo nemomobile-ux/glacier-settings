@@ -30,6 +30,7 @@
 
 #include <glacierapp.h>
 
+#include "models/themesmodel.h"
 #include "models/settingsmodel.h"
 #include "models/satellitemodel.h"
 #include "models/timezonesmodel.h"
@@ -52,6 +53,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
     qmlRegisterType<SatelliteModel>("org.nemomobile.glacier.settings",1,0,"SatelliteModel");
     qmlRegisterType<TimeZonesModel>("org.nemomobile.glacier.settings",1,0,"TimeZonesModel");
+    qmlRegisterType<ThemesModel>("org.nemomobile.glacier.settings",1,0,"ThemesModel");
 
     QQuickWindow *window = GlacierApp::showWindow();
     window->setTitle(QObject::tr("Settings"));

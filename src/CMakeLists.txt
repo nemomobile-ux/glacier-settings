@@ -4,6 +4,8 @@ set(SRC
 	models/imagesmodel.h
         models/timezonesmodel.cpp
         models/timezonesmodel.h
+        models/themesmodel.cpp
+        models/themesmodel.h
 	models/satellitemodel.cpp
 	models/satellitemodel.h
 	models/settingsmodel.cpp
