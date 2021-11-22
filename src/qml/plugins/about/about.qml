@@ -58,7 +58,7 @@ Page {
         id: mainContent
         width: aboutPage.width
         height: aboutPage.height
-        contentHeight: glacierLogo.height+abloutGreed.height
+        contentHeight: glacierLogo.height+abloutGreed.height+Theme.itemSpacingLarge*2
 
         Image {
             id: glacierLogo
@@ -88,8 +88,8 @@ Page {
 
         Column{
             id: abloutGreed
-            width: parent.width-Theme.itemSpacingMedium*2
-            spacing: Theme.itemSpacingLarge
+            width: parent.width-Theme.itemSpacingMedium
+            spacing: Theme.itemSpacingSmall
 
             anchors{
                 top: glacierLogo.bottom
@@ -98,41 +98,46 @@ Page {
                 leftMargin: Theme.itemSpacingMedium
             }
 
-
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
                 text: qsTr("Vendor")
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
                 text: aboutSettings.vendorName
+                font.bold: true
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
                 text: qsTr("Vendor version")
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
                 text: aboutSettings.vendorVersion
+                font.bold: true
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
                 text: qsTr("Software version")
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
-                text: aboutSettings.softwareVersion
+                text: aboutSettings.softwareVersion != "" ? aboutSettings.softwareVersion : "n/a"
+                font.bold: true
             }
 
             Label{
@@ -140,12 +145,14 @@ Page {
                 height: Theme.itemHeightLarge
                 text: qsTr("Adaptation version")
                 wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
-                text: aboutSettings.adaptationVersion
+                text: aboutSettings.adaptationVersion != "" ? aboutSettings.adaptationVersion : "n/a"
+                font.bold: true
             }
 
             Label{
@@ -153,12 +160,14 @@ Page {
                 height: Theme.itemHeightLarge
                 text: qsTr("Serial number")
                 wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
-                text: aboutSettings.serial
+                text: aboutSettings.serial != "" ? aboutSettings.serial : "n/a"
+                font.bold: true
             }
 
             Label{
@@ -166,12 +175,14 @@ Page {
                 height: Theme.itemHeightLarge
                 text: qsTr("IMEI")
                 wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
-                text: aboutSettings.imei
+                text: aboutSettings.imei != "" ? aboutSettings.imei : "n/a"
+                font.bold: true
             }
 
             Label{
@@ -179,12 +190,14 @@ Page {
                 height: Theme.itemHeightLarge
                 text: qsTr("Wlan MAC")
                 wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label{
                 width: parent.width
                 height: Theme.itemHeightLarge
-                text: aboutSettings.wlanMacAddress
+                text: aboutSettings.wlanMacAddress != "" ? aboutSettings.wlanMacAddress : "n/a"
+                font.bold: true
             }
         }
     }
