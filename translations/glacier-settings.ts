@@ -4,33 +4,65 @@
 <context>
     <name>DeviceLockPad</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="39"/>
-        <source>Enter code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="117"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="154"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="137"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="195"/>
         <source>Incorrect code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="138"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="196"/>
         <source>%1 of %2 attempts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="150"/>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="159"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="183"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="189"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="209"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="218"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="151"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="43"/>
+        <source>Enter security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
+        <source>Enther new security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
+        <source>Enter current security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="173"/>
+        <source>Enter new security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="178"/>
+        <source>Repeat new security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="184"/>
+        <source>Security code don&apos;t match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="190"/>
+        <source>Don&apos;t use previous security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="210"/>
         <source>Temporarily locked</source>
         <translation type="unfinished"></translation>
     </message>
@@ -66,7 +98,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="57"/>
+        <location filename="../src/main.cpp" line="59"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -256,37 +288,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="105"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="104"/>
         <source>Vendor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="117"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="118"/>
         <source>Vendor version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="129"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="132"/>
         <source>Software version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="141"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="146"/>
         <source>Adaptation version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="154"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="161"/>
         <source>Serial number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="167"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="176"/>
         <source>IMEI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="180"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="191"/>
         <source>Wlan MAC</source>
         <translation type="unfinished"></translation>
     </message>
@@ -418,141 +450,146 @@
 <context>
     <name>devicelock</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="37"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="40"/>
         <source>Device lock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="99"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
         <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="103"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
         <source>Without delay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
         <source>1 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
         <source>5 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
         <source>10 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
         <source>15 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="131"/>
         <source>30 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="135"/>
         <source>1 hour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="144"/>
-        <source>Enable device lock</source>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="142"/>
+        <source>Lock is not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="171"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="203"/>
+        <source>Change security code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="194"/>
         <source>Show notifications when device locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="198"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="158"/>
         <source>Auto lock device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="229"/>
-        <source>Enter code</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>display</name>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="33"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="34"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="47"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="61"/>
         <source>Dynamic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="50"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
         <source>Portrait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="53"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="67"/>
         <source>Landscape</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="60"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="74"/>
         <source>15 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="78"/>
         <source>30 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="68"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="82"/>
         <source>1 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="72"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="86"/>
         <source>2 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="76"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="90"/>
         <source>5 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="80"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="94"/>
         <source>10 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="92"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="106"/>
         <source>Brightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="111"/>
         <source>Auto brightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="126"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="140"/>
         <source>Display sleep timeout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="157"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="165"/>
         <source>Orientation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="195"/>
+        <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -585,50 +622,50 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="98"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="246"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="99"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="247"/>
         <source>Latitude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="98"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="99"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="106"/>
         <source>unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="249"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="106"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="250"/>
         <source>Longitude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="113"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="258"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="259"/>
         <source>Satellite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="260"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="261"/>
         <source>Not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="262"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="263"/>
         <source>Non-satellite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="264"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
         <source>Multiple</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="266"/>
         <source>source error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -734,7 +771,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/nfc/nfc.qml" line="55"/>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="45"/>
+        <source>NFC unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="63"/>
         <source>Enable NFC</source>
         <translation type="unfinished"></translation>
     </message>
