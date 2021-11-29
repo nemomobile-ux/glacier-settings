@@ -2,33 +2,65 @@
 <context>
     <name>DeviceLockPad</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="39"/>
-        <source>Enter code</source>
-        <translation>Введите код</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="117"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="154"/>
         <source>Ok</source>
         <translation>Ок</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="137"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="195"/>
         <source>Incorrect code</source>
         <translation>Неверный код</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="138"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="196"/>
         <source>%1 of %2 attempts</source>
         <translation>Попыток %1 из %2</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="150"/>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="159"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="183"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="189"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="209"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="218"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="151"/>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="43"/>
+        <source>Enter security code</source>
+        <translation>Введите код доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
+        <source>Enther new security code</source>
+        <translation>Введите новый код доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
+        <source>Enter current security code</source>
+        <translation>Введите текущий код доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="173"/>
+        <source>Enter new security code</source>
+        <translation>Введите новый код доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="178"/>
+        <source>Repeat new security code</source>
+        <translation>Повторите новый код доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="184"/>
+        <source>Security code don&apos;t match</source>
+        <translation>Коды доступа несовпадают</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="190"/>
+        <source>Don&apos;t use previous security code</source>
+        <translation>Не используйте прошлые коды доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="210"/>
         <source>Temporarily locked</source>
         <translation>Временно заблокированно</translation>
     </message>
@@ -64,7 +96,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="57"/>
+        <location filename="../src/main.cpp" line="59"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -254,37 +286,37 @@
         <translation>О продукте</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="105"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="104"/>
         <source>Vendor</source>
         <translation>Производитель</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="117"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="118"/>
         <source>Vendor version</source>
         <translation>Модель</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="129"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="132"/>
         <source>Software version</source>
         <translation>Версия ПО</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="141"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="146"/>
         <source>Adaptation version</source>
         <translation>Версия адаптации</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="154"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="161"/>
         <source>Serial number</source>
         <translation>Серийный номер</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="167"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="176"/>
         <source>IMEI</source>
         <translation>IMEI</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="180"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="191"/>
         <source>Wlan MAC</source>
         <translation>Wlan MAC</translation>
     </message>
@@ -416,142 +448,147 @@
 <context>
     <name>devicelock</name>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="37"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="40"/>
         <source>Device lock</source>
         <translation>Блокировка</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="99"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
         <source>Never</source>
         <translation>Никогда</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="103"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
         <source>Without delay</source>
         <translation>Без задержки</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="107"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
         <source>1 min</source>
         <translation>1 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="111"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
         <source>5 min</source>
         <translation>5 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="115"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
         <source>10 min</source>
         <translation>10 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="119"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
         <source>15 min</source>
         <translation>15 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="123"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="131"/>
         <source>30 min</source>
         <translation>30 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="127"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="135"/>
         <source>1 hour</source>
         <translation>1 час</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="144"/>
-        <source>Enable device lock</source>
-        <translation>Включить блокировку устройства</translation>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="142"/>
+        <source>Lock is not available</source>
+        <translation>Блокировка недоступна</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="171"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="203"/>
+        <source>Change security code</source>
+        <translation>Сменить код доступа</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="194"/>
         <source>Show notifications when device locked</source>
         <translation>Показовать уведомления при заблокированном экране</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="198"/>
+        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="158"/>
         <source>Auto lock device</source>
         <translation>Автоматическая блокировка</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/devicelock/devicelock.qml" line="229"/>
-        <source>Enter code</source>
-        <translation>Ввести код</translation>
     </message>
 </context>
 <context>
     <name>display</name>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="33"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="34"/>
         <source>Display</source>
         <translation>Экран</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="47"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="61"/>
         <source>Dynamic</source>
         <translation>Динамический</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="50"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
         <source>Portrait</source>
         <translation>Портретный</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="53"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="67"/>
         <source>Landscape</source>
         <translation>Ландшафтный</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="60"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="74"/>
         <source>15 sec</source>
         <translation>15 сек</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="78"/>
         <source>30 sec</source>
         <translation>30 сек</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="68"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="82"/>
         <source>1 min</source>
         <translation>1 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="72"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="86"/>
         <source>2 min</source>
         <translation>2 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="76"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="90"/>
         <source>5 min</source>
         <translation>5 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="80"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="94"/>
         <source>10 min</source>
         <translation>10 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="92"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="106"/>
         <source>Brightness</source>
         <translation>Яркость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="111"/>
         <source>Auto brightness</source>
         <translation>Автоматическая яркость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="126"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="140"/>
         <source>Display sleep timeout</source>
         <translation>Время отключения экрана</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="157"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="165"/>
         <source>Orientation</source>
         <translation>Ориентация</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="195"/>
+        <source>Theme</source>
+        <translation>Тема</translation>
     </message>
 </context>
 <context>
@@ -583,50 +620,50 @@
         <translation>Включить определение местоположения</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="98"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="246"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="99"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="247"/>
         <source>Latitude</source>
         <translation>Широта</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="98"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="99"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="106"/>
         <source>unavailable</source>
         <translation>недоступно</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="249"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="106"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="250"/>
         <source>Longitude</source>
         <translation>Долгота</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="113"/>
         <source>Source</source>
         <translation>Источник</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="258"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="259"/>
         <source>Satellite</source>
         <translation>Спутник</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="260"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="261"/>
         <source>Not available</source>
         <translation>Не доступно</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="262"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="263"/>
         <source>Non-satellite</source>
         <translation>Не спутник</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="264"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
         <source>Multiple</source>
         <translation>Множественный</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="266"/>
         <source>source error</source>
         <translation>Ошибка источника</translation>
     </message>
@@ -733,7 +770,12 @@
         <translation>NFC</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/nfc/nfc.qml" line="55"/>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="45"/>
+        <source>NFC unavailable</source>
+        <translation>NFC недоступно</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="63"/>
         <source>Enable NFC</source>
         <translation>Включить NFC</translation>
     </message>
