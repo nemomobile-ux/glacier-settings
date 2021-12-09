@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
 <context>
     <name>DeviceLockPad</name>
     <message>
@@ -30,16 +30,12 @@
         <translation>Введите код доступа</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
-        <source>Enther new security code</source>
-        <translation>Введите новый код доступа</translation>
-    </message>
-    <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
         <source>Enter current security code</source>
         <translation>Введите текущий код доступа</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="173"/>
         <source>Enter new security code</source>
         <translation>Введите новый код доступа</translation>
