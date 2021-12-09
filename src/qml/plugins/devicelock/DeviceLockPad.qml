@@ -133,7 +133,7 @@ Page {
                 deviceLockPadPage.confirmed = confirmed
                 if(changeCode) {
                     lockCodeField.text = "";
-                    toolsLayout.title = qsTr("Enther new security code")
+                    toolsLayout.title = qsTr("Enter new security code")
                 } else {
                     pageStack.pop()
                 }
