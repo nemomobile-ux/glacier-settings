@@ -32,16 +32,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
-        <source>Enther new security code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
         <source>Enter current security code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="173"/>
         <source>Enter new security code</source>
         <translation type="unfinished"></translation>
