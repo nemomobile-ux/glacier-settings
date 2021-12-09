@@ -741,7 +741,7 @@
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitado</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/mobile/mobile.qml" line="99"/>
@@ -774,7 +774,7 @@
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="45"/>
         <source>NFC unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>NFC no disponible</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/nfc/nfc.qml" line="63"/>
