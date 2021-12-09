@@ -30,16 +30,12 @@
         <translation>Marcar código de seguridad</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
-        <source>Enther new security code</source>
-        <translation>Marcar código nuevo de seguridad</translation>
-    </message>
-    <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
         <source>Enter current security code</source>
         <translation>Marcar código actual de seguridad</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="173"/>
         <source>Enter new security code</source>
         <translation>Marcar código nuevo de seguridad</translation>
