@@ -688,7 +688,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/language/language.qml" line="89"/>
-        <source>Ok</source>
+        <source>Accept</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
