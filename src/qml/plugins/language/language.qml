@@ -86,7 +86,7 @@ Page {
         property string locale: ""
 
         cancelText: qsTr("Cancel")
-        acceptText: qsTr("Ok")
+        acceptText: qsTr("Accept")
         headingText: qsTr("Change language?")
         subLabelText: qsTr("Do you want to change locale and reboot?")
 
