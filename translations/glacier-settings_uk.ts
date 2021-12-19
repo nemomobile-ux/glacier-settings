@@ -656,7 +656,7 @@
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
         <source>Multiple</source>
-        <translation>Кілька</translation>
+        <translation>Декілька</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/gps/gps.qml" line="266"/>
