@@ -89,7 +89,7 @@ Page {
         Column{
             id: abloutGreed
             width: parent.width-Theme.itemSpacingMedium
-            spacing: Theme.itemSpacingSmall
+            spacing: Theme.itemSpacingExtraSmall
 
             anchors{
                 top: glacierLogo.bottom
@@ -100,104 +100,90 @@ Page {
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
                 text: qsTr("Vendor")
                 font.pixelSize: Theme.fontSizeSmall
-            }
-
-            Label{
-                width: parent.width
-                height: Theme.itemHeightLarge
-                text: aboutSettings.vendorName
                 font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
+                text: aboutSettings.vendorName
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("Vendor version")
                 font.pixelSize: Theme.fontSizeSmall
-            }
-
-            Label{
-                width: parent.width
-                height: Theme.itemHeightLarge
-                text: aboutSettings.vendorVersion
                 font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
+                text: aboutSettings.vendorVersion
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("Software version")
                 font.pixelSize: Theme.fontSizeSmall
-            }
-
-            Label{
-                width: parent.width
-                height: Theme.itemHeightLarge
-                text: aboutSettings.softwareVersion != "" ? aboutSettings.softwareVersion : "n/a"
                 font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
+                text: aboutSettings.softwareVersion != "" ? aboutSettings.softwareVersion : "n/a"
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("Adaptation version")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
-            }
-
-            Label{
-                width: parent.width
-                height: Theme.itemHeightLarge
-                text: aboutSettings.adaptationVersion != "" ? aboutSettings.adaptationVersion : "n/a"
                 font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
+                text: aboutSettings.adaptationVersion != "" ? aboutSettings.adaptationVersion : "n/a"
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("Serial number")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
-            }
-
-            Label{
-                width: parent.width
-                height: Theme.itemHeightLarge
-                text: aboutSettings.serial != "" ? aboutSettings.serial : "n/a"
                 font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
+                text: aboutSettings.serial != "" ? aboutSettings.serial : "n/a"
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("IMEI")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
-            }
-
-            Label{
-                width: parent.width
-                height: Theme.itemHeightLarge
-                text: aboutSettings.imei != "" ? aboutSettings.imei : "n/a"
                 font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
+                text: aboutSettings.imei != "" ? aboutSettings.imei : "n/a"
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("Wlan MAC")
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
+                font.bold: true
             }
 
             Label{
                 width: parent.width
-                height: Theme.itemHeightLarge
                 text: aboutSettings.wlanMacAddress != "" ? aboutSettings.wlanMacAddress : "n/a"
-                font.bold: true
             }
         }
     }
