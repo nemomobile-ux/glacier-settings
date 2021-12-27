@@ -26,6 +26,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.systemsettings 1.0
 import org.nemomobile.glacier.settings 1.0
 
+import Nemo.Configuration 1.0
+
 import "../../components"
 
 Page {
@@ -33,11 +35,16 @@ Page {
 
     headerTools: HeaderToolsLayout { showBackButton: true; title: qsTr("Display")}
 
+    ConfigurationValue {
+        id: dpScaleFactor
+        key: "/nemo/apps/libglacier/dpScaleFactor"
+        defaultValue: "0"
+    }
+
     DisplaySettings{
         id: displaySettings
 
         onDimTimeoutChanged: {
-            console.log("dimTimeout:"+dimTimeout)
             for(var i=0; i < dimTimeoutModel.count; i++) {
                 if(dimTimeoutModel.get(i).value === displaySettings.dimTimeout) {
                     dsisplaySleepRoller.currentIndex = i
@@ -48,7 +55,7 @@ Page {
 
     ScrollDecorator{
         id: displayScroolDecorator
-        flickable: displaySettingsColumn
+        flickable: displaySettingsFlicable
     }
 
     ThemesModel{
@@ -96,124 +103,147 @@ Page {
         }
     }
 
+    Flickable{
+        id: displaySettingsFlicable
+        anchors.fill: parent
+        contentHeight: displaySettingsColumn.height + Theme.itemSpacingLarge*4
 
-    SettingsColumn{
-        id: displaySettingsColumn
-        spacing: Theme.itemSpacingLarge
+        SettingsColumn{
+            id: displaySettingsColumn
+            spacing: Theme.itemSpacingLarge
 
-        Label{
-            id: brightnessLabel
-            text: qsTr("Brightness");
-        }
-
-        CheckBox{
-            id: autoBrightnessCheck
-            text: qsTr("Auto brightness");
-            checked: displaySettings.autoBrightnessEnabled
-            onClicked: displaySettings.autoBrightnessEnabled = checked
-        }
-
-
-        Slider{
-            id: brightnessSlider
-            width: parent.width
-            visible: ! displaySettings.autoBrightnessEnabled
-
-            minimumValue: 0
-            maximumValue: displaySettings.maximumBrightness
-
-            value: displaySettings.brightness
-
-            stepSize: 1
-            onValueChanged: {
-                displaySettings.brightness = value
+            Label{
+                id: brightnessLabel
+                text: qsTr("Brightness");
             }
-            enabled: !displaySettings.autoBrightnessEnabled
-        }
 
-        GlacierRoller {
-            id: dsisplaySleepRoller
-            width: parent.width
+            CheckBox{
+                id: autoBrightnessCheck
+                text: qsTr("Auto brightness");
+                checked: displaySettings.autoBrightnessEnabled
+                onClicked: displaySettings.autoBrightnessEnabled = checked
+            }
 
-            clip: true
-            model: dimTimeoutModel
-            label: qsTr("Display sleep timeout")
 
-            delegate: GlacierRollerItem{
-                Text{
-                    height: dsisplaySleepRoller.itemHeight
-                    verticalAlignment: Text.AlignVCenter
-                    text: name
-                    color: Theme.textColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    font.bold: (dsisplaySleepRoller.activated && dsisplaySleepRoller.currentIndex === index)
+            Slider{
+                id: brightnessSlider
+                width: parent.width
+                visible: ! displaySettings.autoBrightnessEnabled
+
+                minimumValue: 0
+                maximumValue: displaySettings.maximumBrightness
+
+                value: displaySettings.brightness
+
+                stepSize: 1
+                onValueChanged: {
+                    displaySettings.brightness = value
                 }
+                enabled: !displaySettings.autoBrightnessEnabled
             }
 
-            onSelect: {
-                displaySettings.dimTimeout = dimTimeoutModel.get(currentItem).value
-            }
-        }
+            GlacierRoller {
+                id: dsisplaySleepRoller
+                width: parent.width
 
+                clip: true
+                model: dimTimeoutModel
+                label: qsTr("Display sleep timeout")
 
-        GlacierRoller {
-            id: orientationLockRoller
-            width: parent.width
-
-            clip: true
-            model: orientationModel
-            label: qsTr("Orientation")
-
-            delegate: GlacierRollerItem{
-                Text{
-                    height: orientationLockRoller.itemHeight
-                    verticalAlignment: Text.AlignVCenter
-                    text: name
-                    color: Theme.textColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    font.bold: (orientationLockRoller.activated && orientationLockRoller.currentIndex === index)
-                }
-
-                Component.onCompleted: {
-                    if(name.toLowerCase() == displaySettings.orientationLock) {
-                        orientationLockRoller.currentIndex =  index
+                delegate: GlacierRollerItem{
+                    Text{
+                        height: dsisplaySleepRoller.itemHeight
+                        verticalAlignment: Text.AlignVCenter
+                        text: name
+                        color: Theme.textColor
+                        font.pixelSize: Theme.fontSizeMedium
+                        font.bold: (dsisplaySleepRoller.activated && dsisplaySleepRoller.currentIndex === index)
                     }
                 }
-            }
 
-            onCurrentIndexChanged: {
-                displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
-            }
-        }
-
-        GlacierRoller {
-            id: themeRoller
-            width: parent.width
-
-            clip: true
-            model: themesModel
-            label: qsTr("Theme")
-
-            delegate: GlacierRollerItem{
-                Text{
-                    height: themeRoller.itemHeight
-                    verticalAlignment: Text.AlignVCenter
-                    text: name
-                    color: Theme.textColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    font.bold: (themeRoller.activated && path == Theme.themePath)
+                onSelect: {
+                    displaySettings.dimTimeout = dimTimeoutModel.get(currentItem).value
                 }
+            }
 
-                Component.onCompleted: {
-                    if(path == Theme.themePath) {
-                        themeRoller.currentIndex =  index
+
+            GlacierRoller {
+                id: orientationLockRoller
+                width: parent.width
+
+                clip: true
+                model: orientationModel
+                label: qsTr("Orientation")
+
+                delegate: GlacierRollerItem{
+                    Text{
+                        height: orientationLockRoller.itemHeight
+                        verticalAlignment: Text.AlignVCenter
+                        text: name
+                        color: Theme.textColor
+                        font.pixelSize: Theme.fontSizeMedium
+                        font.bold: (orientationLockRoller.activated && orientationLockRoller.currentIndex === index)
+                    }
+
+                    Component.onCompleted: {
+                        if(name.toLowerCase() == displaySettings.orientationLock) {
+                            orientationLockRoller.currentIndex =  index
+                        }
                     }
                 }
+
+                onCurrentIndexChanged: {
+                    displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
+                }
             }
 
-            onCurrentIndexChanged: {
-                //displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
-                Theme.loadTheme(themesModel.getPath(currentIndex))
+            GlacierRoller {
+                id: themeRoller
+                width: parent.width
+
+                clip: true
+                model: themesModel
+                label: qsTr("Theme")
+
+                delegate: GlacierRollerItem{
+                    Text{
+                        height: themeRoller.itemHeight
+                        verticalAlignment: Text.AlignVCenter
+                        text: name
+                        color: Theme.textColor
+                        font.pixelSize: Theme.fontSizeMedium
+                        font.bold: (themeRoller.activated && path == Theme.themePath)
+                    }
+
+                    Component.onCompleted: {
+                        if(path == Theme.themePath) {
+                            themeRoller.currentIndex =  index
+                        }
+                    }
+                }
+
+                onCurrentIndexChanged: {
+                    //displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
+                    Theme.loadTheme(themesModel.getPath(currentIndex))
+                }
+            }
+
+            Label{
+                id: scaleLabel
+                text: qsTr("Scalling");
+            }
+
+            Slider {
+                id: scaleSlider
+                value: dpScaleFactor.value == 0 ? size.dpScaleFactor : dpScaleFactor.value
+                minimumValue: 0.5
+                maximumValue: 2
+                stepSize: 0.1
+                width: parent.width
+
+                onValueChanged: {
+                    dpScaleFactor.value = scaleSlider.value
+                }
             }
         }
     }
