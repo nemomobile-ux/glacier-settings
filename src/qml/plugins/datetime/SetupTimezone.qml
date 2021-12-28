@@ -71,7 +71,7 @@ Page {
 
         ListView{
             id: timeZonesList
-            width: parent.width
+            width: parent.width - Theme.itemSpacingLarge
             height: parent.height
             clip: true;
 
