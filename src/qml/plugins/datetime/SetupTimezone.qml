@@ -71,33 +71,19 @@ Page {
 
         ListView{
             id: timeZonesList
-            width: parent.width
+            width: parent.width - Theme.itemSpacingLarge
             height: parent.height
+            clip: true;
 
             model: timeZonesModel
-            delegate: Rectangle{
-                width: timeZonesList.width
-                height: Theme.itemHeightLarge
 
-                color: Theme.backgroundColor
-                Label {
-                    color: dateTimeSettings.timezone == name ? Theme.accentColor : Theme.textColor
-                    text: name
-                    anchors{
-                        left: parent.left
-                        leftMargin: Theme.itemSpacingSmall
-                        verticalCenter: parent.verticalCenter
-                    }
-
-                    font.pixelSize: Theme.fontSizeMedium
-                    clip: true
-                }
-
-                MouseArea{
-                    anchors.fill: parent
-                    onClicked: {
-                        dateTimeSettings.timezone = name
-                    }
+            delegate: ListViewItemWithActions {
+                label: name
+                showNext: false
+                iconVisible: false
+                selected: dateTimeSettings.timezone == name
+                onClicked: {
+                    dateTimeSettings.timezone = name
                 }
             }
         }
