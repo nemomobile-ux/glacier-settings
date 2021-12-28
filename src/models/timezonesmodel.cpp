@@ -74,15 +74,16 @@ QVariant TimeZonesModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-void TimeZonesModel::search(QString zoneName)
+void TimeZonesModel::search(QString searchString)
 {
     beginResetModel();
-    if(zoneName.isEmpty()) {
+    if(searchString.isEmpty()) {
         m_zones = m_tzInfo->systemTimeZones();
     } else {
         m_zones.clear();
         foreach(const TimeZoneInfo &zone, m_tzInfo->systemTimeZones()) {
-            if(zone.name().contains(zoneName.toUtf8())) {
+            QString zoneNameStr = zone.name();
+            if (zoneNameStr.contains(searchString, Qt::CaseInsensitive)) {
                 m_zones.append(zone);
             }
         }
