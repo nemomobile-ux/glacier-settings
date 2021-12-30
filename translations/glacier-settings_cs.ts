@@ -282,37 +282,37 @@
         <translation>O produktu</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="104"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="103"/>
         <source>Vendor</source>
         <translation>Výrobce</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="118"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="115"/>
         <source>Vendor version</source>
         <translation>Verze výrobku</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="132"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="127"/>
         <source>Software version</source>
         <translation>Verze software</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="146"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="139"/>
         <source>Adaptation version</source>
         <translation>Verze adaptace</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="161"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="152"/>
         <source>Serial number</source>
         <translation>Sériové číslo</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="176"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="165"/>
         <source>IMEI</source>
         <translation>IMEI</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="191"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="178"/>
         <source>Wlan MAC</source>
         <translation>Wlan MAC</translation>
     </message>
@@ -512,79 +512,84 @@
 <context>
     <name>display</name>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="34"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="36"/>
         <source>Display</source>
         <translation>Obrazovka</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="61"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="68"/>
         <source>Dynamic</source>
         <translation>Dynamicky</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="71"/>
         <source>Portrait</source>
         <translation>Na výšku</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="67"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="74"/>
         <source>Landscape</source>
         <translation>Na šířku</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="74"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="81"/>
         <source>15 sec</source>
         <translation>15 sek</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="78"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="85"/>
         <source>30 sec</source>
         <translation>30 sek</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="82"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="89"/>
         <source>1 min</source>
         <translation>1 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="86"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="93"/>
         <source>2 min</source>
         <translation>2 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="90"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
         <source>5 min</source>
         <translation>5 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="94"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="101"/>
         <source>10 min</source>
         <translation>10 min</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="106"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="117"/>
         <source>Brightness</source>
         <translation>Jas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="111"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="122"/>
         <source>Auto brightness</source>
         <translation>Automatický jas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="140"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="151"/>
         <source>Display sleep timeout</source>
         <translation>Doba pro uspání obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="165"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="176"/>
         <source>Orientation</source>
         <translation>Natočení</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="195"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="206"/>
         <source>Theme</source>
         <translation>Téma</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="233"/>
+        <source>Scalling</source>
+        <translation>Škálování</translation>
     </message>
 </context>
 <context>
