@@ -282,37 +282,37 @@
         <translation>О продукте</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="104"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="103"/>
         <source>Vendor</source>
         <translation>Производитель</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="118"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="115"/>
         <source>Vendor version</source>
         <translation>Модель</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="132"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="127"/>
         <source>Software version</source>
         <translation>Версия ПО</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="146"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="139"/>
         <source>Adaptation version</source>
         <translation>Версия адаптации</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="161"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="152"/>
         <source>Serial number</source>
         <translation>Серийный номер</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="176"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="165"/>
         <source>IMEI</source>
         <translation>IMEI</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="191"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="178"/>
         <source>Wlan MAC</source>
         <translation>Wlan MAC</translation>
     </message>
@@ -512,79 +512,84 @@
 <context>
     <name>display</name>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="34"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="36"/>
         <source>Display</source>
         <translation>Экран</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="61"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="68"/>
         <source>Dynamic</source>
         <translation>Динамический</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="64"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="71"/>
         <source>Portrait</source>
         <translation>Портретный</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="67"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="74"/>
         <source>Landscape</source>
         <translation>Ландшафтный</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="74"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="81"/>
         <source>15 sec</source>
         <translation>15 сек</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="78"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="85"/>
         <source>30 sec</source>
         <translation>30 сек</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="82"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="89"/>
         <source>1 min</source>
         <translation>1 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="86"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="93"/>
         <source>2 min</source>
         <translation>2 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="90"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="97"/>
         <source>5 min</source>
         <translation>5 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="94"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="101"/>
         <source>10 min</source>
         <translation>10 мин</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="106"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="117"/>
         <source>Brightness</source>
         <translation>Яркость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="111"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="122"/>
         <source>Auto brightness</source>
         <translation>Автоматическая яркость</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="140"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="151"/>
         <source>Display sleep timeout</source>
         <translation>Время отключения экрана</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="165"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="176"/>
         <source>Orientation</source>
         <translation>Ориентация</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/display/display.qml" line="195"/>
+        <location filename="../src/qml/plugins/display/display.qml" line="206"/>
         <source>Theme</source>
         <translation>Тема</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/display/display.qml" line="233"/>
+        <source>Scalling</source>
+        <translation>Масштабирование</translation>
     </message>
 </context>
 <context>
