@@ -50,7 +50,7 @@ Page {
             width: parent.width
             height: Theme.itemHeightLarge
 
-            color: (index === languageModel.currentIndex) ? Theme.accentColor : Theme.backgroundColor
+            color: (index === languageModel.currentIndex) ? Theme.accentColor : "transparent"
             Label {
                 color: Theme.textColor
                 text: name
