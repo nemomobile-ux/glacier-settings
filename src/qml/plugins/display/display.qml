@@ -230,7 +230,7 @@ Page {
 
             Label{
                 id: scaleLabel
-                text: qsTr("Scalling");
+                text: qsTr("Scaling");
             }
 
             Slider {

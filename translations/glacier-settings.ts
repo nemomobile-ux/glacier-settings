@@ -9,6 +9,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="184"/>
+        <source>Security codes don&apos;t match</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="195"/>
         <source>Incorrect code</source>
         <translation type="unfinished"></translation>
@@ -45,11 +50,6 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="178"/>
         <source>Repeat new security code</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="184"/>
-        <source>Security code don&apos;t match</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -590,7 +590,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="233"/>
-        <source>Scalling</source>
+        <source>Scaling</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -181,7 +181,7 @@ Page {
 
         case AuthenticationInput.SecurityCodesDoNotMatch:
             simpleDialog.headingText = qsTr("Error")
-            simpleDialog.subLabelText = qsTr("Security code don't match")
+            simpleDialog.subLabelText = qsTr("Security codes don't match")
             simpleDialog.open();
             break
 
