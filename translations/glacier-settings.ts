@@ -590,7 +590,7 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="233"/>
-        <source>Scalling</source>
+        <source>Scaling</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
