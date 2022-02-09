@@ -7,6 +7,11 @@
         <translation>Ок</translation>
     </message>
     <message>
+        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="184"/>
+        <source>Security codes don&apos;t match</source>
+        <translation>Коды доступа несовпадают</translation>
+    </message>
+    <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="195"/>
         <source>Incorrect code</source>
         <translation>Неверный код</translation>
@@ -44,11 +49,6 @@
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="178"/>
         <source>Repeat new security code</source>
         <translation>Повторите новый код доступа</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="184"/>
-        <source>Security code don&apos;t match</source>
-        <translation>Коды доступа несовпадают</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="190"/>
@@ -588,8 +588,8 @@
     </message>
     <message>
         <location filename="../src/qml/plugins/display/display.qml" line="233"/>
-        <source>Scalling</source>
-        <translation>Масштабирование</translation>
+        <source>Scaling</source>
+        <translation>Масштаб</translation>
     </message>
 </context>
 <context>
