@@ -37,7 +37,6 @@ ApplicationWindow{
 
     SettingsModel{
         id: settingsModel
-        path: "/usr/share/glacier-settings/plugins/"
     }
 
     SettingsService{

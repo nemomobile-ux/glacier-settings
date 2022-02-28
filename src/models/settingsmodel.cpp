@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2020 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -61,24 +61,16 @@ QMap<QString, QString> SettingsModel::extraTranlation = QMap<QString, QString>()
 
 SettingsModel::SettingsModel(QObject *parent) :
     QAbstractListModel(parent)
+  , m_pluginsDir("/usr/share/glacier-settings/plugins/")
 {
     m_roleNames << "title";
     m_roleNames << "items";
 
-    for (const QString &role : m_roleNames) {
+    for (const QString &role : qAsConst(m_roleNames)) {
         hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
     }
-}
 
-
-void SettingsModel::setPath(QString path)
-{
-    if(m_pluginsDir != path) {
-        m_pluginsDir = path;
-        init();
-
-        emit pathChanged();
-    }
+    init();
 }
 
 int SettingsModel::compareCategories(QString leftCategory, QString rightCategory)
@@ -106,7 +98,7 @@ void SettingsModel::init()
     while (it.hasNext ()) {
         const QFileInfo &fileInfo = it.next ();
         qDebug() << "Load " << fileInfo.fileName();
-        if(!loadConfig(m_pluginsDir+fileInfo.fileName())) {
+        if(!loadConfig(fileInfo.fileName())) {
             qWarning() << "Wrong plugin config";
         }
     }
@@ -134,7 +126,7 @@ void SettingsModel::init()
     }
 
     /*Remove empty categories*/
-    for(QString category : defaultCategories) {
+    for(const QString &category : qAsConst(defaultCategories)) {
         if(pluginsInCategory(category).count() == 0) {
             defaultCategories.removeAll(category);
         }
@@ -143,25 +135,50 @@ void SettingsModel::init()
 
 bool SettingsModel::loadConfig(QString configFileName)
 {
-    QFile pluginConfig(configFileName);
+    /*
+     * in first check plugin configs into device specific
+     * dir.
+    */
+    QFile dsPluginConfig("/etc/glacier-settings/plugins/"+configFileName);
+    if(dsPluginConfig.exists()) {
+        qDebug() << "Load device speciffic plugin config" << "/etc/glacier-settings/plugins/"+configFileName;
+
+        dsPluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
+        QJsonDocument dsConfig = QJsonDocument::fromJson(dsPluginConfig.readAll());
+        QJsonObject dsConfigObject = dsConfig.object();
+
+        if(dsConfigObject.contains("enabled")) {
+            if(!dsConfigObject["enabled"].toBool()) {
+                qDebug() << "Disabled by device specifig config";
+                return false;
+            }
+        }
+    }
+
+    QFile pluginConfig(m_pluginsDir+configFileName);
     pluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());
     QJsonObject configObject = config.object();
 
-    for (QString role : configObject.keys()) {
+    for (const QString &role : configObject.keys()) {
         if (!m_roleNames.contains(role)) {
             m_roleNames << role;
             hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
         }
     }
 
-    if(configObject.contains("title") && configObject.contains("category") && configObject.contains("path")) {
-        if (configObject.contains("translation_dir") && configObject.contains("translation_file")) {
+    if(configObject.contains("title")
+            && configObject.contains("category")
+            && configObject.contains("path")) {
+
+        if (configObject.contains("translation_dir")
+                && configObject.contains("translation_file")) {
             QString t_dir = configObject["translation_dir"].toString();
             QString t_file = configObject["translation_file"].toString();
             qDebug() << "extra translation files " << configObject["title"].toString() << "" << t_dir << " " << t_file;
             extraTranlation[t_dir] = t_file;
         }
+
         m_pluginsData.append(configObject);
         return true;
     } else {

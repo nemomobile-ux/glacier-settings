@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -27,7 +27,6 @@
 class SettingsModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
 
 public:
     explicit SettingsModel(QObject *parent = 0);
@@ -38,9 +37,6 @@ public:
     QVariantMap data(const QModelIndex &index) const;
     QHash<int, QByteArray> roleNames() const {return hash;}
 
-    QString path(){return m_pluginsDir;}
-    void setPath(QString path);
-
     static int compareCategories(QString leftCategory, QString rightCategory);
 
     static QStringList defaultCategories;
@@ -48,15 +44,10 @@ public:
 
     Q_INVOKABLE bool pluginAviable(QString name);
 
-signals:
-    void pathChanged();
-
-public slots:
-    QVariantMap get(int idx) const;
-
 private:
+    QVariantMap get(int idx) const;
     QHash<int,QByteArray> hash;
-    QString m_pluginsDir;
+    const QString m_pluginsDir;
     QStringList m_roleNames;
     QJsonArray m_pluginsData; //plugins list
 
