@@ -47,6 +47,10 @@ Page {
         id: aboutSettings
     }
 
+    DeviceInfo{
+        id: deviceInfo
+    }
+
     onMagicCountChanged: {
         if(magicCount == 5)
         {
@@ -170,7 +174,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.imei != "" ? aboutSettings.imei : "n/a"
+                text: deviceInfo.imeiNumbers[0] != "" ? deviceInfo.imeiNumbers[0] : "n/a"
             }
 
             Label{
@@ -183,7 +187,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.wlanMacAddress != "" ? aboutSettings.wlanMacAddress : "n/a"
+                text: deviceInfo.wlanMacAddress != "" ? deviceInfo.wlanMacAddress : "n/a"
             }
         }
     }
