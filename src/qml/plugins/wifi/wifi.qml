@@ -54,103 +54,83 @@ Page {
         interval: 5000
         repeat: false
         onTriggered: {
-            columnCheckBox.indeterminate = false
-            columnCheckBox.checked = networkingModel.powered
+            wifiEnable.indeterminate = false
+            wifiEnable.checked = networkingModel.powered
         }
     }
 
     SettingsColumn{
         id: actionColumn
+        anchors.fill: parent
 
-        Rectangle{
+        RightCheckBox{
+            id: wifiEnable
+            label: qsTr("Enable WiFi")
+            checked: networkingModel.powered
             width: parent.width
-            height: childrenRect.height
-            color: "transparent"
+            height: Theme.itemHeightLarge
 
-            Label{
-                id: nameLabel
-                text: qsTr("WiFi")
-                anchors{
-                    left: parent.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
-            }
-
-            CheckBox {
-                id: columnCheckBox
-                checked: networkingModel.powered
-                anchors{
-                    right: parent.right
-                    verticalCenter: nameLabel.verticalCenter
-                }
-                onClicked:{
-                    networkingModel.powered = !networkingModel.powered;
-                    columnCheckBox.indeterminate = true
-                    wifiTimer.start()
-                }
+            onClicked:{
+                networkingModel.powered = !networkingModel.powered;
+                wifiEnable.indeterminate = true
+                wifiTimer.start()
             }
         }
-    }
 
-    Flickable{
-        visible: networkingModel.powered
-        width: parent.width-size.dp(40)
-        height: parent.height-actionColumn.height-size.dp(80)
-        contentHeight: networks.height+size.dp(50)
-
-        clip: true
-        anchors{
-            top: actionColumn.bottom
-            topMargin: size.dp(80)
-            left: parent.left
-            leftMargin: size.dp(20)
-        }
-
-        Column{
-            id: networks
-            spacing: Theme.itemSpacingSmall
+        Flickable{
+            visible: networkingModel.powered
             width: parent.width
+            height: parent.height-wifiEnable.height
 
-            Text{
-                text: qsTr("Saved")
-                color: Theme.textColor
-                font.pixelSize: Theme.fontSizeLarge
-            }
+            contentHeight: networks.height+size.dp(50)
 
-            Rectangle{
+            clip: true
+
+            Column{
+                id: networks
+                spacing: Theme.itemSpacingSmall
                 width: parent.width
-                height: 1
-            }
 
-            Repeater{
-                width: parent.width
-                model: networkingModel
-                delegate: NetworkDelegate{saved: true}
-            }
+                Text{
+                    text: qsTr("Saved")
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeLarge
+                }
+
+                Rectangle{
+                    width: parent.width
+                    height: 1
+                }
+
+                Repeater{
+                    width: parent.width
+                    model: networkingModel
+                    delegate: NetworkDelegate{saved: true}
+                }
 
 
-            Text{
-                text: qsTr("Available")
-                color: Theme.textColor
-                font.pixelSize: Theme.fontSizeLarge
-            }
+                Text{
+                    text: qsTr("Available")
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeLarge
+                }
 
-            Rectangle{
-                width: parent.width
-                height: 1
-            }
+                Rectangle{
+                    width: parent.width
+                    height: 1
+                }
 
-            Repeater{
-                width: parent.width
-                model: networkingModel
-                delegate: NetworkDelegate{saved: false}
-            }
+                Repeater{
+                    width: parent.width
+                    model: networkingModel
+                    delegate: NetworkDelegate{saved: false}
+                }
 
-            ListViewItemWithActions{
-                label: qsTr("Manage saved networks")
-                onClicked: {
-                    pageStack.push(Qt.resolvedUrl("SavedServices.qml"));
+                ListViewItemWithActions{
+                    label: qsTr("Manage saved networks")
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("SavedServices.qml"));
+                    }
                 }
             }
         }
@@ -174,3 +154,4 @@ Page {
         return strengthIndex
     }
 }
+

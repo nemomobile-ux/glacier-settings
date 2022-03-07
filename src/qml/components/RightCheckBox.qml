@@ -29,6 +29,9 @@ Item {
 
     property alias label: rightCheckBoxLabel.text
     property alias checked: rightCheckBoxCheckBox.checked
+    property alias indeterminate: rightCheckBoxCheckBox.indeterminate
+
+    signal clicked();
 
     width: parent.width
     height: visible ? childrenRect.height : 0
@@ -38,6 +41,7 @@ Item {
         width: parent.width
         anchors {
             left: rightCheckBox.left
+            verticalCenter: parent.verticalCenter
         }
         wrapMode: Text.Wrap
         font.bold: true
@@ -49,6 +53,10 @@ Item {
         anchors {
             right: rightCheckBox.right
             verticalCenter: rightCheckBoxLabel.verticalCenter
+        }
+
+        onClicked: {
+            rightCheckBox.clicked();
         }
     }
 }
