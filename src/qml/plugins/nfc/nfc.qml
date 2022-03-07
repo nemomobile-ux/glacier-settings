@@ -51,35 +51,20 @@ Page {
         spacing: Theme.itemSpacingLarge
         visible: nfcSettings.available
 
-        Rectangle{
-            id: nfcEnable
-            width: parent.width
-            height: childrenRect.height
 
-            color: "transparent"
-
-            Label {
-                id: nameLabel
-                text: qsTr("Enable NFC")
-                anchors {
-                    left: nfcEnable.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
+        RightCheckBox {
+            id: nfcCheckBox
+            checked: nfcSettings.enabled
+            label: qsTr("Enable NFC")
+            anchors {
+                right: nfcEnable.right
+                verticalCenter: nameLabel.verticalCenter
             }
 
-            CheckBox {
-                id: nfcCheckBox
-                checked: nfcSettings.enabled
-                anchors {
-                    right: nfcEnable.right
-                    verticalCenter: nameLabel.verticalCenter
-                }
-
-                onClicked: {
-                    nfcSettings.enabled = nfcCheckBox.checked
-                }
+            onClicked: {
+                nfcSettings.enabled = nfcCheckBox.checked
             }
         }
     }
 }
+

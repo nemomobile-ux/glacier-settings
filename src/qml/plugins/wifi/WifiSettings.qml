@@ -121,9 +121,9 @@ Page {
             width: parent.width
         }
 
-        CheckBox{
+        RightCheckBox{
             id: autoConnectCheckBox
-            text: qsTr("Connect automatically")
+            label: qsTr("Connect automatically")
             checked: true
         }
 

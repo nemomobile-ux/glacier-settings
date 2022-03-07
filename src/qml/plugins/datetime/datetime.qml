@@ -67,9 +67,9 @@ Page {
         id: mainContent
         spacing: Theme.itemSpacingLarge
 
-        CheckBox{
+        RightCheckBox{
             id: automaticTimeUpdateCheckbox
-            text: qsTr("Automatic time update")
+            label: qsTr("Automatic time update")
             checked: dateTimeSettings.automaticTimeUpdate
             width: parent.width
             onClicked:{
@@ -102,9 +102,9 @@ Page {
             }
         }
 
-        CheckBox{
+        RightCheckBox{
             id: automaticTimezoneUpdateCheckbox
-            text: qsTr("Automatic time zone update")
+            label: qsTr("Automatic time zone update")
             width: parent.width
             checked: dateTimeSettings.automaticTimezoneUpdate
             onClicked:{

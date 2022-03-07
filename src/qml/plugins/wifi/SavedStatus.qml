@@ -22,32 +22,18 @@ Page {
     SettingsColumn{
         id: actionColumn
 
-        Rectangle{
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
 
-            Label{
-                id: nameLabel
-                text: qsTr("Auto connect")
-                anchors{
-                    left: parent.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
+        RightCheckBox {
+            id: columnCheckBox
+            label: qsTr("Auto connect")
+            checked: modelData.autoConnect
+            anchors{
+                right: parent.right
+                verticalCenter: nameLabel.verticalCenter
             }
 
-            CheckBox {
-                id: columnCheckBox
-                checked: modelData.autoConnect
-                anchors{
-                    right: parent.right
-                    verticalCenter: nameLabel.verticalCenter
-                }
-
-                onClicked: {
-                    modelData.autoConnect = !modelData.autoConnect;
-                }
+            onClicked: {
+                modelData.autoConnect = !modelData.autoConnect;
             }
         }
 

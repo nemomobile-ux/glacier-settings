@@ -117,9 +117,9 @@ Page {
                 text: qsTr("Brightness");
             }
 
-            CheckBox{
+            RightCheckBox{
                 id: autoBrightnessCheck
-                text: qsTr("Auto brightness");
+                label: qsTr("Auto brightness");
                 checked: displaySettings.autoBrightnessEnabled
                 onClicked: displaySettings.autoBrightnessEnabled = checked
             }

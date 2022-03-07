@@ -142,25 +142,25 @@ Page {
             }
         }
 
-        CheckBox {
+        RightCheckBox {
             id: autoConnectCheckBox
             width: parent.width
             height: Theme.itemHeightLarge
 
             checked: cellularNetworkTechnology.powered
-            text: qsTr("Connect to internet")
+            label: qsTr("Connect to internet")
 
             onClicked: {
                 cellularNetworkTechnology.powered = !cellularNetworkTechnology.powered
             }
         }
 
-        CheckBox {
+        RightCheckBox {
             id: roamingCheckBox
             width: parent.width
 
             checked: cellularNetworkTechnology.roamingAllowed
-            text: qsTr("Enable data roaming")
+            label: qsTr("Enable data roaming")
 
             onClicked: {
                 cellularNetworkTechnology.roamingAllowed = !cellularNetworkTechnology.roamingAllowed

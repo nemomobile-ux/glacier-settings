@@ -71,33 +71,19 @@ Page {
     SettingsColumn{
         id: forcePowerSaveColumn
         spacing: Theme.itemSpacingLarge
-        Rectangle{
-            width: parent.width
-            height: childrenRect.height
-            color: "transparent"
 
-            Label{
-                id: nameLabel
-                text: qsTr("Force power save")
-                anchors{
-                    left: parent.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
+        RightCheckBox {
+            id: forcePowerSaveCheckBox
+            label: qsTr("Force power save")
+            checked: displaySettings.powerSaveModeForced
+            anchors{
+                right: parent.right
+                verticalCenter: nameLabel.verticalCenter
             }
-
-            CheckBox {
-                id: forcePowerSaveCheckBox
-                checked: displaySettings.powerSaveModeForced
-                anchors{
-                    right: parent.right
-                    verticalCenter: nameLabel.verticalCenter
-                }
-                onClicked:{
-                    displaySettings.powerSaveModeForced = forcePowerSaveCheckBox.checked
-                    if(forcePowerSaveCheckBox.checked) {
-                        displaySettings.powerSaveModeEnabled = true
-                    }
+            onClicked:{
+                displaySettings.powerSaveModeForced = forcePowerSaveCheckBox.checked
+                if(forcePowerSaveCheckBox.checked) {
+                    displaySettings.powerSaveModeEnabled = true
                 }
             }
         }

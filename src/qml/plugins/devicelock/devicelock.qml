@@ -189,9 +189,9 @@ Page {
             }
         }
 
-        CheckBox {
+        RightCheckBox {
             id: showNotifyCheckBox
-            text: qsTr("Show notifications when device locked")
+            label: qsTr("Show notifications when device locked")
             checked: lockSettings.showNotifications
             onClicked:{
                 lockSettings.showNotifications = showNotifyCheckBox.checked
