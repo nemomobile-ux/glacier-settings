@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -43,53 +43,59 @@ Page {
     SatelliteModel {
         id: satelliteModel
         running: true
-        onErrorFound: {
-            console.error(String("Last Error: %1").arg(code))
-        }
-
-        onSatelliteInfoAvailableChanged: {
-            console.log("Aviable:"+satelliteModel.rowCount())
-        }
     }
 
-    ConfigurationValue {
-        id: loactionEnabled
-        key: "/home/glacier/loaction/enabled"
-        defaultValue: "0"
+    LocationSettings{
+        id: locationSettings
     }
 
     SettingsColumn{
         id: gpsColumn
         spacing: Theme.itemSpacingLarge
 
-        Rectangle{
-            id: gpsEnable
-            width: parent.width
-            height: childrenRect.height
-
-            color: "transparent"
-
-            Label {
-                id: nameLabel
-                text: qsTr("Enable location")
-                width: parent.width
-                anchors {
-                    left: gpsEnable.left
-                }
-                wrapMode: Text.Wrap
-                font.bold: true
+        RightCheckBox{
+            id: locationEnable
+            label: qsTr("Enable location")
+            checked: locationSettings.locationEnabled
+            onCheckedChanged: {
+                locationSettings.locationEnabled = locationEnable.checked
             }
+        }
 
-            CheckBox {
-                id: gpsCheckBox
-                checked: loactionEnabled.value == true
-                anchors {
-                    right: gpsEnable.right
-                    verticalCenter: nameLabel.verticalCenter
+        RightCheckBox{
+            id: gpsEnabled
+            label: qsTr("Enable sattelites location")
+            checked: locationSettings.gpsEnabled
+            visible: locationSettings.gpsAvailable
+            onCheckedChanged: {
+                locationSettings.gpsEnabled = gpsEnabled.checked
+            }
+        }
+
+        RightCheckBox{
+            id: gpsFlightModeEnabled
+            label: qsTr("Use sattelites location in flight mode")
+            checked: locationSettings.gpsFlightMode
+            visible: locationSettings.gpsAvailable
+            onCheckedChanged: {
+                locationSettings.gpsFlightMode = gpsFlightModeEnabled.checked
+            }
+        }
+
+        RightCheckBox{
+            id: onlineServicesEnabled
+            label: qsTr("Enable online location services")
+            checked: locationSettings.hereState == LocationSettings.OnlineAGpsEnabled || locationSettings.mlsEnabled || locationSettings.yandexOnlineState == LocationSettings.OnlineAGpsEnabled
+            visible: locationSettings.hereAvailable || locationSettings.mlsAvailable || locationSettings.yandexAvailable
+            onCheckedChanged: {
+                if(onlineServicesEnabled.checked == true) {
+                    locationSettings.hereState = LocationSettings.OnlineAGpsEnabled
+                    locationSettings.yandexOnlineState = LocationSettings.OnlineAGpsEnabled
+                } else {
+                    locationSettings.hereState = LocationSettings.OnlineAGpsDisabled
+                    locationSettings.yandexOnlineState = LocationSettings.OnlineAGpsDisabled
                 }
-                onClicked: {
-                    loactionEnabled.value = gpsCheckBox.checked
-                }
+                locationSettings.mlsEnabled = onlineServicesEnabled.checked
             }
         }
 
@@ -97,21 +103,21 @@ Page {
             id: latitudeLabel
             font.bold: true
             text: qsTr("Latitude")+" : " + qsTr("unavailable")
-            visible: loactionEnabled.value == true
+            visible: locationSettings.locationEnabled == true
         }
 
         Label{
             id: longitudeLabel
             font.bold: true
             text: qsTr("Longitude")+" : " + qsTr("unavailable")
-            visible: loactionEnabled.value == true
+            visible: locationSettings.locationEnabled == true
         }
 
         Label{
             id: sourceLabel
             font.bold: true
             text: qsTr("Source")+" : "+printableMethod(positionSource.supportedPositioningMethods)
-            visible: loactionEnabled.value == true
+            visible: locationSettings.locationEnabled == true
         }
 
         Rectangle{
@@ -120,7 +126,7 @@ Page {
             height: width
             color: "transparent"
             clip: true
-            visible: loactionEnabled.value == true
+            visible: locationSettings.gpsEnabled == true
 
             Row {
                 property int rows: 13
