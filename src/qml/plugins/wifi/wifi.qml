@@ -68,7 +68,6 @@ Page {
             label: qsTr("Enable WiFi")
             checked: networkingModel.powered
             width: parent.width
-            height: Theme.itemHeightLarge
 
             onClicked:{
                 networkingModel.powered = !networkingModel.powered;

@@ -34,7 +34,7 @@ Item {
     signal clicked();
 
     width: parent.width
-    height: visible ? childrenRect.height : 0
+    height: visible ? Theme.itemHeightLarge : 0
 
     Label {
         id: rightCheckBoxLabel

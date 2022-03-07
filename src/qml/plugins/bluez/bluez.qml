@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -101,10 +101,10 @@ Page {
             height: childrenRect.height
             spacing: Theme.itemSpacingLarge
 
-            CheckBox {
+            RightCheckBox {
                 id: columnCheckBox
                 checked: bluetoothModel.powered
-                text: qsTr("Enable Bluetooth")
+                label: qsTr("Enable Bluetooth")
 
                 onClicked: {
                     bluetoothModel.powered = columnCheckBox.checked
@@ -143,11 +143,11 @@ Page {
                 }
             }
 
-            CheckBox {
+            RightCheckBox {
                 id: visibilityCheckBox
-                checked: bluetoothPage._adapter.discoverable
+                checked: bluetoothPage._adapter ? bluetoothPage._adapter.discoverable : false
                 visible: bluetoothModel.powered
-                text: qsTr("Visibility")
+                label: qsTr("Visibility")
 
                 onClicked: {
                     if (!bluetoothPage._adapter) {
