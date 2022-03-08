@@ -135,7 +135,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.softwareVersion != "" ? aboutSettings.softwareVersion : "n/a"
+                text: aboutSettings.softwareVersion != "" ? aboutSettings.softwareVersion : qsTr("n/a")
             }
 
             Label{
@@ -148,7 +148,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.adaptationVersion != "" ? aboutSettings.adaptationVersion : "n/a"
+                text: aboutSettings.adaptationVersion != "" ? aboutSettings.adaptationVersion : qsTr("n/a")
             }
 
             Label{
@@ -161,7 +161,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.serial != "" ? aboutSettings.serial : "n/a"
+                text: aboutSettings.serial != "" ? aboutSettings.serial : qsTr("n/a")
             }
 
             Label{
@@ -174,7 +174,13 @@ Page {
 
             Label{
                 width: parent.width
-                text: deviceInfo.imeiNumbers[0] != "" ? deviceInfo.imeiNumbers[0] : "n/a"
+                text: deviceInfo.imeiNumbers[0] !== undefined ? deviceInfo.imeiNumbers[0] : qsTr("n/a")
+            }
+
+            Label{
+                width: parent.width
+                text: deviceInfo.imeiNumbers[1] !== undefined ? deviceInfo.imeiNumbers[1] : qsTr("n/a")
+                visible: deviceInfo.imeiNumbers[1] !== undefined
             }
 
             Label{
