@@ -39,20 +39,11 @@ Page {
         id: dateTimeSettings
     }
 
-    ScrollDecorator{
-        id: decorator
-        flickable: dataSettingsColumn
-    }
-
-    SettingsColumn {
-        id: dataSettingsColumn
+    DatePicker{
+        id: dateSelectPicker
         anchors.fill: parent
-
-        DatePicker{
-            id: dateSelectPicker
-            onDateSelect: {
-                dateTimeSettings.setDate(date)
-            }
+        onDateSelect: {
+            dateTimeSettings.setDate(date)
         }
     }
 }
