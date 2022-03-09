@@ -7,3 +7,6 @@ moc_*
 Makefile
 documentation.list
 glacier-settings
+CMakeLists.txt.user*
+CMakeCache.txt*
+CMakeFiles*
