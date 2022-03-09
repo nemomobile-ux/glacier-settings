@@ -54,108 +54,112 @@ Page {
         defaultValue: 1 //24H
     }
 
-    Component.onCompleted: {
-        timeFormatRoller.currentIndex = timeFormat.value
+    Label {
+        width: parent.width
+        text: qsTr("Component is not ready");
+        visible: !dateTimeSettings.ready
+        anchors.centerIn: parent;
+        horizontalAlignment: Text.AlignHCenter
     }
 
-    ScrollDecorator{
-        id: decorator
-        flickable: mainContent
-    }
 
-    SettingsColumn{
-        id: mainContent
-        spacing: Theme.itemSpacingLarge
+    Flickable {
+        id: mainFlickable
+        anchors.fill: parent;
+        contentWidth: parent.width;
+        contentHeight: mainContent.childrenRect.height + 2*Theme.itemSpacingLarge
+        visible: dateTimeSettings.ready
 
-        RightCheckBox{
-            id: automaticTimeUpdateCheckbox
-            label: qsTr("Automatic time update")
-            checked: dateTimeSettings.automaticTimeUpdate
-            width: parent.width
-            onClicked:{
-                dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
-            }
-        }
-
-        SettingsClickedItem{
-            id: selectDate
-            height: visible ? Theme.itemHeightLarge : 0
-            width: parent.width
-            visible: !dateTimeSettings.automaticTimeUpdate
-            description: qsTr("Select date")
-            subDescription: Qt.formatDateTime(new Date(), "dd-MM-yyyy");
-            onClicked: {
-                pageStack.push(Qt.resolvedUrl("SetupDate.qml"));
-            }
-        }
+        SettingsColumn{
+            id: mainContent
+            spacing: Theme.itemSpacingLarge
 
 
-        SettingsClickedItem{
-            id: selectTime
-            height: visible ? Theme.itemHeightLarge : 0
-            width: parent.width
-            visible: !dateTimeSettings.automaticTimeUpdate
-            description: qsTr("Select time")
-            subDescription: Qt.formatDateTime(new Date(), "HH:mm");
-            onClicked: {
-                pageStack.push(Qt.resolvedUrl("SetupTime.qml"));
-            }
-        }
-
-        RightCheckBox{
-            id: automaticTimezoneUpdateCheckbox
-            label: qsTr("Automatic time zone update")
-            width: parent.width
-            checked: dateTimeSettings.automaticTimezoneUpdate
-            onClicked:{
-                dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
-            }
-        }
-
-        SettingsClickedItem{
-            id: selectTimeZone
-            height: visible ? Theme.itemHeightLarge : 0
-            width: parent.width
-            visible: !dateTimeSettings.automaticTimezoneUpdate
-            description: qsTr("Current time zone")
-            subDescription: dateTimeSettings.timezone
-
-            onClicked: {
-                pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
-            }
-        }
-
-
-        GlacierRoller {
-            id: timeFormatRoller
-            width: parent.width
-
-            clip: true
-            model: timeFormatModel
-            label: qsTr("Time format")
-            delegate:GlacierRollerItem{
-                Text{
-                    height: timeFormatRoller.itemHeight
-                    verticalAlignment: Text.AlignVCenter
-                    text: name
-                    color: Theme.textColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    font.bold: (timeFormatRoller.activated && timeFormatRoller.currentIndex === index)
+            RightCheckBox{
+                id: automaticTimeUpdateCheckbox
+                label: qsTr("Automatic time update")
+                checked: dateTimeSettings.automaticTimeUpdate
+                width: parent.width
+                onClicked:{
+                    dateTimeSettings.automaticTimeUpdate = automaticTimeUpdateCheckbox.checked
                 }
             }
 
-            onCurrentIndexChanged: {
-                if(timeFormat.value != currentIndex) {
-                    timeFormat.value = currentIndex
+            SettingsClickedItem{
+                id: selectDate
+                height: visible ? Theme.itemHeightLarge : 0
+                width: parent.width
+                visible: !dateTimeSettings.automaticTimeUpdate
+                description: qsTr("Select date")
+                subDescription: Qt.formatDateTime(new Date(), "dd-MM-yyyy");
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SetupDate.qml"));
+                }
+            }
 
-                    if(currentIndex === 0) {
-                        dateTimeSettings.setHourMode(dateTimeSettings.TwentyFourHours)
-                    } else {
-                        dateTimeSettings.setHourMode(dateTimeSettings.TwelveHours)
+
+            SettingsClickedItem{
+                id: selectTime
+                height: visible ? Theme.itemHeightLarge : 0
+                width: parent.width
+                visible: !dateTimeSettings.automaticTimeUpdate
+                description: qsTr("Select time")
+                subDescription: Qt.formatDateTime(new Date(), "HH:mm");
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SetupTime.qml"));
+                }
+            }
+
+            RightCheckBox{
+                id: automaticTimezoneUpdateCheckbox
+                label: qsTr("Automatic time zone update")
+                width: parent.width
+                checked: dateTimeSettings.automaticTimezoneUpdate
+                onClicked:{
+                    dateTimeSettings.automaticTimezoneUpdate = automaticTimezoneUpdateCheckbox.checked
+                }
+            }
+
+            SettingsClickedItem{
+                id: selectTimeZone
+                height: visible ? Theme.itemHeightLarge : 0
+                width: parent.width
+                visible: !dateTimeSettings.automaticTimezoneUpdate
+                description: qsTr("Current time zone")
+                subDescription: dateTimeSettings.timezone
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
+                }
+            }
+
+            Label {
+                text: qsTr("Time format")
+
+            }
+
+            ButtonRow {
+                model: timeFormatModel
+                currentIndex: timeFormat.value
+                onCurrentIndexChanged: {
+                    if(timeFormat.value !== currentIndex) {
+                        timeFormat.value = currentIndex
+
+                        if(currentIndex === 0) {
+                            dateTimeSettings.setHourMode(dateTimeSettings.TwentyFourHours)
+                        } else {
+                            dateTimeSettings.setHourMode(dateTimeSettings.TwelveHours)
+                        }
                     }
                 }
+
             }
 
         }
     }
+
+        ScrollDecorator{
+            id: decorator
+            flickable: mainFlickable
+        }
+
 }
