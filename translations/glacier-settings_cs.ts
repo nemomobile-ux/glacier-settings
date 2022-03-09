@@ -392,32 +392,37 @@
         <translation>24h</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="59"/>
+        <source>Component is not ready</source>
+        <translation>Komponenta není připravena</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="80"/>
         <source>Automatic time update</source>
         <translation>Automaticky nastavit čas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="93"/>
         <source>Select date</source>
         <translation>Vybrat datum</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="98"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="106"/>
         <source>Select time</source>
         <translation>Vybrat čas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="115"/>
         <source>Automatic time zone update</source>
         <translation>Automaticky nastavit časovou zónu</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="128"/>
         <source>Current time zone</source>
         <translation>Aktuální časová zóna</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="136"/>
         <source>Time format</source>
         <translation>Formát času</translation>
     </message>
