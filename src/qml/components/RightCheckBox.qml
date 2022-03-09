@@ -41,6 +41,7 @@ Item {
         width: parent.width
         anchors {
             left: rightCheckBox.left
+            right: rightCheckBoxCheckBox.left
             verticalCenter: parent.verticalCenter
         }
         wrapMode: Text.Wrap

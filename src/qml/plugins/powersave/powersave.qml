@@ -76,10 +76,6 @@ Page {
             id: forcePowerSaveCheckBox
             label: qsTr("Force power save")
             checked: displaySettings.powerSaveModeForced
-            anchors{
-                right: parent.right
-                verticalCenter: nameLabel.verticalCenter
-            }
             onClicked:{
                 displaySettings.powerSaveModeForced = forcePowerSaveCheckBox.checked
                 if(forcePowerSaveCheckBox.checked) {
