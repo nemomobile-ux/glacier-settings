@@ -64,27 +64,27 @@
 <context>
     <name>NetworkDelegate</name>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="58"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="54"/>
         <source>connected</source>
         <translation>połączono</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="60"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="56"/>
         <source>connecting</source>
         <translation>łączenie się z siecią</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="63"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="59"/>
         <source>open</source>
         <translation>otwarta</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="65"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="61"/>
         <source>unknown</source>
         <translation>nieznana</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="67"/>
+        <location filename="../src/qml/plugins/wifi/NetworkDelegate.qml" line="63"/>
         <source>secure</source>
         <translation>bezpieczna</translation>
     </message>
@@ -113,12 +113,12 @@
 <context>
     <name>SavedStatus</name>
     <message>
-        <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="32"/>
+        <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="28"/>
         <source>Auto connect</source>
         <translation>Łącz się automatycznie</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="67"/>
+        <location filename="../src/qml/plugins/wifi/SavedStatus.qml" line="53"/>
         <source>Remove</source>
         <translation>Usuń</translation>
     </message>
@@ -282,37 +282,46 @@
         <translation>O urządzeniu</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="103"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="107"/>
         <source>Vendor</source>
         <translation>Producent</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="115"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="119"/>
         <source>Vendor version</source>
         <translation>Wersja producenta</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="127"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="131"/>
         <source>Software version</source>
         <translation>Wersja oprogramowania</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="139"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="138"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="151"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="164"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="177"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="182"/>
+        <source>n/a</source>
+        <translation>niedostępne</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/about/about.qml" line="143"/>
         <source>Adaptation version</source>
         <translation>Wersja adaptacji</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="152"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="156"/>
         <source>Serial number</source>
         <translation>Numer seryjny</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="165"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="169"/>
         <source>IMEI</source>
         <translation>IMEI</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/about/about.qml" line="178"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="188"/>
         <source>Wlan MAC</source>
         <translation>WLAN MAC</translation>
     </message>
@@ -383,32 +392,37 @@
         <translation>24-godzinny</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="59"/>
+        <source>Component is not ready</source>
+        <translation>Komponent nie jest gotowy</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="80"/>
         <source>Automatic time update</source>
         <translation>Automatyczna aktualizacja czasu</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="93"/>
         <source>Select date</source>
         <translation>Wybierz datę</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="98"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="106"/>
         <source>Select time</source>
         <translation>Wybierz czas</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="115"/>
         <source>Automatic time zone update</source>
         <translation>Automatyczna aktualizacja strefy czasowej</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="128"/>
         <source>Current time zone</source>
         <translation>Aktualna strefa czasowa</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="136"/>
         <source>Time format</source>
         <translation>Format czasu</translation>
     </message>
@@ -603,7 +617,7 @@
 <context>
     <name>glacier-settings</name>
     <message>
-        <location filename="../src/qml/glacier-settings.qml" line="60"/>
+        <location filename="../src/qml/glacier-settings.qml" line="59"/>
         <source>Settings</source>
         <translation>Ustawienia</translation>
     </message>
@@ -616,55 +630,70 @@
         <translation>Lokalizacja</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="74"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="58"/>
         <source>Enable location</source>
         <translation>Włącz lokalizację</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="99"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="247"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="67"/>
+        <source>Enable sattelites location</source>
+        <translation>Włącz lokalizację satelit</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="77"/>
+        <source>Use sattelites location in flight mode</source>
+        <translation>Używaj lokalizacji satelit w trybie samolotowym</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="87"/>
+        <source>Enable online location services</source>
+        <translation>Włącz internetowe serwisy lokalizacji</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="253"/>
         <source>Latitude</source>
         <translation>Szerokość geograficzna</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="99"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="106"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
         <source>unavailable</source>
         <translation>niedostępna</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="106"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="250"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="256"/>
         <source>Longitude</source>
         <translation>Długość geograficzna</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="113"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="119"/>
         <source>Source</source>
         <translation>Źródło</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="259"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
         <source>Satellite</source>
         <translation>Satelita</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="261"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="267"/>
         <source>Not available</source>
         <translation>Niedostępne</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="263"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="269"/>
         <source>Non-satellite</source>
         <translation>Niesatelitarne</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="271"/>
         <source>Multiple</source>
         <translation>Kilka</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="266"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="272"/>
         <source>source error</source>
         <translation>błąd źródła</translation>
     </message>
@@ -776,7 +805,7 @@
         <translation>NFC niedostępne</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/nfc/nfc.qml" line="63"/>
+        <location filename="../src/qml/plugins/nfc/nfc.qml" line="58"/>
         <source>Enable NFC</source>
         <translation>Włącz NFC</translation>
     </message>
@@ -789,12 +818,12 @@
         <translation>Oszczędzanie energii</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/powersave/powersave.qml" line="81"/>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="77"/>
         <source>Force power save</source>
         <translation>Wymuś oszczędzanie energii</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/powersave/powersave.qml" line="111"/>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="97"/>
         <source>Power save mode battery level threshold</source>
         <translation>Procent baterii, przy którym włączy się tryb oszczędzania energii</translation>
     </message>
@@ -961,22 +990,22 @@
         <translation>Ustawienia WiFi</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="72"/>
-        <source>WiFi</source>
-        <translation>WiFi</translation>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="68"/>
+        <source>Enable WiFi</source>
+        <translation>Włącz WiFi</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="116"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="94"/>
         <source>Saved</source>
         <translation>Zapisane</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="134"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="112"/>
         <source>Available</source>
         <translation>Dostępne</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/wifi/wifi.qml" line="151"/>
+        <location filename="../src/qml/plugins/wifi/wifi.qml" line="129"/>
         <source>Manage saved networks</source>
         <translation>Zarządzaj zapisanymi sieciami</translation>
     </message>
