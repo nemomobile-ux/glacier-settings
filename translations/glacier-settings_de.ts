@@ -611,7 +611,7 @@
     <message>
         <location filename="../src/qml/plugins/example/example.qml" line="29"/>
         <source>Example settings plugin</source>
-        <translation>Bespieleinstellungs-Plugin</translation>
+        <translation>Beispieleinstellungs-Plugin</translation>
     </message>
 </context>
 <context>
