@@ -58,7 +58,7 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="210"/>
         <source>Temporarily locked</source>
-        <translation>Zeitweise gesperrt</translation>
+        <translation>Vorübergehend gesperrt</translation>
     </message>
 </context>
 <context>
