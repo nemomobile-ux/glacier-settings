@@ -43,12 +43,12 @@
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="173"/>
         <source>Enter new security code</source>
-        <translation>Gebe den neuen Entsperrcode ein</translation>
+        <translation>Neuen Entsperrcode eingeben</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="178"/>
         <source>Repeat new security code</source>
-        <translation>Wiederhole den neuen Entsperrcode</translation>
+        <translation>Neuen Entsperrcode wiederholen</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="190"/>
