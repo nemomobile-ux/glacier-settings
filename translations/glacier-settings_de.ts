@@ -731,7 +731,7 @@
     <message>
         <location filename="../src/qml/plugins/language/language.qml" line="91"/>
         <source>Do you want to change locale and reboot?</source>
-        <translation>Willst du die Systemsprache ändern und neustarten?</translation>
+        <translation>Soll die Systemsprache geändert und das Gerät neu gestartet werden?</translation>
     </message>
 </context>
 <context>
