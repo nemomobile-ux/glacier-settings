@@ -53,7 +53,7 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="190"/>
         <source>Don&apos;t use previous security code</source>
-        <translation>Nutze nicht den vorherigen Entsperrcode</translation>
+        <translation>Es darf nicht der vorherige Entspercode verwendet werden</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="210"/>
