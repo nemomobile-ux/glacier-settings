@@ -37,7 +37,7 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
         <source>Enter current security code</source>
-        <translation>Gebe den aktuellen Entsperrcode ein</translation>
+        <translation>Aktuellen Entsperrcode eingeben</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="136"/>
