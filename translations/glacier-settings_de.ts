@@ -32,7 +32,7 @@
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="43"/>
         <source>Enter security code</source>
-        <translation>Gebe den Entsperrcode ein</translation>
+        <translation>Entsperrcode eingeben</translation>
     </message>
     <message>
         <location filename="../src/qml/plugins/devicelock/DeviceLockPad.qml" line="168"/>
