@@ -69,7 +69,8 @@ Page {
                 onClicked: {
                     if(index !== languageModel.currentIndex)
                     {
-                        languageDialog.locale = locale
+                        languageDialog.locale = locale;
+                        languageDialog.localeName = name;
                         languageDialog.visible = true;
                     }
                 }
@@ -84,11 +85,12 @@ Page {
         inline: false
 
         property string locale: ""
+        property string localeName: ""
 
         cancelText: qsTr("Cancel")
         acceptText: qsTr("Accept")
         headingText: qsTr("Change language?")
-        subLabelText: qsTr("Do you want to change locale and reboot?")
+        subLabelText: qsTr("Do you want to change language to %1 and reboot?" ).arg(localeName)
 
         onAccepted: {
             languageModel.setSystemLocale(locale,LanguageModel.UpdateAndReboot)
