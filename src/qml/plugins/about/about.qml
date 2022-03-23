@@ -174,13 +174,13 @@ Page {
 
             Label{
                 width: parent.width
-                text: deviceInfo.imeiNumbers[0] !== undefined ? deviceInfo.imeiNumbers[0] : qsTr("n/a")
+                text: (deviceInfo.imeiNumbers !== undefined && deviceInfo.imeiNumbers[0] !== undefined) ? deviceInfo.imeiNumbers[0] : qsTr("n/a")
             }
 
             Label{
                 width: parent.width
-                text: deviceInfo.imeiNumbers[1] !== undefined ? deviceInfo.imeiNumbers[1] : qsTr("n/a")
-                visible: deviceInfo.imeiNumbers[1] !== undefined
+                visible: deviceInfo.imeiNumbers !== undefined && deviceInfo.imeiNumbers[1] !== undefined
+                text: visible ? deviceInfo.imeiNumbers[1] : qsTr("n/a")
             }
 
             Label{
@@ -193,7 +193,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: deviceInfo.wlanMacAddress != "" ? deviceInfo.wlanMacAddress : "n/a"
+                text: ((deviceInfo.wlanMacAddress != undefined) && (deviceInfo.wlanMacAddress !== "")) ? deviceInfo.wlanMacAddress : "n/a"
             }
         }
     }
