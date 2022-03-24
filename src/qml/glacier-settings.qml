@@ -101,6 +101,7 @@ ApplicationWindow{
                         anchors.verticalCenter: brightnessSlider.verticalCenter
                         height: Theme.itemHeightMedium
                         width: height
+                        active: displaySettings.autoBrightnessEnabled
                         onClicked: {
                             active = !active
                             displaySettings.autoBrightnessEnabled = active
