@@ -60,33 +60,17 @@ Page {
             left: parent.left
         }
 
-        delegate: Rectangle{
-            width: parent.width
-            height: Theme.itemHeightLarge
-
-            color: is_enabled ? Theme.accentColor : "transparent"
-
-            Label{
-                text: local_name + " (" + name +")"
-                anchors{
-                    left: parent.left
-                    leftMargin: Theme.itemSpacingLarge
-                    verticalCenter: parent.verticalCenter
-                }
-            }
-
-            MouseArea{
-                anchors.fill: parent
-                onPressAndHold: {
-                    if(is_enabled) {
-                        is_enabled = false
-                    } else {
-                        is_enabled = true
-                    }
-                    updateKeyboards();
-                }
+        delegate: ListViewItemWithActions {
+            selected: is_enabled
+            label: local_name + " (" + name +")"
+            showNext: false
+            iconVisible: false
+            onClicked: {
+                is_enabled = !is_enabled
+                updateKeyboards();
             }
         }
+
     }
 
 
