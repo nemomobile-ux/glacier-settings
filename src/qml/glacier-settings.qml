@@ -103,8 +103,7 @@ ApplicationWindow{
                         width: height
                         active: displaySettings.autoBrightnessEnabled
                         onClicked: {
-                            active = !active
-                            displaySettings.autoBrightnessEnabled = active
+                            displaySettings.autoBrightnessEnabled = !displaySettings.autoBrightnessEnabled
                         }
                     }
                 }
