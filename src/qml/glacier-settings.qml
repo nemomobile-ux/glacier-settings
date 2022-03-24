@@ -95,11 +95,17 @@ ApplicationWindow{
                         }
                     }
 
-                    NemoIcon{
+                    ToolButton {
                         id: brightnessIcon
-                        source: "image://theme/sun"
-                        height: Theme.itemHeightExtraSmall
+                        iconSource: "image://theme/sun"
+                        anchors.verticalCenter: brightnessSlider.verticalCenter
+                        height: Theme.itemHeightMedium
                         width: height
+                        active: displaySettings.autoBrightnessEnabled
+                        onClicked: {
+                            active = !active
+                            displaySettings.autoBrightnessEnabled = active
+                        }
                     }
                 }
             ]
