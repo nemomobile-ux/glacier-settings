@@ -57,6 +57,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     QQuickWindow *window = GlacierApp::showWindow();
     window->setTitle(QObject::tr("Settings"));
-
+    window->setIcon(QIcon("/usr/share/glacier-settings/glacier-settings.png"));
     return app->exec();
 }
