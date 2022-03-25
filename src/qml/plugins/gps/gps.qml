@@ -49,202 +49,214 @@ Page {
         id: locationSettings
     }
 
-    SettingsColumn{
-        id: gpsColumn
-        spacing: Theme.itemSpacingLarge
+    Flickable {
+        id: mainFlickable
+        anchors.fill: parent;
+        contentWidth: parent.width;
+        contentHeight: gpsColumn.childrenRect.height + 2*Theme.itemSpacingLarge
 
-        RightCheckBox{
-            id: locationEnable
-            label: qsTr("Enable location")
-            checked: locationSettings.locationEnabled
-            onCheckedChanged: {
-                locationSettings.locationEnabled = locationEnable.checked
-            }
-        }
+        SettingsColumn{
+            id: gpsColumn
+            spacing: Theme.itemSpacingLarge
 
-        RightCheckBox{
-            id: gpsEnabled
-            label: qsTr("Enable sattelites location")
-            checked: locationSettings.gpsEnabled
-            visible: locationSettings.gpsAvailable
-            onCheckedChanged: {
-                locationSettings.gpsEnabled = gpsEnabled.checked
-            }
-        }
-
-        RightCheckBox{
-            id: gpsFlightModeEnabled
-            label: qsTr("Use sattelites location in flight mode")
-            checked: locationSettings.gpsFlightMode
-            visible: locationSettings.gpsAvailable
-            onCheckedChanged: {
-                locationSettings.gpsFlightMode = gpsFlightModeEnabled.checked
-            }
-        }
-
-        RightCheckBox{
-            id: onlineServicesEnabled
-            label: qsTr("Enable online location services")
-            checked: locationSettings.hereState == LocationSettings.OnlineAGpsEnabled || locationSettings.mlsEnabled || locationSettings.yandexOnlineState == LocationSettings.OnlineAGpsEnabled
-            visible: locationSettings.hereAvailable || locationSettings.mlsAvailable || locationSettings.yandexAvailable
-            onCheckedChanged: {
-                if(onlineServicesEnabled.checked == true) {
-                    locationSettings.hereState = LocationSettings.OnlineAGpsEnabled
-                    locationSettings.yandexOnlineState = LocationSettings.OnlineAGpsEnabled
-                } else {
-                    locationSettings.hereState = LocationSettings.OnlineAGpsDisabled
-                    locationSettings.yandexOnlineState = LocationSettings.OnlineAGpsDisabled
+            RightCheckBox{
+                id: locationEnable
+                label: qsTr("Enable location")
+                checked: locationSettings.locationEnabled
+                onCheckedChanged: {
+                    locationSettings.locationEnabled = locationEnable.checked
                 }
-                locationSettings.mlsEnabled = onlineServicesEnabled.checked
             }
-        }
 
-        Label{
-            id: latitudeLabel
-            font.bold: true
-            text: qsTr("Latitude")+" : " + qsTr("unavailable")
-            visible: locationSettings.locationEnabled == true
-        }
-
-        Label{
-            id: longitudeLabel
-            font.bold: true
-            text: qsTr("Longitude")+" : " + qsTr("unavailable")
-            visible: locationSettings.locationEnabled == true
-        }
-
-        Label{
-            id: sourceLabel
-            font.bold: true
-            text: qsTr("Source")+" : "+printableMethod(positionSource.supportedPositioningMethods)
-            visible: locationSettings.locationEnabled == true
-        }
-
-        Rectangle{
-            id: satView
-            width: parent.width
-            height: width
-            color: "transparent"
-            clip: true
-            visible: locationSettings.gpsEnabled == true
-
-            Row {
-                property int rows: 13
-                spacing: satView.width/39
-
-                Rectangle {
-                    id: scale
-                    width: satView.width/13
-                    height: satView.height
-                    color: signalColor(100)
-                    Text {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.bottom: lawngreenRect.top
-                        font.pixelSize: Theme.fontSizeTiny
-                        text: "50"
-                    }
-                    Text {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.top: parent.top
-                        font.pixelSize: Theme.fontSizeTiny
-                        text: "100"
-                    }
-
-                    Rectangle {
-                        id: redRect
-                        width: parent.width
-                        color: signalColor(0)
-                        height: parent.height*10/100
-                        anchors.bottom: parent.bottom
-                        Text {
-                            id: strengthLabel
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                            font.pixelSize: Theme.fontSizeTiny
-                            text: "00"
-                        }
-                    }
-                    Rectangle {
-                        id: orangeRect
-                        height: parent.height*10/100
-                        anchors.bottom: redRect.top
-                        width: parent.width
-                        color: signalColor(10)
-                        Text {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                            font.pixelSize: Theme.fontSizeTiny
-                            text: "10"
-                        }
-                    }
-                    Rectangle {
-                        id: goldRect
-                        height: parent.height*10/100
-                        anchors.bottom: orangeRect.top
-                        width: parent.width
-                        color: signalColor(20)
-                        Text {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                            font.pixelSize: Theme.fontSizeTiny
-                            text: "20"
-                        }
-                    }
-                    Rectangle {
-                        id: yellowRect
-                        height: parent.height*10/100
-                        anchors.bottom: goldRect.top
-                        width: parent.width
-                        color: signalColor(30)
-                        Text {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                            font.pixelSize: Theme.fontSizeTiny
-                            text: "30"
-                        }
-                    }
-                    Rectangle {
-                        id: lawngreenRect
-                        height: parent.height*10/100
-                        anchors.bottom: yellowRect.top
-                        width: parent.width
-                        color: signalColor(40)
-                        Text {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.bottom: parent.bottom
-                            font.pixelSize: Theme.fontSizeTiny
-                            text: "40"
-                        }
-                    }
+            RightCheckBox{
+                id: gpsEnabled
+                label: qsTr("Enable sattelites location")
+                checked: locationSettings.gpsEnabled
+                visible: locationSettings.gpsAvailable
+                onCheckedChanged: {
+                    locationSettings.gpsEnabled = gpsEnabled.checked
                 }
+            }
 
-                Repeater {
-                    id: repeater
-                    model: satelliteModel
-                    delegate: Rectangle {
+            RightCheckBox{
+                id: gpsFlightModeEnabled
+                label: qsTr("Use sattelites location in flight mode")
+                checked: locationSettings.gpsFlightMode
+                visible: locationSettings.gpsAvailable
+                onCheckedChanged: {
+                    locationSettings.gpsFlightMode = gpsFlightModeEnabled.checked
+                }
+            }
+
+            RightCheckBox{
+                id: onlineServicesEnabled
+                label: qsTr("Enable online location services")
+                checked: locationSettings.hereState == LocationSettings.OnlineAGpsEnabled || locationSettings.mlsEnabled || locationSettings.yandexOnlineState == LocationSettings.OnlineAGpsEnabled
+                visible: locationSettings.hereAvailable || locationSettings.mlsAvailable || locationSettings.yandexAvailable
+                onCheckedChanged: {
+                    if(onlineServicesEnabled.checked) {
+                        locationSettings.hereState = LocationSettings.OnlineAGpsEnabled
+                        locationSettings.yandexOnlineState = LocationSettings.OnlineAGpsEnabled
+                    } else {
+                        locationSettings.hereState = LocationSettings.OnlineAGpsDisabled
+                        locationSettings.yandexOnlineState = LocationSettings.OnlineAGpsDisabled
+                    }
+                    locationSettings.mlsEnabled = onlineServicesEnabled.checked
+                }
+            }
+
+            Label{
+                id: latitudeLabel
+                font.bold: true
+                text: qsTr("Latitude")+" : " + qsTr("unavailable")
+                visible: locationSettings.locationEnabled
+            }
+
+            Label{
+                id: longitudeLabel
+                font.bold: true
+                text: qsTr("Longitude")+" : " + qsTr("unavailable")
+                visible: locationSettings.locationEnabled
+            }
+
+            Label{
+                id: sourceLabel
+                font.bold: true
+                text: qsTr("Source")+" : "+printableMethod(positionSource.supportedPositioningMethods)
+                visible: locationSettings.locationEnabled
+            }
+
+            Rectangle{
+                id: satView
+                width: parent.width
+                height: width
+                color: "transparent"
+                clip: true
+                visible: locationSettings.gpsEnabled
+
+                Row {
+                    property int rows: 13
+                    spacing: satView.width/39
+
+                    Rectangle {
+                        id: scale
+                        width: satView.width/13
                         height: satView.height
-                        width: Theme.itemHeightExtraSmall
-                        color: "transparent"
+                        color: signalColor(100)
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.bottom: lawngreenRect.top
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "50"
+                        }
+                        Text {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            anchors.top: parent.top
+                            font.pixelSize: Theme.fontSizeTiny
+                            text: "100"
+                        }
 
                         Rectangle {
-                            anchors.bottom: parent.bottom
+                            id: redRect
                             width: parent.width
-                            height: parent.height*signalStrength/100
-                            color: signalColor(signalStrength);
-                        }
-
-                        Text {
-                            anchors.horizontalCenter: parent.horizontalCenter
+                            color: signalColor(0)
+                            height: parent.height*10/100
                             anchors.bottom: parent.bottom
-                            text: satelliteIdentifier
-                            font.pixelSize: Theme.fontSizeTiny
-                            font.bold: isInUse
+                            Text {
+                                id: strengthLabel
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.bottom: parent.bottom
+                                font.pixelSize: Theme.fontSizeTiny
+                                text: "00"
+                            }
+                        }
+                        Rectangle {
+                            id: orangeRect
+                            height: parent.height*10/100
+                            anchors.bottom: redRect.top
+                            width: parent.width
+                            color: signalColor(10)
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.bottom: parent.bottom
+                                font.pixelSize: Theme.fontSizeTiny
+                                text: "10"
+                            }
+                        }
+                        Rectangle {
+                            id: goldRect
+                            height: parent.height*10/100
+                            anchors.bottom: orangeRect.top
+                            width: parent.width
+                            color: signalColor(20)
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.bottom: parent.bottom
+                                font.pixelSize: Theme.fontSizeTiny
+                                text: "20"
+                            }
+                        }
+                        Rectangle {
+                            id: yellowRect
+                            height: parent.height*10/100
+                            anchors.bottom: goldRect.top
+                            width: parent.width
+                            color: signalColor(30)
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.bottom: parent.bottom
+                                font.pixelSize: Theme.fontSizeTiny
+                                text: "30"
+                            }
+                        }
+                        Rectangle {
+                            id: lawngreenRect
+                            height: parent.height*10/100
+                            anchors.bottom: yellowRect.top
+                            width: parent.width
+                            color: signalColor(40)
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.bottom: parent.bottom
+                                font.pixelSize: Theme.fontSizeTiny
+                                text: "40"
+                            }
+                        }
+                    }
+
+                    Repeater {
+                        id: repeater
+                        model: satelliteModel
+                        delegate: Rectangle {
+                            height: satView.height
+                            width: Theme.itemHeightExtraSmall
+                            color: "transparent"
+
+                            Rectangle {
+                                anchors.bottom: parent.bottom
+                                width: parent.width
+                                height: parent.height*signalStrength/100
+                                color: signalColor(signalStrength);
+                            }
+
+                            Text {
+                                anchors.horizontalCenter: parent.horizontalCenter
+                                anchors.bottom: parent.bottom
+                                text: satelliteIdentifier
+                                font.pixelSize: Theme.fontSizeTiny
+                                font.bold: isInUse
+                            }
                         }
                     }
                 }
             }
         }
     }
+    ScrollDecorator{
+        id: decorator
+        flickable: mainFlickable
+    }
+
 
     PositionSource {
         id: positionSource
