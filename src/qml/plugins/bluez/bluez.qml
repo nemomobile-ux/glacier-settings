@@ -94,6 +94,8 @@ Page {
     Flickable{
         id: bluetoothFlickable
         anchors.fill: parent
+        contentWidth: parent.width;
+        contentHeight: bluetoothColumn.height+Theme.itemHeightLarge
         visible: bluetoothModel.available
 
         SettingsColumn{

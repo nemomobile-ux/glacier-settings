@@ -25,7 +25,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 ListView {
     id: btDeviceList
     width: parent.width
-    height: childrenRect.height
+    height: contentHeight
 
     clip: true
 
