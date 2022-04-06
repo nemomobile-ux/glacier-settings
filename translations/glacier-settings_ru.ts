@@ -301,7 +301,7 @@
         <location filename="../src/qml/plugins/about/about.qml" line="151"/>
         <location filename="../src/qml/plugins/about/about.qml" line="164"/>
         <location filename="../src/qml/plugins/about/about.qml" line="177"/>
-        <location filename="../src/qml/plugins/about/about.qml" line="182"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="183"/>
         <source>n/a</source>
         <translation>н/д</translation>
     </message>
@@ -392,32 +392,37 @@
         <translation>24ч</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="72"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="59"/>
+        <source>Component is not ready</source>
+        <translation>Компонент не готов</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="80"/>
         <source>Automatic time update</source>
         <translation>Определять время автоматически</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="85"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="93"/>
         <source>Select date</source>
         <translation>Выбрать дату</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="98"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="106"/>
         <source>Select time</source>
         <translation>Выбрать время</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="107"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="115"/>
         <source>Automatic time zone update</source>
         <translation>Определять часовой пояс автоматически</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="120"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="128"/>
         <source>Current time zone</source>
         <translation>Текущий часовой пояс</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/datetime/datetime.qml" line="135"/>
+        <location filename="../src/qml/plugins/datetime/datetime.qml" line="136"/>
         <source>Time format</source>
         <translation>Формат времени</translation>
     </message>
@@ -709,24 +714,24 @@
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="88"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="90"/>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="89"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="91"/>
         <source>Accept</source>
         <translation>Применить</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="90"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="92"/>
         <source>Change language?</source>
         <translation>Сменить язык?</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="91"/>
-        <source>Do you want to change locale and reboot?</source>
-        <translation>Вы хотите сменить язык и перезагрузиться?</translation>
+        <location filename="../src/qml/plugins/language/language.qml" line="93"/>
+        <source>Do you want to change language to %1 and reboot?</source>
+        <translation>Хотите сменить язык на %1 и перезагрузиться?</translation>
     </message>
 </context>
 <context>
@@ -818,7 +823,7 @@
         <translation>Усиленное энергосбережение</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/powersave/powersave.qml" line="97"/>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="93"/>
         <source>Power save mode battery level threshold</source>
         <translation>Включить усиленное энергосбережение при уровне заряда</translation>
     </message>
