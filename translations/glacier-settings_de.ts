@@ -301,7 +301,7 @@
         <location filename="../src/qml/plugins/about/about.qml" line="151"/>
         <location filename="../src/qml/plugins/about/about.qml" line="164"/>
         <location filename="../src/qml/plugins/about/about.qml" line="177"/>
-        <location filename="../src/qml/plugins/about/about.qml" line="182"/>
+        <location filename="../src/qml/plugins/about/about.qml" line="183"/>
         <source>n/a</source>
         <translation>n/a</translation>
     </message>
@@ -714,24 +714,24 @@
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="88"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="90"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="89"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="91"/>
         <source>Accept</source>
         <translation>Akzeptieren</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="90"/>
+        <location filename="../src/qml/plugins/language/language.qml" line="92"/>
         <source>Change language?</source>
         <translation>Sprache ändern?</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/language/language.qml" line="91"/>
-        <source>Do you want to change locale and reboot?</source>
-        <translation>Soll die Systemsprache geändert und das Gerät neu gestartet werden?</translation>
+        <location filename="../src/qml/plugins/language/language.qml" line="93"/>
+        <source>Do you want to change language to %1 and reboot?</source>
+        <translation>Soll die Sprache auf %1 geändert und das Gerät neu gestartet werden?</translation>
     </message>
 </context>
 <context>
@@ -822,7 +822,7 @@
         <translation>Energiesparen erzwingen</translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/powersave/powersave.qml" line="97"/>
+        <location filename="../src/qml/plugins/powersave/powersave.qml" line="93"/>
         <source>Power save mode battery level threshold</source>
         <translation>Schwellwert des Energiesparmodus&apos; der Batterie</translation>
     </message>
