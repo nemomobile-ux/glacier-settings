@@ -341,37 +341,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="107"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="109"/>
         <source>Enable Bluetooth</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="119"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="121"/>
         <source>Device name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="150"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="152"/>
         <source>Visibility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="164"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="166"/>
         <source>Paired devices:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="188"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="190"/>
         <source>Devices nearby:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="218"/>
         <source>Stop search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/bluez/bluez.qml" line="216"/>
+        <location filename="../src/qml/plugins/bluez/bluez.qml" line="218"/>
         <source>Start discovery</source>
         <translation type="unfinished"></translation>
     </message>
@@ -632,70 +632,70 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="58"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="64"/>
         <source>Enable location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="67"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="73"/>
         <source>Enable sattelites location</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="77"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="83"/>
         <source>Use sattelites location in flight mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="87"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="93"/>
         <source>Enable online location services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="253"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="111"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
         <source>Latitude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="105"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="111"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="118"/>
         <source>unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="112"/>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="256"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="118"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="268"/>
         <source>Longitude</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="119"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="125"/>
         <source>Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="265"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="277"/>
         <source>Satellite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="267"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="279"/>
         <source>Not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="269"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="281"/>
         <source>Non-satellite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="271"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="283"/>
         <source>Multiple</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/plugins/gps/gps.qml" line="272"/>
+        <location filename="../src/qml/plugins/gps/gps.qml" line="284"/>
         <source>source error</source>
         <translation type="unfinished"></translation>
     </message>
