@@ -43,46 +43,20 @@ Page {
         id: dataSettingsColumn
         anchors.fill: parent
 
-        Item {
-            id: timeSelect
-            width: parent.width
-            height: Theme.itemHeightLarge
+        TextField{
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: Qt.formatDateTime(new Date(), "HH:mm");
+            width: Theme.itemWidthSmall
+            horizontalAlignment: TextInput.AlignHCenter
+            inputMethodHints: Qt.ImhDigitsOnly
+            inputMask: "00:00;_"
 
-            TextField{
-                id: hours
-                text: Qt.formatDateTime(new Date(), "HH:mm");
-                width: Theme.itemWidthExtraSmall
-                horizontalAlignment: TextInput.AlignRight
-                maximumLength: 2
-                inputMethodHints: Qt.ImhTime
-
-                anchors{
-                    verticalCenter: parent.verticalCenter
-                    right: twoDots.left
-                }
-            }
-
-            Label{
-                id: twoDots
-                text: ":"
-                anchors{
-                    centerIn: parent
-                }
-            }
-
-            TextField{
-                id: minutes
-                text: Qt.formatDateTime(new Date(), "mm");
-                width: Theme.itemWidthExtraSmall
-                horizontalAlignment: TextInput.AlignLeft
-                maximumLength: 2
-                inputMethodHints: Qt.ImhDigitsOnly
-
-                anchors{
-                    verticalCenter: parent.verticalCenter
-                    left: twoDots.right
-                }
+            onEditingFinished: {
+                var values = text.split(":")
+                dateTimeSettings.setTime(values[0], values[1])
+                console.log("setTime: " + text)
             }
         }
+
     }
 }

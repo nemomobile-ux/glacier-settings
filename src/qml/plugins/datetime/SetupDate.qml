@@ -44,6 +44,7 @@ Page {
         anchors.fill: parent
         onDateSelect: {
             dateTimeSettings.setDate(date)
+            console.log("dateTimeSettings.setDate: " + date)
         }
     }
 }
