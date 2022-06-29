@@ -24,6 +24,9 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
+#include "glaciersettingsplugin.h"
+#include "settingspluginmanager.h"
+
 class SettingsModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -39,20 +42,21 @@ public:
 
     static int compareCategories(QString leftCategory, QString rightCategory);
 
-    static QStringList defaultCategories;
+    static QMetaEnum defaultCategories;
     static QMap<QString, QString> extraTranlation;
 
     Q_INVOKABLE bool pluginAviable(QString name);
 
 private:
     QVariantMap get(int idx) const;
+    SettingsPluginManager* m_pluginManager;
     QHash<int,QByteArray> hash;
-    const QString m_pluginsDir;
     QStringList m_roleNames;
     QJsonArray m_pluginsData; //plugins list
 
-    QVariantList pluginsInCategory(QString category) const;
+    QVariantList pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const;
     bool loadConfig(QString configFileName);
+    QString categoryToString(GlacierSettingsPlugin::PluginCategory category) const;
 };
 
 #endif // SETTINGSMODEL_H

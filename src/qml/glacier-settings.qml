@@ -27,7 +27,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
-import "components"
+import Glacier.Controls.Settings 1.0
 
 ApplicationWindow{
     id: main
@@ -182,9 +182,9 @@ ApplicationWindow{
                                     height: Theme.itemHeightMedium
                                     width: isUiLandscape ? parent.width/2 : parent.width
                                     label: modelData.title
-                                    icon: "/usr/share/glacier-settings/qml/plugins/"+modelData.path+"/"+modelData.path+".svg"
+                                    icon: modelData.icon
                                     onClicked:{
-                                        pageStack.push(Qt.resolvedUrl("plugins/"+modelData.path+"/"+modelData.path+".qml"))
+                                        pageStack.push(Qt.resolvedUrl(modelData.path))
                                     }
                                 }
                             }

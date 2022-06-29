@@ -26,6 +26,10 @@
 #include <QDir>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QMetaEnum>
+
+#include "glaciersettingsplugin.h"
+#include "settingspluginhost.h"
 
 /*
  * Orgeding category DRAFT
@@ -47,21 +51,13 @@
  * Other
 */
 
-
-QStringList SettingsModel::defaultCategories = {
-    QT_TR_NOOP("Personalization"),
-    QT_TR_NOOP("Network"),
-    QT_TR_NOOP("Security"),
-    QT_TR_NOOP("Development"),
-    QT_TR_NOOP("Info"),
-    QT_TR_NOOP("Other")
-};
+QMetaEnum SettingsModel::defaultCategories = QMetaEnum::fromType<GlacierSettingsPlugin::PluginCategory>();
 
 QMap<QString, QString> SettingsModel::extraTranlation = QMap<QString, QString>();
 
 SettingsModel::SettingsModel(QObject *parent) :
     QAbstractListModel(parent)
-  , m_pluginsDir("/usr/share/glacier-settings/plugins/")
+  , m_pluginManager(new SettingsPluginManager())
 {
     m_roleNames << "title";
     m_roleNames << "items";
@@ -75,7 +71,8 @@ SettingsModel::SettingsModel(QObject *parent) :
 
 int SettingsModel::compareCategories(QString leftCategory, QString rightCategory)
 {
-    if(leftCategory == rightCategory) {
+    return 0;
+    /*if(leftCategory == rightCategory) {
         return 0;
     } else if (defaultCategories.contains(leftCategory) && defaultCategories.contains(rightCategory)) {
         return defaultCategories.indexOf(leftCategory)-defaultCategories.indexOf(rightCategory);
@@ -83,30 +80,30 @@ int SettingsModel::compareCategories(QString leftCategory, QString rightCategory
         return -1;
     } else {
         return 1;
-    }
+    }*/
 }
 
 void SettingsModel::init()
 {
-    QDir pluginsPath = QDir(m_pluginsDir);
-    qDebug() << "Start scan plugins dir " << pluginsPath.absolutePath();
-    pluginsPath.setNameFilters(QStringList("*.json"));
+    if(m_pluginManager->getPlugins().count() == 0) {
+        qWarning() << "Plugins not installed";
+        return;
+    }
 
-    const QFileInfoList &list = pluginsPath.entryInfoList();
-    QListIterator<QFileInfo> it (list);
-
-    while (it.hasNext ()) {
-        const QFileInfo &fileInfo = it.next ();
-        qDebug() << "Load " << fileInfo.fileName();
-        if(!loadConfig(fileInfo.fileName())) {
-            qWarning() << "Wrong plugin config";
+    for(GlacierSettingsPlugin* plugin :m_pluginManager->getPlugins()) {
+        qDebug() << "Load " << plugin->title();
+        if(!plugin->enabled()) {
+            qWarning() << "Plugin disabled";
+            continue;
         }
-    }
 
-    if(rowCount() == 0) {
-        qWarning() << "Plugins directory is empty";
-    }
+        QJsonObject pluginObject;
+        pluginObject["titile"] = plugin->title();
+        pluginObject["category"] = plugin->category();
+        pluginObject["path"] = plugin->qmlPath();
 
+        m_pluginsData.append(pluginObject);
+    }
 
     QCoreApplication *app = QCoreApplication::instance();
     for (QMap<QString, QString>::const_iterator i = extraTranlation.constBegin(); i != extraTranlation.constEnd(); ++i) {
@@ -125,65 +122,12 @@ void SettingsModel::init()
 
     }
 
-    /*Remove empty categories*/
-    for(const QString &category : qAsConst(defaultCategories)) {
-        if(pluginsInCategory(category).count() == 0) {
-            defaultCategories.removeAll(category);
+    /*Remove empty categories
+    for(int i = 0; i < defaultCategories.keyCount(); i++ )
+        if(pluginsInCategory((GlacierSettingsPlugin::PluginCategory)defaultCategories.value(i)).count() == 0) {
+            defaultCategories.removeAll(defaultCategories.value(i);
         }
-    }
-}
-
-bool SettingsModel::loadConfig(QString configFileName)
-{
-    /*
-     * in first check plugin configs into device specific
-     * dir.
-    */
-    QFile dsPluginConfig("/etc/glacier-settings/plugins/"+configFileName);
-    if(dsPluginConfig.exists()) {
-        qDebug() << "Load device speciffic plugin config" << "/etc/glacier-settings/plugins/"+configFileName;
-
-        dsPluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
-        QJsonDocument dsConfig = QJsonDocument::fromJson(dsPluginConfig.readAll());
-        QJsonObject dsConfigObject = dsConfig.object();
-
-        if(dsConfigObject.contains("enabled")) {
-            if(!dsConfigObject["enabled"].toBool()) {
-                qDebug() << "Disabled by device specifig config";
-                return false;
-            }
-        }
-    }
-
-    QFile pluginConfig(m_pluginsDir+configFileName);
-    pluginConfig.open(QIODevice::ReadOnly | QIODevice::Text);
-    QJsonDocument config = QJsonDocument::fromJson(pluginConfig.readAll());
-    QJsonObject configObject = config.object();
-
-    for (const QString &role : configObject.keys()) {
-        if (!m_roleNames.contains(role)) {
-            m_roleNames << role;
-            hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
-        }
-    }
-
-    if(configObject.contains("title")
-            && configObject.contains("category")
-            && configObject.contains("path")) {
-
-        if (configObject.contains("translation_dir")
-                && configObject.contains("translation_file")) {
-            QString t_dir = configObject["translation_dir"].toString();
-            QString t_file = configObject["translation_file"].toString();
-            qDebug() << "extra translation files " << configObject["title"].toString() << "" << t_dir << " " << t_file;
-            extraTranlation[t_dir] = t_file;
-        }
-
-        m_pluginsData.append(configObject);
-        return true;
-    } else {
-        return false;
-    }
+    }*/
 }
 
 bool SettingsModel::pluginAviable(QString name)
@@ -192,41 +136,68 @@ bool SettingsModel::pluginAviable(QString name)
         return false;
     }
 
-    QFile pluginConfig(m_pluginsDir+"/"+name+".json");
+    for(GlacierSettingsPlugin* plugin :m_pluginManager->getPlugins()) {
+        if(plugin->title() == name) {
+            return true;
+        }
+    }
 
-    return pluginConfig.exists();
+    return false;
 }
 
-QVariantList SettingsModel::pluginsInCategory(QString category) const
+QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const
 {
     QVariantList pluginsInCat;
 
-    for (const QJsonValue &item : m_pluginsData) {
-        if(item.toObject().value("category").toString() == category) {
-            QVariantMap map = item.toObject().toVariantMap();
-            QString title = map["title"].toString();
-            QString path = map["path"].toString();
-            map["title"] = QCoreApplication::translate(path.toLatin1(), title.toLatin1());
+    for (GlacierSettingsPlugin* item : m_pluginManager->getPlugins()) {
+        if(item->category() == category) {
+            QVariantMap map;
+            map["title"] = item->title();
+            map["icon"] = item->icon();
+            map["path"] = item->qmlPath();
+            map["description"] = item->description();
             pluginsInCat.append(map);
         }
     }
     return pluginsInCat;
 }
 
+QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory category) const
+{
+    switch (category) {
+    case GlacierSettingsPlugin::Development:
+        return tr("Development");
+        break;
+    case GlacierSettingsPlugin::Info:
+        return tr("Info");
+        break;
+    case GlacierSettingsPlugin::Network:
+        return tr("Network");
+        break;
+    case GlacierSettingsPlugin::Personalization:
+        return tr("Personalization");
+        break;
+    case GlacierSettingsPlugin::Security:
+        return tr("Security");
+        break;
+    default:
+        return tr("Other");
+        break;
+    }
+}
+
 int SettingsModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return defaultCategories.count();
+    return defaultCategories.keyCount();
 }
 
 
 QVariantMap SettingsModel::get(int idx) const
 {
-    QString title = defaultCategories.at(idx);
-
     return QVariantMap{
-        {"title", title },
-        {"items", pluginsInCategory(title)}
+        {"title", m_pluginManager->getPlugins().at(idx)->title() },
+        {"items", pluginsInCategory(m_pluginManager->getPlugins().at(idx)->category())}
     };
 }
 
@@ -236,15 +207,15 @@ QVariant SettingsModel::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    if (index.row() >= defaultCategories.count())
+    if (index.row() >= defaultCategories.keyCount())
         return QVariant();
 
-    QVariant item = defaultCategories.at(index.row());
+    QVariant item = defaultCategories.value(index.row());
 
     if(role == Qt::UserRole) {
-        return tr(item.toString().toLatin1());
+        return categoryToString((GlacierSettingsPlugin::PluginCategory)item.toUInt());
     } else if(role == Qt::UserRole+1) {
-        return pluginsInCategory(item.toString()) ;
+        return pluginsInCategory((GlacierSettingsPlugin::PluginCategory)item.toUInt());
     }
     return QVariant();
 }
@@ -254,7 +225,7 @@ QVariantMap SettingsModel::data(const QModelIndex &index) const
     if (!index.isValid())
         return QVariantMap();
 
-    if (index.row() >= defaultCategories.size())
+    if (index.row() >= defaultCategories.keyCount())
         return QVariantMap();
 
     return get(index.row());
