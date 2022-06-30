@@ -89,7 +89,7 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
     QVariantList pluginsInCat;
 
     for (GlacierSettingsPlugin* item : m_pluginManager->getPlugins()) {
-        if(item->category() == category) {
+        if(item->category() == category && item->enabled()) {
             QVariantMap map;
             map["title"] = item->title();
             map["icon"] = item->icon();
