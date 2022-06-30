@@ -26,7 +26,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.Connman 0.2
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 ListViewItemWithActions{
     property bool saved
