@@ -29,7 +29,7 @@ import Nemo.DBus 2.0
 
 import org.nemomobile.models 1.0
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 Page {
     id: bluetoothPage

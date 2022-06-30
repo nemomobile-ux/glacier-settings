@@ -29,7 +29,6 @@ set(SRC
 
 set(QML_PLUGINS
     qml/plugins/sounds/sounds.json
-    qml/plugins/bluez/bluez.json
     qml/plugins/display/display.json
     qml/plugins/datetime/datetime.json
     qml/plugins/gps/gps.json
