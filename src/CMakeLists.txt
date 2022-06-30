@@ -20,7 +20,6 @@ set(SRC
 set(QML_PLUGINS
     qml/plugins/sounds/sounds.json
     qml/plugins/display/display.json
-    qml/plugins/datetime/datetime.json
     qml/plugins/gps/gps.json
     qml/plugins/language/language.json
     qml/plugins/keyboard/keyboard.json
