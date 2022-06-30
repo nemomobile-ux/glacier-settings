@@ -34,7 +34,6 @@ set(QML_PLUGINS
     qml/plugins/datetime/datetime.json
     qml/plugins/wifi/wifi.json
     qml/plugins/gps/gps.json
-    qml/plugins/nfc/nfc.json
     qml/plugins/language/language.json
     qml/plugins/keyboard/keyboard.json
     qml/plugins/usb/usb.json

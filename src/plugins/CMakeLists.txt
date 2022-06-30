@@ -23,3 +23,4 @@ install(FILES ${PUBLIC_HEADERS}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glacier-settings)
 
 add_subdirectory(about)
+add_subdirectory(nfc)
