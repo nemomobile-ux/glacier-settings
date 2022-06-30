@@ -43,7 +43,9 @@ set(QML_PLUGINS
 
 qt5_create_translation(QT_FILES ${SRC})
 
-add_executable(glacier-settings ${SRC} ${PUBLIC_HEADERS} ${QT_FILES})
+qtquick_compiler_add_resources(RESOURCES qml/glacier-settings.qrc)
+
+add_executable(glacier-settings ${SRC} ${PUBLIC_HEADERS} ${RESOURCES})
 
 include_directories("plugins/")
 
@@ -65,9 +67,6 @@ install(TARGETS glacier-settings RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${QML_PLUGINS}
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
-
-install(FILES qml/glacier-settings.qml
-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/qml)
 
 if(MER_DEVMODE)
     install(FILES qml/plugins/developermode/developermode.json
