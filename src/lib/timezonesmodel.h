@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2021-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -17,28 +17,34 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef THEMESMODEL_H
-#define THEMESMODEL_H
+#ifndef TIMEZONESMODEL_H
+#define TIMEZONESMODEL_H
 
 #include <QObject>
 #include <QAbstractListModel>
 
-class ThemesModel : public QAbstractListModel
+#include <timezoneinfo.h>
+
+#include "glaciersettings_global.h"
+
+class GLACIERSETTINGS_EXPORT TimeZonesModel:public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit ThemesModel(QObject *parent = nullptr);
+    explicit TimeZonesModel(QObject *parent = 0);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role) const;
     QHash<int, QByteArray> roleNames() const {return m_hash;}
-    Q_INVOKABLE QString getPath(int index);
 
-signals:
+    Q_INVOKABLE void search(QString zoneName);
 
 private:
     QHash<int,QByteArray> m_hash;
-    QVariantMap m_themes;
+    QStringList m_roleNames;
+
+    TimeZoneInfo* m_tzInfo;
+    QList<TimeZoneInfo> m_zones;
 };
 
-#endif // THEMESMODEL_H
+#endif // TIMEZONESMODEL_H

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2021-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -16,43 +16,31 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
-#ifndef IMAGESMODEL_H
-#define IMAGESMODEL_H
+
+#ifndef THEMESMODEL_H
+#define THEMESMODEL_H
 
 #include <QObject>
 #include <QAbstractListModel>
 
-class ImagesModel:public QAbstractListModel
+#include "glaciersettings_global.h"
+
+class GLACIERSETTINGS_EXPORT ThemesModel : public QAbstractListModel
 {
     Q_OBJECT
-
-    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
-    Q_PROPERTY(bool reqursive READ reqursive WRITE setReqursive NOTIFY reqursiveChanged)
-
 public:
-    explicit ImagesModel(QObject *parent);
-    void init();
+    explicit ThemesModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role) const;
-    QHash<int, QByteArray> roleNames() const {return hash;}
-
-    QList<QString> imageList;
-
-    QString path(){return m_imagesDir;}
-    void setPath(QString path);
-
-    bool reqursive(){return m_reqursive;}
-    void setReqursive(bool reqursive);
+    QHash<int, QByteArray> roleNames() const {return m_hash;}
+    Q_INVOKABLE QString getPath(int index);
 
 signals:
-    void pathChanged();
-    void reqursiveChanged();
 
 private:
-    QHash<int,QByteArray> hash;
-    QString m_imagesDir;
-    bool m_reqursive;
+    QHash<int,QByteArray> m_hash;
+    QVariantMap m_themes;
 };
 
-#endif // IMAGESMODEL_H
+#endif // THEMESMODEL_H

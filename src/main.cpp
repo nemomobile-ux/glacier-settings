@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -30,10 +30,10 @@
 
 #include <glacierapp.h>
 
-#include "models/themesmodel.h"
-#include "models/settingsmodel.h"
-#include "models/satellitemodel.h"
-#include "models/timezonesmodel.h"
+#include "themesmodel.h"
+#include "settingsmodel.h"
+#include "satellitemodel.h"
+#include "timezonesmodel.h"
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {

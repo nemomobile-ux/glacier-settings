@@ -15,17 +15,7 @@ endfunction()
 FindQtInstallQml()
 
 set(SRC
-    main.cpp
-    models/imagesmodel.cpp
-    models/imagesmodel.h
-    models/timezonesmodel.cpp
-    models/timezonesmodel.h
-    models/themesmodel.cpp
-    models/themesmodel.h
-    models/satellitemodel.cpp
-    models/satellitemodel.h
-    models/settingsmodel.cpp
-    models/settingsmodel.h)
+    main.cpp)
 
 set(QML_PLUGINS
     qml/plugins/sounds/sounds.json
@@ -46,7 +36,7 @@ qtquick_compiler_add_resources(RESOURCES qml/glacier-settings.qrc)
 
 add_executable(glacier-settings ${SRC} ${PUBLIC_HEADERS} ${RESOURCES})
 
-include_directories("plugins/")
+include_directories("lib/")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -fvisibility=hidden -fvisibility-inlines-hidden")
 set(CMAKE_EXE_LINKER_FLAGS "-pie -rdynamic")
@@ -58,9 +48,6 @@ target_link_libraries(glacier-settings PRIVATE
     ${SYSSETTINGS_LIBRARIES}
     Glacier::App
     Glacier::Settings)
-
-target_include_directories(glacier-settings PUBLIC
-    ${SYSSETTINGS_INCLUDE_DIRS})
 
 install(TARGETS glacier-settings RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR})
@@ -89,4 +76,5 @@ install(DIRECTORY qml/img/
 install(DIRECTORY qml/components/
     DESTINATION ${QT_INSTALL_QML}/Glacier/Controls/Settings)
 
+add_subdirectory(lib)
 add_subdirectory(plugins)

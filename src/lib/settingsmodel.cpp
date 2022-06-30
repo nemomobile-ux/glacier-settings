@@ -18,7 +18,6 @@
  */
 #include "settingsmodel.h"
 
-#include <QGuiApplication>
 #include <QTranslator>
 #include <QCoreApplication>
 #include <QAbstractListModel>

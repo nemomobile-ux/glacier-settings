@@ -27,10 +27,9 @@
 #include "glaciersettingsplugin.h"
 #include "settingspluginmanager.h"
 
-class SettingsModel : public QAbstractListModel
+class GLACIERSETTINGS_EXPORT SettingsModel : public QAbstractListModel
 {
     Q_OBJECT
-
 public:
     explicit SettingsModel(QObject *parent = 0);
 
