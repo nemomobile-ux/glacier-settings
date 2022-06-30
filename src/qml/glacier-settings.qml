@@ -184,7 +184,7 @@ ApplicationWindow{
                                     icon: modelData.icon
                                     description: modelData.description
                                     onClicked:{
-                                        pageStack.push(Qt.resolvedUrl(modelData.path))
+                                        pageStack.push(Qt.resolvedUrl("file:/"+modelData.path))
                                     }
                                 }
                             }
