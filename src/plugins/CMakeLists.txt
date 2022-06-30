@@ -1,5 +1,8 @@
 add_subdirectory(about)
 add_subdirectory(bluez)
 add_subdirectory(datetime)
+if(MER_DEVMODE)
+    add_subdirectory(developermode)
+endif()
 add_subdirectory(nfc)
 add_subdirectory(wifi)

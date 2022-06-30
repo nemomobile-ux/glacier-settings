@@ -53,14 +53,6 @@ install(TARGETS glacier-settings RUNTIME
 install(FILES ${QML_PLUGINS}
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
 
-if(MER_DEVMODE)
-    install(FILES qml/plugins/developermode/developermode.json
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
-    install(DIRECTORY qml/plugins/developermode
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/qml/plugins
-        PATTERN "*.json" EXCLUDE)
-endif()
-
 if(BUILD_EXAMPLES)
     install(FILES qml/plugins/example/example.json
         DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
