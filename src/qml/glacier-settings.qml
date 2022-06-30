@@ -179,10 +179,10 @@ ApplicationWindow{
                                 model: items
 
                                 delegate: ListViewItemWithActions {
-                                    height: Theme.itemHeightMedium
                                     width: isUiLandscape ? parent.width/2 : parent.width
                                     label: modelData.title
                                     icon: modelData.icon
+                                    description: modelData.description
                                     onClicked:{
                                         pageStack.push(Qt.resolvedUrl(modelData.path))
                                     }

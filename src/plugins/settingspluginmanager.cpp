@@ -29,6 +29,7 @@ SettingsPluginManager::SettingsPluginManager()
         if(shp) {
             if(shp->valid()) {
                 m_pluginList.push_back(shp->get());
+                connect(shp->get(), &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
             } else {
                 qDebug() << "Loading" << pluginsDir.absoluteFilePath(file) << " fail";
             }

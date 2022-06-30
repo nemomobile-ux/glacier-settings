@@ -31,10 +31,11 @@ class AboutSettingsPlugin : public GlacierSettingsPlugin
 public:
     explicit AboutSettingsPlugin(QObject *parent = nullptr);
     PluginCategory category() { return PluginCategory::Info ;}
-    QString title() { return "About";}
+    QString id() { return "about";}
+    QString title() { return tr("About");}
     QString description() { return "Information about device";}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/about/about.qml";}
-    QString icon() {return "/usr/share/glacier-settings/plugins/about/about.svg"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/about/about.svg";}
     bool enabled() { return true; }
 };
 

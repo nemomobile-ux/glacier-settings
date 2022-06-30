@@ -33,14 +33,11 @@ class SettingsModel : public QAbstractListModel
 
 public:
     explicit SettingsModel(QObject *parent = 0);
-    void init();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role) const;
     QVariantMap data(const QModelIndex &index) const;
     QHash<int, QByteArray> roleNames() const {return hash;}
-
-    static int compareCategories(QString leftCategory, QString rightCategory);
 
     static QMetaEnum defaultCategories;
     static QMap<QString, QString> extraTranlation;
@@ -52,11 +49,13 @@ private:
     SettingsPluginManager* m_pluginManager;
     QHash<int,QByteArray> hash;
     QStringList m_roleNames;
-    QJsonArray m_pluginsData; //plugins list
 
     QVariantList pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const;
     bool loadConfig(QString configFileName);
     QString categoryToString(GlacierSettingsPlugin::PluginCategory category) const;
+
+private slots:
+    void updatePluginData(QString pluginId);
 };
 
 #endif // SETTINGSMODEL_H

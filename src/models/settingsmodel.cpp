@@ -66,68 +66,7 @@ SettingsModel::SettingsModel(QObject *parent) :
         hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
     }
 
-    init();
-}
-
-int SettingsModel::compareCategories(QString leftCategory, QString rightCategory)
-{
-    return 0;
-    /*if(leftCategory == rightCategory) {
-        return 0;
-    } else if (defaultCategories.contains(leftCategory) && defaultCategories.contains(rightCategory)) {
-        return defaultCategories.indexOf(leftCategory)-defaultCategories.indexOf(rightCategory);
-    } else if(defaultCategories.contains(leftCategory)) {
-        return -1;
-    } else {
-        return 1;
-    }*/
-}
-
-void SettingsModel::init()
-{
-    if(m_pluginManager->getPlugins().count() == 0) {
-        qWarning() << "Plugins not installed";
-        return;
-    }
-
-    for(GlacierSettingsPlugin* plugin :m_pluginManager->getPlugins()) {
-        qDebug() << "Load " << plugin->title();
-        if(!plugin->enabled()) {
-            qWarning() << "Plugin disabled";
-            continue;
-        }
-
-        QJsonObject pluginObject;
-        pluginObject["titile"] = plugin->title();
-        pluginObject["category"] = plugin->category();
-        pluginObject["path"] = plugin->qmlPath();
-
-        m_pluginsData.append(pluginObject);
-    }
-
-    QCoreApplication *app = QCoreApplication::instance();
-    for (QMap<QString, QString>::const_iterator i = extraTranlation.constBegin(); i != extraTranlation.constEnd(); ++i) {
-
-        QTranslator* myappTranslator = new QTranslator(app);
-        if (myappTranslator->load(QLocale(), i.value(), QLatin1String("_"), i.key() )) {
-            qDebug() << "translation.load() success" << i.key() << i.value() << QLocale::system().name();
-            if (app->installTranslator(myappTranslator)) {
-                qDebug() << "installTranslator() success"  << i.key() << i.value() << QLocale::system().name();
-            } else {
-                qDebug() << "installTranslator() failed" << i.key() << i.value() << QLocale::system().name();
-            }
-        } else {
-            qDebug() << "translation.load() failed"  << i.key() << i.value() << QLocale::system().name();
-        }
-
-    }
-
-    /*Remove empty categories
-    for(int i = 0; i < defaultCategories.keyCount(); i++ )
-        if(pluginsInCategory((GlacierSettingsPlugin::PluginCategory)defaultCategories.value(i)).count() == 0) {
-            defaultCategories.removeAll(defaultCategories.value(i);
-        }
-    }*/
+    connect(m_pluginManager, &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
 }
 
 bool SettingsModel::pluginAviable(QString name)
@@ -184,6 +123,13 @@ QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory ca
         return tr("Other");
         break;
     }
+}
+
+void SettingsModel::updatePluginData(QString pluginId)
+{
+    beginResetModel();
+//TODO: not resen model, just update changed item
+    endResetModel();
 }
 
 int SettingsModel::rowCount(const QModelIndex &parent) const

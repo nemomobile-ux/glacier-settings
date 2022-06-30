@@ -34,6 +34,9 @@ public:
 
     QList<GlacierSettingsPlugin*> getPlugins() {return m_pluginList;}
 
+signals:
+    void pluginDataChanged(QString pluginId);
+
 private:
     QList<GlacierSettingsPlugin*> m_pluginList;
 };

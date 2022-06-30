@@ -44,6 +44,9 @@ public:
     virtual QString qmlPath() = 0;
     virtual QString icon() = 0;
     virtual bool enabled() = 0;
+
+signals:
+    void pluginChanged(QString id);
 };
 
 Q_DECLARE_INTERFACE(GlacierSettingsPlugin, "Glacier.SettingsPlugin")
