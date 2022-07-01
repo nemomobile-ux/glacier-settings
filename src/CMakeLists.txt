@@ -24,7 +24,6 @@ set(QML_PLUGINS
     qml/plugins/language/language.json
     qml/plugins/keyboard/keyboard.json
     qml/plugins/usb/usb.json
-    qml/plugins/devicelock/devicelock.json
     qml/plugins/mobile/mobile.json
     qml/plugins/powersave/powersave.json
     qml/plugins/storage/storage.json)
