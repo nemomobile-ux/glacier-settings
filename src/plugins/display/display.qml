@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,7 +28,7 @@ import org.nemomobile.glacier.settings 1.0
 
 import Nemo.Configuration 1.0
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 Page {
     id: displaySettingsPage

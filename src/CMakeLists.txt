@@ -19,7 +19,6 @@ set(SRC
 
 set(QML_PLUGINS
     qml/plugins/sounds/sounds.json
-    qml/plugins/display/display.json
     qml/plugins/gps/gps.json
     qml/plugins/language/language.json
     qml/plugins/keyboard/keyboard.json
@@ -51,14 +50,6 @@ install(TARGETS glacier-settings RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${QML_PLUGINS}
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
-
-if(BUILD_EXAMPLES)
-    install(FILES qml/plugins/example/example.json
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
-    install(DIRECTORY qml/plugins/example
-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/qml/plugins
-        PATTERN "*.json" EXCLUDE)
-endif()
 
 install(DIRECTORY qml/img/
     DESTINATION ${QT_INSTALL_QML}/Glacier/Controls/img)
