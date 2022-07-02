@@ -19,7 +19,6 @@ set(SRC
 
 set(QML_PLUGINS
     qml/plugins/sounds/sounds.json
-    qml/plugins/language/language.json
     qml/plugins/usb/usb.json
     qml/plugins/mobile/mobile.json
     qml/plugins/powersave/powersave.json

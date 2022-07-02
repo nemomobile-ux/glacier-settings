@@ -29,7 +29,7 @@ import Nemo.Configuration 1.0
 import org.nemomobile.systemsettings 1.0
 import org.nemomobile.glacier.settings 1.0
 
-import "../../components/"
+import Glacier.Controls.Settings 1.0
 
 Page {
     id: gpsPage

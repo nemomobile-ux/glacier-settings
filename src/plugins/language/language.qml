@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -16,6 +16,7 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
+
 import QtQuick 2.6
 
 import QtQuick.Controls 1.0
@@ -26,7 +27,7 @@ import Nemo.Dialogs 1.0
 
 import org.nemomobile.systemsettings 1.0
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 Page {
     id: languagePage
