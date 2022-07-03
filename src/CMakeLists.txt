@@ -20,7 +20,6 @@ set(SRC
 set(QML_PLUGINS
     qml/plugins/sounds/sounds.json
     qml/plugins/usb/usb.json
-    qml/plugins/powersave/powersave.json
     qml/plugins/storage/storage.json)
 
 qt5_create_translation(QT_FILES ${SRC})
