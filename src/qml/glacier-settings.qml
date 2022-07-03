@@ -183,6 +183,7 @@ ApplicationWindow{
                                     label: modelData.title
                                     icon: modelData.icon
                                     description: modelData.description
+                                    enabled: modelData.enabled
                                     onClicked:{
                                         pageStack.push(Qt.resolvedUrl("file:/"+modelData.path))
                                     }

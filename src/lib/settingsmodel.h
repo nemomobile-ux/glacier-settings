@@ -43,6 +43,9 @@ public:
 
     Q_INVOKABLE bool pluginAviable(QString name);
 
+private slots:
+    void updatePluginData(QString pluginId);
+
 private:
     QVariantMap get(int idx) const;
     SettingsPluginManager* m_pluginManager;
@@ -52,9 +55,7 @@ private:
     QVariantList pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const;
     bool loadConfig(QString configFileName);
     QString categoryToString(GlacierSettingsPlugin::PluginCategory category) const;
-
-private slots:
-    void updatePluginData(QString pluginId);
+    bool m_showDisabled;
 };
 
 #endif // SETTINGSMODEL_H

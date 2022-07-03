@@ -57,6 +57,7 @@ QMap<QString, QString> SettingsModel::extraTranlation = QMap<QString, QString>()
 SettingsModel::SettingsModel(QObject *parent) :
     QAbstractListModel(parent)
   , m_pluginManager(new SettingsPluginManager())
+  , m_showDisabled(false)
 {
     m_roleNames << "title";
     m_roleNames << "items";
@@ -66,6 +67,10 @@ SettingsModel::SettingsModel(QObject *parent) :
     }
 
     connect(m_pluginManager, &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
+
+    if(qgetenv("SETTINGS_SHOW_DISABLED_PLUGINS") == "1") {
+        m_showDisabled = true;
+    }
 }
 
 bool SettingsModel::pluginAviable(QString name)
@@ -88,12 +93,13 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
     QVariantList pluginsInCat;
 
     for (GlacierSettingsPlugin* item : m_pluginManager->getPlugins()) {
-        if(item->category() == category && item->enabled()) {
+        if(item->category() == category && (item->enabled() || m_showDisabled)) {
             QVariantMap map;
             map["title"] = item->title();
             map["icon"] = item->icon();
             map["path"] = item->qmlPath();
             map["description"] = item->description();
+            map["enabled"] = item->enabled();
             pluginsInCat.append(map);
         }
     }
