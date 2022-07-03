@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2019-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,7 +24,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import MeeGo.QOfono 0.2
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 Page {
     id: mobilePage
