@@ -18,8 +18,7 @@ set(SRC
     main.cpp)
 
 set(QML_PLUGINS
-    qml/plugins/usb/usb.json
-    qml/plugins/storage/storage.json)
+    qml/plugins/usb/usb.json)
 
 qt5_create_translation(QT_FILES ${SRC})
 

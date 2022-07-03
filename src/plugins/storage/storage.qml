@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2021-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,7 +25,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 Page {
     id: storagePage
