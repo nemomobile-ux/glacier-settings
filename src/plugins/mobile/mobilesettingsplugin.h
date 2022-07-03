@@ -21,6 +21,7 @@
 #define MOBILESETTINGSPLUGIN_H
 
 #include "glaciersettingsplugin.h"
+#include <qofonomanager.h>
 
 class MobileSettingsPlugin : public GlacierSettingsPlugin
 {
@@ -35,7 +36,14 @@ public:
     QString description() { return tr("operators and simcard");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg";}
-    bool enabled() { return true; };
+    bool enabled();
+
+private slots:
+    void modemsChanged(const QStringList &modems);
+
+private:
+    bool m_enabled;
+    QOfonoManager* m_qOfonoManager;
 };
 
 #endif // MOBILESETTINGSPLUGIN_H

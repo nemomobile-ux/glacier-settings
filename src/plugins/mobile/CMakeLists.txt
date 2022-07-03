@@ -12,13 +12,16 @@ set(CMAKE_AUTOMOC ON)
 add_definitions(-DQT_PLUGIN)
 
 add_library(${PLUGIN} MODULE ${SRC} ${HEADERS})
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(QT5_OFONO REQUIRED IMPORTED_TARGET qofono-qt5)
 
 target_link_libraries(${PLUGIN}
     Qt5::Gui
     Qt5::Qml
     Qt5::Quick
     Qt5::DBus
-    Glacier::Settings)
+    Glacier::Settings
+    PkgConfig::QT5_OFONO)
 
 install(TARGETS ${PLUGIN}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)
