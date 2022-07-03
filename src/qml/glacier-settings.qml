@@ -128,17 +128,16 @@ ApplicationWindow{
                     height: childrenRect.height
 
                     model: settingsModel
-                    delegate: Rectangle {
+                    delegate: Item {
                         id: settingsListDelegate
                         height: sectionHeading.height+flow.height
                         width: mainArea.width
-                        color: "transparent"
+                        visible: items != ""
 
-                        Rectangle {
+                        Item {
                             id: sectionHeading
                             width: parent.width
                             height: Theme.itemHeightMedium
-                            color: "transparent"
 
                             Text {
                                 id: sectionText
