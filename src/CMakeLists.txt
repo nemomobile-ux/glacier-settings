@@ -17,9 +17,6 @@ FindQtInstallQml()
 set(SRC
     main.cpp)
 
-set(QML_PLUGINS
-    qml/plugins/usb/usb.json)
-
 qt5_create_translation(QT_FILES ${SRC})
 
 qtquick_compiler_add_resources(RESOURCES qml/glacier-settings.qrc)
