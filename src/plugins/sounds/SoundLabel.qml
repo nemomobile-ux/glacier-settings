@@ -1,5 +1,7 @@
 /*
  *
+ * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
  * License as published by the Free Software Foundation; either
@@ -15,6 +17,7 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
+
 import QtQuick 2.6
 import QtQuick.Window 2.1
 
@@ -26,7 +29,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.systemsettings 1.0
 
-import "../../components"
+import Glacier.Controls.Settings 1.0
 
 
 Rectangle{

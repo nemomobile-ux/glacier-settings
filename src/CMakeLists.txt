@@ -18,7 +18,6 @@ set(SRC
     main.cpp)
 
 set(QML_PLUGINS
-    qml/plugins/sounds/sounds.json
     qml/plugins/usb/usb.json
     qml/plugins/storage/storage.json)
 
