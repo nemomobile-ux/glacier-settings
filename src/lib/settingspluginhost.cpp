@@ -88,7 +88,7 @@ QString SettingsPluginHost::icon()
 bool SettingsPluginHost::enabled()
 {
     if(!m_plugin) {
-        return "";
+        return false;
     }
     return m_plugin->enabled();
 }
