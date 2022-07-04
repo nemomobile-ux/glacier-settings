@@ -19,7 +19,30 @@
 
 #include "devicelocksettingsplugin.h"
 
-DeviceLockSettingsPlugin::DeviceLockSettingsPlugin(QObject *parent)
+DeviceLockSettingsPlugin::DeviceLockSettingsPlugin(QObject *parent) :
+    m_enabled(false)
+  , m_authenticator(new NemoDeviceLock::Authenticator())
 {
+    availableMethodsChanged();
+    connect(m_authenticator, &NemoDeviceLock::Authenticator::availableMethodsChanged, this, &DeviceLockSettingsPlugin::availableMethodsChanged);
+}
 
+bool DeviceLockSettingsPlugin::enabled()
+{
+    return m_enabled;
+}
+
+void DeviceLockSettingsPlugin::availableMethodsChanged()
+{
+    bool newEnabled;
+    if(m_authenticator->availableMethods() == 0) {
+        newEnabled = false;
+    } else {
+        newEnabled = true;
+    }
+
+    if(newEnabled != m_enabled) {
+        m_enabled = newEnabled;
+        emit pluginChanged(id());
+    }
 }

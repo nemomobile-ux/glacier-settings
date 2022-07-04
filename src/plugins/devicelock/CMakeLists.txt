@@ -14,9 +14,13 @@ add_definitions(-DQT_PLUGIN)
 
 add_library(${PLUGIN} MODULE ${SRC} ${HEADERS})
 
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(NEMODEVICELOCK REQUIRED IMPORTED_TARGET nemodevicelock)
+
 target_link_libraries(${PLUGIN}
     Qt5::Core
-    Glacier::Settings)
+    Glacier::Settings
+    PkgConfig::NEMODEVICELOCK)
 
 install(TARGETS ${PLUGIN}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)

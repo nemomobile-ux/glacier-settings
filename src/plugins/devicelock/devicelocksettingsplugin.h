@@ -22,6 +22,8 @@
 
 #include "glaciersettingsplugin.h"
 
+#include <nemo-devicelock/authenticator.h>
+
 class DeviceLockSettingsPlugin: public GlacierSettingsPlugin
 {
     Q_OBJECT
@@ -35,7 +37,14 @@ public:
     QString description() { return tr("security settings");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg";}
-    bool enabled() { return true; };
+    bool enabled();
+
+private slots:
+    void availableMethodsChanged();
+
+private:
+    bool m_enabled;
+    NemoDeviceLock::Authenticator* m_authenticator;
 };
 
 #endif // DEVICELOCKSETTINGSPLUGIN_H
