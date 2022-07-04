@@ -181,8 +181,7 @@ ApplicationWindow{
                                     width: isUiLandscape ? parent.width/2 : parent.width
                                     label: modelData.title
                                     icon: modelData.icon
-                                    description: modelData.description
-                                    enabled: modelData.enabled
+                                    description: modelData.enabled ? modelData.description : qsTr("disabled")
                                     onClicked:{
                                         pageStack.push(Qt.resolvedUrl("file:/"+modelData.path))
                                     }
