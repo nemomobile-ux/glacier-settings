@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>glacier-settings.qml</file>
+    </qresource>
+</RCC>

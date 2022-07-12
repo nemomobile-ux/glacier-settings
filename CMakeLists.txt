@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.1.0)
 
 project(glacier-settings
-        VERSION 0.1.5
-	DESCRIPTION "The Glacier settings application")
+    VERSION 0.2
+    DESCRIPTION "The Glacier settings application")
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_INSTALL_PREFIX /usr)
@@ -13,10 +14,11 @@ set(CMAKE_INSTALL_PREFIX /usr)
 include(FeatureSummary)
 include(GNUInstallDirs)
 
-set(QT_MIN_VERSION "5.6.0")
+set(QT_MIN_VERSION "5.11.0")
 find_package(PkgConfig REQUIRED)
-find_package(Qt5 COMPONENTS Qml Quick Positioning LinguistTools REQUIRED)
-find_package(Glacier COMPONENTS App REQUIRED)
+find_package(Qt5 COMPONENTS Qml Quick Positioning LinguistTools DBus REQUIRED)
+find_package(Qt5QuickCompiler)
+find_package(Glacier 0.8 COMPONENTS App REQUIRED)
 
 option(MER_DEVMODE "Install mer developer mode plugin" OFF)
 option(BUILD_EXAMPLES "Install example plugin" OFF)
@@ -32,18 +34,18 @@ add_custom_target(translations DEPENDS ${QM_FILES})
 add_dependencies(glacier-settings translations)
 
 install(FILES ${QM_FILES}
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/translations)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/translations)
 
 install(FILES glacier-settings.desktop
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
 install(FILES data/org.nemomobile.qmlsettings.service
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/dbus-1/services)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/dbus-1/services)
 install(FILES glacier-settings.png
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings)
 
 file(GLOB LANGLIST_FILES ./configs/supported-languages/*.conf)
 install(FILES ${LANGLIST_FILES}
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/supported-languages)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/supported-languages)
 
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

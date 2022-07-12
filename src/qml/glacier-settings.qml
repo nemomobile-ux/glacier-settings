@@ -27,7 +27,7 @@ import QtQuick.Controls.Styles.Nemo 1.0
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
 
-import "components"
+import Glacier.Controls.Settings 1.0
 
 ApplicationWindow{
     id: main
@@ -128,17 +128,16 @@ ApplicationWindow{
                     height: childrenRect.height
 
                     model: settingsModel
-                    delegate: Rectangle {
+                    delegate: Item {
                         id: settingsListDelegate
                         height: sectionHeading.height+flow.height
                         width: mainArea.width
-                        color: "transparent"
+                        visible: items != ""
 
-                        Rectangle {
+                        Item {
                             id: sectionHeading
                             width: parent.width
                             height: Theme.itemHeightMedium
-                            color: "transparent"
 
                             Text {
                                 id: sectionText
@@ -179,12 +178,12 @@ ApplicationWindow{
                                 model: items
 
                                 delegate: ListViewItemWithActions {
-                                    height: Theme.itemHeightMedium
                                     width: isUiLandscape ? parent.width/2 : parent.width
                                     label: modelData.title
-                                    icon: "/usr/share/glacier-settings/qml/plugins/"+modelData.path+"/"+modelData.path+".svg"
+                                    icon: modelData.icon
+                                    description: modelData.enabled ? modelData.description : qsTr("disabled")
                                     onClicked:{
-                                        pageStack.push(Qt.resolvedUrl("plugins/"+modelData.path+"/"+modelData.path+".qml"))
+                                        pageStack.push(Qt.resolvedUrl("file:/"+modelData.path))
                                     }
                                 }
                             }
