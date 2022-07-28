@@ -31,8 +31,8 @@ public:
     KeyboardSettingsPlugin(QObject *parent = nullptr);
     PluginCategory category() { return PluginCategory::Personalization; }
     QString id() { return "keyboard";}
-    QString title() { return tr("keybord");}
-    QString description() { return tr("Keybord layout");}
+    QString title() { return tr("keyboard");}
+    QString description() { return tr("Keyboard layout");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/keyboard/keyboard.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/keyboard/keyboard.svg";}
     bool enabled() { return true; };
