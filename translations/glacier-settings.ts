@@ -39,7 +39,7 @@
     </message>
     <message>
         <location filename="../src/plugins/developermode/developermodesettingsplugin.h" line="35"/>
-        <source>developer tools</source>
+        <source>Developer tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -114,7 +114,7 @@
     </message>
     <message>
         <location filename="../src/plugins/devicelock/devicelocksettingsplugin.h" line="37"/>
-        <source>security settings</source>
+        <source>Security settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -179,7 +179,7 @@
     </message>
     <message>
         <location filename="../src/plugins/location/locationsettingsplugin.h" line="36"/>
-        <source>gps and other location services</source>
+        <source>GPS and other location services</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -192,7 +192,7 @@
     </message>
     <message>
         <location filename="../src/plugins/mobile/mobilesettingsplugin.h" line="36"/>
-        <source>operators and simcard</source>
+        <source>Operators and simcard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <location filename="../src/plugins/powersave/powersavesettingsplugin.h" line="35"/>
-        <source>battery settings</source>
+        <source>Battery settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -358,7 +358,7 @@
     </message>
     <message>
         <location filename="../src/plugins/sounds/soundssettingsplugin.h" line="35"/>
-        <source>ringtones and sound level</source>
+        <source>Ringtones and sound level</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -366,12 +366,12 @@
     <name>StorageSettingsPlugin</name>
     <message>
         <location filename="../src/plugins/storage/storagesettingsplugin.h" line="35"/>
-        <source>Sorage</source>
+        <source>Storage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/plugins/storage/storagesettingsplugin.h" line="36"/>
-        <source>free space on device</source>
+        <source>Free space on device</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -384,7 +384,7 @@
     </message>
     <message>
         <location filename="../src/plugins/usb/usbsettingsplugin.h" line="35"/>
-        <source>select usb mode</source>
+        <source>Select usb mode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
