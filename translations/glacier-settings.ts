@@ -148,7 +148,7 @@
     <name>KeyboardSettingsPlugin</name>
     <message>
         <location filename="../src/plugins/keyboard/keyboardsettingsplugin.h" line="34"/>
-        <source>keyboard</source>
+        <source>Keyboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
