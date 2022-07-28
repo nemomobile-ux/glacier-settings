@@ -32,7 +32,7 @@ public:
     PluginCategory category() { return PluginCategory::Personalization; }
     QString id() { return "sounds";}
     QString title() { return tr("Sounds");}
-    QString description() { return tr("ringtones and sound level");}
+    QString description() { return tr("Ringtones and sound level");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/sounds/sounds.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/sounds/sounds.svg";}
     bool enabled() { return true; };

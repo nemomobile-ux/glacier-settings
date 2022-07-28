@@ -32,7 +32,7 @@ public:
     PluginCategory category() { return PluginCategory::Personalization; }
     QString id() { return "powersave";}
     QString title() { return tr("Power save");}
-    QString description() { return tr("battery settings");}
+    QString description() { return tr("Battery settings");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/powersave/powersave.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/powersave/powersave.svg";}
     bool enabled() { return true; };

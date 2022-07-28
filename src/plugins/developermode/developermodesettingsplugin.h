@@ -32,7 +32,7 @@ public:
     PluginCategory category() { return PluginCategory::Development ;}
     QString id() { return "developermode";}
     QString title() { return tr("Developer mode");}
-    QString description() { return tr("developer tools");}
+    QString description() { return tr("Developer tools");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/developermode/developermode.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/developermode/developermode.svg";}
     bool enabled() { return true; };

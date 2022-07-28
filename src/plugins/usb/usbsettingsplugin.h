@@ -32,7 +32,7 @@ public:
     PluginCategory category() { return PluginCategory::Network; }
     QString id() { return "usb";}
     QString title() { return tr("USB");}
-    QString description() { return tr("select usb mode");}
+    QString description() { return tr("Select usb mode");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/usb/usb.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/usb/usb.svg";}
     bool enabled() { return true; }

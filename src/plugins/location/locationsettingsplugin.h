@@ -33,7 +33,7 @@ public:
     PluginCategory category() { return PluginCategory::Network; }
     QString id() { return "location";}
     QString title() { return tr("Location");}
-    QString description() { return tr("gps and other location services");}
+    QString description() { return tr("GPS and other location services");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/location/location.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/location/location.svg";}
     bool enabled() { return true; };

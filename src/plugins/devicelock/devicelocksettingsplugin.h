@@ -34,7 +34,7 @@ public:
     PluginCategory category() { return PluginCategory::Security ;}
     QString id() { return "devicelock";}
     QString title() { return tr("Device lock");}
-    QString description() { return tr("security settings");}
+    QString description() { return tr("Security settings");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg";}
     bool enabled();

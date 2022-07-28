@@ -33,7 +33,7 @@ public:
     PluginCategory category() { return PluginCategory::Network; }
     QString id() { return "mobile";}
     QString title() { return tr("Mobile");}
-    QString description() { return tr("operators and simcard");}
+    QString description() { return tr("Operators and simcard");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg";}
     bool enabled();

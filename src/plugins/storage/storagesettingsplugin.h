@@ -32,8 +32,8 @@ public:
     StorageSettingsPlugin(QObject *parent = nullptr);
     PluginCategory category() { return PluginCategory::Info; }
     QString id() { return "storage";}
-    QString title() { return tr("Sorage");}
-    QString description() { return tr("free space on device");}
+    QString title() { return tr("Storage");}
+    QString description() { return tr("Free space on device");}
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/storage/storage.qml";}
     QString icon() { return "/usr/share/glacier-settings/plugins/storage/storage.svg";}
     bool enabled() { return true; }
