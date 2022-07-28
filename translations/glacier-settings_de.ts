@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/plugins/datetime/SetupTimezone.qml" line="35"/>
         <source>Setup time zone</source>
-        <translation>Zeitzone einstellen</translation>
+        <translation>Zeitzone festlegen</translation>
     </message>
 </context>
 <context>
