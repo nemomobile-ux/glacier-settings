@@ -29,7 +29,7 @@ class LanguageSettingsPlugin : public GlacierSettingsPlugin
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     LanguageSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network; }
+    PluginCategory category() { return PluginCategory::Personalization; }
     QString id() { return "langiage";}
     QString title() { return tr("Language");}
     QString description() { return tr("Interface language");}
