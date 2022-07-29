@@ -625,7 +625,7 @@
     <message>
         <location filename="../src/plugins/datetime/datetime.qml" line="80"/>
         <source>Automatic time update</source>
-        <translation>Automatisches Zeitupdate</translation>
+        <translation>Zeitzone automatisch wählen</translation>
     </message>
     <message>
         <location filename="../src/plugins/datetime/datetime.qml" line="93"/>
