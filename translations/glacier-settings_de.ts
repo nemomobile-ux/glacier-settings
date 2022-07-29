@@ -1021,7 +1021,7 @@
     <message>
         <location filename="../src/plugins/mobile/mobile.qml" line="173"/>
         <source>Preferred network</source>
-        <translation>Bevorzuge Verbindungen</translation>
+        <translation>Bevorzugtes Netzwerk</translation>
     </message>
 </context>
 <context>
