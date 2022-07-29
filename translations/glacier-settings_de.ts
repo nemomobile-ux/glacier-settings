@@ -668,7 +668,7 @@
     <message>
         <location filename="../src/plugins/developermode/developermode.qml" line="106"/>
         <source>Allow install untrusted software</source>
-        <translation>Installieren von nicht vertrauensvoller Software erlauben</translation>
+        <translation>Installieren von nicht vertrauenswürdiger Software erlauben</translation>
     </message>
     <message>
         <location filename="../src/plugins/developermode/developermode.qml" line="147"/>
