@@ -172,13 +172,13 @@ ApplicationWindow{
                             Repeater{
                                 id: list
                                 width: parent.width
-                                height: isUiLandscape ?
+                                height: main.isUiLandscape ?
                                             Theme.itemHeightMedium*Math.ceil(items.length/2) :
                                             Theme.itemHeightMedium*items.length
                                 model: items
 
                                 delegate: ListViewItemWithActions {
-                                    width: isUiLandscape ? parent.width/2 : parent.width
+                                    width: main.isUiLandscape ? parent.width/2 : parent.width
                                     label: modelData.title
                                     icon: modelData.icon
                                     description: modelData.enabled ? modelData.description : qsTr("disabled")
