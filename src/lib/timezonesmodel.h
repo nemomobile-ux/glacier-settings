@@ -20,27 +20,26 @@
 #ifndef TIMEZONESMODEL_H
 #define TIMEZONESMODEL_H
 
-#include <QObject>
 #include <QAbstractListModel>
+#include <QObject>
 
 #include <timezoneinfo.h>
 
 #include "glaciersettings_global.h"
 
-class GLACIERSETTINGS_EXPORT TimeZonesModel:public QAbstractListModel
-{
+class GLACIERSETTINGS_EXPORT TimeZonesModel : public QAbstractListModel {
     Q_OBJECT
 public:
-    explicit TimeZonesModel(QObject *parent = 0);
+    explicit TimeZonesModel(QObject* parent = 0);
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    QHash<int, QByteArray> roleNames() const {return m_hash;}
+    int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    QVariant data(const QModelIndex& index, int role) const;
+    QHash<int, QByteArray> roleNames() const { return m_hash; }
 
     Q_INVOKABLE void search(QString zoneName);
 
 private:
-    QHash<int,QByteArray> m_hash;
+    QHash<int, QByteArray> m_hash;
     QStringList m_roleNames;
 
     TimeZoneInfo* m_tzInfo;

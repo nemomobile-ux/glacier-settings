@@ -17,25 +17,23 @@
  * Boston, MA 02110-1301, USA.
  */
 
-
 #ifndef STORAGESETTINGSPLUGIN_H
 #define STORAGESETTINGSPLUGIN_H
 
 #include "glaciersettingsplugin.h"
 
-class StorageSettingsPlugin : public GlacierSettingsPlugin
-{
+class StorageSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    StorageSettingsPlugin(QObject *parent = nullptr);
+    StorageSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Info; }
-    QString id() { return "storage";}
-    QString title() { return tr("Storage");}
-    QString description() { return tr("Free space on device");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/storage/storage.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/storage/storage.svg";}
+    QString id() { return "storage"; }
+    QString title() { return tr("Storage"); }
+    QString description() { return tr("Free space on device"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/storage/storage.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/storage/storage.svg"; }
     bool enabled() { return true; }
 };
 

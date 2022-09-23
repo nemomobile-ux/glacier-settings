@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class DisplaySettingsPlugin : public GlacierSettingsPlugin
-{
+class DisplaySettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    DisplaySettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization ;}
-    QString id() { return "display";}
-    QString title() { return tr("Display");}
-    QString description() { return tr("Brightness, orientation and theme");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/display/display.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/display/display.svg";}
+    DisplaySettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Personalization; }
+    QString id() { return "display"; }
+    QString title() { return tr("Display"); }
+    QString description() { return tr("Brightness, orientation and theme"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/display/display.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/display/display.svg"; }
     bool enabled() { return true; };
 };
 

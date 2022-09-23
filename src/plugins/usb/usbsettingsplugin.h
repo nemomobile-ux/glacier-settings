@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class UsbSettingsPlugin : public GlacierSettingsPlugin
-{
+class UsbSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    UsbSettingsPlugin(QObject *parent = nullptr);
+    UsbSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "usb";}
-    QString title() { return tr("USB");}
-    QString description() { return tr("Select usb mode");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/usb/usb.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/usb/usb.svg";}
+    QString id() { return "usb"; }
+    QString title() { return tr("USB"); }
+    QString description() { return tr("Select usb mode"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/usb/usb.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/usb/usb.svg"; }
     bool enabled() { return true; }
 };
 

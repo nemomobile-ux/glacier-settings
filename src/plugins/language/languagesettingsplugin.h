@@ -22,19 +22,18 @@
 
 #include <glaciersettingsplugin.h>
 
-class LanguageSettingsPlugin : public GlacierSettingsPlugin
-{
+class LanguageSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    LanguageSettingsPlugin(QObject *parent = nullptr);
+    LanguageSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "langiage";}
-    QString title() { return tr("Language");}
-    QString description() { return tr("Interface language");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/language/language.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/language/language.svg";}
+    QString id() { return "langiage"; }
+    QString title() { return tr("Language"); }
+    QString description() { return tr("Interface language"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/language/language.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/language/language.svg"; }
     bool enabled() { return true; };
 };
 

@@ -23,14 +23,13 @@
 #include <QAbstractListModel>
 #include <QSet>
 #include <QTimer>
-#include <QtQml/qqml.h>
-#include <QtQml/QQmlParserStatus>
 #include <QtPositioning/QGeoSatelliteInfoSource>
+#include <QtQml/QQmlParserStatus>
+#include <QtQml/qqml.h>
 
 #include "glaciersettings_global.h"
 
-class GLACIERSETTINGS_EXPORT SatelliteModel : public QAbstractListModel, public QQmlParserStatus
-{
+class GLACIERSETTINGS_EXPORT SatelliteModel : public QAbstractListModel, public QQmlParserStatus {
     Q_OBJECT
     Q_PROPERTY(bool running READ running WRITE setRunning NOTIFY runningChanged)
     Q_PROPERTY(bool satelliteInfoAvailable READ canProvideSatelliteInfo NOTIFY canProvideSatelliteInfoChanged)
@@ -40,7 +39,7 @@ class GLACIERSETTINGS_EXPORT SatelliteModel : public QAbstractListModel, public 
     Q_PROPERTY(int avaiableSattelites READ avaiableSattelites NOTIFY avaiableSattelitesChanged)
     Q_INTERFACES(QQmlParserStatus)
 public:
-    explicit SatelliteModel(QObject *parent = 0);
+    explicit SatelliteModel(QObject* parent = 0);
 
     enum {
         IdentifierRole = Qt::UserRole + 1,
@@ -51,13 +50,13 @@ public:
         SatelliteSystem
     };
 
-    //From QAbstractListModel
-    int rowCount(const QModelIndex &parent) const;
-    QVariant data(const QModelIndex &index, int role) const;
+    // From QAbstractListModel
+    int rowCount(const QModelIndex& parent) const;
+    QVariant data(const QModelIndex& index, int role) const;
     QHash<int, QByteArray> roleNames() const;
 
-    //From QQmlParserStatus
-    void classBegin() {}
+    // From QQmlParserStatus
+    void classBegin() { }
     void componentComplete();
 
     bool running() const;
@@ -70,8 +69,8 @@ public:
 
     bool canProvideSatelliteInfo() const;
 
-    int usedSattelites(){return satellitesInUse.count();}
-    int avaiableSattelites(){return knownSatellites.count();}
+    int usedSattelites() { return satellitesInUse.count(); }
+    int avaiableSattelites() { return knownSatellites.count(); }
 
 signals:
     void runningChanged();
@@ -88,22 +87,21 @@ public slots:
 
 private slots:
     void error(QGeoSatelliteInfoSource::Error);
-    void satellitesInViewUpdated(const QList<QGeoSatelliteInfo> &infos);
-    void satellitesInUseUpdated(const QList<QGeoSatelliteInfo> &infos);
+    void satellitesInViewUpdated(const QList<QGeoSatelliteInfo>& infos);
+    void satellitesInUseUpdated(const QList<QGeoSatelliteInfo>& infos);
 
 private:
-    QGeoSatelliteInfoSource *source;
+    QGeoSatelliteInfoSource* source;
     bool m_componentCompleted;
     bool m_running;
     bool m_runningRequested;
-    QList <QGeoSatelliteInfo> knownSatellites;
+    QList<QGeoSatelliteInfo> knownSatellites;
     QSet<int> knownSatelliteIds;
     QSet<int> satellitesInUse;
     bool demo;
-    QTimer *timer;
+    QTimer* timer;
     bool isSingle;
     bool singleRequestServed;
-
 };
 
 #endif // SATELLITEMODEL_H

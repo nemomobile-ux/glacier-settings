@@ -23,23 +23,22 @@
 #include "glaciersettingsplugin.h"
 #include <qofonomanager.h>
 
-class MobileSettingsPlugin : public GlacierSettingsPlugin
-{
+class MobileSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    MobileSettingsPlugin(QObject *parent = nullptr);
+    MobileSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "mobile";}
-    QString title() { return tr("Mobile");}
-    QString description() { return tr("Operators and simcard");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg";}
+    QString id() { return "mobile"; }
+    QString title() { return tr("Mobile"); }
+    QString description() { return tr("Operators and simcard"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg"; }
     bool enabled();
 
 private slots:
-    void modemsChanged(const QStringList &modems);
+    void modemsChanged(const QStringList& modems);
 
 private:
     bool m_enabled;

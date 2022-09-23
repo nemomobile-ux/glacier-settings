@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class DeveloperModeSettingsPlugin: public GlacierSettingsPlugin
-{
+class DeveloperModeSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    DeveloperModeSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Development ;}
-    QString id() { return "developermode";}
-    QString title() { return tr("Developer mode");}
-    QString description() { return tr("Developer tools");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/developermode/developermode.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/developermode/developermode.svg";}
+    DeveloperModeSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Development; }
+    QString id() { return "developermode"; }
+    QString title() { return tr("Developer mode"); }
+    QString description() { return tr("Developer tools"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/developermode/developermode.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/developermode/developermode.svg"; }
     bool enabled() { return true; };
 };
 
