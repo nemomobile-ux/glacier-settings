@@ -22,20 +22,19 @@
 
 #include "glaciersettingsplugin.h"
 
-class LocationSettingsPlugin : public GlacierSettingsPlugin
-{
+class LocationSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 
 public:
-    LocationSettingsPlugin(QObject *parent = nullptr);
+    LocationSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "location";}
-    QString title() { return tr("Location");}
-    QString description() { return tr("GPS and other location services");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/location/location.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/location/location.svg";}
+    QString id() { return "location"; }
+    QString title() { return tr("Location"); }
+    QString description() { return tr("GPS and other location services"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/location/location.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/location/location.svg"; }
     bool enabled() { return true; };
 };
 

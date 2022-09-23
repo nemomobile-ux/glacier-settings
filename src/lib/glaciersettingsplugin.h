@@ -20,14 +20,13 @@
 #ifndef GLACIERSETTINGSPLUGIN_H
 #define GLACIERSETTINGSPLUGIN_H
 
-#include <QObject>
 #include "glaciersettings_global.h"
+#include <QObject>
 
-class GLACIERSETTINGS_EXPORT GlacierSettingsPlugin : public QObject
-{
+class GLACIERSETTINGS_EXPORT GlacierSettingsPlugin : public QObject {
     Q_OBJECT
 public:
-    enum PluginCategory{
+    enum PluginCategory {
         Personalization,
         Network,
         Security,
@@ -37,7 +36,7 @@ public:
     };
     Q_ENUM(PluginCategory)
 
-    virtual ~GlacierSettingsPlugin() {}
+    virtual ~GlacierSettingsPlugin() { }
     virtual PluginCategory category() = 0;
     virtual QString title() = 0;
     virtual QString description() = 0;

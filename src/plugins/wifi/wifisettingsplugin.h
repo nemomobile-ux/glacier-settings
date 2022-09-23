@@ -23,25 +23,24 @@
 #include "glaciersettingsplugin.h"
 #include <networkmanager.h>
 
-class WiFiSettingsPlugin: public GlacierSettingsPlugin
-{
+class WiFiSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 
 public:
-    WiFiSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network ;}
-    QString id() { return "wifi";}
-    QString title() { return tr("WiFi");}
-    QString description() { return m_description;}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/wifi/wifi.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/wifi/wifi.svg";}
+    WiFiSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Network; }
+    QString id() { return "wifi"; }
+    QString title() { return tr("WiFi"); }
+    QString description() { return m_description; }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/wifi/wifi.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/wifi/wifi.svg"; }
     bool enabled() { return m_enabled; };
 
 private slots:
-    void onPoweredChanded(const bool &powered);
-    void onConnectedChanged(const bool &connected);
+    void onPoweredChanded(const bool& powered);
+    void onConnectedChanged(const bool& connected);
     void onTechnologiesChanged();
 
 private:

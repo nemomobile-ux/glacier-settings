@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class SoundsSettingsPlugin : public GlacierSettingsPlugin
-{
+class SoundsSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    SoundsSettingsPlugin(QObject *parent = nullptr);
+    SoundsSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "sounds";}
-    QString title() { return tr("Sounds");}
-    QString description() { return tr("Ringtones and sound level");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/sounds/sounds.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/sounds/sounds.svg";}
+    QString id() { return "sounds"; }
+    QString title() { return tr("Sounds"); }
+    QString description() { return tr("Ringtones and sound level"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/sounds/sounds.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/sounds/sounds.svg"; }
     bool enabled() { return true; };
 };
 

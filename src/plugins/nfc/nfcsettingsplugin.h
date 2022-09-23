@@ -22,21 +22,21 @@
 
 #include "glaciersettingsplugin.h"
 
-class NfcSettingsPlugin: public GlacierSettingsPlugin
-{
+class NfcSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 
 public:
-    explicit NfcSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network ;}
-    QString id() { return "nfc";}
-    QString title() { return tr("NFC");}
-    QString description() { return "Near field communication";}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/nfc/nfc.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/nfc/nfc.svg";}
+    explicit NfcSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Network; }
+    QString id() { return "nfc"; }
+    QString title() { return tr("NFC"); }
+    QString description() { return "Near field communication"; }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/nfc/nfc.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/nfc/nfc.svg"; }
     bool enabled() { return m_enabled; };
+
 private:
     bool m_enabled;
 };

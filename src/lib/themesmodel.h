@@ -20,26 +20,25 @@
 #ifndef THEMESMODEL_H
 #define THEMESMODEL_H
 
-#include <QObject>
 #include <QAbstractListModel>
+#include <QObject>
 
 #include "glaciersettings_global.h"
 
-class GLACIERSETTINGS_EXPORT ThemesModel : public QAbstractListModel
-{
+class GLACIERSETTINGS_EXPORT ThemesModel : public QAbstractListModel {
     Q_OBJECT
 public:
-    explicit ThemesModel(QObject *parent = nullptr);
+    explicit ThemesModel(QObject* parent = nullptr);
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    QHash<int, QByteArray> roleNames() const {return m_hash;}
+    int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    QVariant data(const QModelIndex& index, int role) const;
+    QHash<int, QByteArray> roleNames() const { return m_hash; }
     Q_INVOKABLE QString getPath(int index);
 
 signals:
 
 private:
-    QHash<int,QByteArray> m_hash;
+    QHash<int, QByteArray> m_hash;
     QVariantMap m_themes;
 };
 

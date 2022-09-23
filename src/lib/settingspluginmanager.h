@@ -22,17 +22,16 @@
 
 #include <QObject>
 
-#include "settingspluginhost.h"
 #include "glaciersettings_global.h"
+#include "settingspluginhost.h"
 
-class GLACIERSETTINGS_EXPORT SettingsPluginManager : public QObject
-{
+class GLACIERSETTINGS_EXPORT SettingsPluginManager : public QObject {
     Q_OBJECT
 public:
     SettingsPluginManager();
     ~SettingsPluginManager();
 
-    QList<GlacierSettingsPlugin*> getPlugins() {return m_pluginList;}
+    QList<GlacierSettingsPlugin*> getPlugins() { return m_pluginList; }
 
 signals:
     void pluginDataChanged(QString pluginId);

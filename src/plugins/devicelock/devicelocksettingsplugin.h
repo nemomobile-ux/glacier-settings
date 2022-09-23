@@ -24,19 +24,18 @@
 
 #include <nemo-devicelock/authenticator.h>
 
-class DeviceLockSettingsPlugin: public GlacierSettingsPlugin
-{
+class DeviceLockSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    DeviceLockSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Security ;}
-    QString id() { return "devicelock";}
-    QString title() { return tr("Device lock");}
-    QString description() { return tr("Security settings");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg";}
+    DeviceLockSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Security; }
+    QString id() { return "devicelock"; }
+    QString title() { return tr("Device lock"); }
+    QString description() { return tr("Security settings"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg"; }
     bool enabled();
 
 private slots:

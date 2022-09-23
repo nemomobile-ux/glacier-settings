@@ -22,20 +22,19 @@
 
 #include "glaciersettingsplugin.h"
 
-class DateTimeSettingsPlugin: public GlacierSettingsPlugin
-{
+class DateTimeSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 
 public:
-    DateTimeSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization ;}
-    QString id() { return "datetime";}
-    QString title() { return tr("Date and time");}
-    QString description() { return tr("Setup date time and timezone");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/datetime/datetime.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/datetime/datetime.svg";}
+    DateTimeSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Personalization; }
+    QString id() { return "datetime"; }
+    QString title() { return tr("Date and time"); }
+    QString description() { return tr("Setup date time and timezone"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/datetime/datetime.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/datetime/datetime.svg"; }
     bool enabled() { return true; };
 };
 

@@ -23,15 +23,14 @@
 #include <QObject>
 #include <QPluginLoader>
 
-#include "glaciersettingsplugin.h"
 #include "glaciersettings_global.h"
+#include "glaciersettingsplugin.h"
 
 class QPluginLoader;
 
-class GLACIERSETTINGS_EXPORT SettingsPluginHost: public QObject
-{
+class GLACIERSETTINGS_EXPORT SettingsPluginHost : public QObject {
 public:
-    SettingsPluginHost(const QString& fileName, QObject *parent = 0);
+    SettingsPluginHost(const QString& fileName, QObject* parent = 0);
     ~SettingsPluginHost();
 
     bool load();
@@ -41,7 +40,7 @@ public:
     QString qmlPath();
     QString icon();
     bool enabled();
-    bool valid() {return m_valid;}
+    bool valid() { return m_valid; }
 
 private:
     QPluginLoader* m_loader;

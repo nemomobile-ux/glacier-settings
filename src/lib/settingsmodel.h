@@ -19,24 +19,23 @@
 #ifndef SETTINGSMODEL_H
 #define SETTINGSMODEL_H
 
-#include <QObject>
 #include <QAbstractListModel>
-#include <QJsonObject>
 #include <QJsonArray>
+#include <QJsonObject>
+#include <QObject>
 
 #include "glaciersettingsplugin.h"
 #include "settingspluginmanager.h"
 
-class GLACIERSETTINGS_EXPORT SettingsModel : public QAbstractListModel
-{
+class GLACIERSETTINGS_EXPORT SettingsModel : public QAbstractListModel {
     Q_OBJECT
 public:
-    explicit SettingsModel(QObject *parent = 0);
+    explicit SettingsModel(QObject* parent = 0);
 
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    QVariantMap data(const QModelIndex &index) const;
-    QHash<int, QByteArray> roleNames() const {return hash;}
+    int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    QVariant data(const QModelIndex& index, int role) const;
+    QVariantMap data(const QModelIndex& index) const;
+    QHash<int, QByteArray> roleNames() const { return hash; }
 
     static QMetaEnum defaultCategories;
     static QMap<QString, QString> extraTranlation;
@@ -49,7 +48,7 @@ private slots:
 private:
     QVariantMap get(int idx) const;
     SettingsPluginManager* m_pluginManager;
-    QHash<int,QByteArray> hash;
+    QHash<int, QByteArray> hash;
     QStringList m_roleNames;
 
     QVariantList pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const;

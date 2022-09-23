@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class BluezSettingsPlugin: public GlacierSettingsPlugin
-{
+class BluezSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    explicit BluezSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network ;}
-    QString id() { return "bluez";}
-    QString title() { return tr("Bluetooth");}
-    QString description() { return "Manage bluetooth connection";}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/bluez/bluez.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/bluez/bluez.svg";}
+    explicit BluezSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Network; }
+    QString id() { return "bluez"; }
+    QString title() { return tr("Bluetooth"); }
+    QString description() { return "Manage bluetooth connection"; }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/bluez/bluez.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/bluez/bluez.svg"; }
     bool enabled() { return true; };
 };
 

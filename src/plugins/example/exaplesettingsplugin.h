@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class ExapleSettingsPlugin : public GlacierSettingsPlugin
-{
+class ExapleSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    ExapleSettingsPlugin(QObject *parent = nullptr);
+    ExapleSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Development; }
-    QString id() { return "example";}
-    QString title() { return tr("Example");}
-    QString description() { return tr("Example settings plugin");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/example/example.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/example/example.svg";}
+    QString id() { return "example"; }
+    QString title() { return tr("Example"); }
+    QString description() { return tr("Example settings plugin"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/example/example.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/example/example.svg"; }
     bool enabled() { return true; };
 };
 

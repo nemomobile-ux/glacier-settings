@@ -22,20 +22,19 @@
 
 #include "glaciersettingsplugin.h"
 
-class AboutSettingsPlugin : public GlacierSettingsPlugin
-{
+class AboutSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 
 public:
-    explicit AboutSettingsPlugin(QObject *parent = nullptr);
-    PluginCategory category() { return PluginCategory::Info ;}
-    QString id() { return "about";}
-    QString title() { return tr("About");}
-    QString description() { return "Information about device";}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/about/about.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/about/about.svg";}
+    explicit AboutSettingsPlugin(QObject* parent = nullptr);
+    PluginCategory category() { return PluginCategory::Info; }
+    QString id() { return "about"; }
+    QString title() { return tr("About"); }
+    QString description() { return "Information about device"; }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/about/about.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/about/about.svg"; }
     bool enabled() { return true; }
 };
 

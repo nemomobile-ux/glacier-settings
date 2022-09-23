@@ -22,19 +22,18 @@
 
 #include "glaciersettingsplugin.h"
 
-class PowerSaveSettingsPlugin : public GlacierSettingsPlugin
-{
+class PowerSaveSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    PowerSaveSettingsPlugin(QObject *parent = nullptr);
+    PowerSaveSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "powersave";}
-    QString title() { return tr("Power save");}
-    QString description() { return tr("Battery settings");}
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/powersave/powersave.qml";}
-    QString icon() { return "/usr/share/glacier-settings/plugins/powersave/powersave.svg";}
+    QString id() { return "powersave"; }
+    QString title() { return tr("Power save"); }
+    QString description() { return tr("Battery settings"); }
+    QString qmlPath() { return "/usr/share/glacier-settings/plugins/powersave/powersave.qml"; }
+    QString icon() { return "/usr/share/glacier-settings/plugins/powersave/powersave.svg"; }
     bool enabled() { return true; };
 };
 
