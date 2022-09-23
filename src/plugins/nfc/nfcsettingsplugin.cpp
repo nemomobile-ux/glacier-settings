@@ -21,8 +21,8 @@
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 
-NfcSettingsPlugin::NfcSettingsPlugin(QObject *parent) :
-    m_enabled(false)
+NfcSettingsPlugin::NfcSettingsPlugin(QObject* parent)
+    : m_enabled(false)
 {
     if (QDBusConnection::systemBus().interface()->isServiceRegistered("org.sailfishos.nfc.settings")) {
         m_enabled = true;

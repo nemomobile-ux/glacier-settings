@@ -21,41 +21,40 @@
 #endif
 #include <QtGui/QGuiApplication>
 
-
+#include <QCoreApplication>
+#include <QScreen>
+#include <QtCore/QString>
 #include <QtQml>
 #include <QtQuick/QQuickView>
-#include <QtCore/QString>
-#include <QScreen>
-#include <QCoreApplication>
 
 #include <glacierapp.h>
 
-#include "themesmodel.h"
-#include "settingsmodel.h"
 #include "satellitemodel.h"
+#include "settingsmodel.h"
+#include "themesmodel.h"
 #include "timezonesmodel.h"
 
-Q_DECL_EXPORT int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char* argv[])
 {
     setenv("QT_QUICK_CONTROLS_STYLE", "Nemo", 1);
 
-    QGuiApplication *app = GlacierApp::app(argc, argv);
+    QGuiApplication* app = GlacierApp::app(argc, argv);
     app->setOrganizationName("NemoMobile");
 
     QScreen* sc = app->primaryScreen();
-    if(sc){
+    if (sc) {
         sc->setOrientationUpdateMask(Qt::LandscapeOrientation
-                             | Qt::PortraitOrientation
-                             | Qt::InvertedLandscapeOrientation
-                             | Qt::InvertedPortraitOrientation);
+            | Qt::PortraitOrientation
+            | Qt::InvertedLandscapeOrientation
+            | Qt::InvertedPortraitOrientation);
     }
 
-    qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings",1,0,"SettingsModel");
-    qmlRegisterType<SatelliteModel>("org.nemomobile.glacier.settings",1,0,"SatelliteModel");
-    qmlRegisterType<TimeZonesModel>("org.nemomobile.glacier.settings",1,0,"TimeZonesModel");
-    qmlRegisterType<ThemesModel>("org.nemomobile.glacier.settings",1,0,"ThemesModel");
+    qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings", 1, 0, "SettingsModel");
+    qmlRegisterType<SatelliteModel>("org.nemomobile.glacier.settings", 1, 0, "SatelliteModel");
+    qmlRegisterType<TimeZonesModel>("org.nemomobile.glacier.settings", 1, 0, "TimeZonesModel");
+    qmlRegisterType<ThemesModel>("org.nemomobile.glacier.settings", 1, 0, "ThemesModel");
 
-    QQuickWindow *window = GlacierApp::showWindow();
+    QQuickWindow* window = GlacierApp::showWindow();
     window->setTitle(QObject::tr("Settings"));
     window->setIcon(QIcon("/usr/share/glacier-settings/glacier-settings.png"));
     return app->exec();

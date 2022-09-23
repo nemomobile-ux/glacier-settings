@@ -21,9 +21,9 @@
 
 #include <networktechnology.h>
 
-WiFiSettingsPlugin::WiFiSettingsPlugin(QObject *parent) :
-    m_enabled(false)
-  , m_description(tr("Wireless networks"))
+WiFiSettingsPlugin::WiFiSettingsPlugin(QObject* parent)
+    : m_enabled(false)
+    , m_description(tr("Wireless networks"))
 {
     m_manager = NetworkManagerFactory::createInstance();
 
@@ -31,7 +31,7 @@ WiFiSettingsPlugin::WiFiSettingsPlugin(QObject *parent) :
 
     m_wifiTech = m_manager->getTechnology("wifi");
 
-    if(m_wifiTech) {
+    if (m_wifiTech) {
         m_enabled = true;
 
         connect(m_wifiTech, &NetworkTechnology::poweredChanged, this, &WiFiSettingsPlugin::onPoweredChanded);
@@ -41,31 +41,31 @@ WiFiSettingsPlugin::WiFiSettingsPlugin(QObject *parent) :
     }
 }
 
-void WiFiSettingsPlugin::onPoweredChanded(const bool &powered)
+void WiFiSettingsPlugin::onPoweredChanded(const bool& powered)
 {
     QString newStatus;
-    if(powered) {
+    if (powered) {
         newStatus = tr("enabled");
     } else {
         newStatus = tr("disabled");
     }
 
-    if(newStatus != m_description) {
+    if (newStatus != m_description) {
         m_description = newStatus;
         emit pluginChanged(id());
     }
 }
 
-void WiFiSettingsPlugin::onConnectedChanged(const bool &connected)
+void WiFiSettingsPlugin::onConnectedChanged(const bool& connected)
 {
     QString newStatus;
-    if(connected) {
+    if (connected) {
         newStatus = tr("connected");
     } else {
         newStatus = tr("diconnected");
     }
 
-    if(newStatus != m_description) {
+    if (newStatus != m_description) {
         m_description = newStatus;
         emit pluginChanged(id());
     }
@@ -73,8 +73,8 @@ void WiFiSettingsPlugin::onConnectedChanged(const bool &connected)
 
 void WiFiSettingsPlugin::onTechnologiesChanged()
 {
-    NetworkTechnology *newTech = m_manager->getTechnology("wifi");
-    if(m_wifiTech == newTech) {
+    NetworkTechnology* newTech = m_manager->getTechnology("wifi");
+    if (m_wifiTech == newTech) {
         return;
     }
 
@@ -93,7 +93,6 @@ void WiFiSettingsPlugin::onTechnologiesChanged()
     if (m_wifiTech) {
         connect(m_wifiTech, &NetworkTechnology::poweredChanged, this, &WiFiSettingsPlugin::onPoweredChanded);
         connect(m_wifiTech, &NetworkTechnology::connectedChanged, this, &WiFiSettingsPlugin::onConnectedChanged);
-
 
         bool powered = m_wifiTech->powered();
         bool connected = m_wifiTech->connected();

@@ -2,5 +2,4 @@
 
 ExapleSettingsPlugin::ExapleSettingsPlugin()
 {
-
 }

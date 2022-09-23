@@ -24,10 +24,10 @@
 SettingsPluginManager::SettingsPluginManager()
 {
     QDir pluginsDir("/usr/lib/glacier-settings/");
-    for(const QString& file: pluginsDir.entryList(QDir::Files)) {
+    for (const QString& file : pluginsDir.entryList(QDir::Files)) {
         SettingsPluginHost* shp = new SettingsPluginHost(pluginsDir.absoluteFilePath(file), this);
-        if(shp) {
-            if(shp->valid()) {
+        if (shp) {
+            if (shp->valid()) {
                 m_pluginList.push_back(shp->get());
                 connect(shp->get(), &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
             } else {
@@ -36,11 +36,10 @@ SettingsPluginManager::SettingsPluginManager()
         } else {
             qWarning() << "can't load" << pluginsDir.absoluteFilePath(file);
         }
-        delete(shp);
+        delete (shp);
     }
 }
 
 SettingsPluginManager::~SettingsPluginManager()
 {
-
 }

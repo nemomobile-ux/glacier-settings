@@ -22,7 +22,6 @@
 #include <QDebug>
 #include <QtPlugin>
 
-AboutSettingsPlugin::AboutSettingsPlugin(QObject *parent)
+AboutSettingsPlugin::AboutSettingsPlugin(QObject* parent)
 {
 }
-

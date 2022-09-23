@@ -19,7 +19,6 @@
 
 #include "storagesettingsplugin.h"
 
-StorageSettingsPlugin::StorageSettingsPlugin(QObject *parent)
+StorageSettingsPlugin::StorageSettingsPlugin(QObject* parent)
 {
-
 }

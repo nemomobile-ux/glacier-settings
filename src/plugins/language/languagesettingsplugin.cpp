@@ -19,7 +19,6 @@
 
 #include "languagesettingsplugin.h"
 
-LanguageSettingsPlugin::LanguageSettingsPlugin(QObject *parent)
+LanguageSettingsPlugin::LanguageSettingsPlugin(QObject* parent)
 {
-
 }

@@ -21,32 +21,32 @@
 
 #include <QDir>
 
-ThemesModel::ThemesModel(QObject *parent) :
-    QAbstractListModel(parent)
+ThemesModel::ThemesModel(QObject* parent)
+    : QAbstractListModel(parent)
 {
-    m_hash.insert(Qt::UserRole ,QByteArray("name"));
-    m_hash.insert(Qt::UserRole+1 ,QByteArray("path"));
+    m_hash.insert(Qt::UserRole, QByteArray("name"));
+    m_hash.insert(Qt::UserRole + 1, QByteArray("path"));
 
     QDir imagesPathDir = QDir("/usr/lib/qt/qml/QtQuick/Controls/Styles/Nemo/themes/");
     imagesPathDir.setNameFilters(QStringList("*.json"));
-    const QFileInfoList &list = imagesPathDir.entryInfoList();
-    QListIterator<QFileInfo>it(list);
+    const QFileInfoList& list = imagesPathDir.entryInfoList();
+    QListIterator<QFileInfo> it(list);
 
-    while (it.hasNext ()) {
-        const QFileInfo &fileInfo = it.next();
+    while (it.hasNext()) {
+        const QFileInfo& fileInfo = it.next();
         QString path = fileInfo.absoluteFilePath();
         QString name = fileInfo.fileName().remove("glacier_").remove(".json");
 
-        m_themes.insert(name,path);
+        m_themes.insert(name, path);
     }
 }
 
-int ThemesModel::rowCount(const QModelIndex &parent) const
+int ThemesModel::rowCount(const QModelIndex& parent) const
 {
     return m_themes.count();
 }
 
-QVariant ThemesModel::data(const QModelIndex &index, int role) const
+QVariant ThemesModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid()) {
         return QVariant();
@@ -58,11 +58,11 @@ QVariant ThemesModel::data(const QModelIndex &index, int role) const
 
     QList<QString> keys = m_themes.keys();
 
-    if(role == Qt::UserRole) {
+    if (role == Qt::UserRole) {
         return keys[index.row()];
     }
 
-    if(role == Qt::UserRole) {
+    if (role == Qt::UserRole) {
         return m_themes.value(keys[index.row()]);
     }
 

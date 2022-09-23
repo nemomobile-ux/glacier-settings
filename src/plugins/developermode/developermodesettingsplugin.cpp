@@ -19,7 +19,6 @@
 
 #include "developermodesettingsplugin.h"
 
-DeveloperModeSettingsPlugin::DeveloperModeSettingsPlugin(QObject *parent)
+DeveloperModeSettingsPlugin::DeveloperModeSettingsPlugin(QObject* parent)
 {
-
 }

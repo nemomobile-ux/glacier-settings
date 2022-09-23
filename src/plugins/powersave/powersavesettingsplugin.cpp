@@ -19,7 +19,6 @@
 
 #include "powersavesettingsplugin.h"
 
-PowerSaveSettingsPlugin::PowerSaveSettingsPlugin(QObject *parent)
+PowerSaveSettingsPlugin::PowerSaveSettingsPlugin(QObject* parent)
 {
-
 }
