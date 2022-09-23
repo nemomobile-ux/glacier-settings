@@ -19,16 +19,16 @@
 
 #include "settingspluginhost.h"
 
-SettingsPluginHost::SettingsPluginHost(const QString &fileName, QObject *parent) :
-    QObject(parent)
+SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
+    : QObject(parent)
     , m_fileName(fileName)
     , m_valid(false)
 {
     QPluginLoader pluginLoader(fileName);
-    QObject *plugin = pluginLoader.instance();
-    if(plugin) {
-        m_plugin =  qobject_cast<GlacierSettingsPlugin*>(plugin);
-        if(!m_plugin) {
+    QObject* plugin = pluginLoader.instance();
+    if (plugin) {
+        m_plugin = qobject_cast<GlacierSettingsPlugin*>(plugin);
+        if (!m_plugin) {
             qWarning("Can't cast plugin");
             pluginLoader.unload();
         } else {
@@ -41,12 +41,11 @@ SettingsPluginHost::SettingsPluginHost(const QString &fileName, QObject *parent)
 
 SettingsPluginHost::~SettingsPluginHost()
 {
-
 }
 
-GlacierSettingsPlugin *SettingsPluginHost::get()
+GlacierSettingsPlugin* SettingsPluginHost::get()
 {
-    if(!m_plugin) {
+    if (!m_plugin) {
         return nullptr;
     }
     return m_plugin;
@@ -54,7 +53,7 @@ GlacierSettingsPlugin *SettingsPluginHost::get()
 
 GlacierSettingsPlugin::PluginCategory SettingsPluginHost::category()
 {
-    if(!m_plugin) {
+    if (!m_plugin) {
         return GlacierSettingsPlugin::PluginCategory::Other;
     }
 
@@ -63,7 +62,7 @@ GlacierSettingsPlugin::PluginCategory SettingsPluginHost::category()
 
 QString SettingsPluginHost::title()
 {
-    if(!m_plugin) {
+    if (!m_plugin) {
         return "";
     }
     return m_plugin->title();
@@ -71,7 +70,7 @@ QString SettingsPluginHost::title()
 
 QString SettingsPluginHost::qmlPath()
 {
-    if(!m_plugin) {
+    if (!m_plugin) {
         return "";
     }
     return m_plugin->qmlPath();
@@ -79,7 +78,7 @@ QString SettingsPluginHost::qmlPath()
 
 QString SettingsPluginHost::icon()
 {
-    if(!m_plugin) {
+    if (!m_plugin) {
         return "";
     }
     return m_plugin->icon();
@@ -87,7 +86,7 @@ QString SettingsPluginHost::icon()
 
 bool SettingsPluginHost::enabled()
 {
-    if(!m_plugin) {
+    if (!m_plugin) {
         return false;
     }
     return m_plugin->enabled();

@@ -19,7 +19,6 @@
 
 #include "locationsettingsplugin.h"
 
-LocationSettingsPlugin::LocationSettingsPlugin(QObject *parent)
+LocationSettingsPlugin::LocationSettingsPlugin(QObject* parent)
 {
-
 }

@@ -19,11 +19,11 @@
 
 #include "mobilesettingsplugin.h"
 
-MobileSettingsPlugin::MobileSettingsPlugin(QObject *parent) :
-    m_enabled(false)
-  , m_qOfonoManager(new QOfonoManager())
+MobileSettingsPlugin::MobileSettingsPlugin(QObject* parent)
+    : m_enabled(false)
+    , m_qOfonoManager(new QOfonoManager())
 {
-    if(m_qOfonoManager->modems().count() > 0) {
+    if (m_qOfonoManager->modems().count() > 0) {
         m_enabled = true;
     }
 
@@ -35,16 +35,16 @@ bool MobileSettingsPlugin::enabled()
     return m_enabled;
 }
 
-void MobileSettingsPlugin::modemsChanged(const QStringList &modems)
+void MobileSettingsPlugin::modemsChanged(const QStringList& modems)
 {
     bool newEnabled;
-    if(modems.count() > 0) {
+    if (modems.count() > 0) {
         newEnabled = true;
     } else {
         newEnabled = false;
     }
 
-    if(newEnabled != m_enabled) {
+    if (newEnabled != m_enabled) {
         m_enabled = newEnabled;
         emit pluginChanged(id());
     }

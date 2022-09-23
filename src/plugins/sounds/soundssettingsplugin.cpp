@@ -17,10 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-
 #include "soundssettingsplugin.h"
 
-SoundsSettingsPlugin::SoundsSettingsPlugin(QObject *parent)
+SoundsSettingsPlugin::SoundsSettingsPlugin(QObject* parent)
 {
-
 }

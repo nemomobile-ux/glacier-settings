@@ -18,14 +18,14 @@
  */
 #include "settingsmodel.h"
 
-#include <QTranslator>
-#include <QCoreApplication>
 #include <QAbstractListModel>
+#include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMetaEnum>
+#include <QTranslator>
 
 #include "glaciersettingsplugin.h"
 #include "settingspluginhost.h"
@@ -48,39 +48,39 @@
  * Info
  *  - About
  * Other
-*/
+ */
 
 QMetaEnum SettingsModel::defaultCategories = QMetaEnum::fromType<GlacierSettingsPlugin::PluginCategory>();
 
 QMap<QString, QString> SettingsModel::extraTranlation = QMap<QString, QString>();
 
-SettingsModel::SettingsModel(QObject *parent) :
-    QAbstractListModel(parent)
-  , m_pluginManager(new SettingsPluginManager())
-  , m_showDisabled(false)
+SettingsModel::SettingsModel(QObject* parent)
+    : QAbstractListModel(parent)
+    , m_pluginManager(new SettingsPluginManager())
+    , m_showDisabled(false)
 {
     m_roleNames << "title";
     m_roleNames << "items";
 
-    for (const QString &role : qAsConst(m_roleNames)) {
-        hash.insert(Qt::UserRole+hash.count() ,role.toLatin1());
+    for (const QString& role : qAsConst(m_roleNames)) {
+        hash.insert(Qt::UserRole + hash.count(), role.toLatin1());
     }
 
     connect(m_pluginManager, &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
 
-    if(qgetenv("SETTINGS_SHOW_DISABLED_PLUGINS") == "1") {
+    if (qgetenv("SETTINGS_SHOW_DISABLED_PLUGINS") == "1") {
         m_showDisabled = true;
     }
 }
 
 bool SettingsModel::pluginAviable(QString name)
 {
-    if(name.length() == 0) {
+    if (name.length() == 0) {
         return false;
     }
 
-    for(GlacierSettingsPlugin* plugin :m_pluginManager->getPlugins()) {
-        if(plugin->title() == name) {
+    for (GlacierSettingsPlugin* plugin : m_pluginManager->getPlugins()) {
+        if (plugin->title() == name) {
             return true;
         }
     }
@@ -93,7 +93,7 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
     QVariantList pluginsInCat;
 
     for (GlacierSettingsPlugin* item : m_pluginManager->getPlugins()) {
-        if(item->category() == category && (item->enabled() || m_showDisabled)) {
+        if (item->category() == category && (item->enabled() || m_showDisabled)) {
             QVariantMap map;
             map["title"] = item->title();
             map["icon"] = item->icon();
@@ -133,26 +133,25 @@ QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory ca
 void SettingsModel::updatePluginData(QString pluginId)
 {
     beginResetModel();
-//TODO: not resen model, just update changed item
+    // TODO: not resen model, just update changed item
     endResetModel();
 }
 
-int SettingsModel::rowCount(const QModelIndex &parent) const
+int SettingsModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
     return defaultCategories.keyCount();
 }
 
-
 QVariantMap SettingsModel::get(int idx) const
 {
-    return QVariantMap{
-        {"title", m_pluginManager->getPlugins().at(idx)->title() },
-        {"items", pluginsInCategory(m_pluginManager->getPlugins().at(idx)->category())}
+    return QVariantMap {
+        { "title", m_pluginManager->getPlugins().at(idx)->title() },
+        { "items", pluginsInCategory(m_pluginManager->getPlugins().at(idx)->category()) }
     };
 }
 
-QVariant SettingsModel::data(const QModelIndex &index, int role) const
+QVariant SettingsModel::data(const QModelIndex& index, int role) const
 {
     Q_UNUSED(role);
     if (!index.isValid())
@@ -163,15 +162,15 @@ QVariant SettingsModel::data(const QModelIndex &index, int role) const
 
     QVariant item = defaultCategories.value(index.row());
 
-    if(role == Qt::UserRole) {
+    if (role == Qt::UserRole) {
         return categoryToString((GlacierSettingsPlugin::PluginCategory)item.toUInt());
-    } else if(role == Qt::UserRole+1) {
+    } else if (role == Qt::UserRole + 1) {
         return pluginsInCategory((GlacierSettingsPlugin::PluginCategory)item.toUInt());
     }
     return QVariant();
 }
 
-QVariantMap SettingsModel::data(const QModelIndex &index) const
+QVariantMap SettingsModel::data(const QModelIndex& index) const
 {
     if (!index.isValid())
         return QVariantMap();

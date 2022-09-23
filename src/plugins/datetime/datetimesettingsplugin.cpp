@@ -19,7 +19,6 @@
 
 #include "datetimesettingsplugin.h"
 
-DateTimeSettingsPlugin::DateTimeSettingsPlugin(QObject *parent)
+DateTimeSettingsPlugin::DateTimeSettingsPlugin(QObject* parent)
 {
-
 }

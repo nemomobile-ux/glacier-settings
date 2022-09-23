@@ -18,20 +18,25 @@
  */
 
 #include "satellitemodel.h"
-#include <QTimer>
 #include <QDebug>
 #include <QFile>
+#include <QTimer>
 
-SatelliteModel::SatelliteModel(QObject *parent) :
-    QAbstractListModel(parent), source(0), m_componentCompleted(false), m_running(false),
-    m_runningRequested(false), demo(false), isSingle(false), singleRequestServed(false)
+SatelliteModel::SatelliteModel(QObject* parent)
+    : QAbstractListModel(parent)
+    , source(0)
+    , m_componentCompleted(false)
+    , m_running(false)
+    , m_runningRequested(false)
+    , demo(false)
+    , isSingle(false)
+    , singleRequestServed(false)
 {
     source = QGeoSatelliteInfoSource::createDefaultSource(this);
     QStringList aS = QGeoSatelliteInfoSource::availableSources();
-    for(int i = 0; i < aS.size(); ++i) {
+    for (int i = 0; i < aS.size(); ++i) {
         qDebug() << " - " << aS[i];
     }
-
 
     if (!demo && !source) {
         qWarning() << "No satellite data source found. Changing to demo mode.";
@@ -41,11 +46,11 @@ SatelliteModel::SatelliteModel(QObject *parent) :
     if (!demo) {
         source->setUpdateInterval(3000);
         connect(source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
-                this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
+            this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
         connect(source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
-                this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
+            this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
         connect(source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
-                this, SLOT(error(QGeoSatelliteInfoSource::Error)));
+            this, SLOT(error(QGeoSatelliteInfoSource::Error)));
     }
 
     if (demo) {
@@ -55,7 +60,7 @@ SatelliteModel::SatelliteModel(QObject *parent) :
     }
 }
 
-int SatelliteModel::rowCount(const QModelIndex &parent) const
+int SatelliteModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
     if (!source && !demo)
@@ -64,7 +69,7 @@ int SatelliteModel::rowCount(const QModelIndex &parent) const
     return knownSatellites.count();
 }
 
-QVariant SatelliteModel::data(const QModelIndex &index, int role) const
+QVariant SatelliteModel::data(const QModelIndex& index, int role) const
 {
     if (!demo && !source)
         return QVariant();
@@ -77,7 +82,7 @@ QVariant SatelliteModel::data(const QModelIndex &index, int role) const
         return QVariant();
     }
 
-    const QGeoSatelliteInfo &info = knownSatellites.at(index.row());
+    const QGeoSatelliteInfo& info = knownSatellites.at(index.row());
     switch (role) {
     case IdentifierRole:
         return info.satelliteIdentifier();
@@ -94,16 +99,15 @@ QVariant SatelliteModel::data(const QModelIndex &index, int role) const
             return QVariant();
         return info.attribute(QGeoSatelliteInfo::Azimuth);
     case SatelliteSystem:
-        if(info.satelliteSystem() == QGeoSatelliteInfo::GPS) {
+        if (info.satelliteSystem() == QGeoSatelliteInfo::GPS) {
             return QVariant("GPS");
         }
-        if(info.satelliteSystem() == QGeoSatelliteInfo::GLONASS) {
+        if (info.satelliteSystem() == QGeoSatelliteInfo::GLONASS) {
             return QVariant("GNS");
         }
         return QVariant("UNK");
     default:
         break;
-
     }
 
     return QVariant();
@@ -145,7 +149,7 @@ void SatelliteModel::setSingleRequest(bool single)
         return;
     }
 
-    if (single != isSingle) { //flag changed
+    if (single != isSingle) { // flag changed
         isSingle = single;
         emit singleRequestChanged();
     }
@@ -211,21 +215,20 @@ void SatelliteModel::updateDemoData()
     static bool flag = true;
     QList<QGeoSatelliteInfo> satellites;
     if (flag) {
-        for (int i = 0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
             QGeoSatelliteInfo info;
             info.setSatelliteIdentifier(i);
-            info.setSignalStrength(20 + 20*i);
+            info.setSignalStrength(20 + 20 * i);
             satellites.append(info);
         }
     } else {
-        for (int i = 0; i<9; i++) {
+        for (int i = 0; i < 9; i++) {
             QGeoSatelliteInfo info;
-            info.setSatelliteIdentifier(i*2);
-            info.setSignalStrength(20 + 10*i);
+            info.setSatelliteIdentifier(i * 2);
+            info.setSignalStrength(20 + 10 * i);
             satellites.append(info);
         }
     }
-
 
     satellitesInViewUpdated(satellites);
     flag ? satellitesInUseUpdated(QList<QGeoSatelliteInfo>() << satellites.at(2))
@@ -252,7 +255,7 @@ inline bool operator<(const QGeoSatelliteInfo& a, const QGeoSatelliteInfo& b)
 }
 QT_END_NAMESPACE
 
-void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo> &infos)
+void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo>& infos)
 {
     if (!running())
         return;
@@ -260,28 +263,28 @@ void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo> &inf
     int oldEntryCount = knownSatellites.count();
 
     QSet<int> satelliteIdsInUpdate;
-    foreach (const QGeoSatelliteInfo &info, infos) {
-        if(info.signalStrength() > 0) {
+    foreach (const QGeoSatelliteInfo& info, infos) {
+        if (info.signalStrength() > 0) {
             satelliteIdsInUpdate.insert(info.satelliteIdentifier());
         }
     }
 
     QSet<int> toBeRemoved = knownSatelliteIds - satelliteIdsInUpdate;
 
-    //We reset the model as in reality just about all entry values change
-    //and there are generally a lot of inserts and removals each time
-    //Hence we don't bother with complex model update logic beyond resetModel()
+    // We reset the model as in reality just about all entry values change
+    // and there are generally a lot of inserts and removals each time
+    // Hence we don't bother with complex model update logic beyond resetModel()
     beginResetModel();
 
     knownSatellites = infos;
     emit avaiableSattelitesChanged();
 
-    //sort them for presentation purposes
+    // sort them for presentation purposes
     std::sort(knownSatellites.begin(), knownSatellites.end());
 
-    //remove old "InUse" data
-    //new satellites are by default not in "InUse"
-    //existing satellites keep their "inUse" state
+    // remove old "InUse" data
+    // new satellites are by default not in "InUse"
+    // existing satellites keep their "inUse" state
     satellitesInUse -= toBeRemoved;
 
     knownSatelliteIds = satelliteIdsInUpdate;
@@ -291,7 +294,7 @@ void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo> &inf
         emit entryCountChanged();
 }
 
-void SatelliteModel::satellitesInUseUpdated(const QList<QGeoSatelliteInfo> &infos)
+void SatelliteModel::satellitesInUseUpdated(const QList<QGeoSatelliteInfo>& infos)
 {
     if (!running())
         return;
@@ -299,7 +302,7 @@ void SatelliteModel::satellitesInUseUpdated(const QList<QGeoSatelliteInfo> &info
     beginResetModel();
 
     satellitesInUse.clear();
-    foreach (const QGeoSatelliteInfo &info, infos)
+    foreach (const QGeoSatelliteInfo& info, infos)
         satellitesInUse.insert(info.satelliteIdentifier());
 
     emit usedSattelitesChanged();

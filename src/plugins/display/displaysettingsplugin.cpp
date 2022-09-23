@@ -19,7 +19,6 @@
 
 #include "displaysettingsplugin.h"
 
-DisplaySettingsPlugin::DisplaySettingsPlugin(QObject *parent)
+DisplaySettingsPlugin::DisplaySettingsPlugin(QObject* parent)
 {
-
 }

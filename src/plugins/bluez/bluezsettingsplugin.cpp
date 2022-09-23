@@ -19,7 +19,6 @@
 
 #include "bluezsettingsplugin.h"
 
-BluezSettingsPlugin::BluezSettingsPlugin(QObject *parent)
+BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
 {
-
 }

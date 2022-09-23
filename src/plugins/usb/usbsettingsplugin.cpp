@@ -19,7 +19,6 @@
 
 #include "usbsettingsplugin.h"
 
-UsbSettingsPlugin::UsbSettingsPlugin(QObject *parent)
+UsbSettingsPlugin::UsbSettingsPlugin(QObject* parent)
 {
-
 }
