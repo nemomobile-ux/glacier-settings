@@ -91,6 +91,7 @@ void WiFiSettingsPlugin::onTechnologiesChanged()
     m_wifiTech = newTech;
 
     if (m_wifiTech) {
+        m_enabled = true;
         connect(m_wifiTech, &NetworkTechnology::poweredChanged, this, &WiFiSettingsPlugin::onPoweredChanded);
         connect(m_wifiTech, &NetworkTechnology::connectedChanged, this, &WiFiSettingsPlugin::onConnectedChanged);
 
