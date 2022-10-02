@@ -17,17 +17,17 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef EXAPLESETTINGSPLUGIN_H
-#define EXAPLESETTINGSPLUGIN_H
+#ifndef EXAMPLESETTINGSPLUGIN_H
+#define EXAMPLESETTINGSPLUGIN_H
 
 #include "glaciersettingsplugin.h"
 
-class ExapleSettingsPlugin : public GlacierSettingsPlugin {
+class ExampleSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
     Q_INTERFACES(GlacierSettingsPlugin)
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
-    ExapleSettingsPlugin(QObject* parent = nullptr);
+    ExampleSettingsPlugin(QObject* parent = nullptr);
     PluginCategory category() { return PluginCategory::Development; }
     QString id() { return "example"; }
     QString title() { return tr("Example"); }
@@ -37,4 +37,4 @@ public:
     bool enabled() { return true; };
 };
 
-#endif // EXAPLESETTINGSPLUGIN_H
+#endif // EXAMPLESETTINGSPLUGIN_H
