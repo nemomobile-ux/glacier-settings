@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
     <name>MobileSettingsPlugin</name>
     <message>
@@ -28,13 +26,13 @@
     </message>
     <message>
         <location filename="../mobile.qml" line="98"/>
-        <source>No sim</source>
-        <translation>Není vložena sim</translation>
+        <source>Unknown</source>
+        <translation>Neznámo</translation>
     </message>
     <message>
         <location filename="../mobile.qml" line="98"/>
-        <source>Unknown</source>
-        <translation>Neznámo</translation>
+        <source>No sim</source>
+        <translation>Není vložena sim</translation>
     </message>
     <message>
         <location filename="../mobile.qml" line="99"/>
