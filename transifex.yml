@@ -8,80 +8,80 @@ git:
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/nfc.ts'
-      translation_files_expression: './src/plugins/translations/nfc_<lang>.ts'
+      source_file: 'src/plugins/nfc/translations/nfc.ts'
+      translation_files_expression: 'src/plugins/nfc/translations/nfc_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/powersave.ts'
-      translation_files_expression: './src/plugins/translations/powersave_<lang>.ts'
+      source_file: 'src/plugins/powersave/translations/powersave.ts'
+      translation_files_expression: 'src/plugins/powersave/translations/powersave_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/example.ts'
-      translation_files_expression: './src/plugins/translations/example_<lang>.ts'
+      source_file: 'src/plugins/example/translations/example.ts'
+      translation_files_expression: 'src/plugins/example/translations/example_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/mobile.ts'
-      translation_files_expression: './src/plugins/translations/mobile_<lang>.ts'
+      source_file: 'src/plugins/mobile/translations/mobile.ts'
+      translation_files_expression: 'src/plugins/mobile/translations/mobile_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/about.ts'
-      translation_files_expression: './src/plugins/translations/about_<lang>.ts'
+      source_file: 'src/plugins/about/translations/about.ts'
+      translation_files_expression: 'src/plugins/about/translations/about_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/location.ts'
-      translation_files_expression: './src/plugins/translations/location_<lang>.ts'
+      source_file: 'src/plugins/location/translations/location.ts'
+      translation_files_expression: 'src/plugins/location/translations/location_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/devicelock.ts'
-      translation_files_expression: './src/plugins/translations/devicelock_<lang>.ts'
+      source_file: 'src/plugins/devicelock/translations/devicelock.ts'
+      translation_files_expression: 'src/plugins/devicelock/translations/devicelock_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/display.ts'
-      translation_files_expression: './src/plugins/translations/display_<lang>.ts'
+      source_file: 'src/plugins/display/translations/display.ts'
+      translation_files_expression: 'src/plugins/display/translations/display_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/wifi.ts'
-      translation_files_expression: './src/plugins/translations/wifi_<lang>.ts'
+      source_file: 'src/plugins/wifi/translations/wifi.ts'
+      translation_files_expression: 'src/plugins/wifi/translations/wifi_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/usb.ts'
-      translation_files_expression: './src/plugins/translations/usb_<lang>.ts'
+      source_file: 'src/plugins/usb/translations/usb.ts'
+      translation_files_expression: 'src/plugins/usb/translations/usb_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/bluez.ts'
-      translation_files_expression: './src/plugins/translations/bluez_<lang>.ts'
+      source_file: 'src/plugins/bluez/translations/bluez.ts'
+      translation_files_expression: 'src/plugins/bluez/translations/bluez_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/developermode.ts'
-      translation_files_expression: './src/plugins/translations/developermode_<lang>.ts'
+      source_file: 'src/plugins/developermode/translations/developermode.ts'
+      translation_files_expression: 'src/plugins/developermode/translations/developermode_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/sounds.ts'
-      translation_files_expression: './src/plugins/translations/sounds_<lang>.ts'
+      source_file: 'src/plugins/sounds/translations/sounds.ts'
+      translation_files_expression: 'src/plugins/sounds/translations/sounds_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/datetime.ts'
-      translation_files_expression: './src/plugins/translations/datetime_<lang>.ts'
+      source_file: 'src/plugins/datetime/translations/datetime.ts'
+      translation_files_expression: 'src/plugins/datetime/translations/datetime_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/storage.ts'
-      translation_files_expression: './src/plugins/translations/storage_<lang>.ts'
+      source_file: 'src/plugins/storage/translations/storage.ts'
+      translation_files_expression: 'src/plugins/storage/translations/storage_<lang>.ts'
     - filter_type: file
       file_format: QT
       source_language: en
-      source_file: './src/plugins/translations/language.ts'
-      translation_files_expression: './src/plugins/translations/language_<lang>.ts'
+      source_file: 'src/plugins/language/translations/language.ts'
+      translation_files_expression: 'src/plugins/language/translations/language_<lang>.ts'
