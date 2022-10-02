@@ -1,27 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="de">
 <context>
     <name>DeviceLockPad</name>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="43"/>
+        <source>Enter security code</source>
+        <translation>Entsperrcode eingeben</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="136"/>
+        <location filename="../DeviceLockPad.qml" line="173"/>
+        <source>Enter new security code</source>
+        <translation>Neuen Entsperrcode eingeben</translation>
+    </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="154"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="184"/>
-        <source>Security codes don&apos;t match</source>
-        <translation>Entsperrcodes stimmen nicht überein</translation>
+        <location filename="../DeviceLockPad.qml" line="168"/>
+        <source>Enter current security code</source>
+        <translation>Aktuellen Entsperrcode eingeben</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="195"/>
-        <source>Incorrect code</source>
-        <translation>Fehlerhafter Code</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="196"/>
-        <source>%1 of %2 attempts</source>
-        <translation>%1 von %2 Versuchen</translation>
+        <location filename="../DeviceLockPad.qml" line="178"/>
+        <source>Repeat new security code</source>
+        <translation>Neuen Entsperrcode wiederholen</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="183"/>
@@ -32,30 +36,24 @@
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="43"/>
-        <source>Enter security code</source>
-        <translation>Entsperrcode eingeben</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="168"/>
-        <source>Enter current security code</source>
-        <translation>Aktuellen Entsperrcode eingeben</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="136"/>
-        <location filename="../DeviceLockPad.qml" line="173"/>
-        <source>Enter new security code</source>
-        <translation>Neuen Entsperrcode eingeben</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="178"/>
-        <source>Repeat new security code</source>
-        <translation>Neuen Entsperrcode wiederholen</translation>
+        <location filename="../DeviceLockPad.qml" line="184"/>
+        <source>Security codes don&apos;t match</source>
+        <translation>Entsperrcodes stimmen nicht überein</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="190"/>
         <source>Don&apos;t use previous security code</source>
         <translation>Es darf nicht der vorherige Entspercode verwendet werden</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="195"/>
+        <source>Incorrect code</source>
+        <translation>Fehlerhafter Code</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="196"/>
+        <source>%1 of %2 attempts</source>
+        <translation>%1 von %2 Versuchen</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="210"/>
@@ -129,9 +127,9 @@
         <translation>Sperre nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="203"/>
-        <source>Change security code</source>
-        <translation>Entsperrcode</translation>
+        <location filename="../devicelock.qml" line="158"/>
+        <source>Auto lock device</source>
+        <translation>Gerät automatisch sperren</translation>
     </message>
     <message>
         <location filename="../devicelock.qml" line="194"/>
@@ -139,9 +137,9 @@
         <translation>Benachrichtigungen bei gesperrten Gerät anzeigen</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="158"/>
-        <source>Auto lock device</source>
-        <translation>Gerät automatisch sperren</translation>
+        <location filename="../devicelock.qml" line="203"/>
+        <source>Change security code</source>
+        <translation>Entsperrcode</translation>
     </message>
 </context>
 </TS>
