@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
 <context>
     <name>NetworkDelegate</name>
     <message>
@@ -63,15 +61,6 @@
         <translation>Беспроводные сети</translation>
     </message>
     <message>
-        <source>enabled</source>
-        <translation type="vanished">включено</translation>
-    </message>
-    <message>
-        <location filename="../wifisettingsplugin.cpp" line="54"/>
-        <source>disabled</source>
-        <translation>выключено</translation>
-    </message>
-    <message>
         <location filename="../wifisettingsplugin.cpp" line="49"/>
         <location filename="../wifisettingsplugin.cpp" line="67"/>
         <source>connected</source>
@@ -82,6 +71,11 @@
         <location filename="../wifisettingsplugin.cpp" line="69"/>
         <source>diconnected</source>
         <translation>разъединено </translation>
+    </message>
+    <message>
+        <location filename="../wifisettingsplugin.cpp" line="54"/>
+        <source>disabled</source>
+        <translation>выключено</translation>
     </message>
     <message>
         <location filename="../wifisettingsplugin.h" line="35"/>
