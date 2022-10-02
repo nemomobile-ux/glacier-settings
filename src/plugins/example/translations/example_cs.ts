@@ -9,7 +9,7 @@
     <message>
         <location filename="../examplesettingsplugin.h" line="34"/>
         <source>Example settings plugin</source>
-        <translation>Ukázkový zásuvný modul nastavení</translation>
+        <translation>Příklad modulu nastavení</translation>
     </message>
 </context>
 <context>
