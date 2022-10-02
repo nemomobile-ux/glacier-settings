@@ -1,27 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
 <context>
     <name>DeviceLockPad</name>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="43"/>
+        <source>Enter security code</source>
+        <translation>Введите код доступа</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="136"/>
+        <location filename="../DeviceLockPad.qml" line="173"/>
+        <source>Enter new security code</source>
+        <translation>Введите новый код доступа</translation>
+    </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="154"/>
         <source>Ok</source>
         <translation>Ок</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="184"/>
-        <source>Security codes don&apos;t match</source>
-        <translation>Коды доступа несовпадают</translation>
+        <location filename="../DeviceLockPad.qml" line="168"/>
+        <source>Enter current security code</source>
+        <translation>Введите текущий код доступа</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="195"/>
-        <source>Incorrect code</source>
-        <translation>Неверный код</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="196"/>
-        <source>%1 of %2 attempts</source>
-        <translation>Попыток %1 из %2</translation>
+        <location filename="../DeviceLockPad.qml" line="178"/>
+        <source>Repeat new security code</source>
+        <translation>Повторите новый код доступа</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="183"/>
@@ -32,30 +36,24 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="43"/>
-        <source>Enter security code</source>
-        <translation>Введите код доступа</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="168"/>
-        <source>Enter current security code</source>
-        <translation>Введите текущий код доступа</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="136"/>
-        <location filename="../DeviceLockPad.qml" line="173"/>
-        <source>Enter new security code</source>
-        <translation>Введите новый код доступа</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="178"/>
-        <source>Repeat new security code</source>
-        <translation>Повторите новый код доступа</translation>
+        <location filename="../DeviceLockPad.qml" line="184"/>
+        <source>Security codes don&apos;t match</source>
+        <translation>Коды доступа несовпадают</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="190"/>
         <source>Don&apos;t use previous security code</source>
         <translation>Не используйте прошлые коды доступа</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="195"/>
+        <source>Incorrect code</source>
+        <translation>Неверный код</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="196"/>
+        <source>%1 of %2 attempts</source>
+        <translation>Попыток %1 из %2</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="210"/>
@@ -129,9 +127,9 @@
         <translation>Блокировка недоступна</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="203"/>
-        <source>Change security code</source>
-        <translation>Сменить код доступа</translation>
+        <location filename="../devicelock.qml" line="158"/>
+        <source>Auto lock device</source>
+        <translation>Автоматическая блокировка</translation>
     </message>
     <message>
         <location filename="../devicelock.qml" line="194"/>
@@ -139,9 +137,9 @@
         <translation>Показовать уведомления при заблокированном экране</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="158"/>
-        <source>Auto lock device</source>
-        <translation>Автоматическая блокировка</translation>
+        <location filename="../devicelock.qml" line="203"/>
+        <source>Change security code</source>
+        <translation>Сменить код доступа</translation>
     </message>
 </context>
 </TS>
