@@ -84,7 +84,7 @@ ListViewItemWithActions{
         ActionButton {
             id: removeNetworkButton
             visible: saved
-            iconSource: "/usr/share/glacier-settings/qml/img/trash.svg"
+            iconSource: "image://theme/trash"
 
             onClicked: {
                 modelData.remove();
