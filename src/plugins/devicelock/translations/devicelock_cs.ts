@@ -1,27 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
 <context>
     <name>DeviceLockPad</name>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="43"/>
+        <source>Enter security code</source>
+        <translation>Zadejte bezpečnostní kód</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="136"/>
+        <location filename="../DeviceLockPad.qml" line="173"/>
+        <source>Enter new security code</source>
+        <translation>Zadejte nový bezpečnostní kód</translation>
+    </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="154"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="184"/>
-        <source>Security codes don&apos;t match</source>
-        <translation>Bezpečnostní kód nesedí</translation>
+        <location filename="../DeviceLockPad.qml" line="168"/>
+        <source>Enter current security code</source>
+        <translation>Zadejte současný bezpečnostní kód</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="195"/>
-        <source>Incorrect code</source>
-        <translation>Nesprávný kód</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="196"/>
-        <source>%1 of %2 attempts</source>
-        <translation>%1 z %2 pokusů</translation>
+        <location filename="../DeviceLockPad.qml" line="178"/>
+        <source>Repeat new security code</source>
+        <translation>Zopakujte nový bezpečnostní kód</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="183"/>
@@ -32,30 +36,24 @@
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="43"/>
-        <source>Enter security code</source>
-        <translation>Zadejte bezpečnostní kód</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="168"/>
-        <source>Enter current security code</source>
-        <translation>Zadejte současný bezpečnostní kód</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="136"/>
-        <location filename="../DeviceLockPad.qml" line="173"/>
-        <source>Enter new security code</source>
-        <translation>Zadejte nový bezpečnostní kód</translation>
-    </message>
-    <message>
-        <location filename="../DeviceLockPad.qml" line="178"/>
-        <source>Repeat new security code</source>
-        <translation>Zopakujte nový bezpečnostní kód</translation>
+        <location filename="../DeviceLockPad.qml" line="184"/>
+        <source>Security codes don&apos;t match</source>
+        <translation>Bezpečnostní kód nesedí</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="190"/>
         <source>Don&apos;t use previous security code</source>
         <translation>Nepoužívat předchozí bezpečnostní kód</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="195"/>
+        <source>Incorrect code</source>
+        <translation>Nesprávný kód</translation>
+    </message>
+    <message>
+        <location filename="../DeviceLockPad.qml" line="196"/>
+        <source>%1 of %2 attempts</source>
+        <translation>%1 z %2 pokusů</translation>
     </message>
     <message>
         <location filename="../DeviceLockPad.qml" line="210"/>
@@ -129,9 +127,9 @@
         <translation>Zámek zařízení není k dispozici</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="203"/>
-        <source>Change security code</source>
-        <translation>Změňte bezpečnostní kód</translation>
+        <location filename="../devicelock.qml" line="158"/>
+        <source>Auto lock device</source>
+        <translation>Automaticky zamknout zařízení</translation>
     </message>
     <message>
         <location filename="../devicelock.qml" line="194"/>
@@ -139,9 +137,9 @@
         <translation>Zobraovat upozornění na zamčené obrazovce</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="158"/>
-        <source>Auto lock device</source>
-        <translation>Automaticky zamknout zařízení</translation>
+        <location filename="../devicelock.qml" line="203"/>
+        <source>Change security code</source>
+        <translation>Změňte bezpečnostní kód</translation>
     </message>
 </context>
 </TS>
