@@ -45,7 +45,11 @@ void WiFiSettingsPlugin::onPoweredChanded(const bool& powered)
 {
     QString newStatus;
     if (powered) {
-        newStatus = tr("enabled");
+        if (m_wifiTech->connected()) {
+            newStatus = tr("connected");
+        } else {
+            newStatus = tr("diconnected");
+        }
     } else {
         newStatus = tr("disabled");
     }
