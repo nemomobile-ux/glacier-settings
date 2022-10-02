@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pl">
 <context>
     <name>NetworkDelegate</name>
     <message>
@@ -63,15 +61,6 @@
         <translation>Sieci bezprzewodowe</translation>
     </message>
     <message>
-        <source>enabled</source>
-        <translation type="vanished">włączone</translation>
-    </message>
-    <message>
-        <location filename="../wifisettingsplugin.cpp" line="54"/>
-        <source>disabled</source>
-        <translation>wyłączone</translation>
-    </message>
-    <message>
         <location filename="../wifisettingsplugin.cpp" line="49"/>
         <location filename="../wifisettingsplugin.cpp" line="67"/>
         <source>connected</source>
@@ -82,6 +71,11 @@
         <location filename="../wifisettingsplugin.cpp" line="69"/>
         <source>diconnected</source>
         <translation>rozłączono</translation>
+    </message>
+    <message>
+        <location filename="../wifisettingsplugin.cpp" line="54"/>
+        <source>disabled</source>
+        <translation>wyłączone</translation>
     </message>
     <message>
         <location filename="../wifisettingsplugin.h" line="35"/>
