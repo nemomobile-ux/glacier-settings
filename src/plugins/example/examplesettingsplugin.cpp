@@ -1,5 +1,5 @@
 #include "examplesettingsplugin.h"
 
-ExampleSettingsPlugin::ExampleSettingsPlugin()
+ExampleSettingsPlugin::ExampleSettingsPlugin(QObject* parent)
 {
 }
