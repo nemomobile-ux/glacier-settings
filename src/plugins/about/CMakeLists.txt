@@ -25,3 +25,14 @@ install(TARGETS about
 
 INSTALL(FILES ${PLUGINS_FILES}
     DESTINATION /usr/share/glacier-settings/plugins/about/)
+
+# Translations
+file(GLOB TS_FILES translations/*.ts)
+#set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_INSTALL_LOCALEDIR})
+qt5_add_translation(QM_FILES ${TS_FILES})
+add_custom_target(about_translations DEPENDS ${QM_FILES})
+add_dependencies(about about_translations)
+
+install(FILES ${QM_FILES}
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/translations)
+
