@@ -33,7 +33,6 @@ public:
     QString title() { return tr("Example"); }
     QString description() { return tr("Example settings plugin"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/example/example.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/example/example.svg"; }
     bool enabled() { return true; };
 };

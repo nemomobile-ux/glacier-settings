@@ -33,7 +33,6 @@ public:
     QString title() { return tr("Language"); }
     QString description() { return tr("Interface language"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/language/language.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/language/language.svg"; }
     bool enabled() { return true; };
 };

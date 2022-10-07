@@ -34,7 +34,6 @@ public:
     QString title() { return tr("About"); }
     QString description() { return "Information about device"; }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/about/about.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/about/about.svg"; }
     bool enabled() { return true; }
 };

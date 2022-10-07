@@ -38,7 +38,6 @@ public:
     GlacierSettingsPlugin::PluginCategory category();
     QString title();
     QString qmlPath();
-    QString translationPath();
     QString icon();
     bool enabled();
     bool valid() { return m_valid; }

@@ -34,7 +34,6 @@ public:
     QString title() { return tr("NFC"); }
     QString description() { return "Near field communication"; }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/nfc/nfc.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/nfc/nfc.svg"; }
     bool enabled() { return m_enabled; };
 

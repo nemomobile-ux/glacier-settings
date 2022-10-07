@@ -35,7 +35,6 @@ public:
     QString title() { return tr("Device lock"); }
     QString description() { return tr("Security settings"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg"; }
     bool enabled();
 

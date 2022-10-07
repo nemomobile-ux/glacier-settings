@@ -33,7 +33,6 @@ public:
     QString title() { return tr("USB"); }
     QString description() { return tr("Select usb mode"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/usb/usb.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/usb/usb.svg"; }
     bool enabled() { return true; }
 };

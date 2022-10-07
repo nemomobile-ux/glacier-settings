@@ -35,7 +35,6 @@ public:
     QString title() { return tr("WiFi"); }
     QString description() { return m_description; }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/wifi/wifi.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/wifi/wifi.svg"; }
     bool enabled() { return m_enabled; };
 

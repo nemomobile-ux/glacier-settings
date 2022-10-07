@@ -33,7 +33,6 @@ public:
     QString title() { return tr("Sounds"); }
     QString description() { return tr("Ringtones and sound level"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/sounds/sounds.qml"; }
-    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/sounds/sounds.svg"; }
     bool enabled() { return true; };
 };
