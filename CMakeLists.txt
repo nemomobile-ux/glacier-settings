@@ -20,7 +20,6 @@ find_package(Qt5 COMPONENTS Gui Qml Quick Positioning LinguistTools DBus REQUIRE
 find_package(Qt5QuickCompiler)
 find_package(Glacier 0.8 COMPONENTS App REQUIRED)
 
-option(MER_DEVMODE "Install mer developer mode plugin" OFF)
 option(BUILD_EXAMPLES "Install example plugin" OFF)
 pkg_search_module(SYSSETTINGS REQUIRED systemsettings)
 
