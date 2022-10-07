@@ -32,7 +32,7 @@ install(TARGETS wifi
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)
 
 INSTALL(FILES ${PLUGINS_FILES}
-    DESTINATION /usr/share/glacier-settings/plugins/wifi/)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins/wifi/)
 
 # Translations
 file(GLOB TS_FILES translations/*.ts)

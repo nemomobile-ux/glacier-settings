@@ -24,7 +24,7 @@ install(TARGETS about
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)
 
 INSTALL(FILES ${PLUGINS_FILES}
-    DESTINATION /usr/share/glacier-settings/plugins/about/)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins/about/)
 
 # Translations
 file(GLOB TS_FILES translations/*.ts)

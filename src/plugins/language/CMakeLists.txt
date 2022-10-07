@@ -24,7 +24,7 @@ install(TARGETS ${PLUGIN}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)
 
 INSTALL(FILES ${PLUGINS_FILES}
-    DESTINATION /usr/share/glacier-settings/plugins/${PLUGIN}/)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins/${PLUGIN}/)
 
 file(GLOB LANGLIST_FILES supported-languages/*.conf)
 install(FILES ${LANGLIST_FILES}
