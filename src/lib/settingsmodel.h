@@ -38,7 +38,6 @@ public:
     QHash<int, QByteArray> roleNames() const { return hash; }
 
     static QMetaEnum defaultCategories;
-    static QMap<QString, QString> extraTranlation;
 
     Q_INVOKABLE bool pluginAviable(QString name);
 

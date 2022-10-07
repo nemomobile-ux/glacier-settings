@@ -33,6 +33,7 @@ public:
     QString title() { return tr("Storage"); }
     QString description() { return tr("Free space on device"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/storage/storage.qml"; }
+    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/storage/storage.svg"; }
     bool enabled() { return true; }
 };

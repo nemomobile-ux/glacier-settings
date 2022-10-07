@@ -52,8 +52,6 @@
 
 QMetaEnum SettingsModel::defaultCategories = QMetaEnum::fromType<GlacierSettingsPlugin::PluginCategory>();
 
-QMap<QString, QString> SettingsModel::extraTranlation = QMap<QString, QString>();
-
 SettingsModel::SettingsModel(QObject* parent)
     : QAbstractListModel(parent)
     , m_pluginManager(new SettingsPluginManager())

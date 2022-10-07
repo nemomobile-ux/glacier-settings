@@ -33,6 +33,7 @@ public:
     QString title() { return tr("Developer mode"); }
     QString description() { return tr("Developer tools"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/developermode/developermode.qml"; }
+    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/developermode/developermode.svg"; }
     bool enabled() { return true; };
 };

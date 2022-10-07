@@ -34,6 +34,7 @@ public:
     QString title() { return tr("Date and time"); }
     QString description() { return tr("Setup date time and timezone"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/datetime/datetime.qml"; }
+    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/datetime/datetime.svg"; }
     bool enabled() { return true; };
 };

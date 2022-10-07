@@ -17,6 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
+#include <QGuiApplication>
+#include <QTranslator>
 #include "settingspluginhost.h"
 
 SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
@@ -34,6 +36,19 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
         } else {
             m_valid = true;
         }
+
+        QTranslator* myappTranslator = new QTranslator(qApp);
+        if (myappTranslator->load(QLocale(), m_plugin->id(), QLatin1String("_"), m_plugin->translationPath() )) {
+            qDebug() << "Plugin " << m_plugin->id() << " translation.load() success" << QLocale::system().name();
+            if (qApp->installTranslator(myappTranslator)) {
+                qDebug() << "Plugin " << m_plugin->id() << " installTranslator() success" << QLocale::system().name();
+            } else {
+                qWarning() << "Plugin " << m_plugin->id() << " installTranslator() failed" << QLocale::system().name();
+            }
+        } else {
+            qWarning() << "Plugin " << m_plugin->id() << " translation.load() failed" << QLocale::system().name();
+        }
+
     } else {
         qDebug() << "Plugin not found" << fileName << pluginLoader.errorString();
     }
@@ -74,6 +89,14 @@ QString SettingsPluginHost::qmlPath()
         return "";
     }
     return m_plugin->qmlPath();
+}
+
+QString SettingsPluginHost::translationPath()
+{
+    if (!m_plugin) {
+        return "";
+    }
+    return m_plugin->translationPath();
 }
 
 QString SettingsPluginHost::icon()

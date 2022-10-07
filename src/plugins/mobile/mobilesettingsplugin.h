@@ -34,6 +34,7 @@ public:
     QString title() { return tr("Mobile"); }
     QString description() { return tr("Operators and simcard"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml"; }
+    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg"; }
     bool enabled();
 

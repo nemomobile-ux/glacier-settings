@@ -33,6 +33,7 @@ public:
     QString title() { return tr("Display"); }
     QString description() { return tr("Brightness, orientation and theme"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/display/display.qml"; }
+    QString translationPath() { return "/usr/share/glacier-settings/translations/"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/display/display.svg"; }
     bool enabled() { return true; };
 };
