@@ -1,39 +1,36 @@
-SET(PLUGIN sounds)
-
-SET(SRC ${PLUGIN}settingsplugin.cpp)
-SET(HEADERS ${PLUGIN}settingsplugin.h)
+SET(SRC examplesettingsplugin.cpp)
+SET(HEADERS examplesettingsplugin.h)
 
 SET(PLUGINS_FILES
-    ${PLUGIN}.qml
-    ${PLUGIN}.svg
-    SelectRingTonePage.qml
-    SoundLabel.qml)
+    example.qml
+    example.svg
+)
 
 set(CMAKE_AUTOMOC ON)
 
 add_definitions(-DQT_PLUGIN)
 
-add_library(${PLUGIN} MODULE ${SRC} ${HEADERS})
+add_library(example MODULE ${SRC} ${HEADERS})
 
-target_link_libraries(${PLUGIN}
+target_link_libraries(example
     Qt5::Gui
     Qt5::Qml
     Qt5::Quick
-    Qt5::DBus
     Glacier::Settings)
 
-install(TARGETS ${PLUGIN}
+install(TARGETS example
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)
 
 INSTALL(FILES ${PLUGINS_FILES}
-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins/${PLUGIN}/)
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins/example/)
 
 # Translations
 file(GLOB TS_FILES translations/*.ts)
 #set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_INSTALL_LOCALEDIR})
 qt5_add_translation(QM_FILES ${TS_FILES})
-add_custom_target(sounds_translations DEPENDS ${QM_FILES})
-add_dependencies(sounds sounds_translations)
+add_custom_target(example_translations DEPENDS ${QM_FILES})
+add_dependencies(example example_translations)
 
 install(FILES ${QM_FILES}
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/translations)
+

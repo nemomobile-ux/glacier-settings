@@ -38,6 +38,7 @@ public:
 
     virtual ~GlacierSettingsPlugin() { }
     virtual PluginCategory category() = 0;
+    virtual QString id() = 0;
     virtual QString title() = 0;
     virtual QString description() = 0;
     virtual QString qmlPath() = 0;
