@@ -8,6 +8,11 @@
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../aboutsettingsplugin.h" line="35"/>
+        <source>Information about device</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>about</name>

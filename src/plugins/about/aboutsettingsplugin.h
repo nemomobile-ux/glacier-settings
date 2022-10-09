@@ -32,7 +32,7 @@ public:
     PluginCategory category() { return PluginCategory::Info; }
     QString id() { return "about"; }
     QString title() { return tr("About"); }
-    QString description() { return "Information about device"; }
+    QString description() { return tr("Information about device"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/about/about.qml"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/about/about.svg"; }
     bool enabled() { return true; }
