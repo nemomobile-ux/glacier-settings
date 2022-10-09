@@ -6,6 +6,11 @@
         <source>About</source>
         <translation>O aplikaci</translation>
     </message>
+    <message>
+        <location filename="../aboutsettingsplugin.h" line="35"/>
+        <source>Information about device</source>
+        <translation>Informace o zařízení</translation>
+    </message>
 </context>
 <context>
     <name>about</name>
