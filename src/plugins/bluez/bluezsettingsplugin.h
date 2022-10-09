@@ -31,7 +31,7 @@ public:
     PluginCategory category() { return PluginCategory::Network; }
     QString id() { return "bluez"; }
     QString title() { return tr("Bluetooth"); }
-    QString description() { return "Manage bluetooth connection"; }
+    QString description() { return tr("Manage bluetooth connection"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/bluez/bluez.qml"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/bluez/bluez.svg"; }
     bool enabled() { return true; };

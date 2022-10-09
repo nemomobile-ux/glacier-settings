@@ -8,6 +8,11 @@
         <source>Bluetooth</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../bluezsettingsplugin.h" line="34"/>
+        <source>Manage bluetooth connection</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>bluez</name>
