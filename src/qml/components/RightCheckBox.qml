@@ -38,14 +38,14 @@ Item {
 
     Label {
         id: rightCheckBoxLabel
-        width: parent.width
+        width: parent.width - rightCheckBoxCheckBox.width
         anchors {
-            left: rightCheckBox.left
+            left: parent.left
+            leftMargin: Theme.itemHeightLarge/2
             right: rightCheckBoxCheckBox.left
             verticalCenter: parent.verticalCenter
         }
         wrapMode: Text.Wrap
-        font.bold: true
     }
 
 
@@ -53,6 +53,7 @@ Item {
         id: rightCheckBoxCheckBox
         anchors {
             right: rightCheckBox.right
+            rightMargin: Theme.itemHeightMedium/2
             verticalCenter: rightCheckBoxLabel.verticalCenter
         }
 
