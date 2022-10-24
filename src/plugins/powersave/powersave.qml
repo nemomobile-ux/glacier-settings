@@ -29,7 +29,7 @@ import org.nemomobile.systemsettings 1.0
 import Glacier.Controls.Settings 1.0
 
 Page {
-    id: wifiPage
+    id: powerSavePage
 
     headerTools: HeaderToolsLayout {
         id: header
@@ -43,16 +43,17 @@ Page {
         defaultValue: 5
     }
 
+    BatteryStatus{
+        id: batteryStatus
+    }
+
     DisplaySettings {
         id: displaySettings
 
         onPowerSaveModeThresholdChanged: {
-            console.log("powerSaveModeThreshold: "+displaySettings.powerSaveModeThreshold)
             for (var i = 0; i < thresholdRollerModel.count; ++i) {
                 if(thresholdRollerModel.get(i).name == displaySettings.powerSaveModeThreshold) {
                     powerSaveModeThresholdRoller.currentIndex = i
-
-                    console.log("powerSaveModeThresholdRoller: " + powerSaveModeThresholdRoller.currentIndex+" "+thresholdRollerModel.get(i).name)
                 }
             }
         }
@@ -67,9 +68,44 @@ Page {
         ListElement { name: "20"; }
     }
 
+    ListModel{
+        id: chargerModeModel
+        ListElement {name: qsTr("Enabled")}
+        ListElement {name: qsTr("Disabled")}
+        ListElement {name: qsTr("Apply thresholds")}
+        ListElement {name: qsTr("Apply thresholds after full")}
+    }
+
+    Label{
+        id: unknowChargerStatusLabel
+        text: qsTr("Unknow battery status")
+        anchors.centerIn: parent
+        visible: !powerStatusColumn.visible
+    }
+
     SettingsColumn{
-        id: forcePowerSaveColumn
+        id: powerStatusColumn
         spacing: Theme.itemSpacingLarge
+        visible: batteryStatus.status != BatteryStatus.BatteryStatusUnknown
+
+        GlacierRoller{
+            id: chargerModeRoller
+            width: parent.width
+            clip: true
+            label: qsTr("Charger mode")
+            model: chargerModeModel
+            delegate: GlacierRollerItem{
+                Text{
+                    height: chargerModeRoller.itemHeight
+                    verticalAlignment: Text.AlignVCenter
+                    text: name
+                    color: Theme.textColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    font.bold: (chargerModeRoller.activated && chargerModeRoller.currentIndex === index)
+                }
+            }
+            onCurrentIndexChanged: batteryStatus.chargingMode = currentIndex
+        }
 
         RightCheckBox {
             id: forcePowerSaveCheckBox
@@ -81,12 +117,13 @@ Page {
                     displaySettings.powerSaveModeEnabled = true
                 }
             }
+            visible: batteryStatus.chargingMode != BatteryStatus.DisableCharging
         }
 
         GlacierRoller {
             id: powerSaveModeThresholdRoller
             width: parent.width
-
+            visible: batteryStatus.chargingMode != BatteryStatus.DisableCharging
             clip: true
             model: thresholdRollerModel
             label: qsTr("Power save mode battery level threshold")
@@ -106,14 +143,26 @@ Page {
 
         }
 
+        ListViewItemWithActions{
+            id: batteryHealth
+            showNext: true
+            iconVisible: false
+            label: qsTr("Battery health")
+            description: qsTr("Set charging limits to increase battery life")
+            onClicked: pageStack.push(Qt.resolvedUrl("BatteryHealth.qml"));
+
+            visible: batteryStatus.chargingMode === BatteryStatus.ApplyChargingThresholds
+                     || batteryStatus.chargingMode === BatteryStatus.ApplyChargingThresholdsAfterFull
+        }
+
         Component.onCompleted: {
             for (var i = 0; i < thresholdRollerModel.count; ++i) {
                 if(thresholdRollerModel.get(i).name == displaySettings.powerSaveModeThreshold) {
-                    powerSaveModeThresholdRoller.currentIndex = i
-
-                    console.log("powerSaveModeThresholdRoller: " + powerSaveModeThresholdRoller.currentIndex+" "+thresholdRollerModel.get(i).name)
+                    powerSaveModeThresholdRoller.currentIndex = i        
                 }
             }
+
+            chargerModeRoller.currentIndex = batteryStatus.chargingMode
         }
     }
 }

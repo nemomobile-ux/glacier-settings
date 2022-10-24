@@ -5,6 +5,7 @@ SET(HEADERS ${PLUGIN}settingsplugin.h)
 
 SET(PLUGINS_FILES
     ${PLUGIN}.qml
+    BatteryHealth.qml
     ${PLUGIN}.svg)
 
 set(CMAKE_AUTOMOC ON)
