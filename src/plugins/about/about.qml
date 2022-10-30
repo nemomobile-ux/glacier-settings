@@ -193,7 +193,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: ((deviceInfo.wlanMacAddress != undefined) && (deviceInfo.wlanMacAddress !== "")) ? deviceInfo.wlanMacAddress : "n/a"
+                text: ((deviceInfo.wlanMacAddress != undefined) && (deviceInfo.wlanMacAddress !== "")) ? deviceInfo.wlanMacAddress : qsTr("n/a")
             }
         }
     }
