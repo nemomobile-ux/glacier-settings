@@ -41,9 +41,6 @@ install(TARGETS glacier-settings RUNTIME
 install(FILES ${QML_PLUGINS}
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings/plugins)
 
-install(DIRECTORY qml/img/
-    DESTINATION ${QT_INSTALL_QML}/Glacier/Controls/img)
-
 install(DIRECTORY qml/components/
     DESTINATION ${QT_INSTALL_QML}/Glacier/Controls/Settings)
 
