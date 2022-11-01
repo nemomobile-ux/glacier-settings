@@ -61,7 +61,7 @@
     </message>
     <message>
         <location filename="../powersave.qml" line="81"/>
-        <source>Unknow battery status</source>
+        <source>Unknown battery status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

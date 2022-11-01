@@ -77,8 +77,8 @@ Page {
     }
 
     Label{
-        id: unknowChargerStatusLabel
-        text: qsTr("Unknow battery status")
+        id: UnknownChargerStatusLabel
+        text: qsTr("Unknown battery status")
         anchors.centerIn: parent
         visible: !powerStatusColumn.visible
     }
