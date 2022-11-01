@@ -28,7 +28,7 @@ import org.nemomobile.systemsettings 1.0
 
 ToolButton {
     id: volumeButton
-    iconSource: "../img/volume.svg"
+    iconSource: "image://theme/volume-up"
     showCounter: false
 
 
