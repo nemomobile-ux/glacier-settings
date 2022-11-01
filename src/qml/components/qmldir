@@ -2,7 +2,6 @@ module Glacier.Controls.Settings
 
 AiroplaneButton 1.0 AiroplaneButton.qml
 RightCheckBox 1.0 RightCheckBox.qml
-SettingsClickedItem 1.0 SettingsClickedItem.qml
 SettingsColumn 1.0 SettingsColumn.qml
 SettingsService 1.0 SettingsService.qml
 VolumeButton 1.0 VolumeButton.qml

@@ -85,30 +85,34 @@ Page {
                 }
             }
 
-            SettingsClickedItem{
+
+            ListViewItemWithActions {
                 id: selectDate
                 height: visible ? Theme.itemHeightLarge : 0
                 width: parent.width
+                iconVisible: false
                 visible: !dateTimeSettings.automaticTimeUpdate
-                description: qsTr("Select date")
-                subDescription: Qt.formatDateTime(new Date(), "dd-MM-yyyy");
+                label: qsTr("Select date")
+                description: Qt.formatDateTime(new Date(), "dd-MM-yyyy");
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("SetupDate.qml"));
                 }
+
             }
 
-
-            SettingsClickedItem{
+            ListViewItemWithActions {
                 id: selectTime
                 height: visible ? Theme.itemHeightLarge : 0
                 width: parent.width
+                iconVisible: false
                 visible: !dateTimeSettings.automaticTimeUpdate
-                description: qsTr("Select time")
-                subDescription: Qt.formatDateTime(new Date(), "HH:mm");
+                label: qsTr("Select time")
+                description: Qt.formatDateTime(new Date(), "HH:mm");
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("SetupTime.qml"));
                 }
             }
+
 
             RightCheckBox{
                 id: automaticTimezoneUpdateCheckbox
@@ -120,13 +124,14 @@ Page {
                 }
             }
 
-            SettingsClickedItem{
+            ListViewItemWithActions {
                 id: selectTimeZone
                 height: visible ? Theme.itemHeightLarge : 0
                 width: parent.width
+                iconVisible: false
                 visible: !dateTimeSettings.automaticTimezoneUpdate
-                description: qsTr("Current time zone")
-                subDescription: dateTimeSettings.timezone
+                label: qsTr("Current time zone")
+                description: dateTimeSettings.timezone
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
                 }
