@@ -91,7 +91,7 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
     QVariantList pluginsInCat;
 
     for (GlacierSettingsPlugin* item : m_pluginManager->getPlugins()) {
-        if(item == nullptr) {
+        if (item == nullptr) {
             continue;
         }
 

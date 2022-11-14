@@ -18,9 +18,9 @@
  */
 
 #include "settingspluginhost.h"
+#include <QDebug>
 #include <QGuiApplication>
 #include <QTranslator>
-#include <QDebug>
 
 SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
     : QObject(parent)

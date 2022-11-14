@@ -19,12 +19,12 @@
 
 #include "settingspluginmanager.h"
 
-#include <QDir>
 #include <QDebug>
+#include <QDir>
 
 SettingsPluginManager::SettingsPluginManager()
 {
-    QDir pluginsDir(QString(INSTALLLIBDIR)+"/glacier-settings/");
+    QDir pluginsDir(QString(INSTALLLIBDIR) + "/glacier-settings/");
     for (const QString& file : pluginsDir.entryList(QDir::Files)) {
         SettingsPluginHost* shp = new SettingsPluginHost(pluginsDir.absoluteFilePath(file), this);
         if (shp) {
