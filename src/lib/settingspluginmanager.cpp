@@ -20,6 +20,7 @@
 #include "settingspluginmanager.h"
 
 #include <QDir>
+#include <QDebug>
 
 SettingsPluginManager::SettingsPluginManager()
 {

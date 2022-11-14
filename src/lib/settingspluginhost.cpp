@@ -20,6 +20,7 @@
 #include "settingspluginhost.h"
 #include <QGuiApplication>
 #include <QTranslator>
+#include <QDebug>
 
 SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
     : QObject(parent)
