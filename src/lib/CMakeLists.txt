@@ -20,6 +20,7 @@ set(PUBLIC_HEADERS
 
 add_library(glaciersettings SHARED ${SRC} ${HEADERS} ${PUBLIC_HEADERS})
 add_library(Glacier::Settings ALIAS glaciersettings)
+add_definitions(-DINSTALLLIBDIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
 
 target_include_directories(glaciersettings PUBLIC
     ${SYSSETTINGS_INCLUDE_DIRS})
