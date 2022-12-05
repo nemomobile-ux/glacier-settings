@@ -28,7 +28,6 @@
 #include <QTranslator>
 
 #include "glaciersettingsplugin.h"
-#include "settingspluginhost.h"
 
 /*
  * Orgeding category DRAFT
@@ -78,12 +77,27 @@ bool SettingsModel::pluginAviable(QString name)
     }
 
     for (GlacierSettingsPlugin* plugin : m_pluginManager->getPlugins()) {
-        if (plugin->title() == name) {
+        if (plugin->id() == name) {
             return true;
         }
     }
 
     return false;
+}
+
+QString SettingsModel::pluginQmlPath(QString name)
+{
+    if (name.length() == 0) {
+        return QString();
+    }
+
+    for (GlacierSettingsPlugin* plugin : m_pluginManager->getPlugins()) {
+        if (plugin->id() == name) {
+            return plugin->qmlPath();
+        }
+    }
+
+    return QString();
 }
 
 QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const

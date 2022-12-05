@@ -40,6 +40,7 @@ public:
     static QMetaEnum defaultCategories;
 
     Q_INVOKABLE bool pluginAviable(QString name);
+    Q_INVOKABLE QString pluginQmlPath(QString name);
 
 private slots:
     void updatePluginData(QString pluginId);

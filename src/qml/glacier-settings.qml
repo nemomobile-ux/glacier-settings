@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -44,7 +44,7 @@ ApplicationWindow{
 
         onOpenSettingsPage: {
             if(settingsModel.pluginAviable(plugin)) {
-                pageStack.push(Qt.resolvedUrl("plugins/"+plugin+"/"+plugin+".qml"))
+                pageStack.push(Qt.resolvedUrl(settingsModel.pluginQmlPath(plugin)))
                 main.raise()
             } else {
                 console.error("Wrong plugin "+plugin)
