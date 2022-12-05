@@ -44,7 +44,7 @@ ApplicationWindow{
 
         onOpenSettingsPage: {
             if(settingsModel.pluginAviable(plugin)) {
-                pageStack.push(Qt.resolvedUrl(settingsModel.pluginQmlPath(plugin)))
+                pageStack.push(Qt.resolvedUrl("file:/"+settingsModel.pluginQmlPath(plugin)))
                 main.raise()
             } else {
                 console.error("Wrong plugin "+plugin)
