@@ -6,6 +6,11 @@
         <source>About</source>
         <translation>О продукте</translation>
     </message>
+    <message>
+        <location filename="../aboutsettingsplugin.h" line="35"/>
+        <source>Information about device</source>
+        <translation>Информация об устройстве</translation>
+    </message>
 </context>
 <context>
     <name>about</name>
