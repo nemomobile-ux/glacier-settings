@@ -6,6 +6,11 @@
         <source>Bluetooth</source>
         <translation>Bluetooth</translation>
     </message>
+    <message>
+        <location filename="../bluezsettingsplugin.h" line="34"/>
+        <source>Manage bluetooth connection</source>
+        <translation>Управление соединениями Bluetooth</translation>
+    </message>
 </context>
 <context>
     <name>bluez</name>
@@ -17,7 +22,7 @@
     <message>
         <location filename="../bluez.qml" line="89"/>
         <source>Bluetooth adapters not available</source>
-        <translation>Блютус адаптеры не найдены</translation>
+        <translation>Bluetooth адаптеры не найдены</translation>
     </message>
     <message>
         <location filename="../bluez.qml" line="109"/>
