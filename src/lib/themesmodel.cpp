@@ -62,7 +62,7 @@ QVariant ThemesModel::data(const QModelIndex& index, int role) const
         return keys[index.row()];
     }
 
-    if (role == Qt::UserRole) {
+    if (role == Qt::UserRole + 1) {
         return m_themes.value(keys[index.row()]);
     }
 

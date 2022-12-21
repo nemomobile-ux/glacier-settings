@@ -212,11 +212,20 @@ Page {
                         text: name
                         color: Theme.textColor
                         font.pixelSize: Theme.fontSizeMedium
-                        font.bold: (themeRoller.activated && path == Theme.themePath)
+                        font.bold: (themeRoller.activated && path === Theme.themePath)
                     }
 
                     Component.onCompleted: {
-                        if(path == Theme.themePath) {
+                        if(path === Theme.themePath) {
+                            themeRoller.currentIndex =  index
+                        }
+                    }
+                }
+
+                Component.onCompleted: {
+                    for (var index = 0; index < themesModel.rowCount(); index++) {
+                        var path = themesModel.getPath(index)
+                        if (path === Theme.themePath) {
                             themeRoller.currentIndex =  index
                         }
                     }
