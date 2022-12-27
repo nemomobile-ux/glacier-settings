@@ -17,127 +17,99 @@
  * Boston, MA 02110-1301, USA.
  */
 import QtQuick 2.6
-
 import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
-
 import org.nemomobile.systemsettings 1.0
-
 import Glacier.Controls.Settings 1.0
 
 Page {
     id: usbPage
 
-    headerTools: HeaderToolsLayout {
-        id: header
-        showBackButton: true;
-        title: qsTr("USB")
+    function formatMode(mode) {
+        switch (mode) {
+        case "ask":
+            return qsTr("Always ask");
+        case "mtp_mode":
+            return qsTr("MTP");
+        case "charging_only":
+            return qsTr("Charging only");
+        case "connection_sharing":
+            return qsTr("Connection sharing");
+        case "developer_mode":
+            return qsTr("Developer mode");
+        case "busy":
+            return qsTr("Busy");
+        default:
+            return mode;
+        }
     }
 
-    ListModel{
+    ListModel {
         id: modesModel
-        ListElement{
-            label: qsTr("Ask")
-            mode: "ask"
-        }
-        ListElement {
-            label: qsTr("Connection sharing")
-            mode: "connection_sharing"
-        }
-        ListElement {
-            label: qsTr("MTP")
-            mode: "mtp_mode"
-        }
-        ListElement{
-            label: qsTr("Charging only")
-            mode: "charging_only"
-        }
-        ListElement{
-            label: qsTr("Developer mode")
-            mode: "developer_mode"
-        }
     }
 
-    USBSettings{
+    USBSettings {
         id: usbSettings
 
         onSupportedModesChanged: {
-            for(var i = 0; i <= modesModel.count-1; i++) {
-                if(modesModel.get(i).mode === usbSettings.configMode) {
-                    usbModeRoller.currentIndex = i;
-                }
+            modesModel.clear();
+            modesModel.append({
+                "label": formatMode("ask"),
+                "mode": "ask"
+            });
+            for (var i = 0; i < usbSettings.supportedModes.length; i++) {
+                var mode = usbSettings.supportedModes[i];
+                var label = formatMode(mode);
+                modesModel.append({
+                    "label": label,
+                    "mode": mode
+                });
             }
-        }
-
-        onCurrentModeChanged: {
-            currentModeLabel.text = qsTr("Usb mode: ") + formatMode(usbSettings.configMode)
         }
     }
 
-    Flickable{
-        width: parent.width
-        height: parent.height-size.dp(80)
+    Label {
+        anchors.fill: parent
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: Theme.fontSizeLarge
+        font.family: Theme.fontFamily
+        color: Theme.textColor
+        text: qsTr("No USB mode available")
+        visible: modesModel.count === 0
+    }
 
+    Spinner {
+        anchors.centerIn: parent
+        enabled: usbSettings.currentMode === "busy"
+        visible: enabled
+    }
+
+    ListView {
+        anchors.fill: parent
         clip: true
-        anchors{
-            top: parent.top
-            topMargin: size.dp(80)
-            left: parent.left
-            leftMargin: size.dp(20)
-        }
+        model: modesModel
 
-        Column{
-            width: parent.width
-            spacing: Theme.itemSpacingMedium
-
-            Label{
-                id: currentModeLabel
-                text: qsTr("Usb mode: ") + formatMode(usbSettings.configMode)
-            }
-
-            GlacierRoller {
-                id: usbModeRoller
-                width: parent.width
-
-                clip: true
-                model: modesModel
-                label: qsTr("Select USB mode")
-                delegate: GlacierRollerItem{
-                    id: item
-                    Text{
-                        height: usbModeRoller.itemHeight
-                        verticalAlignment: Text.AlignVCenter
-                        text: label
-                        color: Theme.textColor
-                        font.pixelSize: Theme.fontSizeMedium
-                        font.bold: (usbModeRoller.activated && usbModeRoller.currentIndex === index)
-                    }
-                }
-
-                onCurrentIndexChanged: {
-                    usbSettings.configMode = modesModel.get(currentIndex).mode
-                }
+        delegate: ListViewItemWithActions {
+            label: model.label
+            description: usbSettings.currentMode === model.mode ? qsTr("Active") : ""
+            showNext: false
+            iconVisible: false
+            selected: usbSettings.configMode === model.mode
+            onClicked: {
+                usbSettings.configMode = model.mode;
+                usbSettings.currentMode = usbSettings.configMode;
             }
         }
+
     }
 
-    function formatMode(mode) {
-            switch(mode) {
-            case "ask":
-                return qsTr("Always ask")
-            case "mtp_mode":
-                return qsTr("MTP")
-            case "charging_only":
-                return qsTr("Charging only")
-            case "connection_sharing":
-                return qsTr("Connection sharing")
-            case "developer_mode":
-                return qsTr("Developer mode")
-            case "busy":
-                return qsTr("Busy")
-            default:
-                return mode
-            }
-        }
+    headerTools: HeaderToolsLayout {
+        id: header
+
+        showBackButton: true
+        title: qsTr("USB")
+    }
+
 }
