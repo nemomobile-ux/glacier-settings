@@ -99,7 +99,7 @@ Page {
             selected: usbSettings.configMode === model.mode
             onClicked: {
                 usbSettings.configMode = model.mode;
-                usbSettings.currentMode = usbSettings.configMode;
+                usbSettings.currentMode = model.mode;
             }
         }
 
