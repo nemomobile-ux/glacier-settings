@@ -38,42 +38,26 @@ Page {
 
     OfonoConnMan {
         id: cellularNetworkTechnology
-        modemPath:ofonoManager.defaultModem
+        modemPath: ofonoManager.defaultModem
+    }
+
+    OfonoContextConnection {
+        id: contextConnection
+        contextPath: (cellularNetworkTechnology.contexts !== undefined && cellularNetworkTechnology.contexts.length > 0) ? cellularNetworkTechnology.contexts[0] : ""
     }
 
     OfonoRadioSettings{
         id: radioSettings
-        modemPath:ofonoManager.defaultModem
+        modemPath: ofonoManager.defaultModem
     }
 
     OfonoManager {
         id: ofonoManager
-        onModemsChanged: {
-            recalcModel()
-        }
-
-        Component.onCompleted: {
-            recalcModel()
-        }
-
-        function recalcModel() {
-            mobilePage.modems = [];
-            for(var i = 0; i < ofonoManager.modems.length; i++) {
-                mobilePage.modems.push(modems[i]);
-            }
-            simList.model = mobilePage.modems;
-            if(mobilePage.modems.length > 0) {
-                noSimLabel.visible = false;
-            } else {
-                noSimLabel.visible = true;
-            }
-        }
     }
-
 
     Label{
         id: noSimLabel
-        visible: mobilePage.modems.length === 0
+        visible: ofonoManager.modems.length === 0
         text: qsTr("SIM cards unavailable")
         anchors.centerIn: parent
     }
@@ -89,7 +73,7 @@ Page {
             width: parent.width
             height: childrenRect.height
 
-            model:  mobilePage.modems
+            model: ofonoManager.modems
 
             clip: true
 
@@ -118,7 +102,7 @@ Page {
                     modemPath: modelData
                 }
 
-                OfonoNetworkRegistration{
+                OfonoNetworkRegistration {
                     id: cellularRegistration
                     modemPath: modelData
 
@@ -131,11 +115,7 @@ Page {
                     ActionButton {
                         iconSource: "image://theme/power-off"
                         onClicked: {
-                            if(modemId.powered) {
-                                modemId.powered = false
-                            } else {
-                                modemId.powered = true
-                            }
+                            modemId.powered = !modemId.powered;
                         }
                     }
                 ]
@@ -143,16 +123,13 @@ Page {
         }
 
         RightCheckBox {
-            id: autoConnectCheckBox
-            width: parent.width
-            height: Theme.itemHeightLarge
-
-            checked: cellularNetworkTechnology.powered
+            id: contextConnectionActiveCheckbox
             label: qsTr("Connect to internet")
-
+            checked: contextConnection.active
             onClicked: {
-                cellularNetworkTechnology.powered = !cellularNetworkTechnology.powered
+                contextConnection.active = !contextConnection.active
             }
+
         }
 
         RightCheckBox {
@@ -182,7 +159,7 @@ Page {
                     text: modelData
                     color: Theme.textColor
                     font.pixelSize: Theme.fontSizeMedium
-                    font.bold: modelData == radioSettings.technologyPreference
+                    font.bold: modelData === radioSettings.technologyPreference
                 }
             }
 
