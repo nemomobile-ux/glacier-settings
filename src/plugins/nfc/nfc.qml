@@ -56,10 +56,6 @@ Page {
             id: nfcCheckBox
             checked: nfcSettings.enabled
             label: qsTr("Enable NFC")
-            anchors {
-                right: nfcEnable.right
-                verticalCenter: nameLabel.verticalCenter
-            }
 
             onClicked: {
                 nfcSettings.enabled = nfcCheckBox.checked
