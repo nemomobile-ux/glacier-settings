@@ -47,36 +47,21 @@ Page {
         height: parent.height
 
         model: languageModel
-        delegate: Rectangle{
-            width: parent.width
-            height: Theme.itemHeightLarge
-
-            color: (index === languageModel.currentIndex) ? Theme.accentColor : "transparent"
-            Label {
-                color: Theme.textColor
-                text: name
-                anchors{
-                    left: parent.left
-                    leftMargin: Theme.itemSpacingSmall
-                    verticalCenter: parent.verticalCenter
-                }
-
-                font.pixelSize: Theme.fontSizeMedium
-                clip: true
-            }
-
-            MouseArea{
-                anchors.fill: parent
-                onClicked: {
-                    if(index !== languageModel.currentIndex)
-                    {
-                        languageDialog.locale = locale;
-                        languageDialog.localeName = name;
-                        languageDialog.visible = true;
-                    }
+        delegate: ListViewItemWithActions {
+            label: model.name
+            selected: (index === languageModel.currentIndex)
+            showNext: false
+            iconVisible: false
+            onClicked: {
+                if(index !== languageModel.currentIndex) {
+                    languageDialog.locale = locale;
+                    languageDialog.localeName = name;
+                    languageDialog.visible = true;
                 }
             }
+
         }
+
     }
 
     QueryDialog {
