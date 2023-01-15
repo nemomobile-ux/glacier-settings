@@ -44,8 +44,12 @@ Item {
             verticalCenter: parent.verticalCenter
         }
         wrapMode: Text.Wrap
-    }
 
+        MouseArea {
+            anchors.fill: parent;
+            onClicked: rightCheckBoxCheckBox.checked = !rightCheckBoxCheckBox.checked
+        }
+    }
 
     CheckBox {
         id: rightCheckBoxCheckBox
