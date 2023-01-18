@@ -47,7 +47,10 @@ Item {
 
         MouseArea {
             anchors.fill: parent;
-            onClicked: rightCheckBoxCheckBox.checked = !rightCheckBoxCheckBox.checked
+            onClicked: {
+                rightCheckBoxCheckBox.checked = !rightCheckBoxCheckBox.checked
+                rightCheckBox.clicked();
+            }
         }
     }
 
