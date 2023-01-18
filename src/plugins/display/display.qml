@@ -66,12 +66,15 @@ Page {
         id: orientationModel
         ListElement{
             name: qsTr("Dynamic")
+            value: "dynamic"
         }
         ListElement{
             name: qsTr("Portrait")
+            value: "portrait"
         }
         ListElement{
             name: qsTr("Landscape")
+            value: "landscape"
         }
     }
 
@@ -186,14 +189,14 @@ Page {
                     }
 
                     Component.onCompleted: {
-                        if(name.toLowerCase() == displaySettings.orientationLock) {
+                        if(value === displaySettings.orientationLock) {
                             orientationLockRoller.currentIndex =  index
                         }
                     }
                 }
 
                 onCurrentIndexChanged: {
-                    displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).name.toLowerCase()
+                    displaySettings.orientationLock = orientationModel.get(orientationLockRoller.currentIndex).value
                 }
             }
 
