@@ -41,7 +41,8 @@ install(FILES data/org.nemomobile.qmlsettings.service
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/dbus-1/services)
 install(FILES glacier-settings.png
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings)
-
+install(FILES data/glacier-settings-prestart.service
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/systemd/user/)
 file(GLOB LANGLIST_FILES ./configs/supported-languages/*.conf)
 install(FILES ${LANGLIST_FILES}
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/supported-languages)

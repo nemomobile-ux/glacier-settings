@@ -1,0 +1,8 @@
+[Unit]
+Description=Glacier dialer application
+Requires=lipstick.service
+After=lipstick.service
+
+[Service]
+ExecStart=/usr/bin/glacier-settings -p
+Restart=always
