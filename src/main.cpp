@@ -41,14 +41,6 @@ Q_DECL_EXPORT int main(int argc, char* argv[])
     QGuiApplication* app = GlacierApp::app(argc, argv);
     app->setOrganizationName("NemoMobile");
 
-    QScreen* sc = app->primaryScreen();
-    if (sc) {
-        sc->setOrientationUpdateMask(Qt::LandscapeOrientation
-            | Qt::PortraitOrientation
-            | Qt::InvertedLandscapeOrientation
-            | Qt::InvertedPortraitOrientation);
-    }
-
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings", 1, 0, "SettingsModel");
     qmlRegisterType<SatelliteModel>("org.nemomobile.glacier.settings", 1, 0, "SatelliteModel");
     qmlRegisterType<TimeZonesModel>("org.nemomobile.glacier.settings", 1, 0, "TimeZonesModel");

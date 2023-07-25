@@ -28,8 +28,8 @@ target_include_directories(glaciersettings PUBLIC
 add_definitions(-DGLACIERSETTINGS_LIBRARY)
 
 target_link_libraries(glaciersettings
-    Qt5::Core
-    Qt5::Gui)
+    Qt6::Core
+    Qt6::Gui)
 
 install(TARGETS glaciersettings
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/)

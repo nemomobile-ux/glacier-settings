@@ -23,9 +23,7 @@ import QtQuick.Window 2.1
 
 import QtMultimedia 5.15
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0
 

@@ -13,9 +13,9 @@ add_definitions(-DQT_PLUGIN)
 add_library(example MODULE ${SRC} ${HEADERS})
 
 target_link_libraries(example
-    Qt5::Gui
-    Qt5::Qml
-    Qt5::Quick
+    Qt6::Gui
+    Qt6::Qml
+    Qt6::Quick
     Glacier::Settings)
 
 install(TARGETS example
@@ -27,7 +27,7 @@ INSTALL(FILES ${PLUGINS_FILES}
 # Translations
 file(GLOB TS_FILES translations/*.ts)
 #set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_INSTALL_LOCALEDIR})
-qt5_add_translation(QM_FILES ${TS_FILES})
+qt6_add_translation(QM_FILES ${TS_FILES})
 add_custom_target(example_translations DEPENDS ${QM_FILES})
 add_dependencies(example example_translations)
 

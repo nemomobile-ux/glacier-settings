@@ -19,15 +19,12 @@
 import QtQuick 2.6
 import QtQuick.Window 2.1
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Controls
+import Nemo.Models
 
 import Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
 import Nemo.DBus 2.0
-
-import org.nemomobile.models 1.0
 
 import Glacier.Controls.Settings 1.0
 

@@ -14,21 +14,20 @@ set(CMAKE_INSTALL_PREFIX /usr)
 include(FeatureSummary)
 include(GNUInstallDirs)
 
-set(QT_MIN_VERSION "5.11.0")
+set(QT_MIN_VERSION "6.0.0")
 find_package(PkgConfig REQUIRED)
-find_package(Qt5 COMPONENTS Gui Qml Quick Positioning LinguistTools DBus REQUIRED)
-find_package(Qt5QuickCompiler)
-find_package(Glacier 0.8 COMPONENTS App REQUIRED)
+find_package(Qt6 COMPONENTS Gui Qml Quick Positioning LinguistTools DBus REQUIRED)
 
 option(BUILD_EXAMPLES "Install example plugin" OFF)
-pkg_search_module(SYSSETTINGS REQUIRED systemsettings)
+pkg_search_module(SYSSETTINGS REQUIRED systemsettings-qt6)
+pkg_search_module(GLACIERAPP6 REQUIRED glacierapp6)
 
 add_subdirectory(src)
 
 # Translations
 file(GLOB TS_FILES translations/*.ts)
 #set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_INSTALL_LOCALEDIR})
-qt5_add_translation(QM_FILES ${TS_FILES})
+qt6_add_translation(QM_FILES ${TS_FILES})
 add_custom_target(translations DEPENDS ${QM_FILES})
 add_dependencies(glacier-settings translations)
 

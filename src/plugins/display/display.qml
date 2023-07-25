@@ -18,10 +18,7 @@
  */
 import QtQuick 2.6
 import QtQuick.Window 2.1
-
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0
 import org.nemomobile.glacier.settings 1.0
@@ -133,8 +130,8 @@ Page {
                 width: parent.width
                 visible: ! displaySettings.autoBrightnessEnabled
 
-                minimumValue: 0
-                maximumValue: displaySettings.maximumBrightness
+                from: 0
+                to: displaySettings.maximumBrightness
 
                 value: displaySettings.brightness
 
@@ -248,8 +245,8 @@ Page {
             Slider {
                 id: scaleSlider
                 value: dpScaleFactor.value == 0 ? size.dpScaleFactor : dpScaleFactor.value
-                minimumValue: 0.5
-                maximumValue: 2
+                from: 0.5
+                to: 2
                 stepSize: 0.1
                 width: parent.width
 

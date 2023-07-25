@@ -23,9 +23,7 @@ import QtQuick.Window 2.1
 
 import QtMultimedia 5.15
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0
 
@@ -89,8 +87,8 @@ Page {
         Slider {
             showValue: true
             alwaysUp: true
-            minimumValue: 0
-            maximumValue: 100
+            from: 0
+            to: 100
             value: profile.ringerVolume
             stepSize: 1
             onValueChanged: {
@@ -132,8 +130,8 @@ Page {
         Slider {
             showValue: false
             alwaysUp: false
-            minimumValue: 0
-            maximumValue: 2
+            from: 0
+            to: 2
             value: profile.systemSoundLevel
             stepSize: 1
             onValueChanged: {
@@ -148,8 +146,8 @@ Page {
         Slider {
             showValue: false
             alwaysUp: false
-            minimumValue: 0
-            maximumValue: 2
+            from: 0
+            to: 2
             value: profile.touchscreenToneLevel
             stepSize: 1
             onValueChanged: {
@@ -165,8 +163,8 @@ Page {
         Slider {
             showValue: false
             alwaysUp: false
-            minimumValue: 0
-            maximumValue: 2
+            from: 0
+            to: 2
             value: profile.touchscreenVibrationLevel
             stepSize: 1
             onValueChanged: {

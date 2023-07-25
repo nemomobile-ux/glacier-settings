@@ -19,9 +19,7 @@
 import QtQuick 2.6
 import QtQuick.Window 2.1
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0
 
@@ -53,8 +51,8 @@ Page {
             id: chargeEnableLimitSlider
             value: batteryStatus.chargeEnableLimit
             showValue: true
-            minimumValue: 1
-            maximumValue: 100
+            from: 1
+            to: 100
             stepSize: 1
             alwaysUp: true
             onValueChanged: {
@@ -71,8 +69,8 @@ Page {
             id: chargeDisableLimitSlider
             value: batteryStatus.chargeDisableLimit
             showValue: true
-            minimumValue: 1
-            maximumValue: 100
+            from: 1
+            to: 100
             stepSize: 1
             alwaysUp: true
             onValueChanged: {

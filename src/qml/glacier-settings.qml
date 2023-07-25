@@ -20,9 +20,7 @@
 import QtQuick 2.6
 import QtQuick.Window 2.1
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo.Controls
 
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
@@ -31,9 +29,6 @@ import Glacier.Controls.Settings 1.0
 
 ApplicationWindow{
     id: main
-
-    contentOrientation: Screen.orientation
-    allowedOrientations:  Qt.PortraitOrientation | Qt.LandscapeOrientation | Qt.InvertedLandscapeOrientation | Qt.InvertedPortraitOrientation
 
     SettingsModel{
         id: settingsModel
@@ -54,6 +49,9 @@ ApplicationWindow{
 
     initialPage: Page{
         id: mainPage
+
+        allowedOrientations:  Qt.PortraitOrientation | Qt.LandscapeOrientation | Qt.InvertedLandscapeOrientation | Qt.InvertedPortraitOrientation
+
         headerTools: HeaderToolsLayout {
             id: tools
             title: qsTr("Settings")
@@ -81,8 +79,8 @@ ApplicationWindow{
                         id: brightnessSlider
                         width: parent.width-brightnessIcon.width-size.dp(120)
 
-                        minimumValue: 0
-                        maximumValue: displaySettings.maximumBrightness
+                        from: 0
+                        to: displaySettings.maximumBrightness
                         value: displaySettings.brightness
                         stepSize: 1
                         onValueChanged: {
