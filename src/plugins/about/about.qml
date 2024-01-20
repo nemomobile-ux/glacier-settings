@@ -64,7 +64,7 @@ Page {
 
         Image {
             id: glacierLogo
-            source: "file:///usr/share/glacier-settings/qml/plugins/about/icon-glacier-icon.png"
+            source: "file:///usr/share/glacier-settings/plugins/about/icon-glacier-icon.png"
             anchors{
                 top: parent.top
                 topMargin: Theme.itemSpacingLarge
