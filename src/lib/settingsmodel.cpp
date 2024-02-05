@@ -59,7 +59,7 @@ SettingsModel::SettingsModel(QObject* parent)
     m_roleNames << "title";
     m_roleNames << "items";
 
-    for (const QString& role : qAsConst(m_roleNames)) {
+    for (const QString& role : std::as_const(m_roleNames)) {
         hash.insert(Qt::UserRole + hash.count(), role.toLatin1());
     }
 
