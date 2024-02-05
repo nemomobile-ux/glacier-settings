@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2024 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -17,8 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-import QtQuick 2.6
-import QtQuick.Window 2.1
+import QtQuick
+import QtQuick.Window
 
 import Nemo.Controls
 
@@ -32,19 +32,6 @@ ApplicationWindow{
 
     SettingsModel{
         id: settingsModel
-    }
-
-    SettingsService{
-        id: setingService
-
-        onOpenSettingsPage: {
-            if(settingsModel.pluginAviable(plugin)) {
-                pageStack.push(Qt.resolvedUrl("file:/"+settingsModel.pluginQmlPath(plugin)))
-                main.show()
-            } else {
-                console.error("Wrong plugin "+plugin)
-            }
-        }
     }
 
     initialPage: Page{
