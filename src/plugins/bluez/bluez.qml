@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2024 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -16,11 +16,11 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
-import QtQuick 2.6
-import QtQuick.Window 2.1
+import QtQuick
+import QtQuick.Window
 
 import Nemo.Controls
-import Nemo.Models
+import org.nemomobile.models
 
 import Connman 0.2
 import org.kde.bluezqt 1.0 as BluezQt
@@ -44,12 +44,12 @@ Page {
         id: bluetoothModel
         name: "bluetooth"
 
-        onPoweredChanged: {
+        onPoweredChanged: function(powered) {
             bluetoothTimer.stop();
             columnCheckBox.indeterminate = false
             columnCheckBox.checked = bluetoothModel.powered
 
-            if(powered) {
+            if(powered && _adapter) {
                 _adapter.startDiscovery()
             }
         }
