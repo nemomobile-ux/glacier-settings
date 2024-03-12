@@ -40,7 +40,6 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
 
         QTranslator* myappTranslator = new QTranslator(qApp);
         if (myappTranslator->load(QLocale(), m_plugin->id(), QLatin1String("_"), QLatin1String("/usr/share/glacier-settings/translations/"))) {
-            qDebug() << "Plugin " << m_plugin->id() << " translation.load() success" << QLocale::system().name();
             if (qApp->installTranslator(myappTranslator)) {
                 qDebug() << "Plugin " << m_plugin->id() << " installTranslator() success" << QLocale::system().name();
             } else {
