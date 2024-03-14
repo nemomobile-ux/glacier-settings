@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2024 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -17,8 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
+#include "logging.h"
 #include "satellitemodel.h"
-#include <QDebug>
 #include <QFile>
 #include <QTimer>
 
@@ -35,11 +35,11 @@ SatelliteModel::SatelliteModel(QObject* parent)
     source = QGeoSatelliteInfoSource::createDefaultSource(this);
     QStringList aS = QGeoSatelliteInfoSource::availableSources();
     for (int i = 0; i < aS.size(); ++i) {
-        qDebug() << " - " << aS[i];
+        qCDebug(lcGlacierSettingsCoreLog) << " - " << aS[i];
     }
 
     if (!demo && !source) {
-        qWarning() << "No satellite data source found. Changing to demo mode.";
+        qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found. Changing to demo mode.";
         demo = true;
     }
 
@@ -78,7 +78,7 @@ QVariant SatelliteModel::data(const QModelIndex& index, int role) const
         return QVariant();
 
     if (index.row() >= knownSatellites.count()) {
-        qWarning() << "SatelliteModel: Index out of bound";
+        qCWarning(lcGlacierSettingsCoreLog) << "SatelliteModel: Index out of bound";
         return QVariant();
     }
 
@@ -145,7 +145,7 @@ bool SatelliteModel::isSingleRequest() const
 void SatelliteModel::setSingleRequest(bool single)
 {
     if (running()) {
-        qWarning() << "Cannot change single request mode while running";
+        qCWarning(lcGlacierSettingsCoreLog) << "Cannot change single request mode while running";
         return;
     }
 

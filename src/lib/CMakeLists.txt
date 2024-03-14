@@ -18,7 +18,8 @@ set(PUBLIC_HEADERS
     glaciersettingsplugin.h
     glaciersettings_global.h)
 
-add_library(glaciersettings SHARED ${SRC} ${HEADERS} ${PUBLIC_HEADERS})
+add_library(glaciersettings SHARED ${SRC} ${HEADERS} ${PUBLIC_HEADERS}
+    logging.h logging.cpp)
 add_library(Glacier::Settings ALIAS glaciersettings)
 add_definitions(-DINSTALLLIBDIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
 

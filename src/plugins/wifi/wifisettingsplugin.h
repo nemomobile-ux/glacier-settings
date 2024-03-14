@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -36,7 +36,7 @@ public:
     QString description() { return m_description; }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/wifi/wifi.qml"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/wifi/wifi.svg"; }
-    bool enabled() { return m_enabled; };
+    bool enabled() { return m_enabled; }
 
 private slots:
     void onPoweredChanded(const bool& powered);

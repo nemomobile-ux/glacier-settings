@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -17,6 +17,7 @@
  * Boston, MA 02110-1301, USA.
  */
 
+#include <logging.h>
 #include "wifisettingsplugin.h"
 
 #include <networktechnology.h>
@@ -37,7 +38,7 @@ WiFiSettingsPlugin::WiFiSettingsPlugin(QObject* parent)
         connect(m_wifiTech, &NetworkTechnology::poweredChanged, this, &WiFiSettingsPlugin::onPoweredChanded);
         connect(m_wifiTech, &NetworkTechnology::connectedChanged, this, &WiFiSettingsPlugin::onConnectedChanged);
     } else {
-        qDebug() << "WiFi not found";
+        qCWarning(lcGlacierSettingsCoreLog) << "WiFi not found";
     }
 }
 

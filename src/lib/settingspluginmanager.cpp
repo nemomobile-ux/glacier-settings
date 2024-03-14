@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -17,9 +17,9 @@
  * Boston, MA 02110-1301, USA.
  */
 
+#include "logging.h"
 #include "settingspluginmanager.h"
 
-#include <QDebug>
 #include <QDir>
 
 SettingsPluginManager::SettingsPluginManager()
@@ -32,10 +32,10 @@ SettingsPluginManager::SettingsPluginManager()
                 m_pluginList.push_back(shp->get());
                 connect(shp->get(), &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
             } else {
-                qDebug() << "Loading" << pluginsDir.absoluteFilePath(file) << " fail";
+                qCDebug(lcGlacierSettingsCoreLog) << "Loading" << pluginsDir.absoluteFilePath(file) << " fail";
             }
         } else {
-            qWarning() << "can't load" << pluginsDir.absoluteFilePath(file);
+            qCWarning(lcGlacierSettingsCoreLog) << "can't load" << pluginsDir.absoluteFilePath(file);
         }
         delete (shp);
     }
