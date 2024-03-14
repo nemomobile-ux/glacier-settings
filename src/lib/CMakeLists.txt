@@ -1,4 +1,4 @@
-set(SRC imagesmodel.cpp
+set(SRC
     satellitemodel.cpp
     settingsmodel.cpp
     settingspluginhost.cpp
@@ -6,7 +6,7 @@ set(SRC imagesmodel.cpp
     themesmodel.cpp
     timezonesmodel.cpp)
 
-set(HEADERS imagesmodel.h
+set(HEADERS
     satellitemodel.h
     settingsmodel.h
     settingspluginhost.h
