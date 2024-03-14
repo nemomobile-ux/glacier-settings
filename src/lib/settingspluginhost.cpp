@@ -17,8 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include "logging.h"
 #include "settingspluginhost.h"
+#include "logging.h"
 #include <QGuiApplication>
 #include <QTranslator>
 
