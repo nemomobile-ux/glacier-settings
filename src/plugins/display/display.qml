@@ -245,7 +245,7 @@ Page {
 
             Slider {
                 id: scaleSlider
-                value: dpScaleFactor.value == 0 ? size.dpScaleFactor : dpScaleFactor.value
+                value: dpScaleFactor.value == 0 ? Theme.dpScaleFactor : dpScaleFactor.value
                 from: 0.5
                 to: 2
                 stepSize: 0.1

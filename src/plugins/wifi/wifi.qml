@@ -80,7 +80,7 @@ Page {
             width: parent.width
             height: parent.height-wifiEnable.height
 
-            contentHeight: networks.height+size.dp(50)
+            contentHeight: networks.height+Theme.dp(50)
 
             clip: true
 

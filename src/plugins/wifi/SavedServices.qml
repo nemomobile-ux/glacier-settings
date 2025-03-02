@@ -50,7 +50,7 @@ Page {
         height: parent.height - header.height
         model: savedModel
         delegate: ListViewItemWithActions{
-            height: size.dp(80)
+            height: Theme.dp(80)
             label: networkService.name
             width: savedPage.width
 
