@@ -20,6 +20,7 @@
 import QtQuick 2.6
 import QtQuick.Window 2.1
 
+import Nemo
 import Nemo.Controls
 
 import Connman 0.2
@@ -49,7 +50,7 @@ Page {
         height: parent.height - header.height
         model: savedModel
         delegate: ListViewItemWithActions{
-            height: size.dp(80)
+            height: Theme.dp(80)
             label: networkService.name
             width: savedPage.width
 

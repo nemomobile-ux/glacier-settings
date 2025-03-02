@@ -20,6 +20,7 @@
 import QtQuick 2.6
 import QtQuick.Window 2.1
 
+import Nemo
 import Nemo.Controls
 
 import Connman 0.2
@@ -79,7 +80,7 @@ Page {
             width: parent.width
             height: parent.height-wifiEnable.height
 
-            contentHeight: networks.height+size.dp(50)
+            contentHeight: networks.height+Theme.dp(50)
 
             clip: true
 

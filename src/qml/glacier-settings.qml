@@ -20,6 +20,7 @@
 import QtQuick
 import QtQuick.Window
 
+import Nemo
 import Nemo.Controls
 
 import org.nemomobile.glacier.settings 1.0
@@ -59,12 +60,12 @@ ApplicationWindow{
                 Row {
                     id: brightnessRow
                     width: mainPage.width
-                    spacing: size.dp(40)
-                    padding: size.dp(40)
+                    spacing: Theme.dp(40)
+                    padding: Theme.dp(40)
 
                     Slider{
                         id: brightnessSlider
-                        width: parent.width-brightnessIcon.width-size.dp(120)
+                        width: parent.width-brightnessIcon.width-Theme.dp(120)
 
                         from: 0
                         to: displaySettings.maximumBrightness
@@ -105,7 +106,7 @@ ApplicationWindow{
             Column {
                 id: content
                 width: parent.width
-                spacing: size.dp(20)
+                spacing: Theme.dp(20)
 
                 Repeater {
                     id: view
@@ -139,7 +140,7 @@ ApplicationWindow{
 
                             Rectangle{
                                 id: line
-                                height: size.dp(1)
+                                height: Theme.dp(1)
                                 color: Theme.textColor
                                 width: content.width-sectionText.width-Theme.itemHeightExtraSmall
                                 anchors{
