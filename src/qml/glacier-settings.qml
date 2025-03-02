@@ -20,6 +20,7 @@
 import QtQuick
 import QtQuick.Window
 
+import Nemo
 import Nemo.Controls
 
 import org.nemomobile.glacier.settings 1.0
