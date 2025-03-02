@@ -18,6 +18,7 @@
  */
 import QtQuick 2.6
 import QtQuick.Window 2.1
+import Nemo
 import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0

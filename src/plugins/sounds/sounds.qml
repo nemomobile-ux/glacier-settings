@@ -22,6 +22,7 @@ import QtQuick 2.6
 
 import QtMultimedia
 
+import Nemo
 import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0
