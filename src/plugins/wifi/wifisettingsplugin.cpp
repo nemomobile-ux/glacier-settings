@@ -38,7 +38,8 @@ WiFiSettingsPlugin::WiFiSettingsPlugin(QObject* parent)
         connect(m_wifiTech, &NetworkTechnology::poweredChanged, this, &WiFiSettingsPlugin::onPoweredChanded);
         connect(m_wifiTech, &NetworkTechnology::connectedChanged, this, &WiFiSettingsPlugin::onConnectedChanged);
     } else {
-        qCWarning(lcGlacierSettingsCoreLog) << "WiFi not found";
+//        qCWarning(lcGlacierSettingsCoreLog) << "WiFi not found";
+        qWarning() << "WiFi not found";
     }
 }
 
