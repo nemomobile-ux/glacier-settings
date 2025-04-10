@@ -77,212 +77,205 @@ Page {
         contentHeight: column.height
 
 
-    SettingsColumn{
-        id: column
-        spacing: Theme.itemSpacingLarge
+        SettingsColumn{
+            id: column
+            spacing: Theme.itemSpacingLarge
 
-        Label {
-            text: qsTr("Ringer Volume");
-        }
-        Slider {
-            showValue: true
-            alwaysUp: true
-            from: 0
-            to: 100
-            value: profile.ringerVolume
-            stepSize: 1
-            onValueChanged: {
-                profile.ringerVolume = value
+            Label {
+                text: qsTr("Ringer Volume");
             }
-        }
-
-        GlacierRoller {
-            id: vibraModeRoller
-            label: qsTr("Vibrations mode")
-            width:  parent.width
-            currentIndex: profile.vibraMode
-
-            // enum: VibraAlways, VibraSilent, VibraNormal, VibraNever
-
-            model: ListModel {
-                ListElement { name: qsTr("Always") }
-                ListElement { name: qsTr("Silent") }
-                ListElement { name: qsTr("Normal") }
-                ListElement { name: qsTr("Never") }
-            }
-            delegate: GlacierRollerItem{
-                Text{
-                    verticalAlignment: Text.AlignVCenter
-                    text: name
-                    color: Theme.textColor
-                    font.pixelSize: Theme.fontSizeMedium
-                    font.bold: (profile.vibraMode === index)
+            Slider {
+                showValue: true
+                alwaysUp: true
+                from: 0
+                to: 100
+                value: profile.ringerVolume
+                stepSize: 1
+                onValueChanged: {
+                    profile.ringerVolume = value
                 }
             }
-        }
 
+            GlacierRoller {
+                id: vibraModeRoller
+                label: qsTr("Vibrations mode")
+                width:  parent.width
+                currentIndex: profile.vibraMode
 
+                // enum: VibraAlways, VibraSilent, VibraNormal, VibraNever
 
-        Label {
-            text: qsTr("System sound level");
-        }
-
-        Slider {
-            showValue: false
-            alwaysUp: false
-            from: 0
-            to: 2
-            value: profile.systemSoundLevel
-            stepSize: 1
-            onValueChanged: {
-                profile.systemSoundLevel = value
-            }
-        }
-
-        Label {
-            text: qsTr("Touch screen tone level");
-        }
-
-        Slider {
-            showValue: false
-            alwaysUp: false
-            from: 0
-            to: 2
-            value: profile.touchscreenToneLevel
-            stepSize: 1
-            onValueChanged: {
-                profile.touchscreenToneLevel = value
-            }
-        }
-
-
-        Label {
-            text: qsTr("Touch screen vibration level");
-        }
-
-        Slider {
-            showValue: false
-            alwaysUp: false
-            from: 0
-            to: 2
-            value: profile.touchscreenVibrationLevel
-            stepSize: 1
-            onValueChanged: {
-                profile.touchscreenVibrationLevel = value
-            }
-        }
-
-//// files ////
-
-        // ringer
-        SoundLabel {
-            label: qsTr("Ringer tone")
-            description: profile.ringerToneFile
-            selectedFile: profile.ringerToneFile
-            onSelectedFileChanged: {
-                profile.ringerToneFile = selectedFile
+                model: ListModel {
+                    ListElement { name: qsTr("Always") }
+                    ListElement { name: qsTr("Silent") }
+                    ListElement { name: qsTr("Normal") }
+                    ListElement { name: qsTr("Never") }
+                }
+                delegate: GlacierRollerItem{
+                    Text{
+                        verticalAlignment: Text.AlignVCenter
+                        text: name
+                        color: Theme.textColor
+                        font.pixelSize: Theme.fontSizeMedium
+                        font.bold: (profile.vibraMode === index)
+                    }
+                }
             }
 
-            checked: profile.ringerToneEnabled
-            onClicked: profile.ringerToneEnabled = checked
-        }
 
 
-        // message
-        SoundLabel {
-            label: qsTr("Message tone")
-            description: profile.messageToneFile
-            selectedFile: profile.messageToneFile
-            onSelectedFileChanged: {
-                profile.messageToneFile = selectedFile
+            Label {
+                text: qsTr("System sound level");
             }
 
-            checked: profile.messageToneEnabled
-            onClicked: profile.messageToneEnabled = checked
-        }
-
-
-        // chat
-        SoundLabel {
-            label: qsTr("Chat tone")
-            description: profile.chatToneFile
-            selectedFile: profile.chatToneFile
-            onSelectedFileChanged: {
-                profile.chatToneFile = selectedFile
+            Slider {
+                showValue: false
+                alwaysUp: false
+                from: 0
+                to: 2
+                value: profile.systemSoundLevel
+                stepSize: 1
+                onValueChanged: {
+                    profile.systemSoundLevel = value
+                }
             }
 
-            checked: profile.chatToneEnabled
-            onClicked: profile.chatToneEnabled = checked
-        }
-
-
-        // mail
-        SoundLabel {
-            label: qsTr("Mail tone")
-            description: profile.mailToneFile
-            selectedFile: profile.mailToneFile
-            onSelectedFileChanged: {
-                profile.mailToneFile = selectedFile
+            Label {
+                text: qsTr("Touch screen tone level");
             }
 
-            checked: profile.mailToneEnabled
-            onClicked: profile.mailToneEnabled = checked
-        }
-
-
-        // internetCall
-        SoundLabel {
-            label: qsTr("Internet call tone")
-            description: profile.internetCallToneFile
-            selectedFile: profile.internetCallToneFile
-            onSelectedFileChanged: {
-                profile.internetCallToneFile = selectedFile
+            Slider {
+                showValue: false
+                alwaysUp: false
+                from: 0
+                to: 2
+                value: profile.touchscreenToneLevel
+                stepSize: 1
+                onValueChanged: {
+                    profile.touchscreenToneLevel = value
+                }
             }
 
-            checked: profile.internetCallToneEnabled
-            onClicked: profile.internetCallToneEnabled = checked
-        }
 
-
-        // calendar
-        SoundLabel {
-            label: qsTr("Calendar tone")
-            description: profile.calendarToneFile
-            selectedFile: profile.calendarToneFile
-            onSelectedFileChanged: {
-                profile.calendarToneFile = selectedFile
+            Label {
+                text: qsTr("Touch screen vibration level");
             }
 
-            checked: profile.calendarToneEnabled
-            onClicked: profile.calendarToneEnabled = checked
-        }
-
-
-        // clockAlarm
-        SoundLabel {
-            label: qsTr("Alarm clock tone")
-            description: profile.clockAlarmToneFile
-            selectedFile: profile.clockAlarmToneFile
-            onSelectedFileChanged: {
-                profile.clockAlarmToneFile = selectedFile
+            Slider {
+                showValue: false
+                alwaysUp: false
+                from: 0
+                to: 2
+                value: profile.touchscreenVibrationLevel
+                stepSize: 1
+                onValueChanged: {
+                    profile.touchscreenVibrationLevel = value
+                }
             }
 
-            checked: profile.clockAlarmToneEnabled
-            onClicked: profile.clockAlarmToneEnabled = checked
-        }
+            //// files ////
+
+            // ringer
+            SoundLabel {
+                label: qsTr("Ringer tone")
+                description: profile.ringerToneFile
+                selectedFile: profile.ringerToneFile
+                onSelectedFileChanged: {
+                    profile.ringerToneFile = selectedFile
+                }
+
+                checked: profile.ringerToneEnabled
+                onClicked: profile.ringerToneEnabled = checked
+            }
 
 
+            // message
+            SoundLabel {
+                label: qsTr("Message tone")
+                description: profile.messageToneFile
+                selectedFile: profile.messageToneFile
+                onSelectedFileChanged: {
+                    profile.messageToneFile = selectedFile
+                }
+
+                checked: profile.messageToneEnabled
+                onClicked: profile.messageToneEnabled = checked
+            }
 
 
+            // chat
+            SoundLabel {
+                label: qsTr("Chat tone")
+                description: profile.chatToneFile
+                selectedFile: profile.chatToneFile
+                onSelectedFileChanged: {
+                    profile.chatToneFile = selectedFile
+                }
+
+                checked: profile.chatToneEnabled
+                onClicked: profile.chatToneEnabled = checked
+            }
 
 
+            // mail
+            SoundLabel {
+                label: qsTr("Mail tone")
+                description: profile.mailToneFile
+                selectedFile: profile.mailToneFile
+                onSelectedFileChanged: {
+                    profile.mailToneFile = selectedFile
+                }
 
-    } // Column
+                checked: profile.mailToneEnabled
+                onClicked: profile.mailToneEnabled = checked
+            }
+
+
+            // internetCall
+            SoundLabel {
+                label: qsTr("Internet call tone")
+                description: profile.internetCallToneFile
+                selectedFile: profile.internetCallToneFile
+                onSelectedFileChanged: {
+                    profile.internetCallToneFile = selectedFile
+                }
+
+                checked: profile.internetCallToneEnabled
+                onClicked: profile.internetCallToneEnabled = checked
+            }
+
+
+            // calendar
+            SoundLabel {
+                label: qsTr("Calendar tone")
+                description: profile.calendarToneFile
+                selectedFile: profile.calendarToneFile
+                onSelectedFileChanged: {
+                    profile.calendarToneFile = selectedFile
+                }
+
+                checked: profile.calendarToneEnabled
+                onClicked: profile.calendarToneEnabled = checked
+            }
+
+
+            // clockAlarm
+            SoundLabel {
+                label: qsTr("Alarm clock tone")
+                description: profile.clockAlarmToneFile
+                selectedFile: profile.clockAlarmToneFile
+                onSelectedFileChanged: {
+                    profile.clockAlarmToneFile = selectedFile
+                }
+
+                checked: profile.clockAlarmToneEnabled
+                onClicked: profile.clockAlarmToneEnabled = checked
+            }
+        } // Column
     } // Flickable
 
     ScrollDecorator{
-            id: decorator
-            flickable: mainFlickable
+        id: decorator
+        flickable: mainFlickable
     }
 
 }

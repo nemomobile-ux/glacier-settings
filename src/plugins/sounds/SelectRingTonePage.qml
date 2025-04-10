@@ -85,8 +85,8 @@ Page {
     }
 
     ScrollDecorator{
-            id: decorator
-            flickable: view
+        id: decorator
+        flickable: view
     }
 
 }

@@ -31,7 +31,7 @@ import Glacier.Controls.Settings 1.0
 
 
 Rectangle{
-    id: main
+    id: soundLabel
 
     property alias label: itemWithAction.label
     property alias description: itemWithAction.description
@@ -51,7 +51,7 @@ Rectangle{
     CheckBox{
         id: checkbox
         anchors.verticalCenter: parent.verticalCenter
-        onClicked: main.clicked();
+        onClicked: soundLabel.clicked();
     }
 
     ListViewItemWithActions {
@@ -64,7 +64,7 @@ Rectangle{
         onClicked: {
             var filePicker = pageStack.push(Qt.resolvedUrl("SelectRingTonePage.qml"), {selectedFile: itemWithAction.selectedFile})
             filePicker.newFileSelected.connect(function(newFile){
-                main.selectedFile = newFile
+                soundLabel.selectedFile = newFile
                 pageStack.pop()
             });
         }
