@@ -94,6 +94,7 @@ Page {
                 onValueChanged: {
                     profile.ringerVolume = value
                 }
+                width: column.width
             }
 
             GlacierRoller {
@@ -137,6 +138,7 @@ Page {
                 onValueChanged: {
                     profile.systemSoundLevel = value
                 }
+                width: column.width
             }
 
             Label {
@@ -153,6 +155,7 @@ Page {
                 onValueChanged: {
                     profile.touchscreenToneLevel = value
                 }
+                width: column.width
             }
 
 
@@ -170,6 +173,7 @@ Page {
                 onValueChanged: {
                     profile.touchscreenVibrationLevel = value
                 }
+                width: column.width
             }
 
             //// files ////
