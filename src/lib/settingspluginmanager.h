@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -23,7 +23,7 @@
 #include <QObject>
 
 #include "glaciersettings_global.h"
-#include "settingspluginhost.h"
+#include "glaciersettingsplugin.h"
 
 class GLACIERSETTINGS_EXPORT SettingsPluginManager : public QObject {
     Q_OBJECT
@@ -32,8 +32,10 @@ public:
     ~SettingsPluginManager();
 
     QList<GlacierSettingsPlugin*> getPlugins() { return m_pluginList; }
+    void loadPlugins();
 
 signals:
+    void pluginListUpated();
     void pluginDataChanged(QString pluginId);
 
 private:

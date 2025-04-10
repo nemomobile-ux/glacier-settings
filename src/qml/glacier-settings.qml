@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -33,6 +33,9 @@ ApplicationWindow{
 
     SettingsModel{
         id: settingsModel
+        Component.onCompleted: {
+            settingsModel.loadPluginsList();
+        }
     }
 
     initialPage: Page{

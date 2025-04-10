@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -18,11 +18,20 @@
  */
 
 #include "settingspluginmanager.h"
+#include "settingspluginhost.h"
 #include "logging.h"
 
 #include <QDir>
 
 SettingsPluginManager::SettingsPluginManager()
+{
+}
+
+SettingsPluginManager::~SettingsPluginManager()
+{
+}
+
+void SettingsPluginManager::loadPlugins()
 {
     QDir pluginsDir(QString(INSTALLLIBDIR) + "/glacier-settings/");
     for (const QString& file : pluginsDir.entryList(QDir::Files)) {
@@ -31,6 +40,7 @@ SettingsPluginManager::SettingsPluginManager()
             if (shp->valid()) {
                 m_pluginList.push_back(shp->get());
                 connect(shp->get(), &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
+                emit pluginListUpated();
             } else {
                 qCDebug(lcGlacierSettingsCoreLog) << "Loading" << pluginsDir.absoluteFilePath(file) << " fail";
             }
@@ -39,8 +49,4 @@ SettingsPluginManager::SettingsPluginManager()
         }
         delete (shp);
     }
-}
-
-SettingsPluginManager::~SettingsPluginManager()
-{
 }

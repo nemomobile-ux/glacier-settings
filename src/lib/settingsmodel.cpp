@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -62,6 +62,7 @@ SettingsModel::SettingsModel(QObject* parent)
         hash.insert(Qt::UserRole + hash.count(), role.toLatin1());
     }
 
+    connect(m_pluginManager, &SettingsPluginManager::pluginListUpated, this, &SettingsModel::updatePluginsList);
     connect(m_pluginManager, &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
 
     if (qgetenv("SETTINGS_SHOW_DISABLED_PLUGINS") == "1") {
@@ -75,7 +76,7 @@ bool SettingsModel::pluginAviable(QString name)
         return false;
     }
 
-    for (GlacierSettingsPlugin* plugin : m_pluginManager->getPlugins()) {
+    for (GlacierSettingsPlugin* plugin : m_pluginList) {
         if (plugin->id() == name) {
             return true;
         }
@@ -90,7 +91,7 @@ QString SettingsModel::pluginQmlPath(QString name)
         return QString();
     }
 
-    for (GlacierSettingsPlugin* plugin : m_pluginManager->getPlugins()) {
+    for (GlacierSettingsPlugin* plugin : m_pluginList) {
         if (plugin->id() == name) {
             return plugin->qmlPath();
         }
@@ -99,11 +100,16 @@ QString SettingsModel::pluginQmlPath(QString name)
     return QString();
 }
 
+void SettingsModel::loadPluginsList()
+{
+    m_pluginManager->loadPlugins();
+}
+
 QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const
 {
     QVariantList pluginsInCat;
 
-    for (GlacierSettingsPlugin* item : m_pluginManager->getPlugins()) {
+    for (GlacierSettingsPlugin* item : m_pluginList) {
         if (item == nullptr) {
             continue;
         }
@@ -148,7 +154,14 @@ QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory ca
 void SettingsModel::updatePluginData(QString pluginId)
 {
     beginResetModel();
-    // TODO: not resen model, just update changed item
+    // TODO: not reset model, just update changed item
+    endResetModel();
+}
+
+void SettingsModel::updatePluginsList()
+{
+    beginResetModel();
+    m_pluginList = m_pluginManager->getPlugins();
     endResetModel();
 }
 
@@ -161,8 +174,8 @@ int SettingsModel::rowCount(const QModelIndex& parent) const
 QVariantMap SettingsModel::get(int idx) const
 {
     return QVariantMap {
-        { "title", m_pluginManager->getPlugins().at(idx)->title() },
-        { "items", pluginsInCategory(m_pluginManager->getPlugins().at(idx)->category()) }
+        { "title", m_pluginList.at(idx)->title() },
+        { "items", pluginsInCategory(m_pluginList.at(idx)->category()) }
     };
 }
 
