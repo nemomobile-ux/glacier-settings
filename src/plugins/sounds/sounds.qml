@@ -113,7 +113,7 @@ Page {
                 }
                 delegate: GlacierRollerItem{
                     Text{
-                        verticalAlignment: Text.AlignVCenter
+                        anchors.verticalCenter: parent.verticalCenter
                         text: name
                         color: Theme.textColor
                         font.pixelSize: Theme.fontSizeMedium
