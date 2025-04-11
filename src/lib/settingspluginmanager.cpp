@@ -18,8 +18,8 @@
  */
 
 #include "settingspluginmanager.h"
-#include "settingspluginhost.h"
 #include "logging.h"
+#include "settingspluginhost.h"
 
 #include <QDir>
 
