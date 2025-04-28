@@ -121,7 +121,7 @@ ApplicationWindow{
                         id: settingsListDelegate
                         height: sectionHeading.height+flow.height
                         width: mainArea.width
-                        visible: items != ""
+                        visible: items.length > 0
 
                         Item {
                             id: sectionHeading
