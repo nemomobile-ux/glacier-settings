@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -18,11 +18,11 @@
  * Boston, MA 02110-1301, USA.
  */
 
-import QtQuick 2.6
-import QtQuick.Window 2.1
+import QtQuick
+import QtQuick.Window
+import QtMultimedia
 
-import QtMultimedia 5.15
-
+import Nemo
 import Nemo.Controls
 
 import org.nemomobile.folderlistmodel 1.0

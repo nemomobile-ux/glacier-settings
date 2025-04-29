@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -18,8 +18,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-import QtQuick 2.6
-import QtQuick.Window 2.1
+import QtQuick
+import QtQuick.Window
 
 import QtMultimedia
 import Nemo
@@ -27,10 +27,7 @@ import Nemo.Controls
 
 import org.nemomobile.systemsettings 1.0
 
-import Glacier.Controls.Settings 1.0
-
-
-Rectangle{
+Item{
     id: soundLabel
 
     property alias label: itemWithAction.label
@@ -42,7 +39,6 @@ Rectangle{
 
     width: parent.width
     height: itemWithAction.height
-    color: "transparent"
 
     MediaPlayer {
         id: soundPlayer
