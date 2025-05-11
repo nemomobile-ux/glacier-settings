@@ -17,6 +17,7 @@ include(GNUInstallDirs)
 set(QT_MIN_VERSION "6.0.0")
 find_package(PkgConfig REQUIRED)
 find_package(Qt6 COMPONENTS Gui Qml Quick Positioning LinguistTools DBus REQUIRED)
+find_package(KF6BluezQt REQUIRED)
 
 option(BUILD_EXAMPLES "Install example plugin" OFF)
 pkg_search_module(SYSSETTINGS REQUIRED systemsettings-qt6)

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,5 +20,35 @@
 #include "bluezsettingsplugin.h"
 
 BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
+    : m_manager(new BluezQt::Manager(this))
+    , m_enabled(false)
 {
+    connect(m_manager, &BluezQt::Manager::deviceAdded, this, &BluezSettingsPlugin::recalcPluginStatus);
+    connect(m_manager, &BluezQt::Manager::deviceRemoved, this, &BluezSettingsPlugin::recalcPluginStatus);
+    connect(m_manager, &BluezQt::Manager::deviceChanged, this, &BluezSettingsPlugin::recalcPluginStatus);
+
+    if(m_manager->adapters().count() > 0) {
+        m_enabled = true;
+    }
+}
+
+BluezSettingsPlugin::~BluezSettingsPlugin()
+{
+    if(m_manager) {
+        delete m_manager;
+    }
+}
+
+bool BluezSettingsPlugin::enabled() {
+    return m_enabled;
+}
+
+void BluezSettingsPlugin::recalcPluginStatus(BluezQt::DevicePtr device)
+{
+    Q_UNUSED(device)
+    bool enabled = m_manager->adapters().count() > 0;
+    if(enabled != m_enabled) {
+        m_enabled = enabled;
+        emit pluginChanged(id());
+    }
 }

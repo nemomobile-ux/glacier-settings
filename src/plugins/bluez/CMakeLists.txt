@@ -19,6 +19,7 @@ target_link_libraries(${PLUGIN}
     Qt6::Qml
     Qt6::Quick
     Qt6::DBus
+    KF6::BluezQt
     Glacier::Settings)
 
 install(TARGETS ${PLUGIN}
