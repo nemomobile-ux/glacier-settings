@@ -24,7 +24,7 @@
 
 SatelliteModel::SatelliteModel(QObject* parent)
     : QAbstractListModel(parent)
-    , source(0)
+    , m_source(nullptr)
     , m_componentCompleted(false)
     , m_running(false)
     , m_runningRequested(false)
@@ -32,28 +32,27 @@ SatelliteModel::SatelliteModel(QObject* parent)
     , singleRequestServed(false)
     , m_isValid(false)
 {
-    source = QGeoSatelliteInfoSource::createDefaultSource(this);
     QStringList aS = QGeoSatelliteInfoSource::availableSources();
-    for (int i = 0; i < aS.size(); ++i) {
-        qCDebug(lcGlacierSettingsCoreLog) << " - " << aS[i];
-    }
-
-    if (source) {
-        m_isValid = true;
+    if(aS.size() == 0) {
+        qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found";
     } else {
-        qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found. Changing to demo mode.";
+        m_source = QGeoSatelliteInfoSource::createDefaultSource(this);
+        if (m_source == nullptr) {
+            qCWarning(lcGlacierSettingsCoreLog) << "QGeoSatelliteInfoSource is NULL";
+        } else {
+            m_isValid = true;
+            m_source->setUpdateInterval(3000);
+            connect(m_source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
+                this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
+                connect(m_source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
+                this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
+            connect(m_source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
+                this, SLOT(error(QGeoSatelliteInfoSource::Error)));
+            timer = new QTimer(this);
+            connect(timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
+            timer->start(3000);
+        }
     }
-
-    source->setUpdateInterval(3000);
-    connect(source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
-        this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
-    connect(source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
-        this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
-    connect(source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
-        this, SLOT(error(QGeoSatelliteInfoSource::Error)));
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
-    timer->start(3000);
 }
 
 int SatelliteModel::rowCount(const QModelIndex& parent) const
@@ -153,7 +152,7 @@ void SatelliteModel::setSingleRequest(bool single)
 
 void SatelliteModel::setRunning(bool isActive)
 {
-    if (m_isValid)
+    if (!m_isValid)
         return;
 
     if (!m_componentCompleted) {
@@ -169,12 +168,12 @@ void SatelliteModel::setRunning(bool isActive)
     if (m_running) {
         clearModel();
         if (isSingleRequest())
-            source->requestUpdate(10000);
+            m_source->requestUpdate(10000);
         else
-            source->startUpdates();
+            m_source->startUpdates();
     } else {
         if (!isSingleRequest())
-            source->stopUpdates();
+            m_source->stopUpdates();
     }
 
     Q_EMIT runningChanged();
