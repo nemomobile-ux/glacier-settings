@@ -35,7 +35,7 @@ public:
     QString description() { return tr("GPS and other location services"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/location/location.qml"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/location/location.svg"; }
-    bool enabled() { return true; };
+    bool enabled();
 };
 
 #endif // LOCATIONSETTINGSPLUGIN_H

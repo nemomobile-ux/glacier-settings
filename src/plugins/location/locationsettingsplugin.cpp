@@ -19,6 +19,13 @@
 
 #include "locationsettingsplugin.h"
 
+#include <QtPositioning/QGeoSatelliteInfoSource>
+
 LocationSettingsPlugin::LocationSettingsPlugin(QObject* parent)
 {
+}
+
+bool LocationSettingsPlugin::enabled()
+{
+    return QGeoSatelliteInfoSource::availableSources().count() > 0;
 }
