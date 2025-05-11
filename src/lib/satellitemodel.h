@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -31,6 +31,7 @@
 
 class GLACIERSETTINGS_EXPORT SatelliteModel : public QAbstractListModel, public QQmlParserStatus {
     Q_OBJECT
+    Q_PROPERTY(bool isValid READ isValid NOTIFY isValidChanged FINAL)
     Q_PROPERTY(bool running READ running WRITE setRunning NOTIFY runningChanged)
     Q_PROPERTY(bool satelliteInfoAvailable READ canProvideSatelliteInfo NOTIFY canProvideSatelliteInfoChanged)
     Q_PROPERTY(int entryCount READ entryCount NOTIFY entryCountChanged)
@@ -72,6 +73,8 @@ public:
     int usedSattelites() { return satellitesInUse.count(); }
     int avaiableSattelites() { return knownSatellites.count(); }
 
+    bool isValid() const;
+
 signals:
     void runningChanged();
     void entryCountChanged();
@@ -80,6 +83,8 @@ signals:
     void singleRequestChanged();
     void usedSattelitesChanged();
     void avaiableSattelitesChanged();
+
+    void isValidChanged();
 
 public slots:
     void clearModel();
@@ -98,10 +103,10 @@ private:
     QList<QGeoSatelliteInfo> knownSatellites;
     QSet<int> knownSatelliteIds;
     QSet<int> satellitesInUse;
-    bool demo;
     QTimer* timer;
     bool isSingle;
     bool singleRequestServed;
+    bool m_isValid;
 };
 
 #endif // SATELLITEMODEL_H

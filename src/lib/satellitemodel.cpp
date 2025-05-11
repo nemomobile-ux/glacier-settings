@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,9 +28,9 @@ SatelliteModel::SatelliteModel(QObject* parent)
     , m_componentCompleted(false)
     , m_running(false)
     , m_runningRequested(false)
-    , demo(false)
     , isSingle(false)
     , singleRequestServed(false)
+    , m_isValid(false)
 {
     source = QGeoSatelliteInfoSource::createDefaultSource(this);
     QStringList aS = QGeoSatelliteInfoSource::availableSources();
@@ -38,32 +38,28 @@ SatelliteModel::SatelliteModel(QObject* parent)
         qCDebug(lcGlacierSettingsCoreLog) << " - " << aS[i];
     }
 
-    if (!demo && !source) {
+    if (source) {
+        m_isValid = true;
+    } else {
         qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found. Changing to demo mode.";
-        demo = true;
     }
 
-    if (!demo) {
-        source->setUpdateInterval(3000);
-        connect(source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
-            this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
-        connect(source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
-            this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
-        connect(source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
-            this, SLOT(error(QGeoSatelliteInfoSource::Error)));
-    }
-
-    if (demo) {
-        timer = new QTimer(this);
-        connect(timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
-        timer->start(3000);
-    }
+    source->setUpdateInterval(3000);
+    connect(source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
+        this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
+    connect(source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
+        this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
+    connect(source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
+        this, SLOT(error(QGeoSatelliteInfoSource::Error)));
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
+    timer->start(3000);
 }
 
 int SatelliteModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
-    if (!source && !demo)
+    if (!m_isValid)
         return 0;
 
     return knownSatellites.count();
@@ -71,7 +67,7 @@ int SatelliteModel::rowCount(const QModelIndex& parent) const
 
 QVariant SatelliteModel::data(const QModelIndex& index, int role) const
 {
-    if (!demo && !source)
+    if (!m_isValid)
         return QVariant();
 
     if (!index.isValid() || index.row() < 0)
@@ -157,7 +153,7 @@ void SatelliteModel::setSingleRequest(bool single)
 
 void SatelliteModel::setRunning(bool isActive)
 {
-    if (!source && !demo)
+    if (m_isValid)
         return;
 
     if (!m_componentCompleted) {
@@ -172,19 +168,12 @@ void SatelliteModel::setRunning(bool isActive)
 
     if (m_running) {
         clearModel();
-        if (demo)
-            timer->start(2000);
-        else if (isSingleRequest())
+        if (isSingleRequest())
             source->requestUpdate(10000);
         else
             source->startUpdates();
-
-        if (demo)
-            singleRequestServed = false;
     } else {
-        if (demo)
-            timer->stop();
-        else if (!isSingleRequest())
+        if (!isSingleRequest())
             source->stopUpdates();
     }
 
@@ -198,7 +187,7 @@ int SatelliteModel::entryCount() const
 
 bool SatelliteModel::canProvideSatelliteInfo() const
 {
-    return !demo;
+    return !m_isValid;
 }
 
 void SatelliteModel::clearModel()
@@ -271,20 +260,20 @@ void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo>& inf
 
     QSet<int> toBeRemoved = knownSatelliteIds - satelliteIdsInUpdate;
 
-    // We reset the model as in reality just about all entry values change
-    // and there are generally a lot of inserts and removals each time
-    // Hence we don't bother with complex model update logic beyond resetModel()
+           // We reset the model as in reality just about all entry values change
+           // and there are generally a lot of inserts and removals each time
+           // Hence we don't bother with complex model update logic beyond resetModel()
     beginResetModel();
 
     knownSatellites = infos;
     emit avaiableSattelitesChanged();
 
-    // sort them for presentation purposes
+           // sort them for presentation purposes
     std::sort(knownSatellites.begin(), knownSatellites.end());
 
-    // remove old "InUse" data
-    // new satellites are by default not in "InUse"
-    // existing satellites keep their "inUse" state
+           // remove old "InUse" data
+           // new satellites are by default not in "InUse"
+           // existing satellites keep their "inUse" state
     satellitesInUse -= toBeRemoved;
 
     knownSatelliteIds = satelliteIdsInUpdate;
@@ -307,4 +296,9 @@ void SatelliteModel::satellitesInUseUpdated(const QList<QGeoSatelliteInfo>& info
 
     emit usedSattelitesChanged();
     endResetModel();
+}
+
+bool SatelliteModel::isValid() const
+{
+    return m_isValid;
 }
