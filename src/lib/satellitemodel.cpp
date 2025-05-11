@@ -260,20 +260,20 @@ void SatelliteModel::satellitesInViewUpdated(const QList<QGeoSatelliteInfo>& inf
 
     QSet<int> toBeRemoved = knownSatelliteIds - satelliteIdsInUpdate;
 
-           // We reset the model as in reality just about all entry values change
-           // and there are generally a lot of inserts and removals each time
-           // Hence we don't bother with complex model update logic beyond resetModel()
+    // We reset the model as in reality just about all entry values change
+    // and there are generally a lot of inserts and removals each time
+    // Hence we don't bother with complex model update logic beyond resetModel()
     beginResetModel();
 
     knownSatellites = infos;
     emit avaiableSattelitesChanged();
 
-           // sort them for presentation purposes
+    // sort them for presentation purposes
     std::sort(knownSatellites.begin(), knownSatellites.end());
 
-           // remove old "InUse" data
-           // new satellites are by default not in "InUse"
-           // existing satellites keep their "inUse" state
+    // remove old "InUse" data
+    // new satellites are by default not in "InUse"
+    // existing satellites keep their "inUse" state
     satellitesInUse -= toBeRemoved;
 
     knownSatelliteIds = satelliteIdsInUpdate;
