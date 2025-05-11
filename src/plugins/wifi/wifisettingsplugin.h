@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,6 +22,7 @@
 
 #include "glaciersettingsplugin.h"
 #include <networkmanager.h>
+#include <networktechnology.h>
 
 class WiFiSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
@@ -47,7 +48,7 @@ private:
     bool m_enabled;
     QString m_description;
 
-    NetworkManager* m_manager;
+    QSharedPointer<NetworkManager> m_manager;
     NetworkTechnology* m_wifiTech;
 };
 

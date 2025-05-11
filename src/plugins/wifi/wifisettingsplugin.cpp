@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,15 +20,13 @@
 #include "wifisettingsplugin.h"
 #include <logging.h>
 
-#include <networktechnology.h>
-
 WiFiSettingsPlugin::WiFiSettingsPlugin(QObject* parent)
     : m_enabled(false)
     , m_description(tr("Wireless networks"))
 {
-    m_manager = NetworkManagerFactory::createInstance();
+    m_manager = NetworkManager::sharedInstance();
 
-    connect(m_manager, &NetworkManager::technologiesChanged, this, &WiFiSettingsPlugin::onTechnologiesChanged);
+    connect(m_manager.data(), &NetworkManager::technologiesChanged, this, &WiFiSettingsPlugin::onTechnologiesChanged);
 
     m_wifiTech = m_manager->getTechnology("wifi");
 
@@ -37,8 +35,6 @@ WiFiSettingsPlugin::WiFiSettingsPlugin(QObject* parent)
 
         connect(m_wifiTech, &NetworkTechnology::poweredChanged, this, &WiFiSettingsPlugin::onPoweredChanded);
         connect(m_wifiTech, &NetworkTechnology::connectedChanged, this, &WiFiSettingsPlugin::onConnectedChanged);
-    } else {
-        qWarning() << "WiFi not found";
     }
 }
 
