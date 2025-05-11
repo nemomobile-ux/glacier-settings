@@ -27,19 +27,20 @@ BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
     connect(m_manager, &BluezQt::Manager::deviceRemoved, this, &BluezSettingsPlugin::recalcPluginStatus);
     connect(m_manager, &BluezQt::Manager::deviceChanged, this, &BluezSettingsPlugin::recalcPluginStatus);
 
-    if(m_manager->adapters().count() > 0) {
+    if (m_manager->adapters().count() > 0) {
         m_enabled = true;
     }
 }
 
 BluezSettingsPlugin::~BluezSettingsPlugin()
 {
-    if(m_manager) {
+    if (m_manager) {
         delete m_manager;
     }
 }
 
-bool BluezSettingsPlugin::enabled() {
+bool BluezSettingsPlugin::enabled()
+{
     return m_enabled;
 }
 
@@ -47,7 +48,7 @@ void BluezSettingsPlugin::recalcPluginStatus(BluezQt::DevicePtr device)
 {
     Q_UNUSED(device)
     bool enabled = m_manager->adapters().count() > 0;
-    if(enabled != m_enabled) {
+    if (enabled != m_enabled) {
         m_enabled = enabled;
         emit pluginChanged(id());
     }

@@ -33,7 +33,7 @@ SatelliteModel::SatelliteModel(QObject* parent)
     , m_isValid(false)
 {
     QStringList aS = QGeoSatelliteInfoSource::availableSources();
-    if(aS.size() == 0) {
+    if (aS.size() == 0) {
         qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found";
     } else {
         m_source = QGeoSatelliteInfoSource::createDefaultSource(this);
@@ -44,7 +44,7 @@ SatelliteModel::SatelliteModel(QObject* parent)
             m_source->setUpdateInterval(3000);
             connect(m_source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
                 this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
-                connect(m_source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
+            connect(m_source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
                 this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
             connect(m_source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
                 this, SLOT(error(QGeoSatelliteInfoSource::Error)));
