@@ -33,6 +33,7 @@ SettingsPluginManager::~SettingsPluginManager()
 
 void SettingsPluginManager::loadPlugins()
 {
+    m_pluginList.clear();
     QDir pluginsDir(QString(INSTALLLIBDIR) + "/glacier-settings/");
     for (const QString& file : pluginsDir.entryList(QDir::Files)) {
         SettingsPluginHost* shp = new SettingsPluginHost(pluginsDir.absoluteFilePath(file), this);

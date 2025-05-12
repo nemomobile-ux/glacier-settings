@@ -154,7 +154,7 @@ QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory ca
 void SettingsModel::updatePluginData(QString pluginId)
 {
     beginResetModel();
-    // TODO: not reset model, just update changed item
+    m_pluginList = m_pluginManager->getPlugins();
     endResetModel();
 }
 
