@@ -40,7 +40,6 @@ void SettingsPluginManager::loadPlugins()
             if (shp->valid()) {
                 m_pluginList.push_back(shp->get());
                 connect(shp->get(), &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
-                emit pluginListUpated();
             } else {
                 qCDebug(lcGlacierSettingsCoreLog) << "Loading" << pluginsDir.absoluteFilePath(file) << " fail";
             }
@@ -49,4 +48,5 @@ void SettingsPluginManager::loadPlugins()
         }
         delete (shp);
     }
+    emit pluginListUpated();
 }

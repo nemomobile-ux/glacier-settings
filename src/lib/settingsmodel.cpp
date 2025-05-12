@@ -110,17 +110,17 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
     QVariantList pluginsInCat;
 
     for (GlacierSettingsPlugin* item : m_pluginList) {
-        if (item == nullptr) {
+        if (item == nullptr || item->category() != category) {
             continue;
         }
 
-        if (item->category() == category && (item->enabled() || m_showDisabled)) {
-            QVariantMap map;
-            map["title"] = item->title();
-            map["icon"] = item->icon();
-            map["path"] = item->qmlPath();
-            map["description"] = item->description();
-            map["enabled"] = item->enabled();
+        QVariantMap map;
+        map["title"] = item->title();
+        map["icon"] = item->icon();
+        map["path"] = item->qmlPath();
+        map["description"] = item->description();
+        map["enabled"] = item->enabled();
+        if(map["enabled"].toBool() || m_showDisabled) {
             pluginsInCat.append(map);
         }
     }
