@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
 project(glacier-settings
-    VERSION 0.6
+    VERSION 0.8
     DESCRIPTION "The Glacier settings application")
 
 set(CMAKE_AUTOMOC ON)
