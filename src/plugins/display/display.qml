@@ -36,7 +36,7 @@ Page {
     ConfigurationValue {
         id: dpScaleFactor
         key: "/nemo/apps/libglacier/dpScaleFactor"
-        defaultValue: "0"
+        defaultValue: "1"
     }
 
     DisplaySettings{
