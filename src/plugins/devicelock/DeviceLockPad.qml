@@ -71,7 +71,7 @@ Page {
                 delegate:
                     Rectangle {
                     id:button
-                    width: root.width/3 > root.height/4 ? (root.height/4 - 2*Theme.itemSpacingMedium) : (root.width/3 - 2*Theme.itemSpacingMedium)
+                    width: deviceLockPadPage.width/3 > deviceLockPadPage.height/4 ? (deviceLockPadPage.height/4 - 2*Theme.itemSpacingMedium) : (deviceLockPadPage.width/3 - 2*Theme.itemSpacingMedium)
                     height: width
 
                     color: buttonMouse.pressed ? Theme.accentColor : "transparent"
