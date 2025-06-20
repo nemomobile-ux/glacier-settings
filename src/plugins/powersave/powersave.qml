@@ -148,7 +148,7 @@ Page {
             iconVisible: false
             label: qsTr("Battery health")
             description: qsTr("Set charging limits to increase battery life")
-            onClicked: pageStack.push(Qt.resolvedUrl("BatteryHealth.qml"));
+            onClicked: main.pageStack.push(Qt.resolvedUrl("BatteryHealth.qml"));
 
             visible: batteryStatus.chargingMode === BatteryStatus.ApplyChargingThresholds
                      || batteryStatus.chargingMode === BatteryStatus.ApplyChargingThresholdsAfterFull

@@ -58,10 +58,10 @@ Item{
         iconVisible: false
         clip: true
         onClicked: {
-            var filePicker = pageStack.push(Qt.resolvedUrl("SelectRingTonePage.qml"), {selectedFile: itemWithAction.selectedFile})
+            var filePicker = main.pageStack.push(Qt.resolvedUrl("SelectRingTonePage.qml"), {selectedFile: itemWithAction.selectedFile})
             filePicker.newFileSelected.connect(function(newFile){
                 soundLabel.selectedFile = newFile
-                pageStack.pop()
+                main.pageStack.pop()
             });
         }
         actions: [

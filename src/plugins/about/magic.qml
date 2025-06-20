@@ -17,8 +17,8 @@
  * Boston, MA 02110-1301, USA.
  */
 import QtQuick 2.6
+import Nemo
 import Nemo.Controls
-
 import Nemo.Dialogs 1.0
 
 Page {
@@ -37,7 +37,7 @@ Page {
             id: magicLogo
             width: (aboutPage.width > aboutPage.height) ? aboutPage.height*0.8 : aboutPage.width*0.8
             height: width
-            source: "/usr/share/glacier-settings/qml/plugins/about/bluecreature.svg"
+            source: "file:///usr/share/glacier-settings/plugins/about/bluecreature.svg"
             anchors{
                 top: parent.top
                 topMargin: Theme.itemSpacingHuge

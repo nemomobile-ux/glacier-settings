@@ -53,7 +53,7 @@ Page {
     onMagicCountChanged: {
         if(magicCount == 5)
         {
-            pageStack.push(Qt.resolvedUrl("/usr/share/glacier-settings/qml/plugins/about/magic.qml"))
+            main.pageStack.push("file:///usr/share/glacier-settings/plugins/about/magic.qml")
         }
     }
 

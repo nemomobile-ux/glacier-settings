@@ -136,7 +136,7 @@ Page {
                 onClicked: {
                     modelData.requestDisconnect();
                     console.log("Disconnect clicked");
-                    pageStack.pop();
+                    main.pageStack.pop();
                 }
             }
         }

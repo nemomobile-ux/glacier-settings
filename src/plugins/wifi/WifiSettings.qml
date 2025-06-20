@@ -153,7 +153,7 @@ Page {
 
         function onConnectedChanged(connected) {
             if(connected) {
-                pageStack.pop();
+                main.pageStack.pop();
                 spinner.visible = false;
             }
         }
