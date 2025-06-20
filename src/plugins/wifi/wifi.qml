@@ -127,7 +127,7 @@ Page {
                 ListViewItemWithActions{
                     label: qsTr("Manage saved networks")
                     onClicked: {
-                        pageStack.push(Qt.resolvedUrl("SavedServices.qml"));
+                        main.pageStack.push(Qt.resolvedUrl("SavedServices.qml"));
                     }
                 }
             }

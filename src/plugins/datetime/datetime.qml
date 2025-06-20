@@ -94,7 +94,7 @@ Page {
                 label: qsTr("Select date")
                 description: Qt.formatDateTime(new Date(), "dd-MM-yyyy");
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("SetupDate.qml"));
+                    main.pageStack.push(Qt.resolvedUrl("SetupDate.qml"));
                 }
 
             }
@@ -108,7 +108,7 @@ Page {
                 label: qsTr("Select time")
                 description: Qt.formatDateTime(new Date(), "HH:mm");
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("SetupTime.qml"));
+                    main.pageStack.push(Qt.resolvedUrl("SetupTime.qml"));
                 }
             }
 
@@ -132,7 +132,7 @@ Page {
                 label: qsTr("Current time zone")
                 description: dateTimeSettings.timezone
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
+                    main.pageStack.push(Qt.resolvedUrl("SetupTimezone.qml"));
                 }
             }
 

@@ -88,7 +88,7 @@ Page {
 
         onAuthenticationStarted: {
             authInput.feedback(feedback, data)
-            pageStack.push(Qt.resolvedUrl("DeviceLockPad.qml"), {authenticationInput: authInput,
+            main.pageStack.push(Qt.resolvedUrl("DeviceLockPad.qml"), {authenticationInput: authInput,
                                securityCodeSettings: secCodeSettings,
                                changeCode: requestCodeChange})
         }

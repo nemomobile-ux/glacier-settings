@@ -72,7 +72,7 @@ Page {
                 onClicked: {
                     modelData.remove();
                     console.log("Remove clicked");
-                    pageStack.pop();
+                    main.pageStack.pop();
                 }
             }
         }

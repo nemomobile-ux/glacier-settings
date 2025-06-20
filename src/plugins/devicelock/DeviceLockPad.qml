@@ -134,7 +134,7 @@ Page {
                     lockCodeField.text = "";
                     toolsLayout.title = qsTr("Enter new security code")
                 } else {
-                    pageStack.pop()
+                    main.pageStack.pop()
                 }
             }
         }
@@ -143,7 +143,7 @@ Page {
     Connections {
         target: securityCodeSettings
         function onChangingChanged() {
-            pageStack.pop();
+            main.pageStack.pop();
         }
     }
 

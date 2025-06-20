@@ -68,12 +68,12 @@ ListViewItemWithActions{
     onClicked:{
         if (modelData.state === "idle" || modelData.state === "failure"){
             console.log("Show settings page");
-            pageStack.push(Qt.resolvedUrl("WifiSettings.qml"),{modelData: modelData});
+            main.pageStack.push(Qt.resolvedUrl("WifiSettings.qml"),{modelData: modelData});
         } else {
             console.log("Show network status page");
             var component = Qt.createComponent(Qt.resolvedUrl("WifiStatus.qml")).errorString();
             console.log(component);
-            pageStack.push(Qt.resolvedUrl("WifiStatus.qml"),{modelData: modelData});
+            main.pageStack.push(Qt.resolvedUrl("WifiStatus.qml"),{modelData: modelData});
         }
     }
 

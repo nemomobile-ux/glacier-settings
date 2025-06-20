@@ -55,7 +55,7 @@ Page {
             width: savedPage.width
 
             onClicked: {
-                pageStack.push(Qt.resolvedUrl("SavedStatus.qml"), {modelData: networkService});
+                main.pageStack.push(Qt.resolvedUrl("SavedStatus.qml"), {modelData: networkService});
             }
         }
     }
