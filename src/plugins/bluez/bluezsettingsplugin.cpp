@@ -24,7 +24,7 @@ BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
     : m_manager(new BluezQt::Manager(this))
     , m_enabled(false)
 {
-    BluezQt::InitManagerJob *job = m_manager->init();
+    BluezQt::InitManagerJob* job = m_manager->init();
     job->start();
 
     connect(m_manager, &BluezQt::Manager::deviceAdded, this, &BluezSettingsPlugin::recalcPluginStatus);
@@ -33,7 +33,7 @@ BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
 
     connect(job, &BluezQt::InitManagerJob::result, [=]() {
         bool enabled = m_manager->adapters().count() > 0;
-        if(enabled != m_enabled) {
+        if (enabled != m_enabled) {
             m_enabled = enabled;
             emit pluginChanged(id());
         }

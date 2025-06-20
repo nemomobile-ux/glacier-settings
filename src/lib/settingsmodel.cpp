@@ -120,7 +120,7 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
         map["path"] = item->qmlPath();
         map["description"] = item->description();
         map["enabled"] = item->enabled();
-        if(map["enabled"].toBool() || m_showDisabled) {
+        if (map["enabled"].toBool() || m_showDisabled) {
             pluginsInCat.append(map);
         }
     }
