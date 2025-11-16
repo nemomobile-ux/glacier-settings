@@ -21,7 +21,7 @@ find_package(KF6BluezQt REQUIRED)
 
 option(BUILD_EXAMPLES "Install example plugin" OFF)
 pkg_search_module(SYSSETTINGS REQUIRED systemsettings-qt6)
-pkg_search_module(GLACIERAPP6 REQUIRED glacierapp6)
+pkg_search_module(GLACIERAPP REQUIRED glacierapp)
 
 add_subdirectory(src)
 
