@@ -30,7 +30,8 @@ add_definitions(-DGLACIERSETTINGS_LIBRARY)
 
 target_link_libraries(glaciersettings
     Qt6::Core
-    Qt6::Gui)
+    Qt6::Gui
+    Qt6::Positioning)
 
 install(TARGETS glaciersettings
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/)

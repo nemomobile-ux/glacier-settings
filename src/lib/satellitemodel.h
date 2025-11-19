@@ -41,6 +41,7 @@ class GLACIERSETTINGS_EXPORT SatelliteModel : public QAbstractListModel, public 
     Q_INTERFACES(QQmlParserStatus)
 public:
     explicit SatelliteModel(QObject* parent = 0);
+    virtual ~SatelliteModel();
 
     enum {
         IdentifierRole = Qt::UserRole + 1,
@@ -103,7 +104,6 @@ private:
     QList<QGeoSatelliteInfo> knownSatellites;
     QSet<int> knownSatelliteIds;
     QSet<int> satellitesInUse;
-    QTimer* timer;
     bool isSingle;
     bool singleRequestServed;
     bool m_isValid;

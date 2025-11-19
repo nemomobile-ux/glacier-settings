@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -43,7 +43,7 @@ public:
     bool valid() { return m_valid; }
 
 private:
-    QPluginLoader* m_loader;
+    std::shared_ptr<QPluginLoader> m_loader;
     GlacierSettingsPlugin* m_plugin;
     QString m_fileName;
 

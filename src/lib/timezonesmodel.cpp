@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2021-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,7 +22,7 @@
 TimeZonesModel::TimeZonesModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    m_tzInfo = new TimeZoneInfo();
+    m_tzInfo = std::make_shared<TimeZoneInfo>();
 
     m_roleNames << "name";
     m_roleNames << "area";

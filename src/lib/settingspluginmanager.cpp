@@ -29,6 +29,11 @@ SettingsPluginManager::SettingsPluginManager()
 
 SettingsPluginManager::~SettingsPluginManager()
 {
+    for(GlacierSettingsPlugin* p : m_pluginList) {
+        if(p != nullptr) {
+            delete p;
+        }
+    }
 }
 
 void SettingsPluginManager::loadPlugins()
@@ -42,12 +47,13 @@ void SettingsPluginManager::loadPlugins()
                 m_pluginList.push_back(shp->get());
                 connect(shp->get(), &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
             } else {
+                delete shp;
                 qCDebug(lcGlacierSettingsCoreLog) << "Loading" << pluginsDir.absoluteFilePath(file) << " fail";
             }
         } else {
+            delete shp;
             qCWarning(lcGlacierSettingsCoreLog) << "can't load" << pluginsDir.absoluteFilePath(file);
         }
-        delete (shp);
     }
     emit pluginListUpated();
 }

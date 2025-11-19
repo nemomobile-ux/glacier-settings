@@ -42,7 +42,7 @@ private:
     QHash<int, QByteArray> m_hash;
     QStringList m_roleNames;
 
-    TimeZoneInfo* m_tzInfo;
+    std::shared_ptr<TimeZoneInfo> m_tzInfo;
     QList<TimeZoneInfo> m_zones;
 };
 

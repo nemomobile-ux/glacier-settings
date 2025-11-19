@@ -49,7 +49,7 @@ private slots:
 
 private:
     QVariantMap get(int idx) const;
-    SettingsPluginManager* m_pluginManager;
+    std::shared_ptr<SettingsPluginManager> m_pluginManager;
     QHash<int, QByteArray> hash;
     QStringList m_roleNames;
     QList<GlacierSettingsPlugin*> m_pluginList;

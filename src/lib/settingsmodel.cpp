@@ -62,8 +62,8 @@ SettingsModel::SettingsModel(QObject* parent)
         hash.insert(Qt::UserRole + hash.count(), role.toLatin1());
     }
 
-    connect(m_pluginManager, &SettingsPluginManager::pluginListUpated, this, &SettingsModel::updatePluginsList);
-    connect(m_pluginManager, &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
+    connect(m_pluginManager.get(), &SettingsPluginManager::pluginListUpated, this, &SettingsModel::updatePluginsList);
+    connect(m_pluginManager.get(), &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
 
     if (qgetenv("SETTINGS_SHOW_DISABLED_PLUGINS") == "1") {
         m_showDisabled = true;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2024 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -56,6 +56,9 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
 
 SettingsPluginHost::~SettingsPluginHost()
 {
+    if(m_plugin) {
+        delete m_plugin;
+    }
 }
 
 GlacierSettingsPlugin* SettingsPluginHost::get()

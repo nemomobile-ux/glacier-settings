@@ -48,10 +48,17 @@ SatelliteModel::SatelliteModel(QObject* parent)
                 this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
             connect(m_source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
                 this, SLOT(error(QGeoSatelliteInfoSource::Error)));
-            timer = new QTimer(this);
-            connect(timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
-            timer->start(3000);
+            QTimer timer;
+            connect(&timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
+            timer.start(3000);
         }
+    }
+}
+
+SatelliteModel::~SatelliteModel()
+{
+    if(m_source) {
+        delete m_source;
     }
 }
 
