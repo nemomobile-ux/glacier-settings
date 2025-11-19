@@ -25,26 +25,25 @@ BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
     , m_enabled(false)
 {
     BluezQt::InitManagerJob* job = m_manager->init();
-    job->start();
+    if(job != nullptr) {
+        job->start();
 
-    connect(m_manager, &BluezQt::Manager::deviceAdded, this, &BluezSettingsPlugin::recalcPluginStatus);
-    connect(m_manager, &BluezQt::Manager::deviceRemoved, this, &BluezSettingsPlugin::recalcPluginStatus);
-    connect(m_manager, &BluezQt::Manager::deviceChanged, this, &BluezSettingsPlugin::recalcPluginStatus);
+        connect(m_manager, &BluezQt::Manager::deviceAdded, this, &BluezSettingsPlugin::recalcPluginStatus);
+        connect(m_manager, &BluezQt::Manager::deviceRemoved, this, &BluezSettingsPlugin::recalcPluginStatus);
+        connect(m_manager, &BluezQt::Manager::deviceChanged, this, &BluezSettingsPlugin::recalcPluginStatus);
 
-    connect(job, &BluezQt::InitManagerJob::result, [=]() {
-        bool enabled = m_manager->adapters().count() > 0;
-        if (enabled != m_enabled) {
-            m_enabled = enabled;
-            emit pluginChanged(id());
-        }
-    });
+        connect(job, &BluezQt::InitManagerJob::result, [=]() {
+            bool enabled = m_manager->adapters().count() > 0;
+            if (enabled != m_enabled) {
+                m_enabled = enabled;
+                emit pluginChanged(id());
+            }
+        });
+    }
 }
 
 BluezSettingsPlugin::~BluezSettingsPlugin()
 {
-    if (m_manager) {
-        delete m_manager;
-    }
 }
 
 bool BluezSettingsPlugin::enabled()
