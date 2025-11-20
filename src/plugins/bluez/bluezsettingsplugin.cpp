@@ -19,11 +19,31 @@
 
 #include "bluezsettingsplugin.h"
 #include <BluezQt/InitManagerJob>
+#include <QDebug>
+#include <connman-qt6/networktechnology.h>
 
 BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
     : m_manager(new BluezQt::Manager(this))
     , m_enabled(false)
 {
+    m_networkManager = NetworkManager::sharedInstance();
+    if (!m_networkManager) {
+        m_enabled = false;
+        qWarning() << "Network manager not avaiable";
+        return;
+    }
+    m_btTechnology = QSharedPointer<NetworkTechnology>(m_networkManager->getTechnology("bluetooth"));
+    if (!m_btTechnology) {
+        m_enabled = false;
+        qWarning() << "Bluetooth technology not avaiable in network manager";
+        return;
+    }
+
+    if (!m_btTechnology->available()) {
+        m_enabled = false;
+    }
+    connect(m_btTechnology.get(), &NetworkTechnology::availableChanged, this, &BluezSettingsPlugin::onTechnologyAviableChanged);
+
     BluezQt::InitManagerJob* job = m_manager->init();
     if (job != nullptr) {
         job->start();
@@ -49,6 +69,14 @@ BluezSettingsPlugin::~BluezSettingsPlugin()
 bool BluezSettingsPlugin::enabled()
 {
     return m_enabled;
+}
+
+void BluezSettingsPlugin::onTechnologyAviableChanged()
+{
+    if (m_btTechnology->available() != m_enabled) {
+        m_enabled = m_btTechnology->available();
+        emit pluginChanged(id());
+    }
 }
 
 void BluezSettingsPlugin::recalcPluginStatus(BluezQt::DevicePtr device)

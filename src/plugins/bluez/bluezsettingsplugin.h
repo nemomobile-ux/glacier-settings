@@ -21,6 +21,7 @@
 #define BLUEZSETTINGSPLUGIN_H
 
 #include "glaciersettingsplugin.h"
+#include <networkmanager.h>
 
 #include <BluezQt/Manager>
 
@@ -39,7 +40,12 @@ public:
     QString icon() { return "/usr/share/glacier-settings/plugins/bluez/bluez.svg"; }
     bool enabled();
 
+private slots:
+    void onTechnologyAviableChanged();
+
 private:
+    QSharedPointer<NetworkManager> m_networkManager;
+    QSharedPointer<NetworkTechnology> m_btTechnology;
     BluezQt::Manager* m_manager;
     bool m_enabled;
     void recalcPluginStatus(BluezQt::DevicePtr device);
