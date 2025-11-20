@@ -58,45 +58,6 @@ ApplicationWindow{
                     id: volumeButton
                 }
             ]
-
-            drawerLevels: [
-                Row {
-                    id: brightnessRow
-                    width: mainPage.width
-                    spacing: Theme.dp(40)
-                    padding: Theme.dp(40)
-
-                    Slider{
-                        id: brightnessSlider
-                        width: parent.width-brightnessIcon.width-Theme.dp(120)
-
-                        from: 0
-                        to: displaySettings.maximumBrightness
-                        value: displaySettings.brightness
-                        stepSize: 1
-                        onValueChanged: {
-                            displaySettings.brightness = value
-                        }
-                        enabled: !displaySettings.autoBrightnessEnabled
-
-                        DisplaySettings{
-                            id: displaySettings
-                        }
-                    }
-
-                    ToolButton {
-                        id: brightnessIcon
-                        iconSource: "image://theme/sun"
-                        anchors.verticalCenter: brightnessSlider.verticalCenter
-                        height: Theme.itemHeightMedium
-                        width: height
-                        active: displaySettings.autoBrightnessEnabled
-                        onClicked: {
-                            displaySettings.autoBrightnessEnabled = !displaySettings.autoBrightnessEnabled
-                        }
-                    }
-                }
-            ]
         }
 
         Flickable{
