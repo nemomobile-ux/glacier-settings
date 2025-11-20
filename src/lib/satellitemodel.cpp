@@ -57,7 +57,7 @@ SatelliteModel::SatelliteModel(QObject* parent)
 
 SatelliteModel::~SatelliteModel()
 {
-    if(m_source) {
+    if (m_source) {
         delete m_source;
     }
 }

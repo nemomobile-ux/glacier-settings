@@ -25,7 +25,7 @@ BluezSettingsPlugin::BluezSettingsPlugin(QObject* parent)
     , m_enabled(false)
 {
     BluezQt::InitManagerJob* job = m_manager->init();
-    if(job != nullptr) {
+    if (job != nullptr) {
         job->start();
 
         connect(m_manager, &BluezQt::Manager::deviceAdded, this, &BluezSettingsPlugin::recalcPluginStatus);

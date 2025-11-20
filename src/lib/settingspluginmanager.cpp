@@ -29,8 +29,8 @@ SettingsPluginManager::SettingsPluginManager()
 
 SettingsPluginManager::~SettingsPluginManager()
 {
-    for(GlacierSettingsPlugin* p : m_pluginList) {
-        if(p != nullptr) {
+    for (GlacierSettingsPlugin* p : m_pluginList) {
+        if (p != nullptr) {
             delete p;
         }
     }

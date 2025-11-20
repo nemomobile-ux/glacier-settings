@@ -56,7 +56,7 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
 
 SettingsPluginHost::~SettingsPluginHost()
 {
-    if(m_plugin) {
+    if (m_plugin) {
         delete m_plugin;
     }
 }
