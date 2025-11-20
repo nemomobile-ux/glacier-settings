@@ -20,5 +20,17 @@
 #include "datetimesettingsplugin.h"
 
 DateTimeSettingsPlugin::DateTimeSettingsPlugin(QObject* parent)
+    : m_enabled(false)
 {
+    if (!m_timed.settings_changed_connect(this, SLOT(onTimedSignal(const Maemo::Timed::WallClock::Info&, bool)))) {
+        qWarning("Connection to timed signal failed: '%s'", Maemo::Timed::bus().lastError().message().toStdString().c_str());
+    }
+}
+
+void DateTimeSettingsPlugin::onTimedSignal(const Maemo::Timed::WallClock::Info& info, bool time_changed)
+{
+    if (!m_enabled) {
+        m_enabled = true;
+        emit pluginChanged(id());
+    }
 }

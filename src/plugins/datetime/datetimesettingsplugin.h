@@ -21,6 +21,7 @@
 #define DATETIMESETTINGSPLUGIN_H
 
 #include "glaciersettingsplugin.h"
+#include <timed-qt6/interface.h>
 
 class DateTimeSettingsPlugin : public GlacierSettingsPlugin {
     Q_OBJECT
@@ -35,7 +36,14 @@ public:
     QString description() { return tr("Setup date time and timezone"); }
     QString qmlPath() { return "/usr/share/glacier-settings/plugins/datetime/datetime.qml"; }
     QString icon() { return "/usr/share/glacier-settings/plugins/datetime/datetime.svg"; }
-    bool enabled() { return true; };
+    bool enabled() { return m_enabled; };
+
+private slots:
+    void onTimedSignal(const Maemo::Timed::WallClock::Info& info, bool time_changed);
+
+private:
+    Maemo::Timed::Interface m_timed;
+    bool m_enabled;
 };
 
 #endif // DATETIMESETTINGSPLUGIN_H

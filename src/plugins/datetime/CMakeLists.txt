@@ -21,7 +21,8 @@ target_link_libraries(${PLUGIN}
     Qt6::Qml
     Qt6::Quick
     Qt6::DBus
-    Glacier::Settings)
+    Glacier::Settings
+    PkgConfig::TIMED_QT)
 
 install(TARGETS ${PLUGIN}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/glacier-settings/)
