@@ -92,7 +92,7 @@ public slots:
     void updateDemoData();
 
 private slots:
-    void error(QGeoSatelliteInfoSource::Error);
+    void error(QGeoSatelliteInfoSource::Error error);
     void satellitesInViewUpdated(const QList<QGeoSatelliteInfo>& infos);
     void satellitesInUseUpdated(const QList<QGeoSatelliteInfo>& infos);
 

@@ -46,8 +46,8 @@ SatelliteModel::SatelliteModel(QObject* parent)
                 this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
             connect(m_source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
                 this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
-            connect(m_source, SIGNAL(error(QGeoSatelliteInfoSource::Error)),
-                this, SLOT(error(QGeoSatelliteInfoSource::Error)));
+            connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
+                this, &SatelliteModel::error);
             QTimer timer;
             connect(&timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
             timer.start(3000);
@@ -240,6 +240,8 @@ void SatelliteModel::updateDemoData()
 
 void SatelliteModel::error(QGeoSatelliteInfoSource::Error error)
 {
+
+    qDebug() << error;
     emit errorFound((int)error);
 }
 
