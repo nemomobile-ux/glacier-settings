@@ -42,10 +42,11 @@ SatelliteModel::SatelliteModel(QObject* parent)
         } else {
             m_isValid = true;
             m_source->setUpdateInterval(3000);
-            connect(m_source, SIGNAL(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)),
-                this, SLOT(satellitesInViewUpdated(QList<QGeoSatelliteInfo>)));
-            connect(m_source, SIGNAL(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)),
-                this, SLOT(satellitesInUseUpdated(QList<QGeoSatelliteInfo>)));
+
+            connect(m_source, &QGeoSatelliteInfoSource::satellitesInUseUpdated,
+                this, &SatelliteModel::satellitesInUseUpdated);
+            connect(m_source,&QGeoSatelliteInfoSource::satellitesInViewUpdated,
+                this, &SatelliteModel::satellitesInViewUpdated);
             connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
                 this, &SatelliteModel::error);
             QTimer timer;
