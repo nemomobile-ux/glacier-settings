@@ -40,10 +40,6 @@ Item{
     width: parent.width
     height: itemWithAction.height
 
-    MediaPlayer {
-        id: soundPlayer
-    }
-
     CheckBox{
         id: checkbox
         anchors.verticalCenter: parent.verticalCenter
@@ -59,10 +55,10 @@ Item{
         clip: true
         onClicked: {
             var filePicker = main.pageStack.push(Qt.resolvedUrl("SelectRingTonePage.qml"), {selectedFile: itemWithAction.selectedFile})
-            filePicker.newFileSelected.connect(function(newFile){
-                soundLabel.selectedFile = newFile
-                main.pageStack.pop()
-            });
+            filePicker.fileSelectedCallback = function(newFile) {
+                soundLabel.selectedFile = newFile;
+                main.pageStack.pop();
+            }
         }
         actions: [
             ActionButton {
@@ -71,7 +67,7 @@ Item{
                     if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
                         soundPlayer.stop();
                     } else {
-                        soundPlayer.source = itemWithAction.selectedFile.startsWith("/usr") ? itemWithAction.selectedFile : ( "/usr/share/sounds/glacier/stereo/" + itemWithAction.selectedFile )
+                        soundPlayer.source = itemWithAction.selectedFile.startsWith("/usr") ? "file://" + itemWithAction.selectedFile : ( "file:///usr/share/sounds/glacier/stereo/" + itemWithAction.selectedFile )
                         soundPlayer.play();
                     }
                 }

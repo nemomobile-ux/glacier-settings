@@ -66,6 +66,13 @@ Page {
 
     MediaPlayer {
         id: soundPlayer
+
+        audioOutput: AudioOutput {
+        }
+
+        source: ""
+        onErrorChanged: console.log("MediaPlayer error:", error, errorString)
+        onPlaybackStateChanged: console.log("Playback state changed:", playbackState)
     }
 
 

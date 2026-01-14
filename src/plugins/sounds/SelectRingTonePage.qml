@@ -19,7 +19,6 @@
  */
 
 import QtQuick
-import QtQuick.Window
 import QtMultimedia
 
 import Nemo
@@ -33,18 +32,12 @@ Page {
     id: selectRingTonePage
 
     property string selectedFile
-
-    signal newFileSelected(string filename)
-
+    property var fileSelectedCallback
     headerTools: HeaderToolsLayout { showBackButton: true; title: qsTr("Select file")}
 
     FolderListModel {
         id: dirModel
         path: "/usr/share/sounds/glacier/stereo"
-    }
-
-    MediaPlayer {
-        id: soundPlayer
     }
 
     ListView {
@@ -64,7 +57,7 @@ Page {
             height: Theme.itemHeightLarge
 
             onClicked: {
-                newFileSelected(dirModel.path + "/" + fileName);
+                selectedFile = "file://" + dirModel.path + "/" + fileName;
             }
 
             actions:[
@@ -74,8 +67,9 @@ Page {
                         if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
                             soundPlayer.stop();
                         } else {
-                            soundPlayer.source = dirModel.path + "/" + fileName
-                            soundPlayer.play();
+                            soundPlayer.source = "file://" + dirModel.path + "/" + fileName
+                            Qt.callLater(() => soundPlayer.play())
+                            console.log(soundPlayer.source)
                         }
                     }
                 }
@@ -89,4 +83,10 @@ Page {
         flickable: view
     }
 
+    function selectFile(newFile) {
+        if (fileSelectedCallback) {
+            selectedFile = "file://" + dirModel.path + "/" + fileName;
+            fileSelectedCallback(newFile)
+        }
+    }
 }
