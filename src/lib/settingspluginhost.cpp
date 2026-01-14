@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,27 +20,28 @@
 #include "settingspluginhost.h"
 #include "logging.h"
 #include <QGuiApplication>
-#include <QTranslator>
 
 SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
     : QObject(parent)
+    , m_loader(nullptr)
+    , m_myappTranslator(nullptr)
     , m_fileName(fileName)
     , m_valid(false)
 {
-    QPluginLoader pluginLoader(fileName);
-    QObject* plugin = pluginLoader.instance();
+    m_loader = new QPluginLoader(fileName);
+    QObject* plugin = m_loader->instance();
     if (plugin) {
         m_plugin = qobject_cast<GlacierSettingsPlugin*>(plugin);
         if (!m_plugin) {
             qCWarning(lcGlacierSettingsCoreLog) << "Can't cast plugin";
-            pluginLoader.unload();
+            m_loader->unload();
         } else {
             m_valid = true;
         }
 
-        QTranslator* myappTranslator = new QTranslator(qApp);
-        if (myappTranslator->load(QLocale(), m_plugin->id(), QLatin1String("_"), QLatin1String("/usr/share/glacier-settings/translations/"))) {
-            if (qApp->installTranslator(myappTranslator)) {
+        m_myappTranslator = new QTranslator(qApp);
+        if (m_myappTranslator->load(QLocale(), m_plugin->id(), QLatin1String("_"), QLatin1String("/usr/share/glacier-settings/translations/"))) {
+            if (qApp->installTranslator(m_myappTranslator)) {
                 qCDebug(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " installTranslator() success" << QLocale::system().name();
             } else {
                 qCWarning(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " installTranslator() failed" << QLocale::system().name();
@@ -50,14 +51,18 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
         }
 
     } else {
-        qCDebug(lcGlacierSettingsCoreLog) << "Plugin not found" << fileName << pluginLoader.errorString();
+        qCDebug(lcGlacierSettingsCoreLog) << "Plugin not found" << fileName << m_loader->errorString();
     }
 }
 
 SettingsPluginHost::~SettingsPluginHost()
 {
-    if (m_plugin) {
-        delete m_plugin;
+    if(m_myappTranslator) {
+        qApp->removeTranslator(m_myappTranslator);
+    }
+
+    if(m_loader) {
+        m_loader->unload();
     }
 }
 

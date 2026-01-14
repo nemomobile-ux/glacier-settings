@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -21,6 +21,7 @@
 #define SETTINGSPLUGINMANAGER_H
 
 #include <QObject>
+#include "settingspluginhost.h"
 
 #include "glaciersettings_global.h"
 #include "glaciersettingsplugin.h"
@@ -39,7 +40,8 @@ signals:
     void pluginDataChanged(QString pluginId);
 
 private:
-    QList<GlacierSettingsPlugin*> m_pluginList;
+    QVector<GlacierSettingsPlugin*> m_pluginList;
+    QVector<SettingsPluginHost*> m_hosts;
 };
 
 #endif // SETTINGSPLUGINMANAGER_H

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -30,12 +30,12 @@ class DateTimeSettingsPlugin : public GlacierSettingsPlugin {
 
 public:
     DateTimeSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "datetime"; }
-    QString title() { return tr("Date and time"); }
-    QString description() { return tr("Setup date time and timezone"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/datetime/datetime.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/datetime/datetime.svg"; }
+    PluginCategory category() const { return PluginCategory::Personalization; }
+    QString id() const { return "datetime"; }
+    QString title() const { return tr("Date and time"); }
+    QString description() const { return tr("Setup date time and timezone"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/datetime/datetime.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/datetime/datetime.svg"; }
     bool enabled() { return m_enabled; };
 
 private slots:

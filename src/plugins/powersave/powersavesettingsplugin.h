@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class PowerSaveSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     PowerSaveSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "powersave"; }
-    QString title() { return tr("Power save"); }
-    QString description() { return tr("Battery settings"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/powersave/powersave.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/powersave/powersave.svg"; }
+    PluginCategory category() const { return PluginCategory::Personalization; }
+    QString id() const { return "powersave"; }
+    QString title() const { return tr("Power save"); }
+    QString description() const { return tr("Battery settings"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/powersave/powersave.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/powersave/powersave.svg"; }
     bool enabled() { return true; };
 };
 

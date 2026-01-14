@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -29,12 +29,12 @@ class LocationSettingsPlugin : public GlacierSettingsPlugin {
 
 public:
     LocationSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "location"; }
-    QString title() { return tr("Location"); }
-    QString description() { return tr("GPS and other location services"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/location/location.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/location/location.svg"; }
+    PluginCategory category() const { return PluginCategory::Network; }
+    QString id() const { return "location"; }
+    QString title() const { return tr("Location"); }
+    QString description() const { return tr("GPS and other location services"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/location/location.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/location/location.svg"; }
     bool enabled();
 };
 

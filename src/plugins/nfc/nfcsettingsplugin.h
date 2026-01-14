@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -29,12 +29,12 @@ class NfcSettingsPlugin : public GlacierSettingsPlugin {
 
 public:
     explicit NfcSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "nfc"; }
-    QString title() { return tr("NFC"); }
-    QString description() { return "Near field communication"; }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/nfc/nfc.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/nfc/nfc.svg"; }
+    PluginCategory category() const { return PluginCategory::Network; }
+    QString id() const { return "nfc"; }
+    QString title() const { return tr("NFC"); }
+    QString description() const { return "Near field communication"; }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/nfc/nfc.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/nfc/nfc.svg"; }
     bool enabled() { return m_enabled; };
 
 private:

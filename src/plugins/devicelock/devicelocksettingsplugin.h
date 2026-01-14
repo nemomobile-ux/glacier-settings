@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -30,12 +30,12 @@ class DeviceLockSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     DeviceLockSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Security; }
-    QString id() { return "devicelock"; }
-    QString title() { return tr("Device lock"); }
-    QString description() { return tr("Security settings"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg"; }
+    PluginCategory category() const { return PluginCategory::Security; }
+    QString id() const { return "devicelock"; }
+    QString title() const { return tr("Device lock"); }
+    QString description() const { return tr("Security settings"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/devicelock/devicelock.svg"; }
     bool enabled();
 
 private slots:

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class SoundsSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     SoundsSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "sounds"; }
-    QString title() { return tr("Sounds"); }
-    QString description() { return tr("Ringtones and sound level"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/sounds/sounds.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/sounds/sounds.svg"; }
+    PluginCategory category() const { return PluginCategory::Personalization; }
+    QString id() const { return "sounds"; }
+    QString title() const { return tr("Sounds"); }
+    QString description() const { return tr("Ringtones and sound level"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/sounds/sounds.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/sounds/sounds.svg"; }
     bool enabled() { return true; };
 };
 

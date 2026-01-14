@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -29,12 +29,12 @@ class AboutSettingsPlugin : public GlacierSettingsPlugin {
 
 public:
     explicit AboutSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Info; }
-    QString id() { return "about"; }
-    QString title() { return tr("About"); }
-    QString description() { return tr("Information about device"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/about/about.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/about/about.svg"; }
+    PluginCategory category() const { return PluginCategory::Info; }
+    QString id() const { return "about"; }
+    QString title() const { return tr("About"); }
+    QString description() const { return tr("Information about device"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/about/about.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/about/about.svg"; }
     bool enabled() { return true; }
 };
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -29,12 +29,12 @@ class MobileSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     MobileSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "mobile"; }
-    QString title() { return tr("Mobile"); }
-    QString description() { return tr("Operators and simcard"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg"; }
+    PluginCategory category() const { return PluginCategory::Network; }
+    QString id() const { return "mobile"; }
+    QString title() const { return tr("Mobile"); }
+    QString description() const { return tr("Operators and simcard"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/mobile/mobile.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/mobile/mobile.svg"; }
     bool enabled();
 
 private slots:

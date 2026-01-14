@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -63,14 +63,14 @@ SettingsModel::SettingsModel(QObject* parent)
     }
 
     connect(m_pluginManager.get(), &SettingsPluginManager::pluginListUpated, this, &SettingsModel::updatePluginsList);
-    connect(m_pluginManager.get(), &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginData);
+    connect(m_pluginManager.get(), &SettingsPluginManager::pluginDataChanged, this, &SettingsModel::updatePluginsList);
 
     if (qgetenv("SETTINGS_SHOW_DISABLED_PLUGINS") == "1") {
         m_showDisabled = true;
     }
 }
 
-bool SettingsModel::pluginAviable(QString name)
+bool SettingsModel::pluginAvailable(QString name)
 {
     if (name.length() == 0) {
         return false;
@@ -149,13 +149,6 @@ QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory ca
         return tr("Other");
         break;
     }
-}
-
-void SettingsModel::updatePluginData(QString pluginId)
-{
-    beginResetModel();
-    m_pluginList = m_pluginManager->getPlugins();
-    endResetModel();
 }
 
 void SettingsModel::updatePluginsList()

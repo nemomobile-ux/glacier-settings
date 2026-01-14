@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,8 +25,13 @@
 
 class GLACIERSETTINGS_EXPORT GlacierSettingsPlugin : public QObject {
     Q_OBJECT
+    Q_DISABLE_COPY(GlacierSettingsPlugin)
+
 public:
-    enum PluginCategory {
+    explicit GlacierSettingsPlugin(QObject* parent = nullptr)
+        : QObject(parent) {}
+
+    enum PluginCategory : quint8 {
         Personalization,
         Network,
         Security,
@@ -36,19 +41,18 @@ public:
     };
     Q_ENUM(PluginCategory)
 
-    virtual ~GlacierSettingsPlugin() { }
-    virtual PluginCategory category() = 0;
-    virtual QString id() = 0;
-    virtual QString title() = 0;
-    virtual QString description() = 0;
-    virtual QString qmlPath() = 0;
-    virtual QString icon() = 0;
+    ~GlacierSettingsPlugin() override = default;
+    virtual PluginCategory category() const = 0;
+    virtual QString id() const = 0;
+    virtual QString title() const = 0;
+    virtual QString description() const = 0;
+    virtual QString qmlPath() const = 0;
+    virtual QString icon() const = 0;
     virtual bool enabled() = 0;
 
 signals:
     void pluginChanged(QString id);
 };
 
-Q_DECLARE_INTERFACE(GlacierSettingsPlugin, "Glacier.SettingsPlugin")
-
+Q_DECLARE_INTERFACE(GlacierSettingsPlugin, "Glacier.SettingsPlugin/1.0")
 #endif // GLACIERSETTINGSPLUGIN_H

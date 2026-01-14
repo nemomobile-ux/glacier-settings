@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class LanguageSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     LanguageSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "language"; }
-    QString title() { return tr("Language"); }
-    QString description() { return tr("Interface language"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/language/language.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/language/language.svg"; }
+    PluginCategory category() const { return PluginCategory::Personalization; }
+    QString id() const { return "language"; }
+    QString title() const { return tr("Language"); }
+    QString description() const { return tr("Interface language"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/language/language.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/language/language.svg"; }
     bool enabled() { return true; };
 };
 

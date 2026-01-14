@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class UsbSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     UsbSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "usb"; }
-    QString title() { return tr("USB"); }
-    QString description() { return tr("Select usb mode"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/usb/usb.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/usb/usb.svg"; }
+    PluginCategory category() const { return PluginCategory::Network; }
+    QString id() const { return "usb"; }
+    QString title() const { return tr("USB"); }
+    QString description() const { return tr("Select usb mode"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/usb/usb.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/usb/usb.svg"; }
     bool enabled() { return true; }
 };
 

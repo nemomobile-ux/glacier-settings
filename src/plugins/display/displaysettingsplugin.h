@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class DisplaySettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     DisplaySettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Personalization; }
-    QString id() { return "display"; }
-    QString title() { return tr("Display"); }
-    QString description() { return tr("Brightness, orientation and theme"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/display/display.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/display/display.svg"; }
+    PluginCategory category() const { return PluginCategory::Personalization; }
+    QString id() const { return "display"; }
+    QString title() const { return tr("Display"); }
+    QString description() const { return tr("Brightness, orientation and theme"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/display/display.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/display/display.svg"; }
     bool enabled() { return true; };
 };
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -32,12 +32,12 @@ class BluezSettingsPlugin : public GlacierSettingsPlugin {
 public:
     explicit BluezSettingsPlugin(QObject* parent = nullptr);
     virtual ~BluezSettingsPlugin();
-    PluginCategory category() { return PluginCategory::Network; }
-    QString id() { return "bluez"; }
-    QString title() { return tr("Bluetooth"); }
-    QString description() { return tr("Manage bluetooth connection"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/bluez/bluez.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/bluez/bluez.svg"; }
+    PluginCategory category() const { return PluginCategory::Network; }
+    QString id() const { return "bluez"; }
+    QString title() const { return tr("Bluetooth"); }
+    QString description() const { return tr("Manage bluetooth connection"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/bluez/bluez.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/bluez/bluez.svg"; }
     bool enabled();
 
 private slots:

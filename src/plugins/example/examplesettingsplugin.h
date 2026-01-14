@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class ExampleSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     ExampleSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Development; }
-    QString id() { return "example"; }
-    QString title() { return tr("Example"); }
-    QString description() { return tr("Example settings plugin"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/example/example.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/example/example.svg"; }
+    PluginCategory category() const { return PluginCategory::Development; }
+    QString id() const { return "example"; }
+    QString title() const { return tr("Example"); }
+    QString description() const { return tr("Example settings plugin"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/example/example.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/example/example.svg"; }
     bool enabled() { return true; };
 };
 

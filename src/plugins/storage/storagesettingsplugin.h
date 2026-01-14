@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,12 +28,12 @@ class StorageSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     StorageSettingsPlugin(QObject* parent = nullptr);
-    PluginCategory category() { return PluginCategory::Info; }
-    QString id() { return "storage"; }
-    QString title() { return tr("Storage"); }
-    QString description() { return tr("Free space on device"); }
-    QString qmlPath() { return "/usr/share/glacier-settings/plugins/storage/storage.qml"; }
-    QString icon() { return "/usr/share/glacier-settings/plugins/storage/storage.svg"; }
+    PluginCategory category() const { return PluginCategory::Info; }
+    QString id() const { return "storage"; }
+    QString title() const { return tr("Storage"); }
+    QString description() const { return tr("Free space on device"); }
+    QString qmlPath() const { return "/usr/share/glacier-settings/plugins/storage/storage.qml"; }
+    QString icon() const { return "/usr/share/glacier-settings/plugins/storage/storage.svg"; }
     bool enabled() { return true; }
 };
 

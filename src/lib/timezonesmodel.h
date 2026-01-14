@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2022 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2021-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -36,13 +36,13 @@ public:
     QVariant data(const QModelIndex& index, int role) const;
     QHash<int, QByteArray> roleNames() const { return m_hash; }
 
-    Q_INVOKABLE void search(QString zoneName);
+    Q_INVOKABLE void search(const QString zoneName);
 
 private:
     QHash<int, QByteArray> m_hash;
     QStringList m_roleNames;
 
-    std::shared_ptr<TimeZoneInfo> m_tzInfo;
+    TimeZoneInfo* m_tzInfo;
     QList<TimeZoneInfo> m_zones;
 };
 

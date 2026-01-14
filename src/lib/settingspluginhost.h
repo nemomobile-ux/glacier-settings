@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2022-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,18 +22,17 @@
 
 #include <QObject>
 #include <QPluginLoader>
+#include <QTranslator>
 
 #include "glaciersettings_global.h"
 #include "glaciersettingsplugin.h"
 
-class QPluginLoader;
-
 class GLACIERSETTINGS_EXPORT SettingsPluginHost : public QObject {
+    Q_OBJECT
 public:
     SettingsPluginHost(const QString& fileName, QObject* parent = 0);
     ~SettingsPluginHost();
 
-    bool load();
     GlacierSettingsPlugin* get();
     GlacierSettingsPlugin::PluginCategory category();
     QString title();
@@ -43,7 +42,8 @@ public:
     bool valid() { return m_valid; }
 
 private:
-    std::shared_ptr<QPluginLoader> m_loader;
+    QPluginLoader* m_loader;
+    QTranslator* m_myappTranslator;
     GlacierSettingsPlugin* m_plugin;
     QString m_fileName;
 

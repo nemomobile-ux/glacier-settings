@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -39,12 +39,11 @@ public:
 
     static QMetaEnum defaultCategories;
 
-    Q_INVOKABLE bool pluginAviable(QString name);
+    Q_INVOKABLE bool pluginAvailable(QString name);
     Q_INVOKABLE QString pluginQmlPath(QString name);
     Q_INVOKABLE void loadPluginsList();
 
 private slots:
-    void updatePluginData(QString pluginId);
     void updatePluginsList();
 
 private:

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021-2025 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2021-2026 Chupligin Sergey <neochapay@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -22,7 +22,7 @@
 TimeZonesModel::TimeZonesModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    m_tzInfo = std::make_shared<TimeZoneInfo>();
+    m_tzInfo = new TimeZoneInfo();
 
     m_roleNames << "name";
     m_roleNames << "area";
@@ -41,12 +41,12 @@ TimeZonesModel::TimeZonesModel(QObject* parent)
 
 int TimeZonesModel::rowCount(const QModelIndex& parent) const
 {
+    Q_UNUSED(parent)
     return m_zones.count();
 }
 
 QVariant TimeZonesModel::data(const QModelIndex& index, int role) const
 {
-    Q_UNUSED(role);
     if (!index.isValid())
         return QVariant();
 
@@ -54,7 +54,7 @@ QVariant TimeZonesModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    TimeZoneInfo item = m_zones.at(index.row());
+    const TimeZoneInfo& item = m_zones.at(index.row());
 
     if (role == Qt::UserRole) {
         return item.name();
@@ -74,14 +74,14 @@ QVariant TimeZonesModel::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void TimeZonesModel::search(QString searchString)
+void TimeZonesModel::search(const QString searchString)
 {
     beginResetModel();
     if (searchString.isEmpty()) {
         m_zones = m_tzInfo->systemTimeZones();
     } else {
         m_zones.clear();
-        foreach (const TimeZoneInfo& zone, m_tzInfo->systemTimeZones()) {
+        for (const TimeZoneInfo& zone: m_tzInfo->systemTimeZones()) {
             QString zoneNameStr = zone.name();
             if (zoneNameStr.contains(searchString, Qt::CaseInsensitive)) {
                 m_zones.append(zone);
