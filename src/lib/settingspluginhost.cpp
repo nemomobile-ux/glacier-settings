@@ -33,9 +33,11 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
     if (plugin) {
         m_plugin = qobject_cast<GlacierSettingsPlugin*>(plugin);
         if (!m_plugin) {
-            qCWarning(lcGlacierSettingsCoreLog) << "Can't cast plugin";
+            qCWarning(lcGlacierSettingsCoreLog) << "Can't cast plugin" << fileName;
             m_loader->unload();
+            return;
         } else {
+            qCDebug(lcGlacierSettingsCoreLog) << "Cast plugin" << fileName;
             m_valid = true;
         }
 
