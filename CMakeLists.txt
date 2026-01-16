@@ -20,8 +20,8 @@ find_package(Qt6 COMPONENTS Gui Qml Quick Positioning LinguistTools DBus REQUIRE
 find_package(KF6BluezQt REQUIRED)
 
 option(BUILD_EXAMPLES "Install example plugin" OFF)
-pkg_search_module(SYSSETTINGS REQUIRED systemsettings-qt6)
-pkg_search_module(GLACIERAPP REQUIRED glacierapp)
+pkg_search_module(SYSSETTINGS REQUIRED systemsettings-qt6 IMPORTED_TARGET)
+pkg_search_module(GLACIERAPP REQUIRED glacierapp IMPORTED_TARGET)
 pkg_check_modules(TIMED_QT timed-qt6 REQUIRED IMPORTED_TARGET)
 pkg_check_modules(CONNMAN_QT connman-qt6 REQUIRED IMPORTED_TARGET)
 
