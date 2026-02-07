@@ -29,7 +29,9 @@ class GLACIERSETTINGS_EXPORT GlacierSettingsPlugin : public QObject {
 
 public:
     explicit GlacierSettingsPlugin(QObject* parent = nullptr)
-        : QObject(parent) {}
+        : QObject(parent)
+    {
+    }
 
     enum PluginCategory : quint8 {
         Personalization,
