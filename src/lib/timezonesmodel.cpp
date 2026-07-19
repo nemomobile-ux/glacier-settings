@@ -81,7 +81,7 @@ void TimeZonesModel::search(const QString searchString)
         m_zones = m_tzInfo->systemTimeZones();
     } else {
         m_zones.clear();
-        for (const TimeZoneInfo& zone: m_tzInfo->systemTimeZones()) {
+        for (const TimeZoneInfo& zone : m_tzInfo->systemTimeZones()) {
             QString zoneNameStr = zone.name();
             if (zoneNameStr.contains(searchString, Qt::CaseInsensitive)) {
                 m_zones.append(zone);

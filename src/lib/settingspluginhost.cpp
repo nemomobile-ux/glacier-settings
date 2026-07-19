@@ -59,11 +59,11 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
 
 SettingsPluginHost::~SettingsPluginHost()
 {
-    if(m_myappTranslator) {
+    if (m_myappTranslator) {
         qApp->removeTranslator(m_myappTranslator);
     }
 
-    if(m_loader) {
+    if (m_loader) {
         m_loader->unload();
     }
 }

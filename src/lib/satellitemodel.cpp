@@ -45,7 +45,7 @@ SatelliteModel::SatelliteModel(QObject* parent)
 
             connect(m_source, &QGeoSatelliteInfoSource::satellitesInUseUpdated,
                 this, &SatelliteModel::satellitesInUseUpdated);
-            connect(m_source,&QGeoSatelliteInfoSource::satellitesInViewUpdated,
+            connect(m_source, &QGeoSatelliteInfoSource::satellitesInViewUpdated,
                 this, &SatelliteModel::satellitesInViewUpdated);
             connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
                 this, &SatelliteModel::error);

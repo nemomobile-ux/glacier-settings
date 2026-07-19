@@ -20,8 +20,8 @@
 #ifndef SETTINGSPLUGINMANAGER_H
 #define SETTINGSPLUGINMANAGER_H
 
-#include <QObject>
 #include "settingspluginhost.h"
+#include <QObject>
 
 #include "glaciersettings_global.h"
 #include "glaciersettingsplugin.h"

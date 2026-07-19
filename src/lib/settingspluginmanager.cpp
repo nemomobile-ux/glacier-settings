@@ -55,7 +55,6 @@ void SettingsPluginManager::loadPlugins()
         m_hosts.push_back(shp);
         m_pluginList.push_back(plugin);
         connect(plugin, &GlacierSettingsPlugin::pluginChanged, this, &SettingsPluginManager::pluginDataChanged);
-
     }
     emit pluginListUpated();
 }
