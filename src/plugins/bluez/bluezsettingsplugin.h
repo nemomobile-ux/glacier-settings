@@ -31,7 +31,7 @@ class BluezSettingsPlugin : public GlacierSettingsPlugin {
     Q_PLUGIN_METADATA(IID "Glacier.SettingsPlugin")
 public:
     explicit BluezSettingsPlugin(QObject* parent = nullptr);
-    virtual ~BluezSettingsPlugin();
+    virtual ~BluezSettingsPlugin() = default;
     PluginCategory category() const { return PluginCategory::Network; }
     QString id() const { return "bluez"; }
     QString title() const { return tr("Bluetooth"); }
@@ -41,14 +41,15 @@ public:
     bool enabled();
 
 private slots:
-    void onTechnologyAviableChanged();
+    void onBtDeviceChanged(BluezQt::DevicePtr device);
+    void recalcPluginStatus();
+    void updateBluetoothTechnology();
 
 private:
     QSharedPointer<NetworkManager> m_networkManager;
-    QSharedPointer<NetworkTechnology> m_btTechnology;
+    NetworkTechnology* m_btTechnology;
     BluezQt::Manager* m_manager;
     bool m_enabled;
-    void recalcPluginStatus(BluezQt::DevicePtr device);
 };
 
 #endif // BLUEZSETTINGSPLUGIN_H
