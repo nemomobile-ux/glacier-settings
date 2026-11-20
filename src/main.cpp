@@ -42,13 +42,20 @@ Q_DECL_EXPORT int main(int argc, char* argv[])
     QGuiApplication* app = GlacierApp::app(argc, argv);
     app->setOrganizationName("NemoMobile");
 
+    QQmlApplicationEngine* engine = GlacierApp::engine(app);
+
     qmlRegisterType<SettingsModel>("org.nemomobile.glacier.settings", 1, 0, "SettingsModel");
     qmlRegisterType<SatelliteModel>("org.nemomobile.glacier.settings", 1, 0, "SatelliteModel");
     qmlRegisterType<TimeZonesModel>("org.nemomobile.glacier.settings", 1, 0, "TimeZonesModel");
     qmlRegisterType<ThemesModel>("org.nemomobile.glacier.settings", 1, 0, "ThemesModel");
 
     QQuickWindow* window = GlacierApp::showWindow();
+    if (!window) {
+        qCritical() << "Failed to create main window";
+        return -1;
+    }
     window->setTitle(QObject::tr("Settings"));
     window->setIcon(QIcon("/usr/share/glacier-settings/glacier-settings.png"));
+
     return app->exec();
 }
