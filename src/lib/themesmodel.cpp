@@ -20,6 +20,7 @@
 #include "themesmodel.h"
 
 #include <QDir>
+#include <algorithm>
 
 ThemesModel::ThemesModel(QObject* parent)
     : QAbstractListModel(parent)
@@ -30,40 +31,43 @@ ThemesModel::ThemesModel(QObject* parent)
     QDir imagesPathDir = QDir("/usr/lib/qt/qml/QtQuick/Controls/Styles/Nemo/themes/");
     imagesPathDir.setNameFilters(QStringList("*.json"));
     const QFileInfoList& list = imagesPathDir.entryInfoList();
-    QListIterator<QFileInfo> it(list);
 
-    while (it.hasNext()) {
-        const QFileInfo& fileInfo = it.next();
-        QString path = fileInfo.absoluteFilePath();
-        QString name = fileInfo.fileName().remove("glacier_").remove(".json");
-
-        m_themes.insert(name, path);
+    m_themes.reserve(list.size());
+    for (const QFileInfo& fileInfo : list) {
+        const QString path = fileInfo.absoluteFilePath();
+        QString name = fileInfo.fileName();
+        name.remove("glacier_");
+        name.remove(".json");
+        m_themes.append(qMakePair(name, path));
     }
+
+    std::sort(m_themes.begin(), m_themes.end(), [](const QPair<QString, QString>& a, const QPair<QString, QString>& b) {
+        return a.first < b.first;
+    });
 }
 
 int ThemesModel::rowCount(const QModelIndex& parent) const
 {
+    if (parent.isValid()) {
+        return 0;
+    }
+
     return m_themes.count();
 }
 
 QVariant ThemesModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid()) {
+    if (!index.isValid() || index.row() < 0 || index.row() >= m_themes.size()) {
         return QVariant();
     }
 
-    if (index.row() >= m_themes.size()) {
-        return QVariant();
-    }
-
-    QList<QString> keys = m_themes.keys();
-
+    const auto& theme = m_themes.at(index.row());
     if (role == Qt::UserRole) {
-        return keys[index.row()];
+        return theme.first;
     }
 
     if (role == Qt::UserRole + 1) {
-        return m_themes.value(keys[index.row()]);
+        return theme.second;
     }
 
     return QVariant();
@@ -75,9 +79,5 @@ QString ThemesModel::getPath(int index)
         return QString();
     }
 
-    QList<QString> keys = m_themes.keys();
-    QString name = keys[index];
-    QString path = m_themes.value(name).toString();
-
-    return path;
+    return m_themes.at(index).second;
 }

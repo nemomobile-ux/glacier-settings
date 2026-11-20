@@ -22,6 +22,8 @@
 
 #include <QAbstractListModel>
 #include <QObject>
+#include <QPair>
+#include <QVector>
 
 #include "glaciersettings_global.h"
 
@@ -39,7 +41,7 @@ signals:
 
 private:
     QHash<int, QByteArray> m_hash;
-    QVariantMap m_themes;
+    QVector<QPair<QString, QString>> m_themes;
 };
 
 #endif // THEMESMODEL_H
