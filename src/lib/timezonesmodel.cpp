@@ -36,7 +36,8 @@ TimeZonesModel::TimeZonesModel(QObject* parent)
         m_hash.insert(Qt::UserRole + m_hash.count(), role.toLatin1());
     }
 
-    m_zones = m_tzInfo->systemTimeZones();
+    m_allZones = m_tzInfo->systemTimeZones();
+    m_zones = m_allZones;
 }
 
 TimeZonesModel::~TimeZonesModel()
