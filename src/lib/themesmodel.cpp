@@ -71,7 +71,7 @@ QVariant ThemesModel::data(const QModelIndex& index, int role) const
 
 QString ThemesModel::getPath(int index)
 {
-    if (index >= m_themes.size()) {
+    if (index < 0 || index >= m_themes.size()) {
         return QString();
     }
 
