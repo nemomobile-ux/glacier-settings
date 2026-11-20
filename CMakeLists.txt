@@ -21,7 +21,7 @@ find_package(KF6BluezQt REQUIRED)
 
 option(BUILD_EXAMPLES "Install example plugin" OFF)
 pkg_search_module(SYSSETTINGS REQUIRED systemsettings-qt6 IMPORTED_TARGET)
-pkg_search_module(GLACIERAPP REQUIRED glacierapp IMPORTED_TARGET)
+pkg_search_module(GLACIERAPP REQUIRED glacierapp6 glacierapp IMPORTED_TARGET)
 pkg_check_modules(TIMED_QT timed-qt6 REQUIRED IMPORTED_TARGET)
 pkg_check_modules(CONNMAN_QT connman-qt6 REQUIRED IMPORTED_TARGET)
 
