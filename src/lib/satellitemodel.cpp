@@ -295,14 +295,26 @@ void SatelliteModel::satellitesInUseUpdated(const QList<QGeoSatelliteInfo>& info
     if (!running())
         return;
 
-    beginResetModel();
+    QSet<int> newInUse;
+    for (const QGeoSatelliteInfo& info : infos) {
+        newInUse.insert(info.satelliteIdentifier());
+    }
 
-    satellitesInUse.clear();
-    foreach (const QGeoSatelliteInfo& info, infos)
-        satellitesInUse.insert(info.satelliteIdentifier());
+    if (newInUse == satellitesInUse) {
+        return;
+    }
+
+    const QSet<int> changed = (newInUse - satellitesInUse) + (satellitesInUse - newInUse);
+    satellitesInUse = newInUse;
+
+    for (int row = 0; row < knownSatellites.count(); ++row) {
+        if (changed.contains(knownSatellites.at(row).satelliteIdentifier())) {
+            const QModelIndex idx = index(row, 0);
+            emit dataChanged(idx, idx, { InUseRole });
+        }
+    }
 
     emit usedSattelitesChanged();
-    endResetModel();
 }
 
 bool SatelliteModel::isValid() const
