@@ -161,6 +161,7 @@ void SettingsModel::updatePluginsList()
 {
     beginResetModel();
     m_pluginList = m_pluginManager->getPlugins();
+    rebuildCategoryCache();
     endResetModel();
 }
 
@@ -186,7 +187,6 @@ QVariantMap SettingsModel::get(int idx) const
 
 QVariant SettingsModel::data(const QModelIndex& index, int role) const
 {
-    Q_UNUSED(role);
     if (!index.isValid())
         return QVariant();
 
