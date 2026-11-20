@@ -22,6 +22,7 @@
 #include <QtGui/QGuiApplication>
 
 #include <QCoreApplication>
+#include <QDebug>
 #include <QScreen>
 #include <QtCore/QString>
 #include <QtQml>
