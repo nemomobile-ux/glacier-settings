@@ -25,6 +25,7 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
     : QObject(parent)
     , m_loader(nullptr)
     , m_myappTranslator(nullptr)
+    , m_plugin(nullptr)
     , m_fileName(fileName)
     , m_valid(false)
 {
