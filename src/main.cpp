@@ -23,10 +23,16 @@
 
 #include <QCoreApplication>
 #include <QDebug>
+#include <QIcon>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
 #include <QScreen>
 #include <QtCore/QString>
 #include <QtQml>
 #include <QtQuick/QQuickView>
+#include <QUrl>
+
+#include <cstdlib>
 
 #include <glacierapp.h>
 
@@ -37,10 +43,12 @@
 
 Q_DECL_EXPORT int main(int argc, char* argv[])
 {
+    Q_INIT_RESOURCE(glacier_settings);
     setenv("QT_QUICK_CONTROLS_STYLE", "Nemo", 1);
 
     QGuiApplication* app = GlacierApp::app(argc, argv);
     app->setOrganizationName("NemoMobile");
+    QCoreApplication::setApplicationName(QStringLiteral("glacier-settings"));
 
     QQmlApplicationEngine* engine = GlacierApp::engine(app);
 
@@ -49,13 +57,22 @@ Q_DECL_EXPORT int main(int argc, char* argv[])
     qmlRegisterType<TimeZonesModel>("org.nemomobile.glacier.settings", 1, 0, "TimeZonesModel");
     qmlRegisterType<ThemesModel>("org.nemomobile.glacier.settings", 1, 0, "ThemesModel");
 
-    QQuickWindow* window = GlacierApp::showWindow();
-    if (!window) {
-        qCritical() << "Failed to create main window";
-        return -1;
+    engine->load(QUrl(QStringLiteral("qrc:/glacier-settings.qml")));
+    if (engine->rootObjects().isEmpty()) {
+        qCritical() << "Failed to load main QML from resources";
+        std::_Exit(-1);
     }
+
+    QQuickWindow* window = qobject_cast<QQuickWindow*>(engine->rootObjects().constFirst());
+    if (!window) {
+        qCritical() << "Root object is not a QQuickWindow";
+        std::_Exit(-1);
+    }
+
+    engine->rootContext()->setContextProperty(QStringLiteral("__window"), window);
     window->setTitle(QObject::tr("Settings"));
-    window->setIcon(QIcon("/usr/share/glacier-settings/glacier-settings.png"));
+    window->setIcon(QIcon(QStringLiteral("/usr/share/glacier-settings/glacier-settings.png")));
+    window->show();
 
     return app->exec();
 }
