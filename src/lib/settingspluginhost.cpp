@@ -31,30 +31,38 @@ SettingsPluginHost::SettingsPluginHost(const QString& fileName, QObject* parent)
 {
     m_loader = new QPluginLoader(fileName);
     QObject* plugin = m_loader->instance();
-    if (plugin) {
-        m_plugin = qobject_cast<GlacierSettingsPlugin*>(plugin);
-        if (!m_plugin) {
-            qCWarning(lcGlacierSettingsCoreLog) << "Can't cast plugin" << fileName;
-            m_loader->unload();
-            return;
-        } else {
-            qCDebug(lcGlacierSettingsCoreLog) << "Cast plugin" << fileName;
-            m_valid = true;
-        }
-
-        m_myappTranslator = new QTranslator(qApp);
-        if (m_myappTranslator->load(QLocale(), m_plugin->id(), QLatin1String("_"), QLatin1String("/usr/share/glacier-settings/translations/"))) {
-            if (qApp->installTranslator(m_myappTranslator)) {
-                qCDebug(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " installTranslator() success" << QLocale::system().name();
-            } else {
-                qCWarning(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " installTranslator() failed" << QLocale::system().name();
-            }
-        } else {
-            qCWarning(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " translation.load() failed" << QLocale::system().name();
-        }
-
-    } else {
+    if (!plugin) {
         qCDebug(lcGlacierSettingsCoreLog) << "Plugin not found" << fileName << m_loader->errorString();
+        delete m_loader;
+        m_loader = nullptr;
+        return;
+    }
+
+    m_plugin = qobject_cast<GlacierSettingsPlugin*>(plugin);
+    if (!m_plugin) {
+        qCWarning(lcGlacierSettingsCoreLog) << "Can't cast plugin" << fileName;
+        m_loader->unload();
+        delete m_loader;
+        m_loader = nullptr;
+        return;
+    }
+
+    qCDebug(lcGlacierSettingsCoreLog) << "Cast plugin" << fileName;
+    m_valid = true;
+
+    m_myappTranslator = new QTranslator(qApp);
+    if (m_myappTranslator->load(QLocale(), m_plugin->id(), QLatin1String("_"), QLatin1String("/usr/share/glacier-settings/translations/"))) {
+        if (qApp->installTranslator(m_myappTranslator)) {
+            qCDebug(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " installTranslator() success" << QLocale::system().name();
+        } else {
+            qCWarning(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " installTranslator() failed" << QLocale::system().name();
+            delete m_myappTranslator;
+            m_myappTranslator = nullptr;
+        }
+    } else {
+        qCWarning(lcGlacierSettingsCoreLog) << "Plugin " << m_plugin->id() << " translation.load() failed" << QLocale::system().name();
+        delete m_myappTranslator;
+        m_myappTranslator = nullptr;
     }
 }
 
@@ -62,10 +70,14 @@ SettingsPluginHost::~SettingsPluginHost()
 {
     if (m_myappTranslator) {
         qApp->removeTranslator(m_myappTranslator);
+        delete m_myappTranslator;
+        m_myappTranslator = nullptr;
     }
 
     if (m_loader) {
         m_loader->unload();
+        delete m_loader;
+        m_loader = nullptr;
     }
 }
 
