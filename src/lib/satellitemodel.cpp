@@ -20,7 +20,6 @@
 #include "satellitemodel.h"
 #include "logging.h"
 #include <QFile>
-#include <QTimer>
 
 SatelliteModel::SatelliteModel(QObject* parent)
     : QAbstractListModel(parent)
@@ -49,9 +48,6 @@ SatelliteModel::SatelliteModel(QObject* parent)
                 this, &SatelliteModel::satellitesInViewUpdated);
             connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
                 this, &SatelliteModel::error);
-            QTimer timer;
-            connect(&timer, SIGNAL(timeout()), this, SLOT(updateDemoData()));
-            timer.start(3000);
         }
     }
 }
