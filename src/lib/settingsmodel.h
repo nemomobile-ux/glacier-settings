@@ -54,7 +54,6 @@ private:
     QList<GlacierSettingsPlugin*> m_pluginList;
 
     QVariantList pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const;
-    bool loadConfig(QString configFileName);
     QString categoryToString(GlacierSettingsPlugin::PluginCategory category) const;
     bool m_showDisabled;
 };
