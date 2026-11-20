@@ -44,5 +44,8 @@ install(FILES ${QML_PLUGINS}
 install(DIRECTORY qml/components/
     DESTINATION ${QT_INSTALL_QML}/Glacier/Controls/Settings)
 
+install(DIRECTORY qml
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-settings)
+
 add_subdirectory(lib)
 add_subdirectory(plugins)
