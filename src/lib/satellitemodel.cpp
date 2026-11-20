@@ -190,7 +190,7 @@ int SatelliteModel::entryCount() const
 
 bool SatelliteModel::canProvideSatelliteInfo() const
 {
-    return !m_isValid;
+    return m_isValid;
 }
 
 void SatelliteModel::clearModel()
