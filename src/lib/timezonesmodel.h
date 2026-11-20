@@ -31,6 +31,7 @@ class GLACIERSETTINGS_EXPORT TimeZonesModel : public QAbstractListModel {
     Q_OBJECT
 public:
     explicit TimeZonesModel(QObject* parent = 0);
+    ~TimeZonesModel();
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const;
     QVariant data(const QModelIndex& index, int role) const;

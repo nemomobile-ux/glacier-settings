@@ -39,6 +39,11 @@ TimeZonesModel::TimeZonesModel(QObject* parent)
     m_zones = m_tzInfo->systemTimeZones();
 }
 
+TimeZonesModel::~TimeZonesModel()
+{
+    delete m_tzInfo;
+}
+
 int TimeZonesModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent)
