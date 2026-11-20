@@ -166,9 +166,15 @@ int SettingsModel::rowCount(const QModelIndex& parent) const
 
 QVariantMap SettingsModel::get(int idx) const
 {
+    if (idx < 0 || idx >= defaultCategories.keyCount()) {
+        return QVariantMap();
+    }
+
+    const QVariant item = defaultCategories.value(idx);
+    const auto category = static_cast<GlacierSettingsPlugin::PluginCategory>(item.toUInt());
     return QVariantMap {
-        { "title", m_pluginList.at(idx)->title() },
-        { "items", pluginsInCategory(m_pluginList.at(idx)->category()) }
+        { "title", categoryToString(category) },
+        { "items", pluginsInCategory(category) }
     };
 }
 
