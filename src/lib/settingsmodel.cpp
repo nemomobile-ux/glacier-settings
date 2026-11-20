@@ -107,10 +107,15 @@ void SettingsModel::loadPluginsList()
 
 QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const
 {
-    QVariantList pluginsInCat;
+    return m_categoryCache.value(static_cast<int>(category));
+}
+
+void SettingsModel::rebuildCategoryCache()
+{
+    m_categoryCache.clear();
 
     for (GlacierSettingsPlugin* item : m_pluginList) {
-        if (item == nullptr || item->category() != category) {
+        if (!item) {
             continue;
         }
 
@@ -120,11 +125,12 @@ QVariantList SettingsModel::pluginsInCategory(GlacierSettingsPlugin::PluginCateg
         map["path"] = item->qmlPath();
         map["description"] = item->description();
         map["enabled"] = item->enabled();
-        if (map["enabled"].toBool() || m_showDisabled) {
-            pluginsInCat.append(map);
+        if (!map["enabled"].toBool() && !m_showDisabled) {
+            continue;
         }
+
+        m_categoryCache[static_cast<int>(item->category())].append(map);
     }
-    return pluginsInCat;
 }
 
 QString SettingsModel::categoryToString(GlacierSettingsPlugin::PluginCategory category) const

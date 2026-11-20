@@ -55,7 +55,9 @@ private:
 
     QVariantList pluginsInCategory(GlacierSettingsPlugin::PluginCategory category) const;
     QString categoryToString(GlacierSettingsPlugin::PluginCategory category) const;
+    void rebuildCategoryCache();
     bool m_showDisabled;
+    QHash<int, QVariantList> m_categoryCache;
 };
 
 #endif // SETTINGSMODEL_H
