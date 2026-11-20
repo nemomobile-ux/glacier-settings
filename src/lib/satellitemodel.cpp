@@ -171,10 +171,12 @@ void SatelliteModel::setRunning(bool isActive)
 
     if (m_running) {
         clearModel();
-        if (isSingleRequest())
+        if (isSingleRequest()) {
+            singleRequestServed = false;
             m_source->requestUpdate(10000);
-        else
+        } else {
             m_source->startUpdates();
+        }
     } else {
         if (!isSingleRequest())
             m_source->stopUpdates();
