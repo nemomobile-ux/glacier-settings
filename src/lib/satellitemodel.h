@@ -97,6 +97,8 @@ private slots:
     void satellitesInUseUpdated(const QList<QGeoSatelliteInfo>& infos);
 
 private:
+    bool ensureSource();
+
     QGeoSatelliteInfoSource* m_source;
     bool m_componentCompleted;
     bool m_running;

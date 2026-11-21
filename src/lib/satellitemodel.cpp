@@ -31,25 +31,39 @@ SatelliteModel::SatelliteModel(QObject* parent)
     , singleRequestServed(false)
     , m_isValid(false)
 {
-    QStringList aS = QGeoSatelliteInfoSource::availableSources();
-    if (aS.size() == 0) {
+    m_isValid = !QGeoSatelliteInfoSource::availableSources().isEmpty();
+    if (!m_isValid) {
         qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found";
-    } else {
-        m_source = QGeoSatelliteInfoSource::createDefaultSource(this);
-        if (m_source == nullptr) {
-            qCWarning(lcGlacierSettingsCoreLog) << "QGeoSatelliteInfoSource is NULL";
-        } else {
-            m_isValid = true;
-            m_source->setUpdateInterval(3000);
-
-            connect(m_source, &QGeoSatelliteInfoSource::satellitesInUseUpdated,
-                this, &SatelliteModel::satellitesInUseUpdated);
-            connect(m_source, &QGeoSatelliteInfoSource::satellitesInViewUpdated,
-                this, &SatelliteModel::satellitesInViewUpdated);
-            connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
-                this, &SatelliteModel::error);
-        }
     }
+}
+
+bool SatelliteModel::ensureSource()
+{
+    if (m_source) {
+        return true;
+    }
+
+    if (!m_isValid) {
+        return false;
+    }
+
+    m_source = QGeoSatelliteInfoSource::createDefaultSource(this);
+    if (!m_source) {
+        qCWarning(lcGlacierSettingsCoreLog) << "QGeoSatelliteInfoSource is NULL";
+        m_isValid = false;
+        emit isValidChanged();
+        emit canProvideSatelliteInfoChanged();
+        return false;
+    }
+
+    m_source->setUpdateInterval(3000);
+    connect(m_source, &QGeoSatelliteInfoSource::satellitesInUseUpdated,
+        this, &SatelliteModel::satellitesInUseUpdated);
+    connect(m_source, &QGeoSatelliteInfoSource::satellitesInViewUpdated,
+        this, &SatelliteModel::satellitesInViewUpdated);
+    connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
+        this, &SatelliteModel::error);
+    return true;
 }
 
 SatelliteModel::~SatelliteModel()
