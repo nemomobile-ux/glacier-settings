@@ -41,7 +41,7 @@ Page {
 
     SatelliteModel {
         id: satelliteModel
-        running: true
+        running: satelliteModel.isValid && locationSettings.gpsEnabled
     }
 
     LocationSettings{
@@ -267,7 +267,7 @@ Page {
                 longitudeLabel.text = qsTr("Longitude")+" : "+positionSource.position.coordinate.longitude
             }
         }
-        active: true
+        active: locationSettings.locationEnabled
         updateInterval: 10000
     }
 
