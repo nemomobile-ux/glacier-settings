@@ -251,8 +251,8 @@ Page {
                 stepSize: 0.1
                 width: parent.width
 
-                onValueChanged: {
-                    dpScaleFactor.value = scaleSlider.value
+                onMoved: {
+                    dpScaleFactor.value = value
                 }
             }
         }
