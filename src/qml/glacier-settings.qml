@@ -133,7 +133,9 @@ ApplicationWindow{
                                     icon: modelData.icon
                                     description: modelData.enabled ? modelData.description : qsTr("disabled")
                                     onClicked:{
+                                        console.log("SettingsPage: opening plugin", modelData.title, modelData.path)
                                         pageStack.push(Qt.resolvedUrl("file:/"+modelData.path))
+                                        console.log("SettingsPage: push requested", modelData.path)
                                     }
                                 }
                             }

@@ -31,19 +31,25 @@ SatelliteModel::SatelliteModel(QObject* parent)
     , singleRequestServed(false)
     , m_isValid(true)
 {
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: constructed";
 }
 
 bool SatelliteModel::ensureSource()
 {
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: ensureSource called";
     if (m_source) {
+        qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: source already exists";
         return true;
     }
 
     if (!m_isValid) {
+        qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: model is not valid";
         return false;
     }
 
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: creating default source";
     m_source = QGeoSatelliteInfoSource::createDefaultSource(this);
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: default source created" << (m_source != nullptr);
     if (!m_source) {
         qCWarning(lcGlacierSettingsCoreLog) << "QGeoSatelliteInfoSource is NULL";
         m_isValid = false;
@@ -59,6 +65,7 @@ bool SatelliteModel::ensureSource()
         this, &SatelliteModel::satellitesInViewUpdated);
     connect(m_source, &QGeoSatelliteInfoSource::errorOccurred,
         this, &SatelliteModel::error);
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: source initialized";
     return true;
 }
 
@@ -136,6 +143,7 @@ QHash<int, QByteArray> SatelliteModel::roleNames() const
 
 void SatelliteModel::componentComplete()
 {
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: componentComplete, runningRequested=" << m_runningRequested;
     m_componentCompleted = true;
     if (m_runningRequested) {
         m_runningRequested = false;
@@ -168,6 +176,7 @@ void SatelliteModel::setSingleRequest(bool single)
 
 void SatelliteModel::setRunning(bool isActive)
 {
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: setRunning" << isActive << "valid=" << m_isValid << "completed=" << m_componentCompleted << "running=" << m_running;
     if (!isActive) {
         if (!m_running) {
             m_runningRequested = false;
@@ -183,10 +192,12 @@ void SatelliteModel::setRunning(bool isActive)
     }
 
     if (!m_isValid) {
+        qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: not starting, invalid";
         return;
     }
 
     if (!m_componentCompleted) {
+        qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: component not completed, deferring start";
         m_runningRequested = true;
         return;
     }
@@ -196,6 +207,7 @@ void SatelliteModel::setRunning(bool isActive)
     }
 
     if (!ensureSource()) {
+        qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: source unavailable, cannot start";
         return;
     }
 
@@ -208,6 +220,7 @@ void SatelliteModel::setRunning(bool isActive)
         m_source->startUpdates();
     }
 
+    qCDebug(lcGlacierSettingsCoreLog) << "SatelliteModel: started";
     Q_EMIT runningChanged();
 }
 
