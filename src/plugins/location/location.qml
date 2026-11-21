@@ -267,7 +267,7 @@ Page {
                 longitudeLabel.text = qsTr("Longitude")+" : "+positionSource.position.coordinate.longitude
             }
         }
-        active: locationSettings.locationEnabled
+        active: locationSettings.locationEnabled && locationSettings.gpsEnabled
         updateInterval: 10000
     }
 

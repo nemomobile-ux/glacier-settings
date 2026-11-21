@@ -29,12 +29,8 @@ SatelliteModel::SatelliteModel(QObject* parent)
     , m_runningRequested(false)
     , isSingle(false)
     , singleRequestServed(false)
-    , m_isValid(false)
+    , m_isValid(true)
 {
-    m_isValid = !QGeoSatelliteInfoSource::availableSources().isEmpty();
-    if (!m_isValid) {
-        qCDebug(lcGlacierSettingsCoreLog) << "No satellite data source found";
-    }
 }
 
 bool SatelliteModel::ensureSource()
@@ -141,8 +137,10 @@ QHash<int, QByteArray> SatelliteModel::roleNames() const
 void SatelliteModel::componentComplete()
 {
     m_componentCompleted = true;
-    if (m_runningRequested)
+    if (m_runningRequested) {
+        m_runningRequested = false;
         setRunning(true);
+    }
 }
 
 bool SatelliteModel::running() const
@@ -170,30 +168,44 @@ void SatelliteModel::setSingleRequest(bool single)
 
 void SatelliteModel::setRunning(bool isActive)
 {
-    if (!m_isValid)
-        return;
+    if (!isActive) {
+        if (!m_running) {
+            m_runningRequested = false;
+            return;
+        }
 
-    if (!m_componentCompleted) {
-        m_runningRequested = isActive;
+        m_running = false;
+        if (m_source && !isSingleRequest()) {
+            m_source->stopUpdates();
+        }
+        Q_EMIT runningChanged();
         return;
     }
 
-    if (m_running == isActive)
+    if (!m_isValid) {
         return;
+    }
 
-    m_running = isActive;
+    if (!m_componentCompleted) {
+        m_runningRequested = true;
+        return;
+    }
 
     if (m_running) {
-        clearModel();
-        if (isSingleRequest()) {
-            singleRequestServed = false;
-            m_source->requestUpdate(10000);
-        } else {
-            m_source->startUpdates();
-        }
+        return;
+    }
+
+    if (!ensureSource()) {
+        return;
+    }
+
+    m_running = true;
+    clearModel();
+    if (isSingleRequest()) {
+        singleRequestServed = false;
+        m_source->requestUpdate(10000);
     } else {
-        if (!isSingleRequest())
-            m_source->stopUpdates();
+        m_source->startUpdates();
     }
 
     Q_EMIT runningChanged();
