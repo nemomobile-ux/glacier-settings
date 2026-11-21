@@ -103,6 +103,18 @@ Page {
 
             Label{
                 width: parent.width
+                text: qsTr("Operating system")
+                font.pixelSize: Theme.fontSizeSmall
+                font.bold: true
+            }
+
+            Label{
+                width: parent.width
+                text: aboutSettings.localizedOperatingSystemName !== "" ? aboutSettings.localizedOperatingSystemName : qsTr("n/a")
+            }
+
+            Label{
+                width: parent.width
                 text: qsTr("Vendor")
                 font.pixelSize: Theme.fontSizeSmall
                 font.bold: true
@@ -110,7 +122,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.vendorName
+                text: aboutSettings.vendorName !== "" ? aboutSettings.vendorName : qsTr("n/a")
             }
 
             Label{
@@ -122,7 +134,7 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.vendorVersion
+                text: aboutSettings.vendorVersion !== "" ? aboutSettings.vendorVersion : qsTr("n/a")
             }
 
             Label{
@@ -134,7 +146,19 @@ Page {
 
             Label{
                 width: parent.width
-                text: aboutSettings.softwareVersion != "" ? aboutSettings.softwareVersion : qsTr("n/a")
+                text: aboutSettings.softwareVersion !== "" ? aboutSettings.softwareVersion : qsTr("n/a")
+            }
+
+            Label{
+                width: parent.width
+                text: qsTr("Software version ID")
+                font.pixelSize: Theme.fontSizeSmall
+                font.bold: true
+            }
+
+            Label{
+                width: parent.width
+                text: aboutSettings.softwareVersionId !== "" ? aboutSettings.softwareVersionId : qsTr("n/a")
             }
 
             Label{
