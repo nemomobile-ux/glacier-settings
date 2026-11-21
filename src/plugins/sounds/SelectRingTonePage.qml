@@ -20,11 +20,10 @@
 
 import QtQuick
 import QtMultimedia
+import Qt.labs.folderlistmodel
 
 import Nemo
 import Nemo.Controls
-
-import org.nemomobile.folderlistmodel 1.0
 
 import Glacier.Controls.Settings 1.0
 
@@ -37,7 +36,7 @@ Page {
 
     FolderListModel {
         id: dirModel
-        path: "/usr/share/sounds/glacier/stereo"
+        folder: "file:///usr/share/sounds/glacier/stereo"
     }
 
     ListView {
@@ -57,7 +56,7 @@ Page {
             height: Theme.itemHeightLarge
 
             onClicked: {
-                selectedFile = "file://" + dirModel.path + "/" + fileName;
+                selectedFile = fileUrl
             }
 
             actions:[
@@ -67,7 +66,7 @@ Page {
                         if (soundPlayer.playbackState === MediaPlayer.PlayingState) {
                             soundPlayer.stop();
                         } else {
-                            soundPlayer.source = "file://" + dirModel.path + "/" + fileName
+                            soundPlayer.source = fileUrl
                             Qt.callLater(() => soundPlayer.play())
                             console.log(soundPlayer.source)
                         }
@@ -85,7 +84,7 @@ Page {
 
     function selectFile(newFile) {
         if (fileSelectedCallback) {
-            selectedFile = "file://" + dirModel.path + "/" + fileName;
+            selectedFile = newFile
             fileSelectedCallback(newFile)
         }
     }
