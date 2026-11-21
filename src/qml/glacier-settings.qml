@@ -17,11 +17,11 @@
  * Boston, MA 02110-1301, USA.
  */
 
-import QtQuick 2.0
-import QtQuick.Window 2.0
+import QtQuick
+import QtQuick.Window
 
-import Nemo 2.0
-import Nemo.Controls 2.0
+import Nemo
+import Nemo.Controls
 
 import org.nemomobile.glacier.settings 1.0
 import org.nemomobile.systemsettings 1.0
