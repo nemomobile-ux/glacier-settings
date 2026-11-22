@@ -4,25 +4,45 @@
     <message>
         <location filename="../certificatessettingsplugin.h" line="34"/>
         <source>Certificates</source>
-        <translation>Certificates</translation>
+        <translation>Сертификаты</translation>
+    </message>
+    <message>
+        <location filename="../certificatessettingsplugin.h" line="35"/>
+        <source>View system and user certificates</source>
+        <translation>Просмотр системных и пользовательских сертификатов</translation>
     </message>
 </context>
 <context>
     <name>certificates</name>
     <message>
-        <location filename="../certificates.qml" line="35"/>
+        <location filename="../certificates.qml" line="33"/>
         <source>Certificates</source>
-        <translation>Certificates</translation>
+        <translation>Сертификаты</translation>
     </message>
     <message>
-        <location filename="../certificates.qml" line="45"/>
-        <source>Certificates unavailable</source>
-        <translation>Certificates недоступно</translation>
+        <location filename="../certificates.qml" line="50"/>
+        <source>Certificate bundle</source>
+        <translation>Набор сертификатов</translation>
     </message>
     <message>
-        <location filename="../certificates.qml" line="58"/>
-        <source>Enable Certificates</source>
-        <translation>Включить Certificates</translation>
+        <location filename="../certificates.qml" line="53"/>
+        <source>TLS</source>
+        <translation>TLS</translation>
+    </message>
+    <message>
+        <location filename="../certificates.qml" line="54"/>
+        <source>Email</source>
+        <translation>Электронная почта</translation>
+    </message>
+    <message>
+        <location filename="../certificates.qml" line="55"/>
+        <source>Object signing</source>
+        <translation>Подпись объектов</translation>
+    </message>
+    <message>
+        <location filename="../certificates.qml" line="84"/>
+        <source>No certificates found</source>
+        <translation>Сертификаты не найдены</translation>
     </message>
 </context>
 </TS>

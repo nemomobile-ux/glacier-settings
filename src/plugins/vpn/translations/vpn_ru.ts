@@ -1,195 +1,185 @@
 <?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
 <context>
-    <name>NetworkDelegate</name>
+    <name>AddVpnPage</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
-        <source>connected</source>
-        <translation>Соединён</translation>
+        <location filename="../AddVpnPage.qml" line="38"/>
+        <source>Add VPN</source>
+        <translation>Добавить VPN</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
-        <source>connecting</source>
-        <translation>Соединяется</translation>
+        <location filename="../AddVpnPage.qml" line="51"/>
+        <source>Create manually</source>
+        <translation>Создать вручную</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
-        <source>open</source>
-        <translation>открытая</translation>
+        <location filename="../AddVpnPage.qml" line="52"/>
+        <source>Enter VPN settings by hand</source>
+        <translation>Ввести параметры VPN вручную</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
-        <source>unknown</source>
-        <translation>неизвестно</translation>
+        <location filename="../AddVpnPage.qml" line="62"/>
+        <source>Import from file</source>
+        <translation>Импортировать из файла</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
-        <source>secure</source>
-        <translation>защищённая</translation>
+        <location filename="../AddVpnPage.qml" line="63"/>
+        <source>Import OpenVPN configuration file</source>
+        <translation>Импортировать файл конфигурации OpenVPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="74"/>
+        <source>Import VPN</source>
+        <translation>Импорт VPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="75"/>
+        <source>Enter path to OpenVPN configuration file</source>
+        <translation>Введите путь к файлу конфигурации OpenVPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="76"/>
+        <source>Import</source>
+        <translation>Импортировать</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="77"/>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="84"/>
+        <source>/path/to/config.ovpn</source>
+        <translation>/путь/к/config.ovpn</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="101"/>
+        <location filename="../AddVpnPage.qml" line="110"/>
+        <source>Failed to import VPN configuration</source>
+        <translation>Не удалось импортировать конфигурацию VPN</translation>
     </message>
 </context>
 <context>
-    <name>SavedServices</name>
+    <name>VpnEditor</name>
     <message>
-        <location filename="../SavedServices.qml" line="36"/>
-        <source>Manage saved networks</source>
-        <translation>Управление сохранёнными сетями</translation>
+        <location filename="../VpnEditor.qml" line="41"/>
+        <source>Add VPN</source>
+        <translation>Добавить VPN</translation>
     </message>
     <message>
-        <location filename="../SavedServices.qml" line="66"/>
-        <source>No saved vpn networks</source>
-        <translation>Нет сохранённых vpn сетей</translation>
+        <location filename="../VpnEditor.qml" line="41"/>
+        <source>Edit VPN</source>
+        <translation>Изменить VPN</translation>
     </message>
-</context>
-<context>
-    <name>SavedStatus</name>
     <message>
-        <location filename="../SavedStatus.qml" line="47"/>
+        <location filename="../VpnEditor.qml" line="134"/>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="141"/>
+        <source>Host</source>
+        <translation>Хост</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="148"/>
+        <source>Domain (default: local)</source>
+        <translation>Домен (по умолчанию: local)</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="155"/>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="181"/>
         <source>Auto connect</source>
-        <translation>Автоматическое соединение</translation>
+        <translation>Подключаться автоматически</translation>
     </message>
     <message>
-        <location filename="../SavedStatus.qml" line="72"/>
-        <source>Remove</source>
-        <translation>Удалить</translation>
+        <location filename="../VpnEditor.qml" line="199"/>
+        <source>Port (default: 1194)</source>
+        <translation>Порт (по умолчанию: 1194)</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="210"/>
+        <source>Protocol</source>
+        <translation>Протокол</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="232"/>
+        <source>Device type</source>
+        <translation>Тип устройства</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="254"/>
+        <source>CA certificate path</source>
+        <translation>Путь к сертификату CA</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="261"/>
+        <source>Client certificate path</source>
+        <translation>Путь к сертификату клиента</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="268"/>
+        <source>Client key path</source>
+        <translation>Путь к ключу клиента</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="274"/>
+        <source>Use username/password</source>
+        <translation>Использовать имя пользователя и пароль</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="288"/>
+        <source>Username</source>
+        <translation>Имя пользователя</translation>
     </message>
 </context>
 <context>
     <name>VpnSettingsPlugin</name>
     <message>
-        <location filename="../vpnsettingsplugin.cpp" line="26"/>
-        <source>Wireless networks</source>
-        <translation>Беспроводные сети</translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="49"/>
-        <location filename="../vpnsettingsplugin.cpp" line="67"/>
-        <source>connected</source>
-        <translation>соединено</translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="51"/>
-        <location filename="../vpnsettingsplugin.cpp" line="69"/>
-        <source>diconnected</source>
-        <translation>разъединено </translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="54"/>
-        <source>disabled</source>
-        <translation>выключено</translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.h" line="35"/>
+        <location filename="../vpnsettingsplugin.h" line="34"/>
         <source>VPN</source>
         <translation>VPN</translation>
     </message>
-</context>
-<context>
-    <name>WifiSettings</name>
     <message>
-        <location filename="../WifiSettings.qml" line="38"/>
-        <source>Connect to</source>
-        <translation>Присоединиться к</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="101"/>
-        <source>Login</source>
-        <translation>Логин</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="114"/>
-        <source>Password</source>
-        <translation>Пароль</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="126"/>
-        <source>Connect automatically</source>
-        <translation>Подключатся автоматически</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="142"/>
-        <source>Connect</source>
-        <translation>Присоединиться</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="166"/>
-        <source>Ok</source>
-        <translation>Ok</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="167"/>
-        <source>Connection failed</source>
-        <translation>Соединение не удалось</translation>
-    </message>
-</context>
-<context>
-    <name>WifiStatus</name>
-    <message>
-        <location filename="../WifiStatus.qml" line="53"/>
-        <source>Method</source>
-        <translation>Метод</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="61"/>
-        <source>DHCP</source>
-        <translation>DHCP</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="64"/>
-        <source>Manual</source>
-        <translation>Вручную</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="79"/>
-        <source>Network info</source>
-        <translation>Информация о сети</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="86"/>
-        <source>IP address</source>
-        <translation>IP адрес</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="100"/>
-        <source>Net mask</source>
-        <translation>Маска сети</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="114"/>
-        <source>Gateway</source>
-        <translation>Шлюз по умолчанию</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="137"/>
-        <source>Disconnect</source>
-        <translation>Разъединить</translation>
+        <location filename="../vpnsettingsplugin.h" line="35"/>
+        <source>Virtual private networks</source>
+        <translation>Виртуальные частные сети</translation>
     </message>
 </context>
 <context>
     <name>vpn</name>
     <message>
-        <location filename="../vpn.qml" line="37"/>
-        <source>VPN settings</source>
-        <translation>Настройки VPN</translation>
+        <location filename="../vpn.qml" line="36"/>
+        <source>VPN</source>
+        <translation>VPN</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="68"/>
-        <source>Enable VPN</source>
-        <translation>Включить VPN</translation>
+        <location filename="../vpn.qml" line="59"/>
+        <source>connected</source>
+        <translation>подключено</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="94"/>
-        <source>Saved</source>
-        <translation>Сохранённые</translation>
+        <location filename="../vpn.qml" line="62"/>
+        <source>connecting...</source>
+        <translation>подключение...</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="112"/>
-        <source>Available</source>
-        <translation>Доступно</translation>
+        <location filename="../vpn.qml" line="64"/>
+        <source>failed</source>
+        <translation>ошибка</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="129"/>
-        <source>Manage saved networks</source>
-        <translation>Управление сохранёнными сетями</translation>
+        <location filename="../vpn.qml" line="66"/>
+        <source>disconnected</source>
+        <translation>отключено</translation>
+    </message>
+    <message>
+        <location filename="../vpn.qml" line="104"/>
+        <source>No VPN connections configured</source>
+        <translation>VPN-подключения не настроены</translation>
     </message>
 </context>
 </TS>
