@@ -18,6 +18,7 @@
  */
 
 import QtQuick
+import QtQuick.Controls as Controls
 import QtQuick.Window
 
 import Nemo
@@ -35,6 +36,97 @@ ApplicationWindow{
         id: settingsModel
         Component.onCompleted: {
             settingsModel.loadPluginsList();
+            Qt.callLater(main.openDefaultPlugin)
+        }
+    }
+
+    property bool defaultPluginPending: false
+
+    function openDefaultPlugin() {
+        // In landscape the main menu is a permanent side panel, so the root grid
+        // is redundant. Keep About above it whenever navigation returns to the
+        // root page, including after coming back from portrait orientation.
+        if (main.isUiPortrait || defaultPluginPending || pageStack.busy || pageStack.depth > 1) {
+            return
+        }
+        defaultPluginPending = true
+        // This page is restored automatically, so it must appear without the
+        // StackView slide animation (especially visible at application startup).
+        pageStack.push(Qt.resolvedUrl("file:///usr/share/glacier-settings/plugins/about/about.qml"),
+                       {}, Controls.StackView.Immediate)
+    }
+
+    Connections {
+        target: pageStack
+        function onDepthChanged() {
+            if (pageStack.depth > 1) {
+                main.defaultPluginPending = false
+            }
+            Qt.callLater(main.openDefaultPlugin)
+        }
+        function onBusyChanged(busy) {
+            if (!busy) {
+                main.defaultPluginPending = false
+                Qt.callLater(main.openDefaultPlugin)
+            }
+        }
+    }
+
+    onIsUiPortraitChanged: {
+        if (!isUiPortrait) {
+            Qt.callLater(openDefaultPlugin)
+        }
+    }
+
+    mainMenu: Flickable {
+        id: mainMenuFlickable
+        anchors.fill: parent
+        contentHeight: mainMenuColumn.height
+        clip: true
+
+        Column {
+            id: mainMenuColumn
+            width: parent.width
+
+            Repeater {
+                model: settingsModel
+                delegate: Column {
+                    width: mainMenuColumn.width
+                    visible: items.length > 0
+
+                    Label {
+                        text: title
+                        font.capitalization: Font.AllUppercase
+                        font.pixelSize: Theme.fontSizeSmall
+                        color: Theme.textColor
+                        anchors {
+                            left: parent.left
+                            leftMargin: Theme.itemSpacingSmall
+                        }
+                        height: Theme.itemHeightMedium
+                        verticalAlignment: Text.AlignVCenter
+                    }
+
+                    Repeater {
+                        model: items
+                        delegate: ListViewItemWithActions {
+                            width: mainMenuColumn.width
+                            icon: modelData.icon
+                            iconVisible: modelData.icon !== ""
+                            label: modelData.title
+                            description: modelData.enabled ? modelData.description : qsTr("disabled")
+                            showNext: false
+                            onClicked: {
+                                main.push(Qt.resolvedUrl("file:/" + modelData.path))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ScrollDecorator {
+            flickable: mainMenuFlickable
         }
     }
 
