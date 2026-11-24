@@ -1,75 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
     <name>UsbSettingsPlugin</name>
     <message>
-        <location filename="../usbsettingsplugin.h" line="33"/>
+        <location filename="../usbsettingsplugin.h" line="33" />
         <source>USB</source>
-        <translation type="unfinished"></translation>
+        <translation>USB</translation>
     </message>
     <message>
-        <location filename="../usbsettingsplugin.h" line="34"/>
+        <location filename="../usbsettingsplugin.h" line="34" />
         <source>Select usb mode</source>
-        <translation type="unfinished"></translation>
+        <translation>USB-modus selecteren</translation>
     </message>
 </context>
 <context>
     <name>usb</name>
     <message>
-        <location filename="../usb.qml" line="35"/>
+        <location filename="../usb.qml" line="110" />
         <source>USB</source>
-        <translation type="unfinished"></translation>
+        <translation>USB</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="41"/>
-        <source>Ask</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../usb.qml" line="45"/>
-        <location filename="../usb.qml" line="134"/>
+        <location filename="../usb.qml" line="37" />
         <source>Connection sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinding delen</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="49"/>
-        <location filename="../usb.qml" line="130"/>
+        <location filename="../usb.qml" line="33" />
         <source>MTP</source>
-        <translation type="unfinished"></translation>
+        <translation>MTP</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="53"/>
-        <location filename="../usb.qml" line="132"/>
+        <location filename="../usb.qml" line="35" />
         <source>Charging only</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen opladen</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="57"/>
-        <location filename="../usb.qml" line="136"/>
+        <location filename="../usb.qml" line="39" />
         <source>Developer mode</source>
-        <translation type="unfinished">Ontwikkelaarsmodus</translation>
+        <translation>Ontwikkelaarsmodus</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="74"/>
-        <location filename="../usb.qml" line="96"/>
-        <source>Usb mode: </source>
-        <translation type="unfinished"></translation>
+        <location filename="../usb.qml" line="77" />
+        <source>No USB mode available</source>
+        <translation>Geen USB-modus beschikbaar</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="105"/>
-        <source>Select USB mode</source>
-        <translation type="unfinished"></translation>
+        <location filename="../usb.qml" line="94" />
+        <source>Active</source>
+        <translation>Actief</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="128"/>
+        <location filename="../usb.qml" line="31" />
         <source>Always ask</source>
-        <translation type="unfinished"></translation>
+        <translation>Altijd vragen</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="138"/>
+        <location filename="../usb.qml" line="41" />
         <source>Busy</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezet</translation>
     </message>
 </context>
 </TS>

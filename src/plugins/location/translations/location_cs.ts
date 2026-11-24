@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>LocationSettingsPlugin</name>
     <message>
@@ -15,75 +17,75 @@
 <context>
     <name>location</name>
     <message>
-        <location filename="../location.qml" line="40"/>
+        <location filename="../location.qml" line="39"/>
         <source>Location</source>
         <translation>Poloha</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="64"/>
+        <location filename="../location.qml" line="63"/>
         <source>Enable location</source>
         <translation>Povolit učení polohy</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="73"/>
+        <location filename="../location.qml" line="72"/>
         <source>Enable sattelites location</source>
         <translation>Povolit polohu ze satelitů</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="83"/>
+        <location filename="../location.qml" line="82"/>
         <source>Use sattelites location in flight mode</source>
         <translation>Používat polohu ze satelitů v režimu letadlo</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="93"/>
+        <location filename="../location.qml" line="92"/>
         <source>Enable online location services</source>
         <translation>Povolit určení polohy z internetu</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="111"/>
-        <location filename="../location.qml" line="265"/>
+        <location filename="../location.qml" line="110"/>
+        <location filename="../location.qml" line="264"/>
         <source>Latitude</source>
         <translation>Zeměpisná šířka</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="111"/>
-        <location filename="../location.qml" line="118"/>
+        <location filename="../location.qml" line="110"/>
+        <location filename="../location.qml" line="117"/>
         <source>unavailable</source>
         <translation>není k dispozici</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="118"/>
-        <location filename="../location.qml" line="268"/>
+        <location filename="../location.qml" line="117"/>
+        <location filename="../location.qml" line="267"/>
         <source>Longitude</source>
         <translation>Zeměpisná délka</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="125"/>
+        <location filename="../location.qml" line="124"/>
         <source>Source</source>
         <translation>Zdroj</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="277"/>
+        <location filename="../location.qml" line="276"/>
         <source>Satellite</source>
         <translation>Satelit</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="279"/>
+        <location filename="../location.qml" line="278"/>
         <source>Not available</source>
         <translation>Není k dispozici</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="281"/>
+        <location filename="../location.qml" line="280"/>
         <source>Non-satellite</source>
         <translation>Ne ze satelitu</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="283"/>
+        <location filename="../location.qml" line="282"/>
         <source>Multiple</source>
         <translation>Více</translation>
     </message>
     <message>
-        <location filename="../location.qml" line="284"/>
+        <location filename="../location.qml" line="283"/>
         <source>source error</source>
         <translation>chyba zdroje</translation>
     </message>

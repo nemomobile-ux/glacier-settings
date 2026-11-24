@@ -1,65 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
     <name>MobileSettingsPlugin</name>
     <message>
-        <location filename="../mobilesettingsplugin.h" line="34"/>
+        <location filename="../mobilesettingsplugin.h" line="34" />
         <source>Mobile</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobiel</translation>
     </message>
     <message>
-        <location filename="../mobilesettingsplugin.h" line="35"/>
+        <location filename="../mobilesettingsplugin.h" line="35" />
         <source>Operators and simcard</source>
-        <translation type="unfinished"></translation>
+        <translation>Providers en simkaart</translation>
     </message>
 </context>
 <context>
     <name>mobile</name>
     <message>
-        <location filename="../mobile.qml" line="36"/>
+        <location filename="../mobile.qml" line="34" />
         <source>Mobile networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Mobiele netwerken</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="77"/>
+        <location filename="../mobile.qml" line="59" />
         <source>SIM cards unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Simkaarten niet beschikbaar</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80" />
         <source>No sim</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen simkaart</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80" />
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Onbekend</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81" />
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingeschakeld</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81" />
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitgeschakeld</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="151"/>
+        <location filename="../mobile.qml" line="125" />
         <source>Connect to internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinden met internet</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="163"/>
+        <location filename="../mobile.qml" line="138" />
         <source>Enable data roaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Dataroaming inschakelen</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="173"/>
+        <location filename="../mobile.qml" line="148" />
         <source>Preferred network</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorkeursnetwerk</translation>
     </message>
 </context>
 </TS>

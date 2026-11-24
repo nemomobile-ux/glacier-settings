@@ -17,57 +17,59 @@
 <context>
     <name>usb</name>
     <message>
-        <location filename="../usb.qml" line="35"/>
+        <location filename="../usb.qml" line="110"/>
         <source>USB</source>
         <translation>USB</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="41"/>
         <source>Ask</source>
-        <translation>Opýtať sa</translation>
+        <translation type="vanished">Opýtať sa</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="45"/>
-        <location filename="../usb.qml" line="134"/>
+        <location filename="../usb.qml" line="37"/>
         <source>Connection sharing</source>
         <translation>Zdieľanie pripojenia</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="49"/>
-        <location filename="../usb.qml" line="130"/>
+        <location filename="../usb.qml" line="33"/>
         <source>MTP</source>
         <translation>MTP</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="53"/>
-        <location filename="../usb.qml" line="132"/>
+        <location filename="../usb.qml" line="35"/>
         <source>Charging only</source>
         <translation>Iba nabíjanie</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="57"/>
-        <location filename="../usb.qml" line="136"/>
+        <location filename="../usb.qml" line="39"/>
         <source>Developer mode</source>
         <translation>Režim pre vývojárov</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="74"/>
-        <location filename="../usb.qml" line="96"/>
+        <location filename="../usb.qml" line="77"/>
+        <source>No USB mode available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../usb.qml" line="94"/>
+        <source>Active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Usb mode: </source>
-        <translation>Režim USB:</translation>
+        <translation type="vanished">Režim USB:</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="105"/>
         <source>Select USB mode</source>
-        <translation>Zvoľte režim USB</translation>
+        <translation type="vanished">Zvoľte režim USB</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="128"/>
+        <location filename="../usb.qml" line="31"/>
         <source>Always ask</source>
         <translation>Vždy sa opýtať</translation>
     </message>
     <message>
-        <location filename="../usb.qml" line="138"/>
+        <location filename="../usb.qml" line="41"/>
         <source>Busy</source>
         <translation>Zaneprázdnený</translation>
     </message>

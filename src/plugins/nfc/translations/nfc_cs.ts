@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>NfcSettingsPlugin</name>
     <message>
@@ -10,17 +12,17 @@
 <context>
     <name>nfc</name>
     <message>
-        <location filename="../nfc.qml" line="35"/>
+        <location filename="../nfc.qml" line="34"/>
         <source>NFC</source>
         <translation>NFC</translation>
     </message>
     <message>
-        <location filename="../nfc.qml" line="45"/>
+        <location filename="../nfc.qml" line="44"/>
         <source>NFC unavailable</source>
         <translation>NFC není k dispozici</translation>
     </message>
     <message>
-        <location filename="../nfc.qml" line="58"/>
+        <location filename="../nfc.qml" line="57"/>
         <source>Enable NFC</source>
         <translation>Povolit NFC</translation>
     </message>

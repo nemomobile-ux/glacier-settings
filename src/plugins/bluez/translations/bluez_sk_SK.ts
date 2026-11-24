@@ -4,55 +4,60 @@
 <context>
     <name>BluezSettingsPlugin</name>
     <message>
-        <location filename="../bluezsettingsplugin.h" line="33"/>
+        <location filename="../bluezsettingsplugin.h" line="37"/>
         <source>Bluetooth</source>
         <translation type="unfinished">Bluetooth</translation>
+    </message>
+    <message>
+        <location filename="../bluezsettingsplugin.h" line="38"/>
+        <source>Manage bluetooth connection</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>bluez</name>
     <message>
-        <location filename="../bluez.qml" line="40"/>
+        <location filename="../bluez.qml" line="38"/>
         <source>Bluetooth</source>
         <translation>Bluetooth</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="89"/>
+        <location filename="../bluez.qml" line="87"/>
         <source>Bluetooth adapters not available</source>
         <translation>Adaptéry Bluetooth nie sú k dispozícii</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="109"/>
+        <location filename="../bluez.qml" line="107"/>
         <source>Enable Bluetooth</source>
         <translation>Povolenie funkcie Bluetooth</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="121"/>
+        <location filename="../bluez.qml" line="119"/>
         <source>Device name</source>
         <translation>Názov zariadenia</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="152"/>
+        <location filename="../bluez.qml" line="150"/>
         <source>Visibility</source>
         <translation>Viditeľnosť</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="166"/>
+        <location filename="../bluez.qml" line="164"/>
         <source>Paired devices:</source>
         <translation>Spárované zariadenia:</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="190"/>
+        <location filename="../bluez.qml" line="188"/>
         <source>Devices nearby:</source>
         <translation>Zariadenia v okolí:</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="218"/>
+        <location filename="../bluez.qml" line="216"/>
         <source>Stop search</source>
         <translation>Zastaviť vyhľadávanie</translation>
     </message>
     <message>
-        <location filename="../bluez.qml" line="218"/>
+        <location filename="../bluez.qml" line="216"/>
         <source>Start discovery</source>
         <translation>Začať vyhľadávanie</translation>
     </message>

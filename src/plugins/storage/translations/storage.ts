@@ -17,7 +17,7 @@
 <context>
     <name>storage</name>
     <message>
-        <location filename="../storage.qml" line="36"/>
+        <location filename="../storage.qml" line="35"/>
         <source>Storage</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,62 +1,64 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="pl">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl">
 <context>
     <name>DeviceLockPad</name>
     <message>
-        <location filename="../DeviceLockPad.qml" line="43"/>
+        <location filename="../DeviceLockPad.qml" line="42"/>
         <source>Enter security code</source>
         <translation>Wprowadź kod bezpieczeństwa</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="136"/>
-        <location filename="../DeviceLockPad.qml" line="173"/>
+        <location filename="../DeviceLockPad.qml" line="135"/>
+        <location filename="../DeviceLockPad.qml" line="172"/>
         <source>Enter new security code</source>
         <translation>Wprowadź nowy kod bezpieczeństwa</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="154"/>
+        <location filename="../DeviceLockPad.qml" line="153"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="168"/>
+        <location filename="../DeviceLockPad.qml" line="167"/>
         <source>Enter current security code</source>
         <translation>Wprowadź aktualny kod bezpieczeństwa</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="178"/>
+        <location filename="../DeviceLockPad.qml" line="177"/>
         <source>Repeat new security code</source>
         <translation>Powtórz nowy kod bezpieczeństwa</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="183"/>
-        <location filename="../DeviceLockPad.qml" line="189"/>
-        <location filename="../DeviceLockPad.qml" line="209"/>
-        <location filename="../DeviceLockPad.qml" line="218"/>
+        <location filename="../DeviceLockPad.qml" line="182"/>
+        <location filename="../DeviceLockPad.qml" line="188"/>
+        <location filename="../DeviceLockPad.qml" line="208"/>
+        <location filename="../DeviceLockPad.qml" line="217"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="184"/>
+        <location filename="../DeviceLockPad.qml" line="183"/>
         <source>Security codes don&apos;t match</source>
         <translation>Kody bezpieczeństwa nie zgadzają się</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="190"/>
+        <location filename="../DeviceLockPad.qml" line="189"/>
         <source>Don&apos;t use previous security code</source>
         <translation>Nie używaj poprzedniego kodu bezpieczeństwa</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="195"/>
+        <location filename="../DeviceLockPad.qml" line="194"/>
         <source>Incorrect code</source>
         <translation>Nieprawidłowy kod</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="196"/>
+        <location filename="../DeviceLockPad.qml" line="195"/>
         <source>%1 of %2 attempts</source>
         <translation>%1 z %2 prób</translation>
     </message>
     <message>
-        <location filename="../DeviceLockPad.qml" line="210"/>
+        <location filename="../DeviceLockPad.qml" line="209"/>
         <source>Temporarily locked</source>
         <translation>Tymczasowo zablokowane</translation>
     </message>
@@ -77,67 +79,67 @@
 <context>
     <name>devicelock</name>
     <message>
-        <location filename="../devicelock.qml" line="40"/>
+        <location filename="../devicelock.qml" line="37"/>
         <source>Device lock</source>
         <translation>Blokada urządzenia</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="107"/>
+        <location filename="../devicelock.qml" line="104"/>
         <source>Never</source>
         <translation>Nigdy</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="111"/>
+        <location filename="../devicelock.qml" line="108"/>
         <source>Without delay</source>
         <translation>Bez opóźnienia</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="115"/>
+        <location filename="../devicelock.qml" line="112"/>
         <source>1 min</source>
         <translation>1 min</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="119"/>
+        <location filename="../devicelock.qml" line="116"/>
         <source>5 min</source>
         <translation>5 min</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="123"/>
+        <location filename="../devicelock.qml" line="120"/>
         <source>10 min</source>
         <translation>10 min</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="127"/>
+        <location filename="../devicelock.qml" line="124"/>
         <source>15 min</source>
         <translation>15 min</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="131"/>
+        <location filename="../devicelock.qml" line="128"/>
         <source>30 min</source>
         <translation>30 min</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="135"/>
+        <location filename="../devicelock.qml" line="132"/>
         <source>1 hour</source>
         <translation>1 godzina</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="142"/>
+        <location filename="../devicelock.qml" line="139"/>
         <source>Lock is not available</source>
         <translation>Blokada nie jest dostępna</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="158"/>
+        <location filename="../devicelock.qml" line="155"/>
         <source>Auto lock device</source>
         <translation>Automatycznie blokuj urządzenie</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="194"/>
+        <location filename="../devicelock.qml" line="191"/>
         <source>Show notifications when device locked</source>
         <translation>Pokazuj powiadomienia przy zablokowanym urządzeniu</translation>
     </message>
     <message>
-        <location filename="../devicelock.qml" line="203"/>
+        <location filename="../devicelock.qml" line="200"/>
         <source>Change security code</source>
         <translation>Zmień kod bezpieczeństwa</translation>
     </message>

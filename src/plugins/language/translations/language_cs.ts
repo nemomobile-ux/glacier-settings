@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>LanguageSettingsPlugin</name>
     <message>
@@ -15,27 +17,27 @@
 <context>
     <name>language</name>
     <message>
-        <location filename="../language.qml" line="37"/>
+        <location filename="../language.qml" line="34"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="91"/>
+        <location filename="../language.qml" line="73"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="92"/>
+        <location filename="../language.qml" line="74"/>
         <source>Accept</source>
         <translation>Příjmout</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="93"/>
+        <location filename="../language.qml" line="75"/>
         <source>Change language?</source>
         <translation>Změnit jazyk?</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="94"/>
+        <location filename="../language.qml" line="76"/>
         <source>Do you want to change language to %1 and reboot?</source>
         <translation>Chcete změnit jazyk na %1 a restartovat?</translation>
     </message>

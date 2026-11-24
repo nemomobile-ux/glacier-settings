@@ -1,201 +1,318 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="uk">
 <context>
+    <name>AddVpnPage</name>
+    <message>
+        <location filename="../AddVpnPage.qml" line="38" />
+        <source>Add VPN</source>
+        <translation>Додати VPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="51" />
+        <source>Create manually</source>
+        <translation>Створити вручну</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="52" />
+        <source>Enter VPN settings by hand</source>
+        <translation>Введіть налаштування VPN вручну</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="62" />
+        <source>Import from file</source>
+        <translation>Імпортувати з файлу</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="63" />
+        <source>Import OpenVPN configuration file</source>
+        <translation>Імпортувати файл конфігурації OpenVPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="74" />
+        <source>Import VPN</source>
+        <translation>Імпортувати VPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="75" />
+        <source>Enter path to OpenVPN configuration file</source>
+        <translation>Введіть шлях до файлу конфігурації OpenVPN</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="76" />
+        <source>Import</source>
+        <translation>Імпортувати</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="77" />
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="84" />
+        <source>/path/to/config.ovpn</source>
+        <translation>/path/to/config.ovpn</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="101" />
+        <location filename="../AddVpnPage.qml" line="110" />
+        <source>Failed to import VPN configuration</source>
+        <translation>Не вдалося імпортувати конфігурацію VPN</translation>
+    </message>
+</context>
+<context>
     <name>NetworkDelegate</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
         <source>connected</source>
-        <translation>підключений</translation>
+        <translation type="vanished">підключений</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
         <source>connecting</source>
-        <translation>підключення</translation>
+        <translation type="vanished">підключення</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
         <source>open</source>
-        <translation>відкрити</translation>
+        <translation type="vanished">відкрити</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
         <source>unknown</source>
-        <translation>невідомий</translation>
+        <translation type="vanished">невідомий</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
         <source>secure</source>
-        <translation>безпечний</translation>
+        <translation type="vanished">безпечний</translation>
     </message>
 </context>
 <context>
     <name>SavedServices</name>
     <message>
-        <location filename="../SavedServices.qml" line="36"/>
         <source>Manage saved networks</source>
-        <translation>Керуйте збереженими мережами</translation>
+        <translation type="vanished">Керуйте збереженими мережами</translation>
     </message>
     <message>
-        <location filename="../SavedServices.qml" line="66"/>
         <source>No saved vpn networks</source>
-        <translation>Немає збережених мереж Wi-Fi</translation>
+        <translation type="vanished">Немає збережених мереж Wi-Fi</translation>
     </message>
 </context>
 <context>
     <name>SavedStatus</name>
     <message>
-        <location filename="../SavedStatus.qml" line="47"/>
         <source>Auto connect</source>
-        <translation>Автоматичне підключення</translation>
+        <translation type="vanished">Автоматичне підключення</translation>
     </message>
     <message>
-        <location filename="../SavedStatus.qml" line="72"/>
         <source>Remove</source>
-        <translation>Видалити</translation>
+        <translation type="vanished">Видалити</translation>
+    </message>
+</context>
+<context>
+    <name>VpnEditor</name>
+    <message>
+        <location filename="../VpnEditor.qml" line="41" />
+        <source>Add VPN</source>
+        <translation>Додати VPN</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="41" />
+        <source>Edit VPN</source>
+        <translation>Редагувати VPN</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="134" />
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="141" />
+        <source>Host</source>
+        <translation>Хост</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="148" />
+        <source>Domain (default: local)</source>
+        <translation>Домен (типово: local)</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="155" />
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="181" />
+        <source>Auto connect</source>
+        <translation>Автопідключення</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="199" />
+        <source>Port (default: 1194)</source>
+        <translation>Порт (типово: 1194)</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="210" />
+        <source>Protocol</source>
+        <translation>Протокол</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="232" />
+        <source>Device type</source>
+        <translation>Тип пристрою</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="254" />
+        <source>CA certificate path</source>
+        <translation>Шлях до сертифіката CA</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="261" />
+        <source>Client certificate path</source>
+        <translation>Шлях до сертифіката клієнта</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="268" />
+        <source>Client key path</source>
+        <translation>Шлях до ключа клієнта</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="274" />
+        <source>Use username/password</source>
+        <translation>Використовувати ім'я користувача/пароль</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="288" />
+        <source>Username</source>
+        <translation>Ім'я користувача</translation>
     </message>
 </context>
 <context>
     <name>VpnSettingsPlugin</name>
     <message>
-        <location filename="../vpnsettingsplugin.cpp" line="26"/>
-        <source>Wireless networks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="49"/>
-        <location filename="../vpnsettingsplugin.cpp" line="67"/>
         <source>connected</source>
-        <translation type="unfinished">підключений</translation>
+        <translation type="obsolete">підключений</translation>
     </message>
     <message>
-        <location filename="../vpnsettingsplugin.cpp" line="51"/>
-        <location filename="../vpnsettingsplugin.cpp" line="69"/>
-        <source>diconnected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="54"/>
-        <source>disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.h" line="35"/>
+        <location filename="../vpnsettingsplugin.h" line="34" />
         <source>VPN</source>
-        <translation type="unfinished">VPN</translation>
+        <translation>VPN</translation>
+    </message>
+    <message>
+        <location filename="../vpnsettingsplugin.h" line="35" />
+        <source>Virtual private networks</source>
+        <translation>Віртуальні приватні мережі</translation>
     </message>
 </context>
 <context>
     <name>WifiSettings</name>
     <message>
-        <location filename="../WifiSettings.qml" line="38"/>
         <source>Connect to</source>
-        <translation>Підключитися до</translation>
+        <translation type="vanished">Підключитися до</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="101"/>
         <source>Login</source>
-        <translation>Логін</translation>
+        <translation type="vanished">Логін</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="114"/>
         <source>Password</source>
-        <translation>Пароль</translation>
+        <translation type="vanished">Пароль</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="126"/>
         <source>Connect automatically</source>
-        <translation>Підключатись автоматично</translation>
+        <translation type="vanished">Підключатись автоматично</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="142"/>
         <source>Connect</source>
-        <translation>Підключити</translation>
+        <translation type="vanished">Підключити</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="166"/>
         <source>Ok</source>
-        <translation>Ок</translation>
+        <translation type="vanished">Ок</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="167"/>
         <source>Connection failed</source>
-        <translation>Підключення не вдалося</translation>
+        <translation type="vanished">Підключення не вдалося</translation>
     </message>
 </context>
 <context>
     <name>WifiStatus</name>
     <message>
-        <location filename="../WifiStatus.qml" line="53"/>
         <source>Method</source>
-        <translation>Метод</translation>
+        <translation type="vanished">Метод</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="61"/>
         <source>DHCP</source>
-        <translation>DHCP</translation>
+        <translation type="vanished">DHCP</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="64"/>
         <source>Manual</source>
-        <translation>Посібник</translation>
+        <translation type="vanished">Посібник</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="79"/>
         <source>Network info</source>
-        <translation>Інформація про мережу</translation>
+        <translation type="vanished">Інформація про мережу</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="86"/>
         <source>IP address</source>
-        <translation>IP адрес</translation>
+        <translation type="vanished">IP адрес</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="100"/>
         <source>Net mask</source>
-        <translation>Маска мережі</translation>
+        <translation type="vanished">Маска мережі</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="114"/>
         <source>Gateway</source>
-        <translation>Шлюз</translation>
+        <translation type="vanished">Шлюз</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="137"/>
         <source>Disconnect</source>
-        <translation>Роз&apos;єднання</translation>
+        <translation type="vanished">Роз'єднання</translation>
     </message>
 </context>
 <context>
     <name>vpn</name>
     <message>
-        <location filename="../vpn.qml" line="37"/>
         <source>VPN settings</source>
-        <translation>Налаштування VPN</translation>
+        <translation type="vanished">Налаштування VPN</translation>
     </message>
     <message>
+        <location filename="../vpn.qml" line="36" />
         <source>VPN</source>
-        <translation type="vanished">VPN</translation>
+        <translation>VPN</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="68"/>
-        <source>Enable VPN</source>
-        <translation type="unfinished"></translation>
+        <location filename="../vpn.qml" line="59" />
+        <source>connected</source>
+        <translation>підключено</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="94"/>
+        <location filename="../vpn.qml" line="62" />
+        <source>connecting...</source>
+        <translation>підключення...</translation>
+    </message>
+    <message>
+        <location filename="../vpn.qml" line="64" />
+        <source>failed</source>
+        <translation>помилка</translation>
+    </message>
+    <message>
+        <location filename="../vpn.qml" line="66" />
+        <source>disconnected</source>
+        <translation>від'єднано</translation>
+    </message>
+    <message>
+        <location filename="../vpn.qml" line="104" />
+        <source>No VPN connections configured</source>
+        <translation>VPN-з'єднання не налаштовано</translation>
+    </message>
+    <message>
         <source>Saved</source>
-        <translation>Збережено</translation>
+        <translation type="vanished">Збережено</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="112"/>
         <source>Available</source>
-        <translation>Доступно</translation>
+        <translation type="vanished">Доступно</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="129"/>
         <source>Manage saved networks</source>
-        <translation>Керуйте збереженими мережами</translation>
+        <translation type="vanished">Керуйте збереженими мережами</translation>
     </message>
 </context>
 </TS>

@@ -1,195 +1,255 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru">
 <context>
-    <name>NetworkDelegate</name>
+    <name>EthernetSettings</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
-        <source>connected</source>
-        <translation>Соединён</translation>
+        <location filename="../EthernetSettings.qml" line="35" />
+        <source>Wired connection</source>
+        <translation>Проводное соединение</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
-        <source>connecting</source>
-        <translation>Соединяется</translation>
+        <location filename="../EthernetSettings.qml" line="45" />
+        <source>Method</source>
+        <translation>Метод</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
-        <source>open</source>
-        <translation>открытая</translation>
+        <location filename="../EthernetSettings.qml" line="51" />
+        <source>DHCP</source>
+        <translation>DHCP</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
-        <source>unknown</source>
-        <translation>неизвестно</translation>
+        <location filename="../EthernetSettings.qml" line="52" />
+        <source>Manual</source>
+        <translation>Вручную</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
-        <source>secure</source>
-        <translation>защищённая</translation>
-    </message>
-</context>
-<context>
-    <name>SavedServices</name>
-    <message>
-        <location filename="../SavedServices.qml" line="36"/>
-        <source>Manage saved networks</source>
-        <translation>Управление сохранёнными сетями</translation>
+        <location filename="../EthernetSettings.qml" line="67" />
+        <source>IP address</source>
+        <translation>IP-адрес</translation>
     </message>
     <message>
-        <location filename="../SavedServices.qml" line="66"/>
-        <source>No saved ethernet networks</source>
-        <translation>Нет сохранённых ethernet сетей</translation>
-    </message>
-</context>
-<context>
-    <name>SavedStatus</name>
-    <message>
-        <location filename="../SavedStatus.qml" line="47"/>
-        <source>Auto connect</source>
-        <translation>Автоматическое соединение</translation>
+        <location filename="../EthernetSettings.qml" line="76" />
+        <source>Net mask</source>
+        <translation>Маска сети</translation>
     </message>
     <message>
-        <location filename="../SavedStatus.qml" line="72"/>
-        <source>Remove</source>
-        <translation>Удалить</translation>
+        <location filename="../EthernetSettings.qml" line="85" />
+        <source>Gateway</source>
+        <translation>Шлюз</translation>
+    </message>
+    <message>
+        <location filename="../EthernetSettings.qml" line="94" />
+        <source>Disconnect</source>
+        <translation>Отключить</translation>
     </message>
 </context>
 <context>
     <name>EthernetSettingsPlugin</name>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="26"/>
         <source>Wireless networks</source>
-        <translation>Беспроводные сети</translation>
+        <translation type="vanished">Беспроводные сети</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="49"/>
-        <location filename="../ethernetsettingsplugin.cpp" line="67"/>
+        <location filename="../ethernetsettingsplugin.cpp" line="24" />
+        <source>Wired network</source>
+        <translation>Проводная сеть</translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="46" />
+        <location filename="../ethernetsettingsplugin.cpp" line="64" />
         <source>connected</source>
         <translation>соединено</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="51"/>
-        <location filename="../ethernetsettingsplugin.cpp" line="69"/>
-        <source>diconnected</source>
-        <translation>разъединено </translation>
+        <location filename="../ethernetsettingsplugin.cpp" line="48" />
+        <location filename="../ethernetsettingsplugin.cpp" line="66" />
+        <source>disconnected</source>
+        <translation>отключено</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="54"/>
+        <source>diconnected</source>
+        <translation type="vanished">разъединено </translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="51" />
         <source>disabled</source>
         <translation>выключено</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.h" line="35"/>
+        <location filename="../ethernetsettingsplugin.h" line="36" />
         <source>Ethernet</source>
         <translation>Ethernet</translation>
     </message>
 </context>
 <context>
+    <name>NetworkDelegate</name>
+    <message>
+        <source>connected</source>
+        <translation type="vanished">Соединён</translation>
+    </message>
+    <message>
+        <source>connecting</source>
+        <translation type="vanished">Соединяется</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation type="vanished">открытая</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation type="vanished">неизвестно</translation>
+    </message>
+    <message>
+        <source>secure</source>
+        <translation type="vanished">защищённая</translation>
+    </message>
+</context>
+<context>
+    <name>SavedServices</name>
+    <message>
+        <source>Manage saved networks</source>
+        <translation type="vanished">Управление сохранёнными сетями</translation>
+    </message>
+    <message>
+        <source>No saved ethernet networks</source>
+        <translation type="vanished">Нет сохранённых ethernet сетей</translation>
+    </message>
+</context>
+<context>
+    <name>SavedStatus</name>
+    <message>
+        <source>Auto connect</source>
+        <translation type="vanished">Автоматическое соединение</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="vanished">Удалить</translation>
+    </message>
+</context>
+<context>
     <name>WifiSettings</name>
     <message>
-        <location filename="../WifiSettings.qml" line="38"/>
         <source>Connect to</source>
-        <translation>Присоединиться к</translation>
+        <translation type="vanished">Присоединиться к</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="101"/>
         <source>Login</source>
-        <translation>Логин</translation>
+        <translation type="vanished">Логин</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="114"/>
         <source>Password</source>
-        <translation>Пароль</translation>
+        <translation type="vanished">Пароль</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="126"/>
         <source>Connect automatically</source>
-        <translation>Подключатся автоматически</translation>
+        <translation type="vanished">Подключатся автоматически</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="142"/>
         <source>Connect</source>
-        <translation>Присоединиться</translation>
+        <translation type="vanished">Присоединиться</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="166"/>
         <source>Ok</source>
-        <translation>Ok</translation>
+        <translation type="vanished">Ok</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="167"/>
         <source>Connection failed</source>
-        <translation>Соединение не удалось</translation>
+        <translation type="vanished">Соединение не удалось</translation>
     </message>
 </context>
 <context>
     <name>WifiStatus</name>
     <message>
-        <location filename="../WifiStatus.qml" line="53"/>
         <source>Method</source>
-        <translation>Метод</translation>
+        <translation type="vanished">Метод</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="61"/>
         <source>DHCP</source>
-        <translation>DHCP</translation>
+        <translation type="vanished">DHCP</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="64"/>
         <source>Manual</source>
-        <translation>Вручную</translation>
+        <translation type="vanished">Вручную</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="79"/>
         <source>Network info</source>
-        <translation>Информация о сети</translation>
+        <translation type="vanished">Информация о сети</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="86"/>
         <source>IP address</source>
-        <translation>IP адрес</translation>
+        <translation type="vanished">IP адрес</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="100"/>
         <source>Net mask</source>
-        <translation>Маска сети</translation>
+        <translation type="vanished">Маска сети</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="114"/>
         <source>Gateway</source>
-        <translation>Шлюз по умолчанию</translation>
+        <translation type="vanished">Шлюз по умолчанию</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="137"/>
         <source>Disconnect</source>
-        <translation>Разъединить</translation>
+        <translation type="vanished">Разъединить</translation>
     </message>
 </context>
 <context>
     <name>ethernet</name>
     <message>
-        <location filename="../ethernet.qml" line="37"/>
         <source>Ethernet settings</source>
-        <translation>Настройки Ethernet</translation>
+        <translation type="vanished">Настройки Ethernet</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="68"/>
+        <location filename="../ethernet.qml" line="34" />
+        <source>Ethernet</source>
+        <translation>Ethernet</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="58" />
         <source>Enable Ethernet</source>
         <translation>Включить Ethernet</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="94"/>
+        <location filename="../ethernet.qml" line="71" />
+        <source>Connections</source>
+        <translation>Подключения</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="84" />
+        <source>Wired connection</source>
+        <translation>Проводное соединение</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="87" />
+        <source>connected</source>
+        <translation>подключено</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="89" />
+        <source>connecting...</source>
+        <translation>подключение...</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="91" />
+        <source>disconnected</source>
+        <translation>отключено</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="115" />
+        <source>Ethernet is disabled</source>
+        <translation>Ethernet отключен</translation>
+    </message>
+    <message>
         <source>Saved</source>
-        <translation>Сохранённые</translation>
+        <translation type="vanished">Сохранённые</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="112"/>
         <source>Available</source>
-        <translation>Доступно</translation>
+        <translation type="vanished">Доступно</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="129"/>
         <source>Manage saved networks</source>
-        <translation>Управление сохранёнными сетями</translation>
+        <translation type="vanished">Управление сохранёнными сетями</translation>
     </message>
 </context>
 </TS>

@@ -1,167 +1,167 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
     <name>NetworkDelegate</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
+        <location filename="../NetworkDelegate.qml" line="51" />
         <source>connected</source>
-        <translation type="unfinished">verbonden</translation>
+        <translation>verbonden</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
+        <location filename="../NetworkDelegate.qml" line="53" />
         <source>connecting</source>
-        <translation type="unfinished">verbinden</translation>
+        <translation>verbinden</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
+        <location filename="../NetworkDelegate.qml" line="56" />
         <source>open</source>
-        <translation type="unfinished">onbeveiligd</translation>
+        <translation>open</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
+        <location filename="../NetworkDelegate.qml" line="58" />
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>onbekend</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
+        <location filename="../NetworkDelegate.qml" line="60" />
         <source>secure</source>
-        <translation type="unfinished">beveiligd</translation>
+        <translation>beveiligd</translation>
     </message>
 </context>
 <context>
     <name>SavedServices</name>
     <message>
-        <location filename="../SavedServices.qml" line="36"/>
+        <location filename="../SavedServices.qml" line="35" />
         <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Opgeslagen netwerken beheren</translation>
     </message>
     <message>
-        <location filename="../SavedServices.qml" line="66"/>
+        <location filename="../SavedServices.qml" line="65" />
         <source>No saved wifi networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen opgeslagen wifi-netwerken</translation>
     </message>
 </context>
 <context>
     <name>SavedStatus</name>
     <message>
-        <location filename="../SavedStatus.qml" line="47"/>
+        <location filename="../SavedStatus.qml" line="46" />
         <source>Auto connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch verbinden</translation>
     </message>
     <message>
-        <location filename="../SavedStatus.qml" line="72"/>
+        <location filename="../SavedStatus.qml" line="71" />
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
     <name>WiFiSettingsPlugin</name>
     <message>
-        <location filename="../wifisettingsplugin.cpp" line="26"/>
+        <location filename="../wifisettingsplugin.cpp" line="25" />
         <source>Wireless networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Draadloze netwerken</translation>
     </message>
     <message>
-        <location filename="../wifisettingsplugin.cpp" line="49"/>
-        <location filename="../wifisettingsplugin.cpp" line="67"/>
+        <location filename="../wifisettingsplugin.cpp" line="46" />
+        <location filename="../wifisettingsplugin.cpp" line="64" />
         <source>connected</source>
-        <translation type="unfinished">verbonden</translation>
+        <translation>verbonden</translation>
     </message>
     <message>
-        <location filename="../wifisettingsplugin.cpp" line="51"/>
-        <location filename="../wifisettingsplugin.cpp" line="69"/>
+        <location filename="../wifisettingsplugin.cpp" line="48" />
+        <location filename="../wifisettingsplugin.cpp" line="66" />
         <source>diconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>verbroken</translation>
     </message>
     <message>
-        <location filename="../wifisettingsplugin.cpp" line="54"/>
+        <location filename="../wifisettingsplugin.cpp" line="51" />
         <source>disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>uitgeschakeld</translation>
     </message>
     <message>
-        <location filename="../wifisettingsplugin.h" line="35"/>
+        <location filename="../wifisettingsplugin.h" line="36" />
         <source>WiFi</source>
-        <translation type="unfinished"></translation>
+        <translation>Wifi</translation>
     </message>
 </context>
 <context>
     <name>WifiSettings</name>
     <message>
-        <location filename="../WifiSettings.qml" line="38"/>
+        <location filename="../WifiSettings.qml" line="37" />
         <source>Connect to</source>
         <translation>Verbinden met</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="101"/>
+        <location filename="../WifiSettings.qml" line="100" />
         <source>Login</source>
-        <translation type="unfinished"></translation>
+        <translation>Inloggen</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="114"/>
+        <location filename="../WifiSettings.qml" line="113" />
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="126"/>
+        <location filename="../WifiSettings.qml" line="125" />
         <source>Connect automatically</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch verbinden</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="142"/>
+        <location filename="../WifiSettings.qml" line="141" />
         <source>Connect</source>
         <translation>Verbinden</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="166"/>
+        <location filename="../WifiSettings.qml" line="165" />
         <source>Ok</source>
-        <translation type="unfinished">Oké</translation>
+        <translation>OK</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="167"/>
+        <location filename="../WifiSettings.qml" line="166" />
         <source>Connection failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinding mislukt</translation>
     </message>
 </context>
 <context>
     <name>WifiStatus</name>
     <message>
-        <location filename="../WifiStatus.qml" line="53"/>
+        <location filename="../WifiStatus.qml" line="51" />
         <source>Method</source>
         <translation>Methode</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="61"/>
+        <location filename="../WifiStatus.qml" line="59" />
         <source>DHCP</source>
-        <translation type="unfinished"></translation>
+        <translation>DHCP</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="64"/>
+        <location filename="../WifiStatus.qml" line="62" />
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Handmatig</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="79"/>
+        <location filename="../WifiStatus.qml" line="77" />
         <source>Network info</source>
         <translation>Netwerkinfo</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="86"/>
+        <location filename="../WifiStatus.qml" line="84" />
         <source>IP address</source>
         <translation>IP-adres</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="100"/>
+        <location filename="../WifiStatus.qml" line="98" />
         <source>Net mask</source>
         <translation>Netwerkmasker</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="114"/>
+        <location filename="../WifiStatus.qml" line="112" />
         <source>Gateway</source>
         <translation>Gateway</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="137"/>
+        <location filename="../WifiStatus.qml" line="135" />
         <source>Disconnect</source>
         <translation>Verbinding verbreken</translation>
     </message>
@@ -169,29 +169,29 @@
 <context>
     <name>wifi</name>
     <message>
-        <location filename="../wifi.qml" line="37"/>
+        <location filename="../wifi.qml" line="36" />
         <source>WiFi settings</source>
         <translation>Wifi-instellingen</translation>
     </message>
     <message>
-        <location filename="../wifi.qml" line="68"/>
+        <location filename="../wifi.qml" line="67" />
         <source>Enable WiFi</source>
-        <translation type="unfinished"></translation>
+        <translation>Wifi inschakelen</translation>
     </message>
     <message>
-        <location filename="../wifi.qml" line="94"/>
+        <location filename="../wifi.qml" line="93" />
         <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <translation>Opgeslagen</translation>
     </message>
     <message>
-        <location filename="../wifi.qml" line="112"/>
+        <location filename="../wifi.qml" line="111" />
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschikbaar</translation>
     </message>
     <message>
-        <location filename="../wifi.qml" line="129"/>
+        <location filename="../wifi.qml" line="128" />
         <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <translation>Opgeslagen netwerken beheren</translation>
     </message>
 </context>
 </TS>

@@ -1,13 +1,15 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ru">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru">
 <context>
     <name>DateTimeSettingsPlugin</name>
     <message>
-        <location filename="../datetimesettingsplugin.h" line="34"/>
+        <location filename="../datetimesettingsplugin.h" line="35"/>
         <source>Date and time</source>
         <translation>Дата и время</translation>
     </message>
     <message>
-        <location filename="../datetimesettingsplugin.h" line="35"/>
+        <location filename="../datetimesettingsplugin.h" line="36"/>
         <source>Setup date time and timezone</source>
         <translation>Настройки даты времени и часового пояса</translation>
     </message>
@@ -15,7 +17,7 @@
 <context>
     <name>SetupDate</name>
     <message>
-        <location filename="../SetupDate.qml" line="35"/>
+        <location filename="../SetupDate.qml" line="34"/>
         <source>Setup date</source>
         <translation>Настроить дату</translation>
     </message>
@@ -23,7 +25,7 @@
 <context>
     <name>SetupTime</name>
     <message>
-        <location filename="../SetupTime.qml" line="35"/>
+        <location filename="../SetupTime.qml" line="34"/>
         <source>Setup time</source>
         <translation>Настроить время</translation>
     </message>
@@ -31,7 +33,7 @@
 <context>
     <name>SetupTimezone</name>
     <message>
-        <location filename="../SetupTimezone.qml" line="35"/>
+        <location filename="../SetupTimezone.qml" line="34"/>
         <source>Setup time zone</source>
         <translation>Настроить часовой пояс</translation>
     </message>
@@ -39,52 +41,52 @@
 <context>
     <name>datetime</name>
     <message>
-        <location filename="../datetime.qml" line="34"/>
+        <location filename="../datetime.qml" line="33"/>
         <source>Date and time</source>
         <translation>Дата и время</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="47"/>
+        <location filename="../datetime.qml" line="46"/>
         <source>12h</source>
         <translation>12ч</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="48"/>
+        <location filename="../datetime.qml" line="47"/>
         <source>24h</source>
         <translation>24ч</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="59"/>
+        <location filename="../datetime.qml" line="58"/>
         <source>Component is not ready</source>
         <translation>Компонент не готов</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="80"/>
+        <location filename="../datetime.qml" line="79"/>
         <source>Automatic time update</source>
         <translation>Определять время автоматически</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="93"/>
+        <location filename="../datetime.qml" line="94"/>
         <source>Select date</source>
         <translation>Выбрать дату</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="106"/>
+        <location filename="../datetime.qml" line="108"/>
         <source>Select time</source>
         <translation>Выбрать время</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="115"/>
+        <location filename="../datetime.qml" line="118"/>
         <source>Automatic time zone update</source>
         <translation>Определять часовой пояс автоматически</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="128"/>
+        <location filename="../datetime.qml" line="132"/>
         <source>Current time zone</source>
         <translation>Текущий часовой пояс</translation>
     </message>
     <message>
-        <location filename="../datetime.qml" line="136"/>
+        <location filename="../datetime.qml" line="140"/>
         <source>Time format</source>
         <translation>Формат времени</translation>
     </message>

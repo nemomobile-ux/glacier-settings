@@ -17,7 +17,7 @@
 <context>
     <name>mobile</name>
     <message>
-        <location filename="../mobile.qml" line="36"/>
+        <location filename="../mobile.qml" line="34"/>
         <source>Mobile networks</source>
         <translation>Matkapuhelinverkot</translation>
     </message>
@@ -30,42 +30,42 @@
         <translation type="vanished">Tuntematon</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="77"/>
+        <location filename="../mobile.qml" line="59"/>
         <source>SIM cards unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80"/>
         <source>No sim</source>
         <translation>Ei SIM-korttia</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81"/>
         <source>Enabled</source>
         <translation>Päällä</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81"/>
         <source>Disabled</source>
         <translation>Pois päältä</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="151"/>
+        <location filename="../mobile.qml" line="125"/>
         <source>Connect to internet</source>
         <translation>Yhdistä internetiin</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="163"/>
+        <location filename="../mobile.qml" line="138"/>
         <source>Enable data roaming</source>
         <translation>Ota verkkovierailu käyttöön</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="173"/>
+        <location filename="../mobile.qml" line="148"/>
         <source>Preferred network</source>
         <translation>Suosittu verkko</translation>
     </message>

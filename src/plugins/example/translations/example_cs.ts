@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>ExampleSettingsPlugin</name>
     <message>
@@ -15,7 +17,7 @@
 <context>
     <name>example</name>
     <message>
-        <location filename="../example.qml" line="29"/>
+        <location filename="../example.qml" line="28"/>
         <source>Example settings plugin</source>
         <translation>Příklad modulu nastavení</translation>
     </message>

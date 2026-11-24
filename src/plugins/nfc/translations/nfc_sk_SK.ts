@@ -12,17 +12,17 @@
 <context>
     <name>nfc</name>
     <message>
-        <location filename="../nfc.qml" line="35"/>
+        <location filename="../nfc.qml" line="34"/>
         <source>NFC</source>
         <translation>NFS</translation>
     </message>
     <message>
-        <location filename="../nfc.qml" line="45"/>
+        <location filename="../nfc.qml" line="44"/>
         <source>NFC unavailable</source>
         <translation>NFC nie je k dispozícii</translation>
     </message>
     <message>
-        <location filename="../nfc.qml" line="58"/>
+        <location filename="../nfc.qml" line="57"/>
         <source>Enable NFC</source>
         <translation>Povolenie NFC</translation>
     </message>

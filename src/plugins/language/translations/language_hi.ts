@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE TS>
+<TS version="2.1" language="hi_IN">
+<context>
+    <name>LanguageSettingsPlugin</name>
+    <message>
+        <location filename="../languagesettingsplugin.h" line="33" />
+        <source>Language</source>
+        <translation>भाषा</translation>
+    </message>
+    <message>
+        <location filename="../languagesettingsplugin.h" line="34" />
+        <source>Interface language</source>
+        <translation>इंटरफ़ेस भाषा</translation>
+    </message>
+</context>
+<context>
+    <name>language</name>
+    <message>
+        <location filename="../language.qml" line="34" />
+        <source>Language</source>
+        <translation>भाषा</translation>
+    </message>
+    <message>
+        <location filename="../language.qml" line="73" />
+        <source>Cancel</source>
+        <translation>रद्द करें</translation>
+    </message>
+    <message>
+        <location filename="../language.qml" line="74" />
+        <source>Accept</source>
+        <translation>स्वीकार करें</translation>
+    </message>
+    <message>
+        <location filename="../language.qml" line="75" />
+        <source>Change language?</source>
+        <translation>भाषा बदलें?</translation>
+    </message>
+    <message>
+        <location filename="../language.qml" line="76" />
+        <source>Do you want to change language to %1 and reboot?</source>
+        <translation>क्या आप भाषा को %1 में बदलना और रीबूट करना चाहते हैं?</translation>
+    </message>
+</context>
+</TS>

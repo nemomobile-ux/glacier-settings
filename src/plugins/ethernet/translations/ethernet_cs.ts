@@ -1,195 +1,255 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="cs">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
-    <name>NetworkDelegate</name>
+    <name>EthernetSettings</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
-        <source>connected</source>
-        <translation>připojeno</translation>
+        <location filename="../EthernetSettings.qml" line="35"/>
+        <source>Wired connection</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
-        <source>connecting</source>
-        <translation>připojuje se</translation>
+        <location filename="../EthernetSettings.qml" line="45"/>
+        <source>Method</source>
+        <translation type="unfinished">Metoda</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
-        <source>open</source>
-        <translation>otevřené</translation>
+        <location filename="../EthernetSettings.qml" line="51"/>
+        <source>DHCP</source>
+        <translation type="unfinished">DHCP</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
-        <source>unknown</source>
-        <translation>neznámo</translation>
+        <location filename="../EthernetSettings.qml" line="52"/>
+        <source>Manual</source>
+        <translation type="unfinished">Ručně</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
-        <source>secure</source>
-        <translation>zabezpečené</translation>
-    </message>
-</context>
-<context>
-    <name>SavedServices</name>
-    <message>
-        <location filename="../SavedServices.qml" line="36"/>
-        <source>Manage saved networks</source>
-        <translation>Spravovat uložené spojení</translation>
+        <location filename="../EthernetSettings.qml" line="67"/>
+        <source>IP address</source>
+        <translation type="unfinished">IP adresa</translation>
     </message>
     <message>
-        <location filename="../SavedServices.qml" line="66"/>
-        <source>No saved ethernet networks</source>
-        <translation>Nejsou uložené žádné ethernet sítě</translation>
-    </message>
-</context>
-<context>
-    <name>SavedStatus</name>
-    <message>
-        <location filename="../SavedStatus.qml" line="47"/>
-        <source>Auto connect</source>
-        <translation>Automaticky připojit</translation>
+        <location filename="../EthernetSettings.qml" line="76"/>
+        <source>Net mask</source>
+        <translation type="unfinished">Maska sítě</translation>
     </message>
     <message>
-        <location filename="../SavedStatus.qml" line="72"/>
-        <source>Remove</source>
-        <translation>Odstranit</translation>
+        <location filename="../EthernetSettings.qml" line="85"/>
+        <source>Gateway</source>
+        <translation type="unfinished">Brána</translation>
+    </message>
+    <message>
+        <location filename="../EthernetSettings.qml" line="94"/>
+        <source>Disconnect</source>
+        <translation type="unfinished">Odpojit</translation>
     </message>
 </context>
 <context>
     <name>EthernetSettingsPlugin</name>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="26"/>
         <source>Wireless networks</source>
-        <translation>Bezdrátové sítě</translation>
+        <translation type="vanished">Bezdrátové sítě</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="49"/>
-        <location filename="../ethernetsettingsplugin.cpp" line="67"/>
+        <location filename="../ethernetsettingsplugin.cpp" line="24"/>
+        <source>Wired network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="46"/>
+        <location filename="../ethernetsettingsplugin.cpp" line="64"/>
         <source>connected</source>
         <translation>připojeno</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="51"/>
-        <location filename="../ethernetsettingsplugin.cpp" line="69"/>
-        <source>diconnected</source>
-        <translation>odpojeno</translation>
+        <location filename="../ethernetsettingsplugin.cpp" line="48"/>
+        <location filename="../ethernetsettingsplugin.cpp" line="66"/>
+        <source>disconnected</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="54"/>
+        <source>diconnected</source>
+        <translation type="vanished">odpojeno</translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="51"/>
         <source>disabled</source>
         <translation>zakázáno</translation>
     </message>
     <message>
-        <location filename="../ethernetsettingsplugin.h" line="35"/>
+        <location filename="../ethernetsettingsplugin.h" line="36"/>
         <source>Ethernet</source>
         <translation>Ethernet</translation>
     </message>
 </context>
 <context>
+    <name>NetworkDelegate</name>
+    <message>
+        <source>connected</source>
+        <translation type="vanished">připojeno</translation>
+    </message>
+    <message>
+        <source>connecting</source>
+        <translation type="vanished">připojuje se</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation type="vanished">otevřené</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation type="vanished">neznámo</translation>
+    </message>
+    <message>
+        <source>secure</source>
+        <translation type="vanished">zabezpečené</translation>
+    </message>
+</context>
+<context>
+    <name>SavedServices</name>
+    <message>
+        <source>Manage saved networks</source>
+        <translation type="vanished">Spravovat uložené spojení</translation>
+    </message>
+    <message>
+        <source>No saved ethernet networks</source>
+        <translation type="vanished">Nejsou uložené žádné ethernet sítě</translation>
+    </message>
+</context>
+<context>
+    <name>SavedStatus</name>
+    <message>
+        <source>Auto connect</source>
+        <translation type="vanished">Automaticky připojit</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="vanished">Odstranit</translation>
+    </message>
+</context>
+<context>
     <name>WifiSettings</name>
     <message>
-        <location filename="../WifiSettings.qml" line="38"/>
         <source>Connect to</source>
-        <translation>Připojit k</translation>
+        <translation type="vanished">Připojit k</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="101"/>
         <source>Login</source>
-        <translation>Přihlašovací jméno</translation>
+        <translation type="vanished">Přihlašovací jméno</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="114"/>
         <source>Password</source>
-        <translation>Heslo</translation>
+        <translation type="vanished">Heslo</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="126"/>
         <source>Connect automatically</source>
-        <translation>Připojit automaticky</translation>
+        <translation type="vanished">Připojit automaticky</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="142"/>
         <source>Connect</source>
-        <translation>Připojit</translation>
+        <translation type="vanished">Připojit</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="166"/>
         <source>Ok</source>
-        <translation>Ok</translation>
+        <translation type="vanished">Ok</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="167"/>
         <source>Connection failed</source>
-        <translation>Připojení selhalo</translation>
+        <translation type="vanished">Připojení selhalo</translation>
     </message>
 </context>
 <context>
     <name>WifiStatus</name>
     <message>
-        <location filename="../WifiStatus.qml" line="53"/>
         <source>Method</source>
-        <translation>Metoda</translation>
+        <translation type="vanished">Metoda</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="61"/>
         <source>DHCP</source>
-        <translation>DHCP</translation>
+        <translation type="vanished">DHCP</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="64"/>
         <source>Manual</source>
-        <translation>Ručně</translation>
+        <translation type="vanished">Ručně</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="79"/>
         <source>Network info</source>
-        <translation>Informace o síti</translation>
+        <translation type="vanished">Informace o síti</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="86"/>
         <source>IP address</source>
-        <translation>IP adresa</translation>
+        <translation type="vanished">IP adresa</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="100"/>
         <source>Net mask</source>
-        <translation>Maska sítě</translation>
+        <translation type="vanished">Maska sítě</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="114"/>
         <source>Gateway</source>
-        <translation>Brána</translation>
+        <translation type="vanished">Brána</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="137"/>
         <source>Disconnect</source>
-        <translation>Odpojit</translation>
+        <translation type="vanished">Odpojit</translation>
     </message>
 </context>
 <context>
     <name>ethernet</name>
     <message>
-        <location filename="../ethernet.qml" line="37"/>
         <source>Ethernet settings</source>
-        <translation>Nastavení Ethernet</translation>
+        <translation type="vanished">Nastavení Ethernet</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="68"/>
+        <location filename="../ethernet.qml" line="34"/>
+        <source>Ethernet</source>
+        <translation type="unfinished">Ethernet</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="58"/>
         <source>Enable Ethernet</source>
         <translation>Povolit Ethernet</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="94"/>
+        <location filename="../ethernet.qml" line="71"/>
+        <source>Connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="84"/>
+        <source>Wired connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="87"/>
+        <source>connected</source>
+        <translation type="unfinished">připojeno</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="89"/>
+        <source>connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="91"/>
+        <source>disconnected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="115"/>
+        <source>Ethernet is disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Saved</source>
-        <translation>Uloženo</translation>
+        <translation type="vanished">Uloženo</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="112"/>
         <source>Available</source>
-        <translation>K dispozici</translation>
+        <translation type="vanished">K dispozici</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="129"/>
         <source>Manage saved networks</source>
-        <translation>Spravovat uložené spojení</translation>
+        <translation type="vanished">Spravovat uložené spojení</translation>
     </message>
 </context>
 </TS>

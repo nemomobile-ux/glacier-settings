@@ -17,7 +17,7 @@
 <context>
     <name>example</name>
     <message>
-        <location filename="../example.qml" line="29"/>
+        <location filename="../example.qml" line="28"/>
         <source>Example settings plugin</source>
         <translation type="unfinished"></translation>
     </message>

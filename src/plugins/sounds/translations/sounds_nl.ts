@@ -1,118 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
     <name>SelectRingTonePage</name>
     <message>
-        <location filename="../SelectRingTonePage.qml" line="41"/>
+        <location filename="../SelectRingTonePage.qml" line="35" />
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand selecteren</translation>
     </message>
     <message>
-        <location filename="../SelectRingTonePage.qml" line="60"/>
+        <location filename="../SelectRingTonePage.qml" line="50" />
         <source>selected</source>
-        <translation type="unfinished"></translation>
+        <translation>geselecteerd</translation>
     </message>
 </context>
 <context>
     <name>SoundsSettingsPlugin</name>
     <message>
-        <location filename="../soundssettingsplugin.h" line="33"/>
+        <location filename="../soundssettingsplugin.h" line="33" />
         <source>Sounds</source>
-        <translation type="unfinished"></translation>
+        <translation>Geluiden</translation>
     </message>
     <message>
-        <location filename="../soundssettingsplugin.h" line="34"/>
+        <location filename="../soundssettingsplugin.h" line="34" />
         <source>Ringtones and sound level</source>
-        <translation type="unfinished"></translation>
+        <translation>Beltonen en geluidsniveau</translation>
     </message>
 </context>
 <context>
     <name>sounds</name>
     <message>
-        <location filename="../sounds.qml" line="37"/>
+        <location filename="../sounds.qml" line="35" />
         <source>Sounds</source>
-        <translation type="unfinished"></translation>
+        <translation>Geluiden</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="87"/>
+        <location filename="../sounds.qml" line="92" />
         <source>Ringer Volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Belvolume</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="103"/>
+        <location filename="../sounds.qml" line="109" />
         <source>Vibrations mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Trilmodus</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="110"/>
+        <location filename="../sounds.qml" line="116" />
         <source>Always</source>
-        <translation type="unfinished"></translation>
+        <translation>Altijd</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="111"/>
+        <location filename="../sounds.qml" line="117" />
         <source>Silent</source>
-        <translation type="unfinished"></translation>
+        <translation>Stil</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="112"/>
+        <location filename="../sounds.qml" line="118" />
         <source>Normal</source>
-        <translation type="unfinished"></translation>
+        <translation>Normaal</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="113"/>
+        <location filename="../sounds.qml" line="119" />
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation>Nooit</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="129"/>
+        <location filename="../sounds.qml" line="135" />
         <source>System sound level</source>
-        <translation type="unfinished"></translation>
+        <translation>Systeemgeluidsniveau</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="145"/>
+        <location filename="../sounds.qml" line="152" />
         <source>Touch screen tone level</source>
-        <translation type="unfinished"></translation>
+        <translation>Toonsniveau aanraakscherm</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="162"/>
+        <location filename="../sounds.qml" line="170" />
         <source>Touch screen vibration level</source>
-        <translation type="unfinished"></translation>
+        <translation>Trilniveau aanraakscherm</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="181"/>
+        <location filename="../sounds.qml" line="190" />
         <source>Ringer tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Beltoon</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="195"/>
+        <location filename="../sounds.qml" line="204" />
         <source>Message tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Berichttoon</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="209"/>
+        <location filename="../sounds.qml" line="218" />
         <source>Chat tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Chattoon</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="223"/>
+        <location filename="../sounds.qml" line="232" />
         <source>Mail tone</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mailtoon</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="237"/>
+        <location filename="../sounds.qml" line="246" />
         <source>Internet call tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Internetoproep-toon</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="251"/>
+        <location filename="../sounds.qml" line="260" />
         <source>Calendar tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Agendatoon</translation>
     </message>
     <message>
-        <location filename="../sounds.qml" line="265"/>
+        <location filename="../sounds.qml" line="274" />
         <source>Alarm clock tone</source>
-        <translation type="unfinished"></translation>
+        <translation>Wekkertoon</translation>
     </message>
 </context>
 </TS>

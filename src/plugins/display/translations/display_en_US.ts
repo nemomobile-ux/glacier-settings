@@ -17,17 +17,17 @@
 <context>
     <name>display</name>
     <message>
-        <location filename="../display.qml" line="36"/>
+        <location filename="../display.qml" line="34"/>
         <source>Display</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="68"/>
+        <location filename="../display.qml" line="66"/>
         <source>Dynamic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="71"/>
+        <location filename="../display.qml" line="70"/>
         <source>Portrait</source>
         <translation type="unfinished"></translation>
     </message>
@@ -37,62 +37,62 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="81"/>
+        <location filename="../display.qml" line="82"/>
         <source>15 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="85"/>
+        <location filename="../display.qml" line="86"/>
         <source>30 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="89"/>
+        <location filename="../display.qml" line="90"/>
         <source>1 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="93"/>
+        <location filename="../display.qml" line="94"/>
         <source>2 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="97"/>
+        <location filename="../display.qml" line="98"/>
         <source>5 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="101"/>
+        <location filename="../display.qml" line="102"/>
         <source>10 min</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="117"/>
+        <location filename="../display.qml" line="118"/>
         <source>Brightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="122"/>
+        <location filename="../display.qml" line="123"/>
         <source>Auto brightness</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="151"/>
+        <location filename="../display.qml" line="152"/>
         <source>Display sleep timeout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="176"/>
+        <location filename="../display.qml" line="177"/>
         <source>Orientation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="206"/>
+        <location filename="../display.qml" line="207"/>
         <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../display.qml" line="233"/>
+        <location filename="../display.qml" line="243"/>
         <source>Scaling</source>
         <translation type="unfinished"></translation>
     </message>

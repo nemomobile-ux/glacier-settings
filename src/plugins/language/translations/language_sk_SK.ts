@@ -17,27 +17,27 @@
 <context>
     <name>language</name>
     <message>
-        <location filename="../language.qml" line="37"/>
+        <location filename="../language.qml" line="34"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="91"/>
+        <location filename="../language.qml" line="73"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="92"/>
+        <location filename="../language.qml" line="74"/>
         <source>Accept</source>
         <translation>Prijať</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="93"/>
+        <location filename="../language.qml" line="75"/>
         <source>Change language?</source>
         <translation>Zmeniť jazyk?</translation>
     </message>
     <message>
-        <location filename="../language.qml" line="94"/>
+        <location filename="../language.qml" line="76"/>
         <source>Do you want to change language to %1 and reboot?</source>
         <translation type="unfinished"></translation>
     </message>

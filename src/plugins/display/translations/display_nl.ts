@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
     <name>DisplaySettingsPlugin</name>
     <message>
-        <location filename="../displaysettingsplugin.h" line="33"/>
+        <location filename="../displaysettingsplugin.h" line="33" />
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Scherm</translation>
     </message>
     <message>
-        <location filename="../displaysettingsplugin.h" line="34"/>
+        <location filename="../displaysettingsplugin.h" line="34" />
         <source>Brightness, orientation and theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Helderheid, oriëntatie en thema</translation>
     </message>
 </context>
 <context>
@@ -21,84 +21,84 @@
         <translation type="vanished">Scherminstellingen</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="36"/>
+        <location filename="../display.qml" line="34" />
         <source>Display</source>
-        <translation type="unfinished"></translation>
+        <translation>Scherm</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="68"/>
+        <location filename="../display.qml" line="66" />
         <source>Dynamic</source>
-        <translation type="unfinished"></translation>
+        <translation>Dynamisch</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="71"/>
+        <location filename="../display.qml" line="70" />
         <source>Portrait</source>
-        <translation type="unfinished"></translation>
+        <translation>Staand</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="74"/>
+        <location filename="../display.qml" line="74" />
         <source>Landscape</source>
-        <translation type="unfinished"></translation>
+        <translation>Liggend</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="81"/>
+        <location filename="../display.qml" line="82" />
         <source>15 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>15 sec</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="85"/>
+        <location filename="../display.qml" line="86" />
         <source>30 sec</source>
-        <translation type="unfinished"></translation>
+        <translation>30 sec</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="89"/>
+        <location filename="../display.qml" line="90" />
         <source>1 min</source>
-        <translation type="unfinished"></translation>
+        <translation>1 min</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="93"/>
+        <location filename="../display.qml" line="94" />
         <source>2 min</source>
-        <translation type="unfinished"></translation>
+        <translation>2 min</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="97"/>
+        <location filename="../display.qml" line="98" />
         <source>5 min</source>
-        <translation type="unfinished"></translation>
+        <translation>5 min</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="101"/>
+        <location filename="../display.qml" line="102" />
         <source>10 min</source>
-        <translation type="unfinished"></translation>
+        <translation>10 min</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="117"/>
+        <location filename="../display.qml" line="118" />
         <source>Brightness</source>
         <translation>Helderheid</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="122"/>
+        <location filename="../display.qml" line="123" />
         <source>Auto brightness</source>
         <translation>Automatische helderheid</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="151"/>
+        <location filename="../display.qml" line="152" />
         <source>Display sleep timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Time-out voor schermslaapstand</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="176"/>
+        <location filename="../display.qml" line="177" />
         <source>Orientation</source>
-        <translation type="unfinished"></translation>
+        <translation>Oriëntatie</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="206"/>
+        <location filename="../display.qml" line="207" />
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Thema</translation>
     </message>
     <message>
-        <location filename="../display.qml" line="233"/>
+        <location filename="../display.qml" line="243" />
         <source>Scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>Schalen</translation>
     </message>
 </context>
 </TS>

@@ -1,197 +1,256 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="nl">
 <context>
+    <name>AddVpnPage</name>
+    <message>
+        <location filename="../AddVpnPage.qml" line="38" />
+        <source>Add VPN</source>
+        <translation>VPN toevoegen</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="51" />
+        <source>Create manually</source>
+        <translation>Handmatig aanmaken</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="52" />
+        <source>Enter VPN settings by hand</source>
+        <translation>VPN-instellingen handmatig invoeren</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="62" />
+        <source>Import from file</source>
+        <translation>Importeren uit bestand</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="63" />
+        <source>Import OpenVPN configuration file</source>
+        <translation>OpenVPN-configuratiebestand importeren</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="74" />
+        <source>Import VPN</source>
+        <translation>VPN importeren</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="75" />
+        <source>Enter path to OpenVPN configuration file</source>
+        <translation>Voer pad naar OpenVPN-configuratiebestand in</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="76" />
+        <source>Import</source>
+        <translation>Importeren</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="77" />
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="84" />
+        <source>/path/to/config.ovpn</source>
+        <translation>/path/to/config.ovpn</translation>
+    </message>
+    <message>
+        <location filename="../AddVpnPage.qml" line="101" />
+        <location filename="../AddVpnPage.qml" line="110" />
+        <source>Failed to import VPN configuration</source>
+        <translation>VPN-configuratie importeren mislukt</translation>
+    </message>
+</context>
+<context>
     <name>NetworkDelegate</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
         <source>connected</source>
-        <translation type="unfinished">verbonden</translation>
+        <translation type="obsolete">verbonden</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
         <source>connecting</source>
-        <translation type="unfinished">verbinden</translation>
+        <translation type="obsolete">verbinden</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
         <source>open</source>
-        <translation type="unfinished">onbeveiligd</translation>
+        <translation type="obsolete">onbeveiligd</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
-        <source>unknown</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
         <source>secure</source>
-        <translation type="unfinished">beveiligd</translation>
+        <translation type="obsolete">beveiligd</translation>
     </message>
 </context>
 <context>
-    <name>SavedServices</name>
+    <name>VpnEditor</name>
     <message>
-        <location filename="../SavedServices.qml" line="36"/>
-        <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <location filename="../VpnEditor.qml" line="41" />
+        <source>Add VPN</source>
+        <translation>VPN toevoegen</translation>
     </message>
     <message>
-        <location filename="../SavedServices.qml" line="66"/>
-        <source>No saved vpn networks</source>
-        <translation type="unfinished"></translation>
+        <location filename="../VpnEditor.qml" line="41" />
+        <source>Edit VPN</source>
+        <translation>VPN bewerken</translation>
     </message>
-</context>
-<context>
-    <name>SavedStatus</name>
     <message>
-        <location filename="../SavedStatus.qml" line="47"/>
+        <location filename="../VpnEditor.qml" line="134" />
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="141" />
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="148" />
+        <source>Domain (default: local)</source>
+        <translation>Domein (standaard: local)</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="155" />
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="181" />
         <source>Auto connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch verbinden</translation>
     </message>
     <message>
-        <location filename="../SavedStatus.qml" line="72"/>
-        <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <location filename="../VpnEditor.qml" line="199" />
+        <source>Port (default: 1194)</source>
+        <translation>Poort (standaard: 1194)</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="210" />
+        <source>Protocol</source>
+        <translation>Protocol</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="232" />
+        <source>Device type</source>
+        <translation>Apparaattype</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="254" />
+        <source>CA certificate path</source>
+        <translation>Pad naar CA-certificaat</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="261" />
+        <source>Client certificate path</source>
+        <translation>Pad naar clientcertificaat</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="268" />
+        <source>Client key path</source>
+        <translation>Pad naar clientsleutel</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="274" />
+        <source>Use username/password</source>
+        <translation>Gebruikersnaam/wachtwoord gebruiken</translation>
+    </message>
+    <message>
+        <location filename="../VpnEditor.qml" line="288" />
+        <source>Username</source>
+        <translation>Gebruikersnaam</translation>
     </message>
 </context>
 <context>
     <name>VpnSettingsPlugin</name>
     <message>
-        <location filename="../vpnsettingsplugin.cpp" line="26"/>
-        <source>Wireless networks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="49"/>
-        <location filename="../vpnsettingsplugin.cpp" line="67"/>
         <source>connected</source>
-        <translation type="unfinished">verbonden</translation>
+        <translation type="obsolete">verbonden</translation>
     </message>
     <message>
-        <location filename="../vpnsettingsplugin.cpp" line="51"/>
-        <location filename="../vpnsettingsplugin.cpp" line="69"/>
-        <source>diconnected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.cpp" line="54"/>
-        <source>disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../vpnsettingsplugin.h" line="35"/>
+        <location filename="../vpnsettingsplugin.h" line="34" />
         <source>VPN</source>
-        <translation type="unfinished"></translation>
+        <translation>VPN</translation>
+    </message>
+    <message>
+        <location filename="../vpnsettingsplugin.h" line="35" />
+        <source>Virtual private networks</source>
+        <translation>Virtuele privénetwerken</translation>
     </message>
 </context>
 <context>
     <name>WifiSettings</name>
     <message>
-        <location filename="../WifiSettings.qml" line="38"/>
         <source>Connect to</source>
-        <translation>Verbinden met</translation>
+        <translation type="vanished">Verbinden met</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="101"/>
-        <source>Login</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="114"/>
-        <source>Password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="126"/>
-        <source>Connect automatically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="142"/>
         <source>Connect</source>
-        <translation>Verbinden</translation>
+        <translation type="vanished">Verbinden</translation>
     </message>
     <message>
-        <location filename="../WifiSettings.qml" line="166"/>
         <source>Ok</source>
-        <translation type="unfinished">Oké</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="167"/>
-        <source>Connection failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Oké</translation>
     </message>
 </context>
 <context>
     <name>WifiStatus</name>
     <message>
-        <location filename="../WifiStatus.qml" line="53"/>
         <source>Method</source>
-        <translation>Methode</translation>
+        <translation type="vanished">Methode</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="61"/>
-        <source>DHCP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="64"/>
-        <source>Manual</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="79"/>
         <source>Network info</source>
-        <translation>Netwerkinfo</translation>
+        <translation type="vanished">Netwerkinfo</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="86"/>
         <source>IP address</source>
-        <translation>IP-adres</translation>
+        <translation type="vanished">IP-adres</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="100"/>
         <source>Net mask</source>
-        <translation>Netwerkmasker</translation>
+        <translation type="vanished">Netwerkmasker</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="114"/>
         <source>Gateway</source>
-        <translation>Gateway</translation>
+        <translation type="vanished">Gateway</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="137"/>
         <source>Disconnect</source>
-        <translation>Verbinding verbreken</translation>
+        <translation type="vanished">Verbinding verbreken</translation>
     </message>
 </context>
 <context>
     <name>vpn</name>
     <message>
-        <location filename="../vpn.qml" line="37"/>
         <source>VPN settings</source>
-        <translation>Wifi-instellingen</translation>
+        <translation type="vanished">Wifi-instellingen</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="68"/>
-        <source>Enable VPN</source>
-        <translation type="unfinished"></translation>
+        <location filename="../vpn.qml" line="36" />
+        <source>VPN</source>
+        <translation>VPN</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="94"/>
-        <source>Saved</source>
-        <translation type="unfinished"></translation>
+        <location filename="../vpn.qml" line="59" />
+        <source>connected</source>
+        <translation>verbonden</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="112"/>
-        <source>Available</source>
-        <translation type="unfinished"></translation>
+        <location filename="../vpn.qml" line="62" />
+        <source>connecting...</source>
+        <translation>verbinden...</translation>
     </message>
     <message>
-        <location filename="../vpn.qml" line="129"/>
-        <source>Manage saved networks</source>
-        <translation type="unfinished"></translation>
+        <location filename="../vpn.qml" line="64" />
+        <source>failed</source>
+        <translation>mislukt</translation>
+    </message>
+    <message>
+        <location filename="../vpn.qml" line="66" />
+        <source>disconnected</source>
+        <translation>verbroken</translation>
+    </message>
+    <message>
+        <location filename="../vpn.qml" line="104" />
+        <source>No VPN connections configured</source>
+        <translation>Geen VPN-verbindingen geconfigureerd</translation>
     </message>
 </context>
 </TS>

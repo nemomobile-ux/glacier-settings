@@ -1,201 +1,247 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE TS>
 <TS version="2.1" language="es">
 <context>
-    <name>NetworkDelegate</name>
+    <name>EthernetSettings</name>
     <message>
-        <location filename="../NetworkDelegate.qml" line="54"/>
-        <source>connected</source>
-        <translation>conectado</translation>
+        <location filename="../EthernetSettings.qml" line="35" />
+        <source>Wired connection</source>
+        <translation>Conexión por cable</translation>
     </message>
     <message>
-        <location filename="../NetworkDelegate.qml" line="56"/>
-        <source>connecting</source>
-        <translation>Conectando</translation>
-    </message>
-    <message>
-        <location filename="../NetworkDelegate.qml" line="59"/>
-        <source>open</source>
-        <translation>abrir</translation>
-    </message>
-    <message>
-        <location filename="../NetworkDelegate.qml" line="61"/>
-        <source>unknown</source>
-        <translation>desconocido</translation>
-    </message>
-    <message>
-        <location filename="../NetworkDelegate.qml" line="63"/>
-        <source>secure</source>
-        <translation>seguro</translation>
-    </message>
-</context>
-<context>
-    <name>SavedServices</name>
-    <message>
-        <location filename="../SavedServices.qml" line="36"/>
-        <source>Manage saved networks</source>
-        <translation>Gestionar redes guardadas</translation>
-    </message>
-    <message>
-        <location filename="../SavedServices.qml" line="66"/>
-        <source>No saved ethernet networks</source>
-        <translation>No hay redes wlan guardadas</translation>
-    </message>
-</context>
-<context>
-    <name>SavedStatus</name>
-    <message>
-        <location filename="../SavedStatus.qml" line="47"/>
-        <source>Auto connect</source>
-        <translation>Autoconectar</translation>
-    </message>
-    <message>
-        <location filename="../SavedStatus.qml" line="72"/>
-        <source>Remove</source>
-        <translation>Quitar</translation>
-    </message>
-</context>
-<context>
-    <name>EthernetSettingsPlugin</name>
-    <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="26"/>
-        <source>Wireless networks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="49"/>
-        <location filename="../ethernetsettingsplugin.cpp" line="67"/>
-        <source>connected</source>
-        <translation type="unfinished">conectado</translation>
-    </message>
-    <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="51"/>
-        <location filename="../ethernetsettingsplugin.cpp" line="69"/>
-        <source>diconnected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ethernetsettingsplugin.cpp" line="54"/>
-        <source>disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ethernetsettingsplugin.h" line="35"/>
-        <source>Ethernet</source>
-        <translation type="unfinished">WLAN</translation>
-    </message>
-</context>
-<context>
-    <name>WifiSettings</name>
-    <message>
-        <location filename="../WifiSettings.qml" line="38"/>
-        <source>Connect to</source>
-        <translation>Conectar a</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="101"/>
-        <source>Login</source>
-        <translation>Iniciar sesión</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="114"/>
-        <source>Password</source>
-        <translation>Contraseña</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="126"/>
-        <source>Connect automatically</source>
-        <translation>Conectar automáticamente</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="142"/>
-        <source>Connect</source>
-        <translation>Conectar</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="166"/>
-        <source>Ok</source>
-        <translation>Aceptar</translation>
-    </message>
-    <message>
-        <location filename="../WifiSettings.qml" line="167"/>
-        <source>Connection failed</source>
-        <translation>Conexión fallida</translation>
-    </message>
-</context>
-<context>
-    <name>WifiStatus</name>
-    <message>
-        <location filename="../WifiStatus.qml" line="53"/>
+        <location filename="../EthernetSettings.qml" line="45" />
         <source>Method</source>
         <translation>Método</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="61"/>
+        <location filename="../EthernetSettings.qml" line="51" />
         <source>DHCP</source>
         <translation>DHCP</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="64"/>
+        <location filename="../EthernetSettings.qml" line="52" />
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="79"/>
-        <source>Network info</source>
-        <translation>Info de red</translation>
-    </message>
-    <message>
-        <location filename="../WifiStatus.qml" line="86"/>
+        <location filename="../EthernetSettings.qml" line="67" />
         <source>IP address</source>
         <translation>Dirección IP</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="100"/>
+        <location filename="../EthernetSettings.qml" line="76" />
         <source>Net mask</source>
         <translation>Máscara de red</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="114"/>
+        <location filename="../EthernetSettings.qml" line="85" />
         <source>Gateway</source>
-        <translation>Pasarela</translation>
+        <translation>Puerta de enlace</translation>
     </message>
     <message>
-        <location filename="../WifiStatus.qml" line="137"/>
+        <location filename="../EthernetSettings.qml" line="94" />
         <source>Disconnect</source>
         <translation>Desconectar</translation>
     </message>
 </context>
 <context>
+    <name>EthernetSettingsPlugin</name>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="24" />
+        <source>Wired network</source>
+        <translation>Red cableada</translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="46" />
+        <location filename="../ethernetsettingsplugin.cpp" line="64" />
+        <source>connected</source>
+        <translation>conectado</translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="48" />
+        <location filename="../ethernetsettingsplugin.cpp" line="66" />
+        <source>disconnected</source>
+        <translation>desconectado</translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.cpp" line="51" />
+        <source>disabled</source>
+        <translation>desactivado</translation>
+    </message>
+    <message>
+        <location filename="../ethernetsettingsplugin.h" line="36" />
+        <source>Ethernet</source>
+        <translation>Ethernet</translation>
+    </message>
+</context>
+<context>
+    <name>NetworkDelegate</name>
+    <message>
+        <source>connected</source>
+        <translation type="vanished">conectado</translation>
+    </message>
+    <message>
+        <source>connecting</source>
+        <translation type="vanished">Conectando</translation>
+    </message>
+    <message>
+        <source>open</source>
+        <translation type="vanished">abrir</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation type="vanished">desconocido</translation>
+    </message>
+    <message>
+        <source>secure</source>
+        <translation type="vanished">seguro</translation>
+    </message>
+</context>
+<context>
+    <name>SavedServices</name>
+    <message>
+        <source>Manage saved networks</source>
+        <translation type="vanished">Gestionar redes guardadas</translation>
+    </message>
+    <message>
+        <source>No saved ethernet networks</source>
+        <translation type="vanished">No hay redes wlan guardadas</translation>
+    </message>
+</context>
+<context>
+    <name>SavedStatus</name>
+    <message>
+        <source>Auto connect</source>
+        <translation type="vanished">Autoconectar</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="vanished">Quitar</translation>
+    </message>
+</context>
+<context>
+    <name>WifiSettings</name>
+    <message>
+        <source>Connect to</source>
+        <translation type="vanished">Conectar a</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation type="vanished">Iniciar sesión</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="vanished">Contraseña</translation>
+    </message>
+    <message>
+        <source>Connect automatically</source>
+        <translation type="vanished">Conectar automáticamente</translation>
+    </message>
+    <message>
+        <source>Connect</source>
+        <translation type="vanished">Conectar</translation>
+    </message>
+    <message>
+        <source>Ok</source>
+        <translation type="vanished">Aceptar</translation>
+    </message>
+    <message>
+        <source>Connection failed</source>
+        <translation type="vanished">Conexión fallida</translation>
+    </message>
+</context>
+<context>
+    <name>WifiStatus</name>
+    <message>
+        <source>Method</source>
+        <translation type="vanished">Método</translation>
+    </message>
+    <message>
+        <source>DHCP</source>
+        <translation type="vanished">DHCP</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="vanished">Manual</translation>
+    </message>
+    <message>
+        <source>Network info</source>
+        <translation type="vanished">Info de red</translation>
+    </message>
+    <message>
+        <source>IP address</source>
+        <translation type="vanished">Dirección IP</translation>
+    </message>
+    <message>
+        <source>Net mask</source>
+        <translation type="vanished">Máscara de red</translation>
+    </message>
+    <message>
+        <source>Gateway</source>
+        <translation type="vanished">Pasarela</translation>
+    </message>
+    <message>
+        <source>Disconnect</source>
+        <translation type="vanished">Desconectar</translation>
+    </message>
+</context>
+<context>
     <name>ethernet</name>
     <message>
-        <location filename="../ethernet.qml" line="37"/>
         <source>Ethernet settings</source>
-        <translation>Configuración WLAN</translation>
+        <translation type="vanished">Configuración WLAN</translation>
     </message>
     <message>
+        <location filename="../ethernet.qml" line="34" />
         <source>Ethernet</source>
-        <translation type="vanished">WLAN</translation>
+        <translation>WLAN</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="68"/>
+        <location filename="../ethernet.qml" line="58" />
         <source>Enable Ethernet</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar Ethernet</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="94"/>
+        <location filename="../ethernet.qml" line="71" />
+        <source>Connections</source>
+        <translation>Conexiones</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="84" />
+        <source>Wired connection</source>
+        <translation>Conexión por cable</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="87" />
+        <source>connected</source>
+        <translation>conectado</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="89" />
+        <source>connecting...</source>
+        <translation>conectando...</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="91" />
+        <source>disconnected</source>
+        <translation>desconectado</translation>
+    </message>
+    <message>
+        <location filename="../ethernet.qml" line="115" />
+        <source>Ethernet is disabled</source>
+        <translation>Ethernet está desactivado</translation>
+    </message>
+    <message>
         <source>Saved</source>
-        <translation>Salvado</translation>
+        <translation type="vanished">Salvado</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="112"/>
         <source>Available</source>
-        <translation>Disponible</translation>
+        <translation type="vanished">Disponible</translation>
     </message>
     <message>
-        <location filename="../ethernet.qml" line="129"/>
         <source>Manage saved networks</source>
-        <translation>Gestionar redes salvadas</translation>
+        <translation type="vanished">Gestionar redes salvadas</translation>
     </message>
 </context>
 </TS>

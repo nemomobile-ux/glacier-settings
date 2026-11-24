@@ -17,47 +17,47 @@
 <context>
     <name>mobile</name>
     <message>
-        <location filename="../mobile.qml" line="36"/>
+        <location filename="../mobile.qml" line="34"/>
         <source>Mobile networks</source>
         <translation>Mobilné siete</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="77"/>
+        <location filename="../mobile.qml" line="59"/>
         <source>SIM cards unavailable</source>
         <translation>SIM karty nie sú k dispozícii</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80"/>
         <source>No sim</source>
         <translation>Žiadna SIM </translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80"/>
         <source>Unknown</source>
         <translation>Neznámy</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81"/>
         <source>Enabled</source>
         <translation>Zapnuté</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81"/>
         <source>Disabled</source>
         <translation>Vypnuté</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="151"/>
+        <location filename="../mobile.qml" line="125"/>
         <source>Connect to internet</source>
         <translation>Pripojenie k internetu</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="163"/>
+        <location filename="../mobile.qml" line="138"/>
         <source>Enable data roaming</source>
         <translation>Povoliť dátový roaming</translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="173"/>
+        <location filename="../mobile.qml" line="148"/>
         <source>Preferred network</source>
         <translation>Preferovaná sieť</translation>
     </message>

@@ -17,47 +17,47 @@
 <context>
     <name>mobile</name>
     <message>
-        <location filename="../mobile.qml" line="36"/>
+        <location filename="../mobile.qml" line="34"/>
         <source>Mobile networks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="77"/>
+        <location filename="../mobile.qml" line="59"/>
         <source>SIM cards unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80"/>
         <source>No sim</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="98"/>
+        <location filename="../mobile.qml" line="80"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81"/>
         <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="99"/>
+        <location filename="../mobile.qml" line="81"/>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="151"/>
+        <location filename="../mobile.qml" line="125"/>
         <source>Connect to internet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="163"/>
+        <location filename="../mobile.qml" line="138"/>
         <source>Enable data roaming</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile.qml" line="173"/>
+        <location filename="../mobile.qml" line="148"/>
         <source>Preferred network</source>
         <translation type="unfinished"></translation>
     </message>

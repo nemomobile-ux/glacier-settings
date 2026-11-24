@@ -8,22 +8,32 @@
         <source>Keypad</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../keypadsettingsplugin.h" line="35"/>
+        <source>Hardware keypad backlight settings</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>keypad</name>
     <message>
-        <location filename="../keypad.qml" line="35"/>
+        <location filename="../keypad.qml" line="33"/>
         <source>Keypad</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keypad.qml" line="45"/>
-        <source>Keypad unavailable</source>
+        <location filename="../keypad.qml" line="42"/>
+        <source>Keypad settings unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../keypad.qml" line="58"/>
-        <source>Enable Keypad</source>
+        <location filename="../keypad.qml" line="53"/>
+        <source>Keypad backlight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../keypad.qml" line="63"/>
+        <source>Automatic backlight brightness</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

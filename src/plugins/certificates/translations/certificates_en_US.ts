@@ -8,22 +8,42 @@
         <source>Certificates</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../certificatessettingsplugin.h" line="35"/>
+        <source>View system and user certificates</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>certificates</name>
     <message>
-        <location filename="../certificates.qml" line="35"/>
+        <location filename="../certificates.qml" line="33"/>
         <source>Certificates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../certificates.qml" line="45"/>
-        <source>Certificates unavailable</source>
+        <location filename="../certificates.qml" line="50"/>
+        <source>Certificate bundle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../certificates.qml" line="58"/>
-        <source>Enable Certificates</source>
+        <location filename="../certificates.qml" line="53"/>
+        <source>TLS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../certificates.qml" line="54"/>
+        <source>Email</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../certificates.qml" line="55"/>
+        <source>Object signing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../certificates.qml" line="84"/>
+        <source>No certificates found</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
